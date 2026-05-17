@@ -1,0 +1,493 @@
+{
+  "id": "vol1no1",
+  "title": "America Gets The Bill!",
+  "subtitle": "Brass Bands Abroad, Sticker Shock at Home",
+  "eyebrow": "Vol. 1, No. 1 · May 17, 2026",
+  "eyebrowDesc": "Beijing pageantry. Gas at $9.99. White House ballroom. Drones everywhere. The receipt is very long.",
+  "date": "May 17, 2026",
+  "price": "$6.95 US / $8.95 CAN",
+  "order": 1,
+
+  "palette": {
+    "bg":        "#fdf6e3",
+    "pageBg":    "#ffffff",
+    "text":      "#111111",
+    "accent":    "#cc0000",
+    "accent2":   "#f5c400",
+    "accent3":   "#1a1a8a",
+    "navBg":     "#cc0000",
+    "navText":   "#ffffff",
+    "dotActive": "#f5c400",
+    "eyebrow":   "#cc0000",
+    "adBg":      "#fffde7",
+    "adBorder":  "#f5c400"
+  },
+
+  "stylePrefix": "Bold satirical magazine illustration in the style of Mad Magazine. Exaggerated caricature expressions, rich flat colors with deep shading, dynamic action composition, thick black outlines, detailed background visual gags, cinematic framing, slightly chaotic energy. Professional editorial illustration quality. Vivid colors, strong contrast, clear focal point.",
+
+  "pages": [
+
+    {
+      "illoId": "cover",
+      "type": "cover-full"
+    },
+
+    {
+      "illoId": "cover",
+      "type": "cover",
+      "coverLines": [
+        "BALLROOM BLITZ! 24-Carat Class Warfare",
+        "GAS PUMP DIPLOMACY! Fill 'er up. Pay up.",
+        "NOW WITH 3.8% MORE PANIC!",
+        "DRONE SEASON OPENS EARLY!",
+        "INSANE's Guide to Paying More for Everything While Everybody Dances!"
+      ]
+    },
+
+    {
+      "type": "editorial",
+      "illoId": null,
+      "title": "FROM THE EDITOR'S BUNKER",
+      "salutation": "Dear Reader Who Was Probably Already Lying Down,",
+      "paragraphs": [
+        "We had excellent intentions for this issue. We were going to cover infrastructure. We had a whole piece planned about <em>bridges</em>.",
+        "Then Trump came back from Beijing with what aides described as <strong>\"an amazing trade deal\"</strong> and what the rest of us are calling \"a scroll with a red bow that nobody has read.\" He stepped off Air Force One juggling a gas nozzle, a golden ballroom chandelier, a grocery bag with a receipt longer than a CVS coupon, and a sheaf of Chinese brass band recordings — directly into April's inflation report, which said 3.8%, and the Cleveland Fed's May estimate, which said 4.2%, and the national average gas price, which is currently printing new all-time highs in a tier labeled <strong>FREEDOM+</strong> at $9.99.",
+        "We tried to find the bridge story. It is still out there somewhere. We gave up.",
+        "This issue covers: the Beijing pageant, the inflation receipt, the White House ballroom that Congress is apparently funding with money borrowed from your gas tank, the GOP primary process (which has been simplified to <em>\"Did you vote to impeach? Incorrect. Goodbye\"</em>), forty-seven drone-related emergencies across three continents, a cruise ship that has added hantavirus to its all-inclusive package, a new Ebola emergency that arrived apologetically at the worst possible time, and — because we cannot stop the world — <strong>Bulgaria won Eurovision</strong>.",
+        "We are adding confetti to this issue. It seemed appropriate. Also unavoidable."
+      ],
+      "signature": "— The Editors",
+      "ps": "P.S. — The receipt at the bottom of this issue is not a prop. We know you know that. We're sorry."
+    },
+
+    {
+      "type": "masthead",
+      "illoId": null,
+      "title": "INSANE MAGAZINE MASTHEAD",
+      "staff": [
+        { "role": "Publisher",               "name": "A. Panic Jr." },
+        { "role": "Editor-in-Chief",         "name": "Screaming McGee" },
+        { "role": "Beijing Correspondent",   "name": "Currently In Motorcade" },
+        { "role": "Inflation Desk",          "name": "Crying Into Spreadsheet" },
+        { "role": "Gas Price Tracker",       "name": "Updated Every 4 Minutes" },
+        { "role": "White House Ballroom",    "name": "On The Velvet Rope Side" },
+        { "role": "Drone Reporter",          "name": "Look Up! No, The Other Up!" },
+        { "role": "Medical Correspondent",   "name": "Just Wash Your Hands" },
+        { "role": "GOP Primary Analyst",     "name": "Still Counting Dunk Tanks" },
+        { "role": "Eurovision Desk",         "name": "Confetti-Covered, Filing Now" },
+        { "role": "Legal",                   "name": "Anonymous, Affordable Housing Pending" },
+        { "role": "Sanity Level",            "name": "$9.99/gal and climbing" }
+      ],
+      "subscriberAlert": {
+        "title": "INSANE MAGAZINE SUBSCRIBER ALERT!",
+        "subtitle": "Your weekly briefing on things you cannot afford to ignore (or afford, period)",
+        "items": [
+          "☑ 1 trade deal (unread, with red bow)",
+          "☑ 1 Beijing pageant: diplomatic value TBD",
+          "☑ 1 ballroom rising where the East Wing used to stand",
+          "☑ Gas prices: Patriotic, Premium, and Freedom+ tiers now available",
+          "☑ Drone count: 47+ and still rising",
+          "☑ Hantavirus: all-inclusive upgrade, 3 confirmed deaths",
+          "☑ Ebola: 246 suspected cases, DRC and Uganda",
+          "☑ Eurovision: confetti. So much confetti."
+        ],
+        "price": "$6.95 / STILL CHEAPER THAN GAS",
+        "disclaimer": "INSANE Magazine is printed on the backside of unpaid grocery receipts. Any resemblance to an economy that is working is purely aspirational. Our plane. Our rules. Our delay."
+      },
+      "disclaimer": "INSANE Magazine is published whenever reality exceeds our production schedule, which is always."
+    },
+
+    {
+      "type": "contents",
+      "illoId": null,
+      "title": "CONTENTS",
+      "edition": "MAY 17, 2026 · \"AMERICA GETS THE BILL\" EDITION",
+      "ticker": "BREAKING: APRIL CPI 3.8% — CLEVELAND FED MAY ESTIMATE: 4.2% ✦ TRUMP RETURNS FROM BEIJING WITH \"AMAZING\" TRADE DEAL ✦ SENATE BLOCKS $1B WHITE HOUSE BALLROOM FUNDING ✦ GAS HITS FREEDOM+ TIER: $9.99/GAL ✦ UKRAINE DRONES STRIKE RUSSIA; RUSSIA ALSO DRONES UKRAINE ✦ UAE NUCLEAR PLANT DRONE NEAR-MISS: COOLING TOWERS \"FINE\" ✦ WHO DECLARES EBOLA PHEIC: 246 SUSPECTED CASES ✦ MV HONDIUS HANTAVIRUS: 3 DEAD ✦ BULGARIA WINS EUROVISION: WORLD BRIEFLY CHEERS ✦",
+      "items": [
+        { "page": 5,  "emoji": "🧳", "title": "AMERICA GETS THE BILL!",           "desc": "Beijing pageantry meets U.S. inflation receipts" },
+        { "page": 6,  "emoji": "🏛️", "title": "BALLROOM BLITZ!",                 "desc": "24-carat class warfare in the East Wing" },
+        { "page": 7,  "emoji": "⛽", "title": "GAS PUMP DIPLOMACY!",             "desc": "Fill 'er up. Pay up. Vote anyway." },
+        { "page": 8,  "emoji": "🎪", "title": "GOP LOYALTY PURGE",               "desc": "Cassidy's dunk tank tour continues" },
+        { "page": 9,  "emoji": "🚁", "title": "DRONE SEASON OPENS EARLY!",       "desc": "Ukraine, Russia, UAE: everybody's doing it" },
+        { "page": 10, "emoji": "☢️", "title": "CEASEFIRE: HANDLE WITH SARCASM",  "desc": "The bandage over the cooling tower" },
+        { "page": 11, "emoji": "🥷", "title": "SPY VS. SPY: DRONE EDITION",      "desc": "Same result, upgraded technology" },
+        { "page": 12, "emoji": "🏆", "title": "INSANE AWARDS",                   "desc": "Weekly recognition of excellence in chaos" },
+        { "page": 13, "emoji": "🛳️", "title": "ALL-INCLUSIVE QUARANTINE!",       "desc": "Hantavirus: the upgrade you didn't request" },
+        { "page": 14, "emoji": "🎉", "title": "SINGING WHILE THE WORLD BURNS",   "desc": "Bulgaria wins! Confetti accidentally useful!" },
+        { "page": 15, "emoji": "📰", "title": "BACK PAGE FOLD-IN",               "desc": "Who pays for all of this?" }
+      ],
+      "scorecard": {
+        "title": "THIS WEEK'S INSANE SCORECARD",
+        "items": [
+          { "emoji": "🌍", "label": "Continents with active drone incidents",          "value": "3" },
+          { "emoji": "⛽", "label": "Gas price tiers available to patriots",           "value": "3 (Regular, Premium, Freedom+)" },
+          { "emoji": "🏛️", "label": "White House ballroom budget (blocked, for now)", "value": "$1 billion" },
+          { "emoji": "📜", "label": "Trade deals returned from Beijing (unread)",      "value": "1 (red bow, still tied)" },
+          { "emoji": "😷", "label": "Active WHO public health emergencies",            "value": "at least 2" },
+          { "emoji": "🥣", "label": "MEGA FLAKES: percentage more empty",             "value": "3.8%" },
+          { "emoji": "🎉", "label": "Eurovision winners who briefly cheered everyone", "value": "1 (Bulgaria)" }
+        ]
+      }
+    },
+
+    {
+      "illoId": "bill",
+      "type": "story",
+      "flip": false,
+      "scene": "Trump caricature in suit and red tie stumbling off Air Force One stairs while juggling: a giant red gas pump nozzle, a gold chandelier, a paper grocery bag overflowing with caviar and gold steaks, and a massive unfurling receipt labeled TOTAL $1,247.36 — YOU CAN'T AFFORD THIS. Behind him a Chinese parade arch with red banners reading WELCOME MY VERY STABLE FRIEND. Xi Jinping waves from behind a TRADE DEAL IOU sign. On the tarmac a grocery conveyor belt with MEGA FLAKES cereal boxes reading NOW 3.8% MORE EMPTY. Voters on the side hold their own grocery receipts with horrified expressions. Mad Magazine caricature style, chaotic and funny.",
+      "eyebrow": "COVER STORY · PAGEANTRY ABROAD, STICKER SHOCK AT HOME",
+      "heading": "AMERICA GETS THE BILL!",
+      "subheading": "HE TOURED THE PAGEANTRY ABROAD — AND BROUGHT HOME THE RECEIPTS.",
+      "deck": "Trump Returns From Beijing Carrying An \"Amazing Trade Deal,\" A Golden Chandelier, And An April CPI Report Saying 3.8% — Cleveland Fed May Estimate: 4.2%",
+      "caption": "★ \"It's a perfect deal. The best deal. The receipt is fake news.\" ★",
+      "paragraphs": [
+        "President Trump returned from Beijing this week bearing gifts: an <strong>\"Amazing Trade Deal\"</strong> scroll with a red bow that, per aides, has not been read by anyone including the person who tied the bow; a diplomatic relationship described in the President's in-flight statement as <em>\"very blorpful\"</em>; and approximately seventeen brass band recordings that played on loop for the entire flight home.",
+        "He stepped off Air Force One, sources say, directly into the April Consumer Price Index, which had been waiting on the tarmac with a clipboard to note that inflation hit <strong>3.8% in April</strong> — and the Cleveland Federal Reserve was already penciling in <strong>4.2% for May</strong>, driven primarily by the Iran war premium in oil markets, tariff pass-throughs in consumer goods, and what grocery economists are simply calling <em>\"the general atmosphere of this costs more than it did.\"</em>",
+        "The grocery bag photographed on Trump's arm — labeled <strong>MAKE AMERICA EXTRA AGAIN</strong> — contained, per the manifest: caviar at $199.99/lb, golden steaks at $89.99/lb, a golden ballroom miniature, and a receipt from the Beijing state dinner that several economists examined and described as \"aspirational pricing.\"",
+        "At the bottom of the bag, a cereal box. It said, in small print: <strong>NOW 3.8% MORE EMPTY.</strong>",
+        "The MEGA FLAKES brand is now available at participating grocery retailers for $11.49, down from $11.82 before the current tariff adjustment, which has not been applied yet.",
+        "\"It's a great deal,\" Trump told reporters. \"The cereal is tremendous. Xi is a wonderful guy. I like him very much. The receipt is inaccurate.\""
+      ],
+      "pullQuote": "\"The receipt is inaccurate.\" — The President, regarding the April CPI report",
+      "sidebarList": {
+        "title": "WHAT'S IN THE BAG",
+        "items": [
+          "📜 \"Amazing Trade Deal\" scroll (red bow, unread)",
+          "🥩 Golden Steaks: $89.99/lb (down from: unaffordable)",
+          "🐟 Caviar: $199.99/lb (diplomatically sourced)",
+          "🏛️ White House Ballroom miniature (full size: coming soon)",
+          "🥣 MEGA FLAKES: NOW 3.8% MORE EMPTY",
+          "🧾 Receipt total: $1,247.36 (CVS is envious)"
+        ]
+      },
+      "fakeAd": {
+        "headline": "MEGA FLAKES CEREAL!",
+        "subheadline": "Now 3.8% More Empty — Same Patriotic Price!",
+        "bullets": [
+          "🥣 Formerly known as \"breakfast\"",
+          "🥣 Box: Unchanged. Contents: Adjusted for inflation.",
+          "🥣 Back-panel puzzle: Find the purchasing power!",
+          "🥣 Available in: Regular, Less, and Freedom+ sizes"
+        ],
+        "price": "$11.49 / WAS $4.99 / BEFORE THAT: SOMETHING REASONABLE",
+        "disclaimer": "MEGA FLAKES LLC not responsible for cereal weight, box weight, or the space between them. \"3.8% More Empty\" refers to April figures. May figures are pending and expected to be worse. Part of this complete breakfast, if you can afford the rest of it."
+      }
+    },
+
+    {
+      "illoId": "ballroom",
+      "type": "story",
+      "flip": true,
+      "scene": "A giant gold-plated White House ballroom has replaced the entire East Wing. Construction cranes still attach gold leaf to the walls. An enormous chandelier hangs over velvet ropes and a Secret Service bouncer in a tuxedo checking a clipboard. Outside the velvet rope, ordinary Americans in work clothes hold up grocery bills and gas receipts in horror. One woman wears a button reading I VOTED FOR THIS? A senator in tiny cartoon form is being bounced out by the large bouncer. The chandelier price tag reads MORE THAN YOUR HOME. Mad Magazine caricature style, class warfare made visual.",
+      "eyebrow": "WHITE HOUSE BEAT · 24-CARAT CLASS WARFARE",
+      "heading": "BALLROOM BLITZ!",
+      "subheading": "SENATE BLOCKS $1B FOR WHITE HOUSE BALLROOM — VOTERS STILL HOLDING RECEIPTS OUTSIDE",
+      "deck": "Senate Parliamentarian Rules Against Sneaking White House Renovation Into Immigration Bill — Democrats Say It's The Most On-Brand Expense Since The Gold Toilet",
+      "caption": "★ \"Velvet rope: $47,000. Chandelier: $380,000. Not reading the room: Priceless.\" ★",
+      "paragraphs": [
+        "The Senate parliamentarian this week ruled against a provision that would have tucked approximately <strong>$1 billion in White House spending</strong> — including security upgrades and a ballroom renovation — inside a larger immigration funding package, a move Democrats described as <em>\"the legislative equivalent of hiding a chandelier inside a border-wall bill.\"</em>",
+        "The ballroom in question — which White House sources describe as <em>necessary, beautiful, and absolutely not a priority given current economic conditions</em> — would have featured, per construction plans accidentally filed as a public document: a grand staircase, floor-to-ceiling gold leaf detailing, a chandelier costing more than the median American home, and velvet ropes one architect described as <strong>\"aspirationally exclusive.\"</strong>",
+        "Outside the proposed ballroom: a gas station marked <em>PATRIOTIC PRICES: REGULAR $7.59 / PREMIUM $8.49 / FREEDOM+ $9.99.</em> A grocery store with a receipt longer than the renovation timeline. A voter with a button: <strong>I VOTED FOR THIS?</strong>",
+        "The parliamentarian's ruling does not preclude future ballroom funding by other means. The White House said it was <em>\"reviewing options.\"</em> The chandelier vendor confirmed the quote is still valid. The voters confirmed their receipts are also still valid.",
+        "\"We're not paying for a ballroom,\" a White House official said. \"We're paying for <strong>dignity.</strong>\" The official did not appear to see the irony. The chandelier did not appear to care."
+      ],
+      "pullQuote": "\"We're not paying for a ballroom. We're paying for dignity.\" — White House, without apparent irony",
+      "fakeAd": {
+        "headline": "WHITE HOUSE BALLROOM TOURS!",
+        "subheadline": "Coming 2027 — Velvet Rope Experience Included!",
+        "bullets": [
+          "🏛️ Grand staircase: 47 steps to economic irrelevance",
+          "🕯️ Chandelier: More valuable than your home",
+          "🎟️ Tickets: Invite only. Invites: not available.",
+          "💰 Funding: TBD — check your gas bill"
+        ],
+        "price": "$1,000,000,000 / YOUR SENATOR VOTED AGAINST IT",
+        "disclaimer": "White House Ballroom Tours LLC (pending) not responsible for gold leaf flaking, chandelier weight, or the general feeling that something is wrong here. Velvet rope is decorative. Access is not implied. Your invitation is in the mail. It is not in the mail."
+      }
+    },
+
+    {
+      "illoId": "gaspump",
+      "type": "story",
+      "flip": false,
+      "scene": "A rural Colorado gas station with a sign reading PATRIOTIC PRICES: REGULAR $7.59 / PREMIUM $8.49 / FREEDOM+ $9.99 / THANK YOU FOR GETTING FLEECED. A large gas pump nozzle labeled PATRIOTISM $4.50/GAL siphons cash directly from a voter's wallet while the voter — a working-class man in a trucker hat and USA cap — salutes rigidly with a big proud smile as money streams away. Behind him other rural voters also salute with empty wallets. A tiny chart shows gas prices shooting upward. Distant smoke. Mad Magazine exaggerated proud-yet-broke expressions.",
+      "eyebrow": "ECONOMY · IRAN WAR SURCHARGE EDITION",
+      "heading": "GAS PUMP DIPLOMACY!",
+      "subheading": "FILL 'ER UP. PAY UP. VOTE THE SAME WAY ANYWAY.",
+      "deck": "Reuters Finds Rural Colorado Trump Voters With Gas 50% Higher Locally — Trump Economy Approval At 30% In Reuters/Ipsos Poll — They'd Still Do It Again",
+      "caption": "★ \"$4.50/gal is the price of freedom, apparently.\" ★",
+      "paragraphs": [
+        "Reuters visited rural Colorado this week, where gas prices are running approximately <strong>50% higher</strong> than pre-Iran-war levels, and found something economists call <em>\"remarkable loyalty persistence\"</em> and everyone else is calling something shorter and less polite.",
+        "The voters Reuters interviewed — Trump supporters, rural, working-class, the exact demographic that campaign ads address directly while the price on the pump behind them climbs — said, in essence: they understand the gas is expensive. They understand the Iran war is the proximate cause. They understand that Trump's economic approval rating has fallen to <strong>30% in a Reuters/Ipsos poll.</strong> And they would, in most cases, vote the same way again.",
+        "The gas pump labeled <strong>PATRIOTISM: $4.50/gal</strong> was not an actual gas pump, per our legal team. It was a metaphorical gas pump. An actual gas pump in rural Colorado is currently labeled Freedom+ and charges $9.99, which our legal team confirms is an actual number.",
+        "\"It's the Iran thing,\" one voter told Reuters, watching the numbers on the pump roll past figures not seen since the phrase <em>\"energy crisis\"</em> was last current. \"But you know. We have to be strong.\"",
+        "The pump did not comment. The pump was busy."
+      ],
+      "pullQuote": "\"PATRIOTISM: $4.50/gal\" — Gas station sign, rural Colorado, this week",
+      "sidebarList": {
+        "title": "PATRIOTIC PRICE TIERS",
+        "items": [
+          "⛽ Regular: $7.59 — entry-level patriotism",
+          "⛽ Premium: $8.49 — medium commitment",
+          "⛽ Freedom+: $9.99 — full send, no questions",
+          "🧾 \"Thank You For Getting Fleeced\" — on every receipt"
+        ]
+      },
+      "fakeAd": {
+        "headline": "PATRIOTIC PRICES GAS STATIONS!",
+        "subheadline": "Fueling America's Commitment To Itself — Whatever It Costs",
+        "bullets": [
+          "⛽ Regular: For casual patriots. $7.59.",
+          "⛽ Premium: For voters who really mean it. $8.49.",
+          "⛽ Freedom+: We're not sure what's in this one. $9.99.",
+          "🧾 Receipt: Tax-deductible? Probably not. Worth asking."
+        ],
+        "price": "FROM $7.59/GAL — \"THANK YOU FOR GETTING FLEECED\"",
+        "disclaimer": "Patriotic Prices LLC not responsible for Iran war, tariff pass-throughs, oil market speculation, or the feeling that something has gone wrong with the math. Prices subject to change without notice. They are changing right now."
+      }
+    },
+
+    {
+      "illoId": "dunktank",
+      "type": "story",
+      "flip": true,
+      "scene": "A state fair political event with a carnival dunk tank labeled IMPEACHMENT VOTE MEMORY LANE. Sen. Cassidy caricature sits on the dunk seat in a soaking wet suit, looking resigned and dignified. A grinning Trump caricature winds up to throw a baseball. Enthusiastic Republican primary voters cheer. A scoreboard shows LOYALTY SCORE next to Senate headshots with red X marks. Julia Letlow waves a campaign banner. The dunk tank has a recording device on it with a label: PLAYS YOUR VOTE FOREVER. Mad Magazine political carnival style.",
+      "eyebrow": "DEMOCRACY CORNER · IMPEACHMENT VOTE MEMORY LANE",
+      "heading": "GOP LOYALTY PURGE",
+      "subheading": "CASSIDY LOSES LOUISIANA PRIMARY — IMPEACHMENT VOTE RECALLED, FIVE YEARS LATER, WITH INTEREST",
+      "deck": "Sen. Bill Cassidy Ousted By Trump-Backed Julia Letlow In Louisiana GOP Primary — Letlow And Fleming Head To June 27 Runoff — Dunk Tank Industry Reports Record Quarter",
+      "caption": "★ The dunk tank is not a metaphor. Well. It is. But it's also accurate. ★",
+      "paragraphs": [
+        "The Republican Party's ongoing project of <strong>Long Institutional Memory For Specific Votes</strong> claimed another senator this week, as Bill Cassidy of Louisiana lost his state's GOP primary to Trump-backed Julia Letlow — five years after Cassidy voted to convict Trump in the second impeachment trial.",
+        "Cassidy's offense — voting his conscience on a matter of constitutional law — has been described by Trump allies as <em>\"unforgivable,\" \"disqualifying,\"</em> and <em>\"the kind of thing we don't forget,\"</em> which Cassidy might reasonably have thought applied to him as a senator of Louisiana but appears, on review, to apply to him as an employee of someone else.",
+        "Letlow faces John Fleming in a <strong>June 27 runoff.</strong> Both have committed to the correct positions on the impeachment vote, which is to say they did not cast it.",
+        "The dunk tank industry, which INSANE tracks as a leading indicator of intra-party accountability theater, reported <strong>its best quarter since 2021.</strong> Inquiries about the <em>\"Impeachment Vote Memory Lane\"</em> model — which features a recorded voice announcing the vote tally before each dunk — are up 340%.",
+        "Sen. Cassidy, in his concession statement, said he would continue to represent Louisiana's interests. He did not mention the dunk tank. The dunk tank mentioned itself."
+      ],
+      "fakeAd": {
+        "headline": "IMPEACHMENT VOTE MEMORY LANE!",
+        "subheadline": "The Dunk Tank That Remembers So You Don't Have To",
+        "bullets": [
+          "🎪 Voice replay: Records and repeats your vote — forever",
+          "🎪 Target: Senators, primarily. Occasionally: principles.",
+          "🎪 Water: Metaphorical. The dunk: completely real.",
+          "🎪 Available in: Primary season model, general election upgrade"
+        ],
+        "price": "FREE TO USE / COSTS A SENATE SEAT",
+        "disclaimer": "Impeachment Vote Memory Lane LLC not responsible for democratic norms, constitutional law, the long arc of history, or senators who thought conscience was a viable primary strategy. Results typical. Fifth-year loyalty audits available on request."
+      }
+    },
+
+    {
+      "illoId": "drones",
+      "type": "story",
+      "flip": false,
+      "scene": "A chaotic sky filled with tiny buzzing drones flying everywhere — some labeled UKRAINE, some RUSSIA, some unlabeled and clearly confused. Center: UAE nuclear power plant cooling towers with a giant CEASEFIRE bandage stuck on the perimeter fence. A drone has hit the bandage. The bandage is still on. Drone inspectors in hard hats hold clipboards reading FINE. A map of Europe and the Middle East in the background shows drones circling everywhere like mechanical flies. Smoke puffs and small explosions dot the landscape. Mad Magazine style — chaotic, detailed, darkly funny.",
+      "eyebrow": "INTERNATIONAL CHAOS · BZZZZ EDITION",
+      "heading": "DRONE SEASON OPENS EARLY!",
+      "subheading": "UKRAINE DRONES RUSSIA. RUSSIA DRONES UKRAINE. UAE NARROWLY AVOIDS A NUCLEAR INCIDENT.",
+      "deck": "Ukraine Launches One Of Its Largest Drone Attacks — Russia Replies With Hundreds — UAE Barakah Nuclear Plant Hit On Perimeter — Cooling Towers Described As \"Fine\"",
+      "caption": "★ BZZZZ! is now an official diplomatic communication style. ★",
+      "paragraphs": [
+        "Ukraine launched what officials are calling one of its <strong>largest drone attacks on Russia</strong> this week, killing at least four and targeting infrastructure in a strike that Russia responded to by firing <em>hundreds of drones</em> at Ukraine — because the only appropriate response to a drone attack is a drone counterattack, which invites a drone counter-counterattack, and so on, in what defense analysts are calling <strong>\"a sustainable military doctrine\"</strong> and everyone else is calling something much shorter.",
+        "Separately, and the word <em>\"separately\"</em> is doing significant work here: a drone strike hit the perimeter of the United Arab Emirates' <strong>Barakah nuclear power plant.</strong> There were no injuries. There was no radiological release. The cooling towers were, according to inspectors, <strong>fine.</strong>",
+        "The word <em>\"fine\"</em> in that context is doing the most load-bearing work in the history of the English language.",
+        "The strike was described as a sign of the <strong>fragile Iran ceasefire,</strong> which has now been described as fragile so many times that \"fragile\" has become its proper name. The bandage labeled CEASEFIRE that appears to be holding certain things together is not structural, according to engineers who reviewed the Middle East peace framework.",
+        "Drone manufacturers reported record quarterly orders. <strong>\"BZZZZ\"</strong> has been added to the Oxford English Dictionary as an onomatopoeia with geopolitical implications. All three usage examples cite this week."
+      ],
+      "pullQuote": "\"No injuries, no radiological release, totally fine.\" — UAE nuclear plant spokesperson, not sounding fine",
+      "fakeAd": {
+        "headline": "PERSONAL DRONE INSURANCE!",
+        "subheadline": "For The Nuclear Plant In Your Life — Coverage From The Perimeter Out",
+        "bullets": [
+          "🚁 Perimeter coverage: Yes",
+          "🚁 Cooling tower coverage: Ask about our premium plan",
+          "🚁 \"Fine\" coverage: Included in base tier",
+          "🚁 BZZZZ rider: Available at additional cost"
+        ],
+        "price": "CALL FOR A QUOTE / RATES RISING (LIKE THE DRONES)",
+        "disclaimer": "Personal Drone Insurance LLC not responsible for the Iran ceasefire, fragile or otherwise, or for cooling towers described as fine. \"Fine\" is not a technical classification. We have people looking at this."
+      }
+    },
+
+    {
+      "illoId": "ceasefire",
+      "type": "story",
+      "flip": true,
+      "scene": "A large CEASEFIRE bandage is plastered over a glowing nuclear cooling tower while small explosions pop off in the background. Israeli military and Hamas figures in exaggerated caricature face each other across a table labeled MIDEAST TRUCE: NOW WITH EXTRA EXPLOSIONS. A UN mediator tries to hold both sides apart with a look of utter exhausted despair. A doctor in scrubs stands next to the bandaged cooling tower with a chart reading FRAGILE — HANDLE WITH SARCASM. The sky behind is on fire. Mad Magazine editorial cartoon style.",
+      "eyebrow": "MIDEAST UPDATE · FRAGILE, HANDLE WITH SARCASM",
+      "heading": "CEASEFIRE: FRAGILE. HANDLE WITH SARCASM.",
+      "subheading": "ISRAEL KILLS HAMAS MILITARY CHIEF — STRIKES CONTINUE IN GAZA — IRAN CEASEFIRE UPGRADED TO 'WITH EXTRA EXPLOSIONS'",
+      "deck": "Israel Reports Killing Hamas Military Leader Izz al-Din al-Haddad; Strikes Continue; Iran Ceasefire Now Describes Itself As 'A Process' — Bandage Still On, Barely",
+      "caption": "★ \"The 'CEASEFIRE' bandage is load-bearing. Please stop testing that.\" ★",
+      "paragraphs": [
+        "Israel reported this week that it killed <strong>Hamas military leader Izz al-Din al-Haddad,</strong> a development which military analysts say matters significantly and which the region's ceasefire infrastructure absorbed in the way a car absorbs a high-speed impact: technically intact, making sounds it wasn't making before.",
+        "Reuters also reported Israeli strikes killing Palestinians in Gaza on Sunday. The Gaza Strip, which has been described as <em>\"a humanitarian crisis,\" \"an active conflict zone,\"</em> and <em>\"the situation,\"</em> depending on who is filing, continued to be all three simultaneously.",
+        "The Iran ceasefire — which was described as <strong>\"on life support\"</strong> recently, and has since been upgraded to <strong>\"fragile, handle with sarcasm\"</strong> by everyone except the parties directly involved, who describe it as <em>\"a process\"</em> — showed further strain as the UAE nuclear plant drone strike added a new variable to an equation that already had too many variables.",
+        "The bandage labeled CEASEFIRE that appears in the background of every photograph from the region is <strong>not structural,</strong> according to engineers who reviewed the Middle East peace framework. The framework is load-bearing. The bandage is decorative. This distinction may become important.",
+        "\"Mideast Truce: Now With Extra Explosions,\" read the headline board on our cover illustration. We put it there as a gag. We did not expect it to remain accurate this long. We stand by it anyway."
+      ],
+      "fakeAd": {
+        "headline": "CEASEFIRE BANDAGES™",
+        "subheadline": "Industrial-Strength. Decorative. At Least It's Something.",
+        "bullets": [
+          "🩹 Covers cooling towers, peace frameworks, and related infrastructure",
+          "🩹 \"CEASEFIRE\" printed in 47 languages",
+          "🩹 Not load-bearing — see disclaimer",
+          "🩹 Available in: Optimistic, Cautious, and Technically Still Valid"
+        ],
+        "price": "FROM $4.99 / POLITICAL WILL NOT INCLUDED",
+        "disclaimer": "CEASEFIRE BANDAGES™ not responsible for structural failures, additional explosions, or the phrase \"with extra explosions.\" Bandage is decorative. We are very clear about that. Please stop testing the bandage."
+      }
+    },
+
+    {
+      "illoId": "spyvspy",
+      "type": "spy-vs-spy",
+      "scene": "Classic Mad Magazine Spy vs Spy composition — white-suited spy and black-suited spy with long pointed noses and trench coats, both piloting tiny buzzing drones labeled MINE and ALSO MINE. The two drones collide mid-air in a small explosion. Both spies look at their dead controllers in bewilderment. In the wreckage a CEASEFIRE bandage sticker flutters down. Both spies simultaneously reach for it. Dynamic action composition, classic black-and-white spy character design with Mad Magazine energy.",
+      "title": "SPY vs. SPY",
+      "subtitle": "2026 Edition: \"Drone Season Is Open\"",
+      "white": {
+        "panels": [
+          "White Spy builds a precision drone. Programs it to strike the target with maximum precision.",
+          "The drone strikes adjacent to the target. Very near. Technically the target zone. Sort of.",
+          "White Spy affixes a CEASEFIRE bandage to the collateral area.",
+          "White Spy builds a larger, more precise drone. This one will definitely work."
+        ]
+      },
+      "black": {
+        "panels": [
+          "Black Spy builds a larger drone. Programs it specifically to strike White Spy's bandage.",
+          "Black Spy's drone hits the bandage. The bandage falls off.",
+          "Both areas are now exposed. Both sides declare this \"a process.\"",
+          "Black Spy also builds a larger drone. Both new drones are now in the air. Simultaneously."
+        ]
+      },
+      "result": "BOTH DRONES ARE IN THE AIR. THE BANDAGE IS ON THE FLOOR. BOTH SIDES DECLARE THE CEASEFIRE FRAGILE BUT TECHNICALLY INTACT. THE DUNK TANK INDUSTRY REPORTS A RECORD QUARTER. THE DRONES HAVE BEEN UPGRADED."
+    },
+
+    {
+      "type": "awards",
+      "illoId": null,
+      "title": "🏆 INSANE AWARDS",
+      "date": "MAY 17, 2026",
+      "categories": [
+        {
+          "name": "BEST USE OF A RED BOW ON AN UNREAD DOCUMENT",
+          "gold":   "Trump (Amazing Trade Deal, Beijing — still tied)",
+          "silver": "White House Ballroom Construction Plans (filed publicly by accident)",
+          "bronze": "The China TRADE DEAL IOU banner (honorable mention)"
+        },
+        {
+          "name": "MOST CREATIVE GAS PRICE TIER NAME",
+          "gold":   "FREEDOM+ ($9.99/gal — what is in this)",
+          "silver": "PATRIOTIC PRICES (general category excellence)",
+          "bronze": "Regular ($7.59 — for its devastating irony)"
+        },
+        {
+          "name": "BRAVEST BANDAGE PLACEMENT",
+          "gold":   "CEASEFIRE (over the UAE nuclear cooling tower perimeter)",
+          "silver": "The Iran Peace Framework (load-bearing edition)",
+          "bronze": "Sen. Cassidy (wrong kind, completely different situation)"
+        },
+        {
+          "name": "MOST ITEMS ON ONE RECEIPT",
+          "gold":   "America ($1,247.36 and climbing)",
+          "silver": "Beijing state dinner (gold steak at $89.99/lb alone)",
+          "bronze": "White House ballroom chandelier (single line item, devastating)"
+        },
+        {
+          "name": "ACHIEVEMENT IN DRONE-BASED DIPLOMACY",
+          "gold":   "Ukraine (volume, timing, commitment to the escalation)",
+          "silver": "Russia (counter-volume, response speed)",
+          "bronze": "The UAE drone (perimeter work only, but memorable)"
+        },
+        {
+          "name": "MOST CHEERFUL THING THAT HAPPENED",
+          "gold":   "Bulgaria wins Eurovision with \"Bangaranga\"",
+          "silver": "Confetti cannon accidentally hits geopolitical smoke cloud",
+          "bronze": "MEGA FLAKES back-panel puzzle: Find the purchasing power!"
+        }
+      ]
+    },
+
+    {
+      "illoId": "quarantine",
+      "type": "story",
+      "flip": false,
+      "scene": "Luxury cruise ship called S.S. VACAY ANYWAY sailing inside a giant clear biohazard bubble. Passengers on deck wave thermometers instead of handkerchiefs while wearing hazmat suits over formal wear. A banner reads QUARANTINED — BUT MAKE IT LUXURY! On the dock: a tiny newsboy in a full hazmat suit tossing newspapers labeled ANOTHER EMERGENCY! Dock signs: NO DISEMBARKING / NO DISEMBARKING / NO REFUNDS. A rat in a captain's hat stands confidently on the bridge. Background newspaper headline: WHO DECLARES EBOLA PHEIC. Mad Magazine humor style, absurd but clearly satirizing real events.",
+      "eyebrow": "HEALTH & TRAVEL · THE UPGRADE YOU DIDN'T REQUEST",
+      "heading": "ALL-INCLUSIVE QUARANTINE!",
+      "subheading": "HANTAVIRUS CONFIRMED ABOARD MV HONDIUS — WHO DECLARES EBOLA PHEIC — THE WORLD ADDS TWO MORE \"ALSO\"S",
+      "deck": "WHO Declares Bundibugyo Ebola Outbreak In DRC And Uganda A Public Health Emergency — MV Hondius Hantavirus Reaches 12 Cases, 3 Dead — Hazmat Chefs Standing By",
+      "caption": "★ \"The hazmat suit is this season's formal wear.\" ★",
+      "paragraphs": [
+        "The World Health Organization this week declared the <strong>Bundibugyo Ebola outbreak</strong> in the Democratic Republic of Congo and Uganda a public health emergency of international concern, noting 8 confirmed cases, 246 suspected cases, and 80 suspected deaths in Ituri Province as of May 16.",
+        "The WHO declaration arrived in the same news cycle as continued reporting on the <strong>MV Hondius</strong> hantavirus outbreak, which has reached 12 cases including 9 confirmed and 3 deaths as of May 17 — because the world has decided that if you're going to have a public health emergency you might as well have two, scheduled in the same week for coverage efficiency.",
+        "The Quarantine Queen — the name we have given to the general category of luxury ocean vessel currently offering <strong>all-inclusive quarantine packages</strong> — continues to be a going concern. The hazmat chef and contact tracing bingo excursion options are sold out through September.",
+        "A tiny newsboy in a hazmat suit, approximately three inches tall, was spotted in the lower left corner of this week's cover delivering papers labeled <strong>ANOTHER EMERGENCY!</strong> He has been delivering those papers since the first issue. He is very tired. He does not stop.",
+        "The WHO urged all member nations to prepare for potential additional cases. The cruise industry urged all passengers to prepare for <em>potential additional excitement.</em> These are not the same recommendation. We feel this needs to be stated clearly."
+      ],
+      "pullQuote": "\"All-inclusive quarantine: the upgrade you didn't request.\" — S.S. Vacay Anyway, passenger manifest",
+      "fakeAd": {
+        "headline": "QUARANTINE QUEEN CRUISES!",
+        "subheadline": "Sail In Style — In A Completely Sealed Biohazard Bubble!",
+        "bullets": [
+          "🚢 Buffet: Served by certified hazmat chefs",
+          "🚢 Entertainment: Thermometer-waving, contact tracing bingo",
+          "🚢 Shore excursions: Quarantine-compatible destinations only",
+          "🚢 Ebola rider: Available (ask at booking)",
+          "🚢 WHO-approved: Vigorously pending"
+        ],
+        "price": "ALL-INCLUSIVE — HAZMAT RIDER $49 EXTRA",
+        "disclaimer": "Quarantine Queen Cruises not responsible for viral outbreaks, biohazard bubble visibility restrictions, WHO bulletins, or the tiny hazmat newsboy. \"All Inclusive\" includes meals, entertainment, and contact tracing. Medical evacuation: not included. Bon voyage. Wash your hands."
+      }
+    },
+
+    {
+      "illoId": "eurovision",
+      "type": "story",
+      "flip": true,
+      "scene": "A spectacular Eurovision stage with dramatic lighting. A performer in a gorgeous sparkly outfit — Dara from Bulgaria — sings ecstatically into a microphone with the word BANGARANGA on the backdrop. Lavender and gold confetti cannons fire enormous streams of confetti upward into the air. The confetti drifts up and mixes with a large dark geopolitical smoke cloud visible above the arena. For a moment the smoke cloud becomes colorful with confetti. In the distant background: tiny drone silhouettes, a gas pump, a ballroom chandelier. The crowd is genuinely, unironically joyful. Mad Magazine celebratory style.",
+      "eyebrow": "CULTURAL RELIEF · BECAUSE SOMETHING NICE HAPPENED",
+      "heading": "SINGING WHILE THE WORLD BURNS!",
+      "subheading": "BULGARIA WINS EUROVISION 2026 WITH \"BANGARANGA\" — CONFETTI ACCIDENTALLY USEFUL",
+      "deck": "Dara's \"Bangaranga\" Wins Bulgaria's First Eurovision Title Amid Boycott And Political Tension — Confetti Cannon Fires Directly Into Geopolitical Smoke Cloud — Cloud Briefly Colorful",
+      "caption": "★ The confetti did not stop the geopolitics. But it was pretty for a moment. ★",
+      "paragraphs": [
+        "Something nice happened.",
+        "We want to be clear that the previous sentence is not a mistake. <strong>Something nice happened.</strong> Bulgaria — which has never won Eurovision in its decades of participation — won Eurovision 2026 with Dara's <strong>\"Bangaranga,\"</strong> a song that has the distinction of being extremely fun in a week when the supply of fun was running below recommended levels.",
+        "The competition took place against a backdrop of political tension, partial boycotts, and the usual Eurovision controversy that exists because there is always Eurovision controversy. It produced a result that was, by Eurovision standards, controversial, and by general international standards, <em>the least controversial thing that happened this week by a significant margin.</em>",
+        "The confetti cannon that fired at the moment of Bulgaria's victory — lavender and gold, per the broadcast — was aimed at the Eurovision stage. It overshot slightly and hit the geopolitical smoke cloud visible in every broadcast from the past three weeks. For approximately <strong>forty-seven minutes,</strong> the confetti was in the air. The smoke cloud was still there. But there was also confetti.",
+        "\"Bangaranga\" will not solve the Iran ceasefire, reduce gas prices, un-read the Amazing Trade Deal, stop the drones, fix the grocery receipt, or renovate anything. It is very good. We recommend it. <strong>Bulgaria.</strong>"
+      ],
+      "theEnd": {
+        "title": "Bulgaria. For Now.",
+        "sub": "Eurovision, May 2026 · \"Bangaranga\""
+      },
+      "fakeAd": {
+        "headline": "EUROVISION CONFETTI™",
+        "subheadline": "Fires Into Any Crisis — Briefly Helps",
+        "bullets": [
+          "🎉 Lavender and gold standard issue",
+          "🎉 Range: Stage to geopolitical smoke cloud",
+          "🎉 Duration: 47 minutes of airborne improvement",
+          "🎉 Solves: Nothing, but looks genuinely good doing it"
+        ],
+        "price": "FREE WITH PURCHASE OF HOPE",
+        "disclaimer": "Eurovision Confetti™ not responsible for ongoing geopolitical situations, gas prices, trade deals, drones, public health emergencies, or unread scrolls with red bows. Confetti is decorative. The smoke cloud is structural. Both are real. This is the situation."
+      }
+    },
+
+    {
+      "illoId": "foldin",
+      "type": "fold-in",
+      "scene": "Mad Magazine back page fold-in illustration — wide format. Left 60 percent shows Trump in center of a chaotic scene: Beijing arch, gas pumps, golden ballroom chandelier, drones, and grocery receipts all swirling around him as he grins and gestures grandly at everything. Voters surround him holding enormous bills. The visual is packed with detail and labeled A. Right 40 percent shows a giant open wallet being held up, completely empty, moths flying out, a tiny sign inside reading GONE. The wallet is labeled AMERICA. When A is folded over B, Trump appears to be presenting the empty wallet with a big grin. Bold, graphic, classic fold-in composition.",
+      "question": "WHO PAYS FOR THE PAGEANTRY, THE BALLROOM, THE DRONES, THE TARIFFS, THE GAS, AND THE TRADE DEAL WITH THE RED BOW NOBODY OPENED?",
+      "answer": "AMERICA GETS THE BILL.",
+      "leftText": "INSANE — FOLD THIS HALF →",
+      "rightText": "← FOLD LEFT SIDE OVER TO FIND OUT"
+    }
+
+  ]
+}

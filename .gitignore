@@ -1,0 +1,16 @@
+# Environment & secrets
+.env
+
+# Netlify state (contains site ID — keep local, not in git)
+.netlify/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated HTML (optional — uncomment if you want to exclude built files)
+# index.html
+# issues/*/index.html

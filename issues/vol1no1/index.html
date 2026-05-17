@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>America Gets The Bill! — INSANE Mag</title>
+  <meta name="description" content="Brass Bands Abroad, Sticker Shock at Home">
+  <meta property="og:title" content="America Gets The Bill! — INSANE Mag">
+  <meta property="og:description" content="Brass Bands Abroad, Sticker Shock at Home">
+  <meta property="og:image" content="https://insane-mag.bumbloobooks.com/images/vol1no1-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insane-mag.bumbloobooks.com/issues/vol1no1/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Special+Elite&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Default palette (overridden per issue via palette in issue.json) ────────── */
+:root {
+  --bg:           #fdf6e3;   /* newsprint cream */
+  --page-bg:      #fff;
+  --text:         #111111;
+  --accent:       #cc0000;   /* Mad red */
+  --accent2:      #f5c400;   /* Mad yellow */
+  --accent3:      #1a1a8a;   /* blue accent */
+  --nav-bg:       #cc0000;
+  --nav-text:     #ffffff;
+  --dot-active:   #f5c400;
+  --eyebrow:      #cc0000;
+  --ad-bg:        #fffde7;
+  --ad-border:    #f5c400;
+  --spy-white-bg: #f0f0f0;
+  --spy-black-bg: #111111;
+  --cover-text:   #ffffff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Nav bar ────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  height: 50px;
+  border-bottom: 3px solid rgba(0,0,0,0.25);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1.1rem; padding: 8px;
+  opacity: 0.8; transition: opacity 0.15s;
+}
+.nav-btn:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-text);
+  opacity: 0.9;
+}
+.nav-counter {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.nav-back {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-share {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1rem; padding: 8px;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.nav-share:hover { opacity: 1; }
+
+/* ── Dot pager ──────────────────────────────────────────── */
+.dot-row {
+  position: fixed; bottom: 14px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 12px;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text); opacity: 0.2;
+  cursor: pointer; transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+.dot.active {
+  background: var(--dot-active); opacity: 1; transform: scale(1.4);
+}
+
+/* ── Viewport / pager ───────────────────────────────────── */
+.viewport {
+  position: fixed; top: 50px; left: 0; right: 0; bottom: 40px;
+  overflow: hidden;
+}
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  display: flex; align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER-FULL PAGE  (pure full-bleed image, no overlays)
+   ══════════════════════════════════════════════════════════ */
+.cover-full-page {
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cover-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER PAGE
+   ══════════════════════════════════════════════════════════ */
+.cover-page {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+  overflow: hidden;
+}
+.cover-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.82;
+}
+.cover-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8rem; opacity: 0.1;
+}
+.cover-top {
+  position: relative; z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  padding: 12px 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+}
+.cover-mag-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  color: var(--accent2, #f5c400);
+  line-height: 0.85;
+  letter-spacing: 0.06em;
+  text-shadow: 3px 3px 0 #000;
+}
+.cover-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+.cover-lines-wrap {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 8px;
+  gap: 5px;
+}
+.cover-line {
+  background: rgba(204, 0, 0, 0.88);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.85rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  border-left: 4px solid var(--accent2, #f5c400);
+}
+.cover-line:nth-child(even) {
+  background: rgba(0, 0, 0, 0.82);
+  border-left-color: var(--accent, #cc0000);
+}
+.cover-tagline {
+  position: relative; z-index: 2;
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 6px;
+  border-top: 2px solid var(--accent2, #f5c400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDITORIAL PAGE
+   ══════════════════════════════════════════════════════════ */
+.editorial-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editorial-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 28px 60px;
+  margin: 0 auto;
+}
+.editorial-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.editorial-salutation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.editorial-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.editorial-body strong { font-weight: 800; }
+.editorial-body em { font-style: italic; color: var(--accent); }
+.editorial-sig {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--text);
+}
+.editorial-ps {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MASTHEAD PAGE
+   ══════════════════════════════════════════════════════════ */
+.masthead-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.masthead-inner {
+  max-width: 580px;
+  width: 100%;
+  padding: 24px 24px 60px;
+  margin: 0 auto;
+}
+.masthead-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.masthead-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.masthead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  padding: 12px;
+}
+.mast-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.mast-role {
+  font-weight: 800;
+  color: var(--accent);
+}
+.masthead-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  opacity: 0.55;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+/* Subscriber alert box */
+.subscriber-alert {
+  background: var(--accent, #cc0000);
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+}
+.alert-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.alert-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.alert-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.alert-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  color: var(--accent2, #f5c400);
+}
+.alert-disclaimer {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENTS PAGE
+   ══════════════════════════════════════════════════════════ */
+.contents-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ticker */
+.ticker-bar {
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.contents-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 60px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.contents-header {
+  margin-bottom: 18px;
+  border-bottom: 4px solid var(--accent, #cc0000);
+  padding-bottom: 12px;
+}
+.contents-mag {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent);
+  line-height: 0.9;
+}
+.contents-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.contents-edition {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.contents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ci-item {
+  display: grid;
+  grid-template-columns: 28px 24px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 6px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ci-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.ci-emoji {
+  font-size: 1rem;
+  grid-row: 1;
+}
+.ci-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  grid-row: 1;
+}
+.ci-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Scorecard box */
+.scorecard-box {
+  background: var(--accent2, #f5c400);
+  border: 3px solid #000;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.scorecard-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.scorecard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scorecard-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+.scorecard-list strong {
+  color: var(--accent, #cc0000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STORY PAGES
+   ══════════════════════════════════════════════════════════ */
+.story-page {
+  flex-direction: column;
+}
+.story-page.no-illo {
+  flex-direction: column;
+  align-items: center;
+}
+.story-illo {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40vw; min-height: 180px; max-height: 320px;
+  overflow: hidden; position: relative;
+  background: #ddd;
+}
+.story-illo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.illo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; opacity: 0.25;
+}
+.illo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+}
+.story-body {
+  flex: 1;
+  padding: 18px 22px 56px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+.story-eyebrow {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--eyebrow, var(--accent));
+  margin-bottom: 6px;
+  border-left: 3px solid var(--accent, #cc0000);
+  padding-left: 8px;
+}
+.story-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.story-subheading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--accent, #cc0000);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.story-deck {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.story-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
+  line-height: 1.72;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.story-body p strong { font-weight: 800; }
+.story-body p em { color: var(--accent); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  border-top: 3px solid var(--accent2, #f5c400);
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+/* Sidebar list (bullet box) */
+.sidebar-list {
+  background: var(--bg, #fdf6e3);
+  border: 2px solid var(--text);
+  border-left: 5px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.sidebar-list-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sidebar-list ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-list ul li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Fake advertisement */
+.fake-ad {
+  background: var(--ad-bg, #fffde7);
+  border: 3px solid var(--ad-border, #f5c400);
+  border-top: 6px solid var(--accent, #cc0000);
+  padding: 14px 16px;
+  margin: 18px 0 0;
+}
+.ad-headline {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.ad-subheadline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.ad-bullets { margin-bottom: 8px; }
+.ad-bullet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.ad-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.ad-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  opacity: 0.55;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* Glossary box */
+.glossary-box {
+  background: #f0f4ff;
+  border: 2px solid var(--accent3, #1a1a8a);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.glossary-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3, #1a1a8a);
+  margin-bottom: 8px;
+}
+.gloss-entry {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.gloss-word {
+  font-weight: 800;
+  color: var(--accent3, #1a1a8a);
+}
+
+/* The End */
+.the-end {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 3px solid var(--accent2, #f5c400);
+  text-align: center;
+}
+.the-end-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.the-end-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* Desktop split layout for story pages */
+@media (min-width: 700px) {
+  .story-page:not(.no-illo) { flex-direction: row; }
+  .story-page.flip:not(.no-illo) { flex-direction: row-reverse; }
+  .story-illo {
+    flex: 0 0 42%;
+    height: 100%; max-height: none;
+    width: auto;
+  }
+  .story-body { overflow-y: auto; padding: 28px 36px 60px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SPY VS SPY PAGE
+   ══════════════════════════════════════════════════════════ */
+.spy-page {
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--page-bg, #fff);
+}
+.spy-header {
+  background: #000;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.spy-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.spy-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent2, #f5c400);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.spy-illo {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow: hidden;
+}
+.spy-illo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spy-arena {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.spy-col {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+.spy-col h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.spy-white {
+  background: var(--spy-white-bg, #f0f0f0);
+  border-right: 3px solid #000;
+  color: #111;
+}
+.spy-white h3 { color: #111; }
+.spy-black {
+  background: var(--spy-black-bg, #111);
+  color: #f0f0f0;
+}
+.spy-black h3 { color: #fff; }
+.spy-icon { font-size: 2rem; margin-bottom: 6px; }
+.spy-panels p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.spy-divider {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent, #cc0000);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.spy-result {
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 16px;
+  border-top: 3px solid #000;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AWARDS PAGE
+   ══════════════════════════════════════════════════════════ */
+.awards-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.awards-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 28px 24px 60px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.awards-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border-bottom: 5px double var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+.awards-date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.award-category {
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  border-left: 6px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+}
+.award-cat-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.award-medals { display: flex; flex-direction: column; gap: 4px; }
+.medal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.medal.gold   { color: #b8860b; }
+.medal.silver { color: #666; }
+.medal.bronze { color: #8b4513; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOLD-IN PAGE
+   ══════════════════════════════════════════════════════════ */
+.fold-in-page {
+  background: #000;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.foldin-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  overflow: hidden;
+}
+.foldin-header {
+  background: var(--accent, #cc0000);
+  padding: 12px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.foldin-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  color: var(--accent2, #f5c400);
+}
+.foldin-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.foldin-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s;
+}
+.foldin-area.folded {
+  opacity: 0.08;
+  pointer-events: none;
+}
+.foldin-left {
+  flex: 0 0 62%;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px dashed var(--accent2, #f5c400);
+}
+.foldin-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; opacity: 0.6;
+}
+.foldin-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; font-size: 4rem; opacity: 0.1;
+  background: #1a1a1a;
+}
+.foldin-section-top {
+  position: absolute; top: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent2, #f5c400);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 2;
+}
+.foldin-question {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.72);
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.foldin-label-a, .foldin-label-b {
+  position: absolute; bottom: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--accent2, #f5c400);
+  background: rgba(0,0,0,0.8);
+  padding: 2px 8px;
+  z-index: 3;
+}
+.foldin-label-a { right: 8px; }
+.foldin-right {
+  flex: 0 0 38%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.foldin-answer-hidden {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+.foldin-label-b { left: 8px; bottom: 8px; }
+
+/* Revealed answer (shown when folded) */
+.foldin-answer-reveal {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+.foldin-area.folded ~ .foldin-answer-reveal {
+  display: flex;
+}
+.foldin-answer-text {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--accent2, #f5c400);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.foldin-answer-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.foldin-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 3px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.foldin-btn:hover { background: #fff; }
+
+:root {
+  --bg: #fdf6e3;
+  --page-bg: #ffffff;
+  --text: #111111;
+  --accent: #cc0000;
+  --accent2: #f5c400;
+  --accent3: #1a1a8a;
+  --nav-bg: #cc0000;
+  --nav-text: #ffffff;
+  --dot-active: #f5c400;
+  --eyebrow: #cc0000;
+  --ad-bg: #fffde7;
+  --ad-border: #f5c400;
+}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">← All Issues</a>
+  </div>
+  <span class="nav-title">America Gets The Bill!</span>
+  <div class="nav-right">
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next">&#8594;</button>
+    <button class="nav-share" onclick="shareIssue()" aria-label="Share">&#9014;</button>
+  </div>
+</nav>
+
+<div class="viewport">
+  <div class="track" id="track">
+<div class="page cover-full-page" id="p0">
+  <img class="cover-full-img" src="../../images/vol1no1-cover.png?v=1779031429836" alt="cover">
+</div>
+
+<div class="page cover-page" id="p1">
+  <img class="cover-img" src="../../images/vol1no1-cover.png?v=1779031429836" alt="cover">
+  <div class="cover-top">
+    <div class="cover-mag-name">INSANE</div>
+    <div class="cover-meta">Vol. 1, No. 1 · May 17, 2026 &nbsp;·&nbsp; May 17, 2026 &nbsp;·&nbsp; $6.95 US / $8.95 CAN</div>
+  </div>
+  <div class="cover-lines-wrap">
+    <div class="cover-line">BALLROOM BLITZ! 24-Carat Class Warfare</div>
+    <div class="cover-line">GAS PUMP DIPLOMACY! Fill 'er up. Pay up.</div>
+    <div class="cover-line">NOW WITH 3.8% MORE PANIC!</div>
+    <div class="cover-line">DRONE SEASON OPENS EARLY!</div>
+    <div class="cover-line">INSANE's Guide to Paying More for Everything While Everybody Dances!</div>
+  </div>
+  <div class="cover-tagline">SANITY NOT INCLUDED</div>
+</div>
+
+<div class="page editorial-page" id="p2">
+  <div class="editorial-inner">
+    <h2 class="editorial-title">FROM THE EDITOR'S BUNKER</h2>
+    <p class="editorial-salutation">Dear Reader Who Was Probably Already Lying Down,</p>
+    <div class="editorial-body">
+    <p>We had excellent intentions for this issue. We were going to cover infrastructure. We had a whole piece planned about <em>bridges</em>.</p>
+    <p>Then Trump came back from Beijing with what aides described as <strong>"an amazing trade deal"</strong> and what the rest of us are calling "a scroll with a red bow that nobody has read." He stepped off Air Force One juggling a gas nozzle, a golden ballroom chandelier, a grocery bag with a receipt longer than a CVS coupon, and a sheaf of Chinese brass band recordings — directly into April's inflation report, which said 3.8%, and the Cleveland Fed's May estimate, which said 4.2%, and the national average gas price, which is currently printing new all-time highs in a tier labeled <strong>FREEDOM+</strong> at $9.99.</p>
+    <p>We tried to find the bridge story. It is still out there somewhere. We gave up.</p>
+    <p>This issue covers: the Beijing pageant, the inflation receipt, the White House ballroom that Congress is apparently funding with money borrowed from your gas tank, the GOP primary process (which has been simplified to <em>"Did you vote to impeach? Incorrect. Goodbye"</em>), forty-seven drone-related emergencies across three continents, a cruise ship that has added hantavirus to its all-inclusive package, a new Ebola emergency that arrived apologetically at the worst possible time, and — because we cannot stop the world — <strong>Bulgaria won Eurovision</strong>.</p>
+    <p>We are adding confetti to this issue. It seemed appropriate. Also unavoidable.</p>
+    </div>
+    <p class="editorial-sig">— The Editors</p>
+    <p class="editorial-ps">P.S. — The receipt at the bottom of this issue is not a prop. We know you know that. We're sorry.</p>
+  </div>
+</div>
+
+<div class="page masthead-page" id="p3">
+  <div class="masthead-inner">
+    <div class="masthead-logo">INSANE</div>
+    <h2 class="masthead-title">INSANE MAGAZINE MASTHEAD</h2>
+    <div class="masthead-grid">
+      <div class="mast-item"><span class="mast-role">Publisher:</span> <span class="mast-name">A. Panic Jr.</span></div>
+      <div class="mast-item"><span class="mast-role">Editor-in-Chief:</span> <span class="mast-name">Screaming McGee</span></div>
+      <div class="mast-item"><span class="mast-role">Beijing Correspondent:</span> <span class="mast-name">Currently In Motorcade</span></div>
+      <div class="mast-item"><span class="mast-role">Inflation Desk:</span> <span class="mast-name">Crying Into Spreadsheet</span></div>
+      <div class="mast-item"><span class="mast-role">Gas Price Tracker:</span> <span class="mast-name">Updated Every 4 Minutes</span></div>
+      <div class="mast-item"><span class="mast-role">White House Ballroom:</span> <span class="mast-name">On The Velvet Rope Side</span></div>
+      <div class="mast-item"><span class="mast-role">Drone Reporter:</span> <span class="mast-name">Look Up! No, The Other Up!</span></div>
+      <div class="mast-item"><span class="mast-role">Medical Correspondent:</span> <span class="mast-name">Just Wash Your Hands</span></div>
+      <div class="mast-item"><span class="mast-role">GOP Primary Analyst:</span> <span class="mast-name">Still Counting Dunk Tanks</span></div>
+      <div class="mast-item"><span class="mast-role">Eurovision Desk:</span> <span class="mast-name">Confetti-Covered, Filing Now</span></div>
+      <div class="mast-item"><span class="mast-role">Legal:</span> <span class="mast-name">Anonymous, Affordable Housing Pending</span></div>
+      <div class="mast-item"><span class="mast-role">Sanity Level:</span> <span class="mast-name">$9.99/gal and climbing</span></div>
+    </div>
+    
+    <div class="subscriber-alert">
+      <div class="alert-title">INSANE MAGAZINE SUBSCRIBER ALERT!</div>
+      <div class="alert-sub">Your weekly briefing on things you cannot afford to ignore (or afford, period)</div>
+      <div class="alert-items"><div class="alert-item">☑ 1 trade deal (unread, with red bow)</div>
+        <div class="alert-item">☑ 1 Beijing pageant: diplomatic value TBD</div>
+        <div class="alert-item">☑ 1 ballroom rising where the East Wing used to stand</div>
+        <div class="alert-item">☑ Gas prices: Patriotic, Premium, and Freedom+ tiers now available</div>
+        <div class="alert-item">☑ Drone count: 47+ and still rising</div>
+        <div class="alert-item">☑ Hantavirus: all-inclusive upgrade, 3 confirmed deaths</div>
+        <div class="alert-item">☑ Ebola: 246 suspected cases, DRC and Uganda</div>
+        <div class="alert-item">☑ Eurovision: confetti. So much confetti.</div></div>
+      <div class="alert-price">$6.95 / STILL CHEAPER THAN GAS</div>
+      <div class="alert-disclaimer">INSANE Magazine is printed on the backside of unpaid grocery receipts. Any resemblance to an economy that is working is purely aspirational. Our plane. Our rules. Our delay.</div>
+    </div>
+    <div class="masthead-disclaimer">INSANE Magazine is published whenever reality exceeds our production schedule, which is always.</div>
+  </div>
+</div>
+
+<div class="page contents-page" id="p4">
+  <div class="ticker-bar"><div class="ticker-inner">BREAKING: APRIL CPI 3.8% — CLEVELAND FED MAY ESTIMATE: 4.2% ✦ TRUMP RETURNS FROM BEIJING WITH &quot;AMAZING&quot; TRADE DEAL ✦ SENATE BLOCKS $1B WHITE HOUSE BALLROOM FUNDING ✦ GAS HITS FREEDOM+ TIER: $9.99/GAL ✦ UKRAINE DRONES STRIKE RUSSIA; RUSSIA ALSO DRONES UKRAINE ✦ UAE NUCLEAR PLANT DRONE NEAR-MISS: COOLING TOWERS &quot;FINE&quot; ✦ WHO DECLARES EBOLA PHEIC: 246 SUSPECTED CASES ✦ MV HONDIUS HANTAVIRUS: 3 DEAD ✦ BULGARIA WINS EUROVISION: WORLD BRIEFLY CHEERS ✦ &nbsp; ✦ &nbsp; BREAKING: APRIL CPI 3.8% — CLEVELAND FED MAY ESTIMATE: 4.2% ✦ TRUMP RETURNS FROM BEIJING WITH &quot;AMAZING&quot; TRADE DEAL ✦ SENATE BLOCKS $1B WHITE HOUSE BALLROOM FUNDING ✦ GAS HITS FREEDOM+ TIER: $9.99/GAL ✦ UKRAINE DRONES STRIKE RUSSIA; RUSSIA ALSO DRONES UKRAINE ✦ UAE NUCLEAR PLANT DRONE NEAR-MISS: COOLING TOWERS &quot;FINE&quot; ✦ WHO DECLARES EBOLA PHEIC: 246 SUSPECTED CASES ✦ MV HONDIUS HANTAVIRUS: 3 DEAD ✦ BULGARIA WINS EUROVISION: WORLD BRIEFLY CHEERS ✦</div></div>
+  <div class="contents-inner">
+    <div class="contents-header">
+      <div class="contents-mag">INSANE</div>
+      <h2 class="contents-title">CONTENTS</h2>
+      <div class="contents-edition">MAY 17, 2026 · &quot;AMERICA GETS THE BILL&quot; EDITION</div>
+    </div>
+    <div class="contents-list">
+    <div class="ci-item">
+      <span class="ci-num">5</span>
+      <span class="ci-emoji">🧳</span>
+      <span class="ci-title">AMERICA GETS THE BILL!</span>
+      <span class="ci-desc">Beijing pageantry meets U.S. inflation receipts</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">6</span>
+      <span class="ci-emoji">🏛️</span>
+      <span class="ci-title">BALLROOM BLITZ!</span>
+      <span class="ci-desc">24-carat class warfare in the East Wing</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">7</span>
+      <span class="ci-emoji">⛽</span>
+      <span class="ci-title">GAS PUMP DIPLOMACY!</span>
+      <span class="ci-desc">Fill 'er up. Pay up. Vote anyway.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">8</span>
+      <span class="ci-emoji">🎪</span>
+      <span class="ci-title">GOP LOYALTY PURGE</span>
+      <span class="ci-desc">Cassidy's dunk tank tour continues</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">9</span>
+      <span class="ci-emoji">🚁</span>
+      <span class="ci-title">DRONE SEASON OPENS EARLY!</span>
+      <span class="ci-desc">Ukraine, Russia, UAE: everybody's doing it</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">10</span>
+      <span class="ci-emoji">☢️</span>
+      <span class="ci-title">CEASEFIRE: HANDLE WITH SARCASM</span>
+      <span class="ci-desc">The bandage over the cooling tower</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">11</span>
+      <span class="ci-emoji">🥷</span>
+      <span class="ci-title">SPY VS. SPY: DRONE EDITION</span>
+      <span class="ci-desc">Same result, upgraded technology</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">12</span>
+      <span class="ci-emoji">🏆</span>
+      <span class="ci-title">INSANE AWARDS</span>
+      <span class="ci-desc">Weekly recognition of excellence in chaos</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">13</span>
+      <span class="ci-emoji">🛳️</span>
+      <span class="ci-title">ALL-INCLUSIVE QUARANTINE!</span>
+      <span class="ci-desc">Hantavirus: the upgrade you didn't request</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">14</span>
+      <span class="ci-emoji">🎉</span>
+      <span class="ci-title">SINGING WHILE THE WORLD BURNS</span>
+      <span class="ci-desc">Bulgaria wins! Confetti accidentally useful!</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">15</span>
+      <span class="ci-emoji">📰</span>
+      <span class="ci-title">BACK PAGE FOLD-IN</span>
+      <span class="ci-desc">Who pays for all of this?</span>
+    </div>
+    </div>
+    
+    <div class="scorecard-box">
+      <div class="scorecard-title">THIS WEEK'S INSANE SCORECARD</div>
+      <ul class="scorecard-list"><li>🌍 Continents with active drone incidents: <strong>3</strong></li>
+        <li>⛽ Gas price tiers available to patriots: <strong>3 (Regular, Premium, Freedom+)</strong></li>
+        <li>🏛️ White House ballroom budget (blocked, for now): <strong>$1 billion</strong></li>
+        <li>📜 Trade deals returned from Beijing (unread): <strong>1 (red bow, still tied)</strong></li>
+        <li>😷 Active WHO public health emergencies: <strong>at least 2</strong></li>
+        <li>🥣 MEGA FLAKES: percentage more empty: <strong>3.8%</strong></li>
+        <li>🎉 Eurovision winners who briefly cheered everyone: <strong>1 (Bulgaria)</strong></li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p5">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-bill.png?v=1779031429837" alt="AMERICA GETS THE BILL!">
+    <div class="illo-caption">★ &quot;It's a perfect deal. The best deal. The receipt is fake news.&quot; ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">COVER STORY · PAGEANTRY ABROAD, STICKER SHOCK AT HOME</div>
+    <h2 class="story-heading">AMERICA GETS THE BILL!</h2>
+    <p class="story-subheading">HE TOURED THE PAGEANTRY ABROAD — AND BROUGHT HOME THE RECEIPTS.</p>
+    <p class="story-deck">Trump Returns From Beijing Carrying An &quot;Amazing Trade Deal,&quot; A Golden Chandelier, And An April CPI Report Saying 3.8% — Cleveland Fed May Estimate: 4.2%</p>
+    <p>President Trump returned from Beijing this week bearing gifts: an <strong>"Amazing Trade Deal"</strong> scroll with a red bow that, per aides, has not been read by anyone including the person who tied the bow; a diplomatic relationship described in the President's in-flight statement as <em>"very blorpful"</em>; and approximately seventeen brass band recordings that played on loop for the entire flight home.</p>
+    <p>He stepped off Air Force One, sources say, directly into the April Consumer Price Index, which had been waiting on the tarmac with a clipboard to note that inflation hit <strong>3.8% in April</strong> — and the Cleveland Federal Reserve was already penciling in <strong>4.2% for May</strong>, driven primarily by the Iran war premium in oil markets, tariff pass-throughs in consumer goods, and what grocery economists are simply calling <em>"the general atmosphere of this costs more than it did."</em></p>
+    <p>The grocery bag photographed on Trump's arm — labeled <strong>MAKE AMERICA EXTRA AGAIN</strong> — contained, per the manifest: caviar at $199.99/lb, golden steaks at $89.99/lb, a golden ballroom miniature, and a receipt from the Beijing state dinner that several economists examined and described as "aspirational pricing."</p>
+    <p>At the bottom of the bag, a cereal box. It said, in small print: <strong>NOW 3.8% MORE EMPTY.</strong></p>
+    <p>The MEGA FLAKES brand is now available at participating grocery retailers for $11.49, down from $11.82 before the current tariff adjustment, which has not been applied yet.</p>
+    <p>"It's a great deal," Trump told reporters. "The cereal is tremendous. Xi is a wonderful guy. I like him very much. The receipt is inaccurate."</p>
+    <blockquote class="pull-quote">&quot;The receipt is inaccurate.&quot; — The President, regarding the April CPI report</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">WHAT'S IN THE BAG</div>
+      <ul><li>📜 &quot;Amazing Trade Deal&quot; scroll (red bow, unread)</li>
+        <li>🥩 Golden Steaks: $89.99/lb (down from: unaffordable)</li>
+        <li>🐟 Caviar: $199.99/lb (diplomatically sourced)</li>
+        <li>🏛️ White House Ballroom miniature (full size: coming soon)</li>
+        <li>🥣 MEGA FLAKES: NOW 3.8% MORE EMPTY</li>
+        <li>🧾 Receipt total: $1,247.36 (CVS is envious)</li></ul>
+    </div>
+    
+    <div class="fake-ad">
+      <div class="ad-headline">MEGA FLAKES CEREAL!</div>
+      <div class="ad-subheadline">Now 3.8% More Empty — Same Patriotic Price!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🥣 Formerly known as &quot;breakfast&quot;</div>
+        <div class="ad-bullet">🥣 Box: Unchanged. Contents: Adjusted for inflation.</div>
+        <div class="ad-bullet">🥣 Back-panel puzzle: Find the purchasing power!</div>
+        <div class="ad-bullet">🥣 Available in: Regular, Less, and Freedom+ sizes</div></div>
+      <div class="ad-price">$11.49 / WAS $4.99 / BEFORE THAT: SOMETHING REASONABLE</div>
+      <div class="ad-disclaimer">MEGA FLAKES LLC not responsible for cereal weight, box weight, or the space between them. &quot;3.8% More Empty&quot; refers to April figures. May figures are pending and expected to be worse. Part of this complete breakfast, if you can afford the rest of it.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p6">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-ballroom.png?v=1779031429837" alt="BALLROOM BLITZ!">
+    <div class="illo-caption">★ &quot;Velvet rope: $47,000. Chandelier: $380,000. Not reading the room: Priceless.&quot; ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">WHITE HOUSE BEAT · 24-CARAT CLASS WARFARE</div>
+    <h2 class="story-heading">BALLROOM BLITZ!</h2>
+    <p class="story-subheading">SENATE BLOCKS $1B FOR WHITE HOUSE BALLROOM — VOTERS STILL HOLDING RECEIPTS OUTSIDE</p>
+    <p class="story-deck">Senate Parliamentarian Rules Against Sneaking White House Renovation Into Immigration Bill — Democrats Say It's The Most On-Brand Expense Since The Gold Toilet</p>
+    <p>The Senate parliamentarian this week ruled against a provision that would have tucked approximately <strong>$1 billion in White House spending</strong> — including security upgrades and a ballroom renovation — inside a larger immigration funding package, a move Democrats described as <em>"the legislative equivalent of hiding a chandelier inside a border-wall bill."</em></p>
+    <p>The ballroom in question — which White House sources describe as <em>necessary, beautiful, and absolutely not a priority given current economic conditions</em> — would have featured, per construction plans accidentally filed as a public document: a grand staircase, floor-to-ceiling gold leaf detailing, a chandelier costing more than the median American home, and velvet ropes one architect described as <strong>"aspirationally exclusive."</strong></p>
+    <p>Outside the proposed ballroom: a gas station marked <em>PATRIOTIC PRICES: REGULAR $7.59 / PREMIUM $8.49 / FREEDOM+ $9.99.</em> A grocery store with a receipt longer than the renovation timeline. A voter with a button: <strong>I VOTED FOR THIS?</strong></p>
+    <p>The parliamentarian's ruling does not preclude future ballroom funding by other means. The White House said it was <em>"reviewing options."</em> The chandelier vendor confirmed the quote is still valid. The voters confirmed their receipts are also still valid.</p>
+    <p>"We're not paying for a ballroom," a White House official said. "We're paying for <strong>dignity.</strong>" The official did not appear to see the irony. The chandelier did not appear to care.</p>
+    <blockquote class="pull-quote">&quot;We're not paying for a ballroom. We're paying for dignity.&quot; — White House, without apparent irony</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">WHITE HOUSE BALLROOM TOURS!</div>
+      <div class="ad-subheadline">Coming 2027 — Velvet Rope Experience Included!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🏛️ Grand staircase: 47 steps to economic irrelevance</div>
+        <div class="ad-bullet">🕯️ Chandelier: More valuable than your home</div>
+        <div class="ad-bullet">🎟️ Tickets: Invite only. Invites: not available.</div>
+        <div class="ad-bullet">💰 Funding: TBD — check your gas bill</div></div>
+      <div class="ad-price">$1,000,000,000 / YOUR SENATOR VOTED AGAINST IT</div>
+      <div class="ad-disclaimer">White House Ballroom Tours LLC (pending) not responsible for gold leaf flaking, chandelier weight, or the general feeling that something is wrong here. Velvet rope is decorative. Access is not implied. Your invitation is in the mail. It is not in the mail.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p7">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-gaspump.png?v=1779031429837" alt="GAS PUMP DIPLOMACY!">
+    <div class="illo-caption">★ &quot;$4.50/gal is the price of freedom, apparently.&quot; ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">ECONOMY · IRAN WAR SURCHARGE EDITION</div>
+    <h2 class="story-heading">GAS PUMP DIPLOMACY!</h2>
+    <p class="story-subheading">FILL 'ER UP. PAY UP. VOTE THE SAME WAY ANYWAY.</p>
+    <p class="story-deck">Reuters Finds Rural Colorado Trump Voters With Gas 50% Higher Locally — Trump Economy Approval At 30% In Reuters/Ipsos Poll — They'd Still Do It Again</p>
+    <p>Reuters visited rural Colorado this week, where gas prices are running approximately <strong>50% higher</strong> than pre-Iran-war levels, and found something economists call <em>"remarkable loyalty persistence"</em> and everyone else is calling something shorter and less polite.</p>
+    <p>The voters Reuters interviewed — Trump supporters, rural, working-class, the exact demographic that campaign ads address directly while the price on the pump behind them climbs — said, in essence: they understand the gas is expensive. They understand the Iran war is the proximate cause. They understand that Trump's economic approval rating has fallen to <strong>30% in a Reuters/Ipsos poll.</strong> And they would, in most cases, vote the same way again.</p>
+    <p>The gas pump labeled <strong>PATRIOTISM: $4.50/gal</strong> was not an actual gas pump, per our legal team. It was a metaphorical gas pump. An actual gas pump in rural Colorado is currently labeled Freedom+ and charges $9.99, which our legal team confirms is an actual number.</p>
+    <p>"It's the Iran thing," one voter told Reuters, watching the numbers on the pump roll past figures not seen since the phrase <em>"energy crisis"</em> was last current. "But you know. We have to be strong."</p>
+    <p>The pump did not comment. The pump was busy.</p>
+    <blockquote class="pull-quote">&quot;PATRIOTISM: $4.50/gal&quot; — Gas station sign, rural Colorado, this week</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">PATRIOTIC PRICE TIERS</div>
+      <ul><li>⛽ Regular: $7.59 — entry-level patriotism</li>
+        <li>⛽ Premium: $8.49 — medium commitment</li>
+        <li>⛽ Freedom+: $9.99 — full send, no questions</li>
+        <li>🧾 &quot;Thank You For Getting Fleeced&quot; — on every receipt</li></ul>
+    </div>
+    
+    <div class="fake-ad">
+      <div class="ad-headline">PATRIOTIC PRICES GAS STATIONS!</div>
+      <div class="ad-subheadline">Fueling America's Commitment To Itself — Whatever It Costs</div>
+      <div class="ad-bullets"><div class="ad-bullet">⛽ Regular: For casual patriots. $7.59.</div>
+        <div class="ad-bullet">⛽ Premium: For voters who really mean it. $8.49.</div>
+        <div class="ad-bullet">⛽ Freedom+: We're not sure what's in this one. $9.99.</div>
+        <div class="ad-bullet">🧾 Receipt: Tax-deductible? Probably not. Worth asking.</div></div>
+      <div class="ad-price">FROM $7.59/GAL — &quot;THANK YOU FOR GETTING FLEECED&quot;</div>
+      <div class="ad-disclaimer">Patriotic Prices LLC not responsible for Iran war, tariff pass-throughs, oil market speculation, or the feeling that something has gone wrong with the math. Prices subject to change without notice. They are changing right now.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p8">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-dunktank.png?v=1779031429837" alt="GOP LOYALTY PURGE">
+    <div class="illo-caption">★ The dunk tank is not a metaphor. Well. It is. But it's also accurate. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">DEMOCRACY CORNER · IMPEACHMENT VOTE MEMORY LANE</div>
+    <h2 class="story-heading">GOP LOYALTY PURGE</h2>
+    <p class="story-subheading">CASSIDY LOSES LOUISIANA PRIMARY — IMPEACHMENT VOTE RECALLED, FIVE YEARS LATER, WITH INTEREST</p>
+    <p class="story-deck">Sen. Bill Cassidy Ousted By Trump-Backed Julia Letlow In Louisiana GOP Primary — Letlow And Fleming Head To June 27 Runoff — Dunk Tank Industry Reports Record Quarter</p>
+    <p>The Republican Party's ongoing project of <strong>Long Institutional Memory For Specific Votes</strong> claimed another senator this week, as Bill Cassidy of Louisiana lost his state's GOP primary to Trump-backed Julia Letlow — five years after Cassidy voted to convict Trump in the second impeachment trial.</p>
+    <p>Cassidy's offense — voting his conscience on a matter of constitutional law — has been described by Trump allies as <em>"unforgivable," "disqualifying,"</em> and <em>"the kind of thing we don't forget,"</em> which Cassidy might reasonably have thought applied to him as a senator of Louisiana but appears, on review, to apply to him as an employee of someone else.</p>
+    <p>Letlow faces John Fleming in a <strong>June 27 runoff.</strong> Both have committed to the correct positions on the impeachment vote, which is to say they did not cast it.</p>
+    <p>The dunk tank industry, which INSANE tracks as a leading indicator of intra-party accountability theater, reported <strong>its best quarter since 2021.</strong> Inquiries about the <em>"Impeachment Vote Memory Lane"</em> model — which features a recorded voice announcing the vote tally before each dunk — are up 340%.</p>
+    <p>Sen. Cassidy, in his concession statement, said he would continue to represent Louisiana's interests. He did not mention the dunk tank. The dunk tank mentioned itself.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">IMPEACHMENT VOTE MEMORY LANE!</div>
+      <div class="ad-subheadline">The Dunk Tank That Remembers So You Don't Have To</div>
+      <div class="ad-bullets"><div class="ad-bullet">🎪 Voice replay: Records and repeats your vote — forever</div>
+        <div class="ad-bullet">🎪 Target: Senators, primarily. Occasionally: principles.</div>
+        <div class="ad-bullet">🎪 Water: Metaphorical. The dunk: completely real.</div>
+        <div class="ad-bullet">🎪 Available in: Primary season model, general election upgrade</div></div>
+      <div class="ad-price">FREE TO USE / COSTS A SENATE SEAT</div>
+      <div class="ad-disclaimer">Impeachment Vote Memory Lane LLC not responsible for democratic norms, constitutional law, the long arc of history, or senators who thought conscience was a viable primary strategy. Results typical. Fifth-year loyalty audits available on request.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p9">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-drones.png?v=1779031429837" alt="DRONE SEASON OPENS EARLY!">
+    <div class="illo-caption">★ BZZZZ! is now an official diplomatic communication style. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INTERNATIONAL CHAOS · BZZZZ EDITION</div>
+    <h2 class="story-heading">DRONE SEASON OPENS EARLY!</h2>
+    <p class="story-subheading">UKRAINE DRONES RUSSIA. RUSSIA DRONES UKRAINE. UAE NARROWLY AVOIDS A NUCLEAR INCIDENT.</p>
+    <p class="story-deck">Ukraine Launches One Of Its Largest Drone Attacks — Russia Replies With Hundreds — UAE Barakah Nuclear Plant Hit On Perimeter — Cooling Towers Described As &quot;Fine&quot;</p>
+    <p>Ukraine launched what officials are calling one of its <strong>largest drone attacks on Russia</strong> this week, killing at least four and targeting infrastructure in a strike that Russia responded to by firing <em>hundreds of drones</em> at Ukraine — because the only appropriate response to a drone attack is a drone counterattack, which invites a drone counter-counterattack, and so on, in what defense analysts are calling <strong>"a sustainable military doctrine"</strong> and everyone else is calling something much shorter.</p>
+    <p>Separately, and the word <em>"separately"</em> is doing significant work here: a drone strike hit the perimeter of the United Arab Emirates' <strong>Barakah nuclear power plant.</strong> There were no injuries. There was no radiological release. The cooling towers were, according to inspectors, <strong>fine.</strong></p>
+    <p>The word <em>"fine"</em> in that context is doing the most load-bearing work in the history of the English language.</p>
+    <p>The strike was described as a sign of the <strong>fragile Iran ceasefire,</strong> which has now been described as fragile so many times that "fragile" has become its proper name. The bandage labeled CEASEFIRE that appears to be holding certain things together is not structural, according to engineers who reviewed the Middle East peace framework.</p>
+    <p>Drone manufacturers reported record quarterly orders. <strong>"BZZZZ"</strong> has been added to the Oxford English Dictionary as an onomatopoeia with geopolitical implications. All three usage examples cite this week.</p>
+    <blockquote class="pull-quote">&quot;No injuries, no radiological release, totally fine.&quot; — UAE nuclear plant spokesperson, not sounding fine</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">PERSONAL DRONE INSURANCE!</div>
+      <div class="ad-subheadline">For The Nuclear Plant In Your Life — Coverage From The Perimeter Out</div>
+      <div class="ad-bullets"><div class="ad-bullet">🚁 Perimeter coverage: Yes</div>
+        <div class="ad-bullet">🚁 Cooling tower coverage: Ask about our premium plan</div>
+        <div class="ad-bullet">🚁 &quot;Fine&quot; coverage: Included in base tier</div>
+        <div class="ad-bullet">🚁 BZZZZ rider: Available at additional cost</div></div>
+      <div class="ad-price">CALL FOR A QUOTE / RATES RISING (LIKE THE DRONES)</div>
+      <div class="ad-disclaimer">Personal Drone Insurance LLC not responsible for the Iran ceasefire, fragile or otherwise, or for cooling towers described as fine. &quot;Fine&quot; is not a technical classification. We have people looking at this.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p10">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-ceasefire.png?v=1779031429837" alt="CEASEFIRE: FRAGILE. HANDLE WITH SARCASM.">
+    <div class="illo-caption">★ &quot;The 'CEASEFIRE' bandage is load-bearing. Please stop testing that.&quot; ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">MIDEAST UPDATE · FRAGILE, HANDLE WITH SARCASM</div>
+    <h2 class="story-heading">CEASEFIRE: FRAGILE. HANDLE WITH SARCASM.</h2>
+    <p class="story-subheading">ISRAEL KILLS HAMAS MILITARY CHIEF — STRIKES CONTINUE IN GAZA — IRAN CEASEFIRE UPGRADED TO 'WITH EXTRA EXPLOSIONS'</p>
+    <p class="story-deck">Israel Reports Killing Hamas Military Leader Izz al-Din al-Haddad; Strikes Continue; Iran Ceasefire Now Describes Itself As 'A Process' — Bandage Still On, Barely</p>
+    <p>Israel reported this week that it killed <strong>Hamas military leader Izz al-Din al-Haddad,</strong> a development which military analysts say matters significantly and which the region's ceasefire infrastructure absorbed in the way a car absorbs a high-speed impact: technically intact, making sounds it wasn't making before.</p>
+    <p>Reuters also reported Israeli strikes killing Palestinians in Gaza on Sunday. The Gaza Strip, which has been described as <em>"a humanitarian crisis," "an active conflict zone,"</em> and <em>"the situation,"</em> depending on who is filing, continued to be all three simultaneously.</p>
+    <p>The Iran ceasefire — which was described as <strong>"on life support"</strong> recently, and has since been upgraded to <strong>"fragile, handle with sarcasm"</strong> by everyone except the parties directly involved, who describe it as <em>"a process"</em> — showed further strain as the UAE nuclear plant drone strike added a new variable to an equation that already had too many variables.</p>
+    <p>The bandage labeled CEASEFIRE that appears in the background of every photograph from the region is <strong>not structural,</strong> according to engineers who reviewed the Middle East peace framework. The framework is load-bearing. The bandage is decorative. This distinction may become important.</p>
+    <p>"Mideast Truce: Now With Extra Explosions," read the headline board on our cover illustration. We put it there as a gag. We did not expect it to remain accurate this long. We stand by it anyway.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">CEASEFIRE BANDAGES™</div>
+      <div class="ad-subheadline">Industrial-Strength. Decorative. At Least It's Something.</div>
+      <div class="ad-bullets"><div class="ad-bullet">🩹 Covers cooling towers, peace frameworks, and related infrastructure</div>
+        <div class="ad-bullet">🩹 &quot;CEASEFIRE&quot; printed in 47 languages</div>
+        <div class="ad-bullet">🩹 Not load-bearing — see disclaimer</div>
+        <div class="ad-bullet">🩹 Available in: Optimistic, Cautious, and Technically Still Valid</div></div>
+      <div class="ad-price">FROM $4.99 / POLITICAL WILL NOT INCLUDED</div>
+      <div class="ad-disclaimer">CEASEFIRE BANDAGES™ not responsible for structural failures, additional explosions, or the phrase &quot;with extra explosions.&quot; Bandage is decorative. We are very clear about that. Please stop testing the bandage.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page spy-page" id="p11">
+  <div class="spy-header">
+    <h2 class="spy-title">SPY vs. SPY</h2>
+    <div class="spy-subtitle">2026 Edition: &quot;Drone Season Is Open&quot;</div>
+  </div>
+  <div class="spy-illo"><img src="../../images/vol1no1-spyvspy.png?v=1779031429838" alt="spy vs spy"></div>
+  <div class="spy-arena">
+    <div class="spy-col spy-white">
+      <div class="spy-icon">🤍</div>
+      <h3>WHITE SPY</h3>
+      <div class="spy-panels"><p>White Spy builds a precision drone. Programs it to strike the target with maximum precision.</p>
+        <p>The drone strikes adjacent to the target. Very near. Technically the target zone. Sort of.</p>
+        <p>White Spy affixes a CEASEFIRE bandage to the collateral area.</p>
+        <p>White Spy builds a larger, more precise drone. This one will definitely work.</p></div>
+    </div>
+    <div class="spy-divider">VS</div>
+    <div class="spy-col spy-black">
+      <div class="spy-icon">🖤</div>
+      <h3>BLACK SPY</h3>
+      <div class="spy-panels"><p>Black Spy builds a larger drone. Programs it specifically to strike White Spy's bandage.</p>
+        <p>Black Spy's drone hits the bandage. The bandage falls off.</p>
+        <p>Both areas are now exposed. Both sides declare this &quot;a process.&quot;</p>
+        <p>Black Spy also builds a larger drone. Both new drones are now in the air. Simultaneously.</p></div>
+    </div>
+  </div>
+  <div class="spy-result">BOTH DRONES ARE IN THE AIR. THE BANDAGE IS ON THE FLOOR. BOTH SIDES DECLARE THE CEASEFIRE FRAGILE BUT TECHNICALLY INTACT. THE DUNK TANK INDUSTRY REPORTS A RECORD QUARTER. THE DRONES HAVE BEEN UPGRADED.</div>
+</div>
+
+<div class="page awards-page" id="p12">
+  <div class="awards-inner">
+    <h2 class="awards-title">🏆 INSANE AWARDS</h2>
+    <div class="awards-date">MAY 17, 2026</div>
+    <div class="award-category">
+      <div class="award-cat-title">BEST USE OF A RED BOW ON AN UNREAD DOCUMENT</div>
+      <div class="award-medals"><div class="medal gold">🥇 Trump (Amazing Trade Deal, Beijing — still tied)</div>
+      <div class="medal silver">🥈 White House Ballroom Construction Plans (filed publicly by accident)</div>
+      <div class="medal bronze">🥉 The China TRADE DEAL IOU banner (honorable mention)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST CREATIVE GAS PRICE TIER NAME</div>
+      <div class="award-medals"><div class="medal gold">🥇 FREEDOM+ ($9.99/gal — what is in this)</div>
+      <div class="medal silver">🥈 PATRIOTIC PRICES (general category excellence)</div>
+      <div class="medal bronze">🥉 Regular ($7.59 — for its devastating irony)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BRAVEST BANDAGE PLACEMENT</div>
+      <div class="award-medals"><div class="medal gold">🥇 CEASEFIRE (over the UAE nuclear cooling tower perimeter)</div>
+      <div class="medal silver">🥈 The Iran Peace Framework (load-bearing edition)</div>
+      <div class="medal bronze">🥉 Sen. Cassidy (wrong kind, completely different situation)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST ITEMS ON ONE RECEIPT</div>
+      <div class="award-medals"><div class="medal gold">🥇 America ($1,247.36 and climbing)</div>
+      <div class="medal silver">🥈 Beijing state dinner (gold steak at $89.99/lb alone)</div>
+      <div class="medal bronze">🥉 White House ballroom chandelier (single line item, devastating)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">ACHIEVEMENT IN DRONE-BASED DIPLOMACY</div>
+      <div class="award-medals"><div class="medal gold">🥇 Ukraine (volume, timing, commitment to the escalation)</div>
+      <div class="medal silver">🥈 Russia (counter-volume, response speed)</div>
+      <div class="medal bronze">🥉 The UAE drone (perimeter work only, but memorable)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST CHEERFUL THING THAT HAPPENED</div>
+      <div class="award-medals"><div class="medal gold">🥇 Bulgaria wins Eurovision with &quot;Bangaranga&quot;</div>
+      <div class="medal silver">🥈 Confetti cannon accidentally hits geopolitical smoke cloud</div>
+      <div class="medal bronze">🥉 MEGA FLAKES back-panel puzzle: Find the purchasing power!</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p13">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-quarantine.png?v=1779031429838" alt="ALL-INCLUSIVE QUARANTINE!">
+    <div class="illo-caption">★ &quot;The hazmat suit is this season's formal wear.&quot; ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">HEALTH &amp; TRAVEL · THE UPGRADE YOU DIDN'T REQUEST</div>
+    <h2 class="story-heading">ALL-INCLUSIVE QUARANTINE!</h2>
+    <p class="story-subheading">HANTAVIRUS CONFIRMED ABOARD MV HONDIUS — WHO DECLARES EBOLA PHEIC — THE WORLD ADDS TWO MORE &quot;ALSO&quot;S</p>
+    <p class="story-deck">WHO Declares Bundibugyo Ebola Outbreak In DRC And Uganda A Public Health Emergency — MV Hondius Hantavirus Reaches 12 Cases, 3 Dead — Hazmat Chefs Standing By</p>
+    <p>The World Health Organization this week declared the <strong>Bundibugyo Ebola outbreak</strong> in the Democratic Republic of Congo and Uganda a public health emergency of international concern, noting 8 confirmed cases, 246 suspected cases, and 80 suspected deaths in Ituri Province as of May 16.</p>
+    <p>The WHO declaration arrived in the same news cycle as continued reporting on the <strong>MV Hondius</strong> hantavirus outbreak, which has reached 12 cases including 9 confirmed and 3 deaths as of May 17 — because the world has decided that if you're going to have a public health emergency you might as well have two, scheduled in the same week for coverage efficiency.</p>
+    <p>The Quarantine Queen — the name we have given to the general category of luxury ocean vessel currently offering <strong>all-inclusive quarantine packages</strong> — continues to be a going concern. The hazmat chef and contact tracing bingo excursion options are sold out through September.</p>
+    <p>A tiny newsboy in a hazmat suit, approximately three inches tall, was spotted in the lower left corner of this week's cover delivering papers labeled <strong>ANOTHER EMERGENCY!</strong> He has been delivering those papers since the first issue. He is very tired. He does not stop.</p>
+    <p>The WHO urged all member nations to prepare for potential additional cases. The cruise industry urged all passengers to prepare for <em>potential additional excitement.</em> These are not the same recommendation. We feel this needs to be stated clearly.</p>
+    <blockquote class="pull-quote">&quot;All-inclusive quarantine: the upgrade you didn't request.&quot; — S.S. Vacay Anyway, passenger manifest</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">QUARANTINE QUEEN CRUISES!</div>
+      <div class="ad-subheadline">Sail In Style — In A Completely Sealed Biohazard Bubble!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🚢 Buffet: Served by certified hazmat chefs</div>
+        <div class="ad-bullet">🚢 Entertainment: Thermometer-waving, contact tracing bingo</div>
+        <div class="ad-bullet">🚢 Shore excursions: Quarantine-compatible destinations only</div>
+        <div class="ad-bullet">🚢 Ebola rider: Available (ask at booking)</div>
+        <div class="ad-bullet">🚢 WHO-approved: Vigorously pending</div></div>
+      <div class="ad-price">ALL-INCLUSIVE — HAZMAT RIDER $49 EXTRA</div>
+      <div class="ad-disclaimer">Quarantine Queen Cruises not responsible for viral outbreaks, biohazard bubble visibility restrictions, WHO bulletins, or the tiny hazmat newsboy. &quot;All Inclusive&quot; includes meals, entertainment, and contact tracing. Medical evacuation: not included. Bon voyage. Wash your hands.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p14">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no1-eurovision.png?v=1779031429838" alt="SINGING WHILE THE WORLD BURNS!">
+    <div class="illo-caption">★ The confetti did not stop the geopolitics. But it was pretty for a moment. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">CULTURAL RELIEF · BECAUSE SOMETHING NICE HAPPENED</div>
+    <h2 class="story-heading">SINGING WHILE THE WORLD BURNS!</h2>
+    <p class="story-subheading">BULGARIA WINS EUROVISION 2026 WITH &quot;BANGARANGA&quot; — CONFETTI ACCIDENTALLY USEFUL</p>
+    <p class="story-deck">Dara's &quot;Bangaranga&quot; Wins Bulgaria's First Eurovision Title Amid Boycott And Political Tension — Confetti Cannon Fires Directly Into Geopolitical Smoke Cloud — Cloud Briefly Colorful</p>
+    <p>Something nice happened.</p>
+    <p>We want to be clear that the previous sentence is not a mistake. <strong>Something nice happened.</strong> Bulgaria — which has never won Eurovision in its decades of participation — won Eurovision 2026 with Dara's <strong>"Bangaranga,"</strong> a song that has the distinction of being extremely fun in a week when the supply of fun was running below recommended levels.</p>
+    <p>The competition took place against a backdrop of political tension, partial boycotts, and the usual Eurovision controversy that exists because there is always Eurovision controversy. It produced a result that was, by Eurovision standards, controversial, and by general international standards, <em>the least controversial thing that happened this week by a significant margin.</em></p>
+    <p>The confetti cannon that fired at the moment of Bulgaria's victory — lavender and gold, per the broadcast — was aimed at the Eurovision stage. It overshot slightly and hit the geopolitical smoke cloud visible in every broadcast from the past three weeks. For approximately <strong>forty-seven minutes,</strong> the confetti was in the air. The smoke cloud was still there. But there was also confetti.</p>
+    <p>"Bangaranga" will not solve the Iran ceasefire, reduce gas prices, un-read the Amazing Trade Deal, stop the drones, fix the grocery receipt, or renovate anything. It is very good. We recommend it. <strong>Bulgaria.</strong></p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">EUROVISION CONFETTI™</div>
+      <div class="ad-subheadline">Fires Into Any Crisis — Briefly Helps</div>
+      <div class="ad-bullets"><div class="ad-bullet">🎉 Lavender and gold standard issue</div>
+        <div class="ad-bullet">🎉 Range: Stage to geopolitical smoke cloud</div>
+        <div class="ad-bullet">🎉 Duration: 47 minutes of airborne improvement</div>
+        <div class="ad-bullet">🎉 Solves: Nothing, but looks genuinely good doing it</div></div>
+      <div class="ad-price">FREE WITH PURCHASE OF HOPE</div>
+      <div class="ad-disclaimer">Eurovision Confetti™ not responsible for ongoing geopolitical situations, gas prices, trade deals, drones, public health emergencies, or unread scrolls with red bows. Confetti is decorative. The smoke cloud is structural. Both are real. This is the situation.</div>
+    </div>
+    
+    
+    <div class="the-end">
+      <p class="the-end-title">Bulgaria. For Now.</p>
+      <p class="the-end-sub">Eurovision, May 2026 · &quot;Bangaranga&quot;</p>
+    </div>
+  </div>
+</div>
+
+<div class="page fold-in-page" id="p15">
+  <div class="foldin-inner">
+    <div class="foldin-header">
+      <h2 class="foldin-title">INSANE BACK PAGE</h2>
+      <div class="foldin-subtitle">THE FAMOUS FOLD-IN &nbsp;✦&nbsp; "FOLD CAREFULLY — UNLIKE THE CEASEFIRE"</div>
+    </div>
+    <div class="foldin-area" id="foldinArea">
+      <div class="foldin-left" id="foldinLeft">
+        <img class="foldin-img" src="../../images/vol1no1-foldin.png?v=1779031429838" alt="fold-in">
+        <div class="foldin-section-top">INSANE — FOLD THIS HALF →</div>
+        <div class="foldin-question">WHO PAYS FOR THE PAGEANTRY, THE BALLROOM, THE DRONES, THE TARIFFS, THE GAS, AND THE TRADE DEAL WITH THE RED BOW NOBODY OPENED?</div>
+        <div class="foldin-label-a">A</div>
+      </div>
+      <div class="foldin-right">
+        <div class="foldin-section-top">← FOLD LEFT SIDE OVER TO FIND OUT</div>
+        <div class="foldin-answer-hidden">AMERICA GETS THE BILL.</div>
+        <div class="foldin-label-b">B</div>
+      </div>
+    </div>
+    <div class="foldin-answer-reveal" id="foldinAnswer">
+      <div class="foldin-answer-text">AMERICA GETS THE BILL.</div>
+      <div class="foldin-answer-sub">Fold A over B to reveal the hidden truth</div>
+    </div>
+    <button class="foldin-btn" id="foldinBtn" onclick="toggleFoldin()">📰 FOLD IT!</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>window.STORY_PAGES = 16;</script>
+<script>(function () {
+  'use strict';
+
+  var PAGES   = window.STORY_PAGES || 0;
+  var current = 0;
+  var track   = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots    = [];
+
+  function update() {
+    if (track)   track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    if (counter) counter.textContent   = (current + 1) + ' / ' + PAGES;
+    if (prevBtn) prevBtn.disabled      = current === 0;
+    if (nextBtn) nextBtn.disabled      = current === PAGES - 1;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    history.replaceState(null, '', '#' + current);
+    // Reset fold-in state when navigating away
+    var area = document.getElementById('foldinArea');
+    if (area) area.classList.remove('folded');
+    var btn = document.getElementById('foldinBtn');
+    if (btn) btn.textContent = '\uD83D\uDCF0 FOLD IT!';
+  }
+
+  window.goTo = function (n) {
+    current = Math.max(0, Math.min(PAGES - 1, n));
+    update();
+  };
+
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  // Build dots
+  var dotRow = document.getElementById('dotRow');
+  if (dotRow) {
+    for (var i = 0; i < PAGES; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.setAttribute('data-i', i);
+      d.addEventListener('click', (function (idx) {
+        return function () { window.goTo(idx); };
+      })(i));
+      dotRow.appendChild(d);
+      dots.push(d);
+    }
+  }
+
+  // Hash navigation
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  // Touch swipe
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft')  window.prev();
+  });
+
+  // Share
+  window.shareIssue = function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        if (btn) {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 2000);
+        }
+      });
+    }
+  };
+
+  // Fold-in toggle
+  window.toggleFoldin = function () {
+    var area = document.getElementById('foldinArea');
+    var btn  = document.getElementById('foldinBtn');
+    if (!area) return;
+    var folded = area.classList.toggle('folded');
+    if (btn) btn.textContent = folded ? '\uD83D\uDCF0 UNFOLD IT!' : '\uD83D\uDCF0 FOLD IT!';
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>

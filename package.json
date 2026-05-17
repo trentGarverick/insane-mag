@@ -1,0 +1,14 @@
+{
+  "name": "insane-mag",
+  "version": "1.0.0",
+  "description": "INSANE Mag — online satirical magazine hub",
+  "type": "module",
+  "scripts": {
+    "build": "node pre-generate.mjs --build-only",
+    "generate": "node pre-generate.mjs",
+    "generate:issue": "node pre-generate.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,570 @@
+{
+  "id": "vol1no2",
+  "title": "Trump's News Circus!",
+  "subtitle": "Now With Extra Flames — And A Billion In Graft",
+  "eyebrow": "Vol. 1, No. 2 · May 21, 2026",
+  "eyebrowDesc": "Flaming juggling act. Kentucky fried incumbent. Cuba subpoena. IRS audit-proof forever. Billion-dollar graft. Ebola racing the clock.",
+  "date": "May 21, 2026",
+  "price": "$6.99 US / $8.99 CAN",
+  "order": 2,
+
+  "palette": {
+    "bg":        "#fdf6e3",
+    "pageBg":    "#ffffff",
+    "text":      "#111111",
+    "accent":    "#cc0000",
+    "accent2":   "#f5c400",
+    "accent3":   "#1a1a8a",
+    "navBg":     "#1a1a8a",
+    "navText":   "#ffffff",
+    "dotActive": "#f5c400",
+    "eyebrow":   "#cc0000",
+    "adBg":      "#fffde7",
+    "adBorder":  "#f5c400"
+  },
+
+  "stylePrefix": "Bold satirical magazine illustration in the style of Mad Magazine. Exaggerated caricature expressions, rich flat colors with deep shading, dynamic action composition, thick black outlines, detailed background visual gags, cinematic framing, slightly chaotic energy. Professional editorial illustration quality. Vivid CMYK colors, strong contrast, clear focal point. 1970s newsstand parody energy.",
+
+  "pages": [
+
+    {
+      "illoId": "cover",
+      "type": "cover-full"
+    },
+
+    {
+      "illoId": "cover",
+      "type": "cover",
+      "coverLines": [
+        "TRUMP'S NEWS CIRCUS: NOW WITH EXTRA FLAMES!",
+        "KENTUCKY FRIED INCUMBENT!",
+        "OVER $1 BILLION IN GRAFT — YOUR TAX DOLLARS AT WORK!",
+        "ATTORNEY GENERAL: TRUMP FAMILY IRS AUDIT-PROOF FOR ETERNITY!",
+        "CUBA: THE SUBPOENA THAT SMOKES!",
+        "XI + PUTIN: DINNER, DANCE & DÉTENTE?",
+        "EBOLA: SCIENCE RACES THE CLOCK"
+      ]
+    },
+
+    {
+      "type": "editorial",
+      "illoId": null,
+      "title": "FROM THE EDITOR'S BUNKER",
+      "salutation": "Dear Reader Who Immediately Asked For A Helmet,",
+      "paragraphs": [
+        "We had a plan to pace ourselves this issue. We were going to cover <em>one</em> thing at a time. We made a list. The list caught fire.",
+        "In the past 36 hours: Trump juggled an Iran war, a Cuba indictment, an IRS deal, and midterm primaries while standing on a Coast Guard ship. The Attorney General quietly made the Trump family <strong>IRS audit-proof for eternity</strong> — a phrase we had to read three times to confirm was real. Over <strong>$1 billion in graft</strong> is being redirected to allies, January 6th rioters, and cop killers, a use of public funds our accountants describe as <em>\"extremely creative.\"</em>",
+        "Meanwhile: Xi and Putin toasted pipelines and AI chips in Beijing. Kentucky ejected Thomas Massie via the Endorsement Machine. Raúl Castro, 94, received a federal indictment rolled like a cigar. The Israeli Knesset is fizzing toward a snap election. The WHO reports <strong>600 suspected Ebola cases</strong> and 139 suspected deaths in Congo and Uganda, and unlike everything else in this issue, that one is not funny at all — the health workers racing to contain it are heroes.",
+        "On a lighter note: Nashville got the 2030 Super Bowl. The Wall Street bull slipped on an oil slick. And we added a classified ads section this issue because <em>the jobs being advertised are too real to ignore.</em>",
+        "We asked for a helmet. They sent us a subscription form."
+      ],
+      "signature": "— The Editors",
+      "ps": "P.S. — The IRS audit-proof thing is real. We checked. We are very tired."
+    },
+
+    {
+      "type": "masthead",
+      "illoId": null,
+      "title": "INSANE MAGAZINE MASTHEAD",
+      "staff": [
+        { "role": "Publisher",              "name": "A. Panic Jr." },
+        { "role": "Editor-in-Chief",        "name": "Screaming McGee" },
+        { "role": "Circus Correspondent",   "name": "Under The Big Top, Filing Now" },
+        { "role": "IRS Desk",               "name": "Currently Audit-Proof (Somehow)" },
+        { "role": "Graft Accountant",       "name": "$1,000,000,000 / Still Counting" },
+        { "role": "Kentucky Bureau",        "name": "Watching The Jack-In-The-Box" },
+        { "role": "Cuba Correspondent",     "name": "Dodging Paperwork Cannon" },
+        { "role": "Beijing Bureau",         "name": "At The Chessboard Banquet" },
+        { "role": "Israeli Knesset Watch",  "name": "Counting Fizzing Tablets" },
+        { "role": "Ebola Desk",             "name": "Heroic, Masked, Not Joking" },
+        { "role": "Classified Ads",         "name": "Now Accepting Applications" },
+        { "role": "Legal",                  "name": "Audit-Proof As Of Tuesday" },
+        { "role": "Sanity Level",           "name": "Helmet Mandatory" }
+      ],
+      "subscriberAlert": {
+        "title": "INSANE MAGAZINE SUBSCRIBER ALERT!",
+        "subtitle": "What your $6.99 covers this week",
+        "items": [
+          "☑ 1 flaming juggling act (Iran, Cuba, IRS, Primaries)",
+          "☑ $1 billion in creative public fund allocation",
+          "☑ 1 family made IRS audit-proof for eternity",
+          "☑ 1 94-year-old Cuban dictator indicted by paperwork cannon",
+          "☑ 1 Kentucky congressman spring-loaded out of office",
+          "☑ Xi + Putin: pipelines, AI chips, Swan Lake",
+          "☑ 600 suspected Ebola cases — science is on it",
+          "☑ Nashville: 2030 Super Bowl (yes, really, nice)",
+          "☑ Classified ads: jobs you won't believe are being advertised"
+        ],
+        "price": "$6.99 / STILL CHEAPER THAN THE IRS DEAL",
+        "disclaimer": "INSANE Magazine is printed on recycled executive orders and surplus indictment paper. Democracy sold separately. Helmet not included. IRS audit-proofing not available to subscribers."
+      },
+      "disclaimer": "INSANE Magazine is published whenever the news exceeds the recommended daily allowance, which is always."
+    },
+
+    {
+      "type": "contents",
+      "illoId": null,
+      "title": "CONTENTS",
+      "edition": "MAY 21, 2026 · \"ASKED FOR A HELMET\" EDITION",
+      "ticker": "BREAKING: TRUMP FAMILY IRS AUDIT-PROOF FOR ETERNITY ✦ $1B+ IN GRAFT TO ALLIES, JAN 6 RIOTERS, COP KILLERS ✦ MASSIE LOSES KENTUCKY PRIMARY TO TRUMP-BACKED GALLREIN ✦ TRUMP SPEAKS AT COAST GUARD AMID IRAN WAR ✦ U.S. INDICTS RAÚL CASTRO; RUBIO OFFERS CUBA AID ✦ XI-PUTIN MEETING: PIPELINES, AI CHIPS, TOASTS ✦ ISRAEL KNESSET MOVES TOWARD SNAP ELECTION ✦ WHO: 600 SUSPECTED EBOLA CASES, 139 DEATHS, DRC/UGANDA ✦ AP-NORC POLL: GOP APPROVAL OF TRUMP ECONOMY WEAKENING ✦ NASHVILLE GETS 2030 SUPER BOWL ✦",
+      "items": [
+        { "page": 5,  "emoji": "🎪", "title": "TRUMP'S NEWS CIRCUS",              "desc": "Flaming juggling at the Coast Guard Academy" },
+        { "page": 6,  "emoji": "💰", "title": "BILLION-DOLLAR GRAFT",             "desc": "Your tax dollars: allies, rioters, cop killers" },
+        { "page": 7,  "emoji": "🔒", "title": "AUDIT-PROOF FOR ETERNITY",         "desc": "The AG's gift to the Trump family IRS file" },
+        { "page": 8,  "emoji": "🌽", "title": "KENTUCKY FRIED INCUMBENT",         "desc": "Massie meets the Endorsement Machine" },
+        { "page": 9,  "emoji": "🇨🇺", "title": "CUBA: THE SUBPOENA THAT SMOKES", "desc": "Raúl Castro, 94, indicted; Rubio offers aid" },
+        { "page": 10, "emoji": "🥂", "title": "XI + PUTIN: DINNER & DÉTENTE",    "desc": "Pipelines, AI chips, Swan Lake, chess" },
+        { "page": 11, "emoji": "🇮🇱", "title": "ISRAEL'S SNAP-ELECTION FIZZ",   "desc": "The Knesset dissolving tablet situation" },
+        { "page": 12, "emoji": "📊", "title": "ECONOMY POLL: GAS & GRUMBLES",    "desc": "AP-NORC: GOP approval weakening" },
+        { "page": 13, "emoji": "🥷", "title": "SPY VS. SPY: GRAFT EDITION",      "desc": "Same money, different pocket" },
+        { "page": 14, "emoji": "🏆", "title": "INSANE AWARDS",                   "desc": "Weekly recognition in a crowded field" },
+        { "page": 15, "emoji": "🦠", "title": "EBOLA: SCIENCE RACES THE CLOCK",  "desc": "600 suspected cases — the heroes on it" },
+        { "page": 16, "emoji": "📋", "title": "INSANE CLASSIFIEDS",              "desc": "Jobs! Products! Opportunities! (Read carefully.)" },
+        { "page": 17, "emoji": "🛒", "title": "INSANE MARKETPLACE",              "desc": "Trump Bibles, coins, and more fine products" },
+        { "page": 18, "emoji": "📰", "title": "BACK PAGE FOLD-IN",               "desc": "Who is the IRS audit protecting, really?" }
+      ],
+      "scorecard": {
+        "title": "THIS WEEK'S INSANE SCORECARD",
+        "items": [
+          { "emoji": "💰", "label": "Public funds creatively reallocated",          "value": "$1 billion+" },
+          { "emoji": "🔒", "label": "Trump family members IRS audit-proofed",       "value": "All of them, forever" },
+          { "emoji": "🎪", "label": "Flaming objects juggled simultaneously",        "value": "4 (Iran, Cuba, IRS, Primaries)" },
+          { "emoji": "🌽", "label": "Kentucky incumbents spring-loaded out",         "value": "1 (Massie)" },
+          { "emoji": "🦠", "label": "Suspected Ebola cases, DRC/Uganda",            "value": "600 (not a punchline)" },
+          { "emoji": "🥂", "label": "Xi-Putin toasts over pipelines and AI",        "value": "At least 3 (estimated)" },
+          { "emoji": "🏈", "label": "Super Bowls awarded to Nashville",             "value": "1 (2030, genuinely nice)" }
+        ]
+      }
+    },
+
+    {
+      "illoId": "circus",
+      "type": "story",
+      "flip": false,
+      "scene": "Trump caricature as a circus ringmaster in red coat and top hat, standing on a tiny Coast Guard ship podium, juggling four large flaming balls labeled IRAN WAR, CUBA INDICTMENT, IRS DEAL, and MIDTERM PRIMARIES. His expression is gleeful and completely unworried. Behind him: a cheering crowd of supporters in MAGA hats, a grinning GOP elephant driving a steamroller labeled ENDORSEMENT MACHINE, and a Kentucky ballot box launching a suited incumbent (Massie) through the air like a jack-in-the-box. Flames everywhere. Confetti. Mad Magazine caricature style.",
+      "eyebrow": "COVER STORY · THE NEWS CIRCUS · COAST GUARD EDITION",
+      "heading": "TRUMP'S NEWS CIRCUS!",
+      "subheading": "NOW WITH EXTRA FLAMES — IRAN, CUBA, IRS, AND PRIMARIES, ALL JUGGLED SIMULTANEOUSLY",
+      "deck": "Trump Speaks At Coast Guard Academy Amid Iran War; Endorsement Machine Ejects Massie In Kentucky; Cuba Indicted; IRS Dealt — Ringmaster Has Not Dropped A Single Ball, Technically",
+      "caption": "★ \"This is fine,\" said the ringmaster, as the tent burned. ★",
+      "paragraphs": [
+        "President Trump delivered the commencement address at the <strong>United States Coast Guard Academy</strong> this week, speaking to graduating cadets about service, sacrifice, and leadership while simultaneously: managing an active Iran war, processing a Cuba indictment, overseeing an IRS restructuring deal, and monitoring midterm primary results — a feat his aides described as <em>\"focused multitasking\"</em> and everyone else is calling <em>\"a juggling act with flaming objects.\"</em>",
+        "The juggling act is, on technical review, going. None of the flaming balls have landed on anyone important. The tent is on fire in several places. The ringmaster appears to be enjoying himself.",
+        "The <strong>Endorsement Machine</strong> — the GOP elephant-driven steamroller that has been flattening insufficiently loyal Republicans for two years — claimed its latest casualty in Kentucky, where Thomas Massie lost his primary to Trump-backed <strong>Ed Gallrein.</strong> Massie, who had served eight terms and was known primarily for showing up to votes, showed up to this one and lost it. The machine is reportedly already fueled and looking at the next map.",
+        "\"This is a great day for America,\" Trump told the graduating cadets. \"We have the best Coast Guard. The most beautiful ships. You're going to do things nobody has ever done before.\" He did not specify what things. The cadets applauded. The ships floated. The balls stayed in the air.",
+        "For now."
+      ],
+      "pullQuote": "\"Focused multitasking.\" — Trump aide, describing the simultaneous juggling of four international crises",
+      "sidebarList": {
+        "title": "BALLS CURRENTLY IN THE AIR",
+        "items": [
+          "🔥 IRAN WAR — altitude: still high, temperature: rising",
+          "🔥 CUBA INDICTMENT — trajectory: cigar-shaped, smoking",
+          "🔥 IRS DEAL — audit-proof, indefinitely airborne",
+          "🔥 MIDTERM PRIMARIES — Endorsement Machine reloading"
+        ]
+      },
+      "fakeAd": {
+        "headline": "TRUMP'S NEWS CIRCUS™",
+        "subheadline": "Under The Big Top — All Crises, All The Time!",
+        "bullets": [
+          "🎪 Four flaming acts running simultaneously",
+          "🎪 Coast Guard ship included as podium",
+          "🎪 Endorsement Machine: available for primary rentals",
+          "🎪 Tent fire: currently decorative"
+        ],
+        "price": "FREE TO WATCH / COSTLY TO BE IN",
+        "disclaimer": "Trump's News Circus LLC not responsible for flaming objects landing in your district. Endorsement Machine rental requires loyalty oath. Tent fire is load-bearing. Do not extinguish without permission."
+      }
+    },
+
+    {
+      "illoId": "graft",
+      "type": "story",
+      "flip": true,
+      "scene": "A giant money cannon labeled YOUR TAX DOLLARS AT WORK fires bags of cash in three directions simultaneously. First stream: to suited allies in MAGA hats catching money in briefcases. Second stream: to masked January 6 rioters in KILL COPS shirts with their arms open. Third stream: to a recipient labeled COP KILLERS holding a sign that says THANK YOU. In the center a smiling Trump caricature pulls the cannon's lanyard with one hand and holds a sign reading AMERICA FIRST (with asterisk). An accountant in the background faints over a ledger. A small sign reads DEMOCRACY SOLD SEPARATELY. Mad Magazine style with maximum visual irony.",
+      "eyebrow": "FINANCE · YOUR TAX DOLLARS AT WORK*",
+      "heading": "OVER $1 BILLION IN GRAFT!",
+      "subheading": "SPOILS FOR ALLIES, JAN 6 RIOTERS, AND COP KILLERS — *DEMOCRACY SOLD SEPARATELY",
+      "deck": "Trump Administration Redirects Over $1 Billion In Public Funds To Political Allies, January 6th Participants, And Individuals Convicted Of Killing Police Officers — Accountants Request Reassignment",
+      "caption": "★ The asterisk on AMERICA FIRST is doing a lot of work. ★",
+      "paragraphs": [
+        "The Trump administration has directed over <strong>$1 billion in public funds</strong> toward a distribution list that includes political allies, participants in the January 6th Capitol assault, and individuals convicted of killing police officers — a spending allocation that budget analysts describe as <em>\"creative,\"</em> opposition lawmakers describe as <em>\"corruption,\"</em> and the White House describes as <em>\"taking care of the people who matter.\"</em>",
+        "The recipients — categorized by INSANE's finance desk as <strong>\"Allies,\" \"Rioters,\"</strong> and <strong>\"Cop Killers\"</strong> in descending order of optics — represent what administration sources call a <em>\"loyalty dividend\"</em> and what the rest of the English language calls something else.",
+        "January 6th participants who assaulted police officers on the Capitol steps will receive funds from the same public treasury that employs those officers. Several recipients currently carry convictions for violence against law enforcement. The accounting team that processed the allocations has, per sources, requested reassignment to the puzzle page.",
+        "A sign in the relevant White House office, photographed by a staff member and shared widely before being taken down, read: <strong>\"YOUR TAX DOLLARS AT WORK.\"</strong> Below it, in smaller print: <em>\"*Democracy sold separately.\"</em>",
+        "\"We're taking care of our people,\" a senior official said. Our people was not defined. The billion dollars was."
+      ],
+      "pullQuote": "\"We're taking care of our people.\" — Senior official, regarding $1B+ distributed to allies, rioters, and cop killers",
+      "fakeAd": {
+        "headline": "LOYALTY DIVIDEND PROGRAM!",
+        "subheadline": "Were You There January 6th? There May Be Money For You!",
+        "bullets": [
+          "💰 Ally tier: standard briefcase allocation",
+          "💰 Rioter tier: assault-weighted bonus structure",
+          "💰 Cop killer tier: special recognition award",
+          "💰 Taxpayer tier: not a tier"
+        ],
+        "price": "$1,000,000,000+ / YOUR MONEY, THEIR THANK-YOU",
+        "disclaimer": "Loyalty Dividend Program not available to: taxpayers, police officers, voters who did not comply, or anyone who described January 6th using the word 'insurrection.' Democracy sold separately. Receipt not provided."
+      }
+    },
+
+    {
+      "illoId": "irs",
+      "type": "story",
+      "flip": false,
+      "scene": "The Attorney General caricature in a judge's robe uses an enormous golden rubber stamp reading AUDIT-PROOF FOREVER on a stack of Trump family tax files. The stamp is so large it takes both hands. The IRS building in the background has its sign changed to TRUMP FAMILY EXEMPTION OFFICE. A line of regular Americans stretches around the block outside holding their own audit notices. One sign in the line reads I AM NOT A TRUMP. Inside the office a single IRS agent sits at a desk with a sign that says EVERYONE ELSE: STILL AUDITABLE. A small pile of tax files for the Trump family is labeled CLOSED FOREVER. Mad Magazine caricature style, maximum bureaucratic irony.",
+      "eyebrow": "TAX LAW · THE GIFT THAT KEEPS NOT GIVING",
+      "heading": "AUDIT-PROOF FOR ETERNITY!",
+      "subheading": "ATTORNEY GENERAL MAKES TRUMP FAMILY IRS AUDIT-PROOF — EVERYONE ELSE: STILL VERY AUDITABLE",
+      "deck": "In A Move Tax Law Experts Describe As 'Extraordinary,' The Attorney General Has Shielded The Trump Family From IRS Audits Indefinitely — The Rest Of America's Tax Files Remain Open For Business",
+      "caption": "★ \"CLOSED FOREVER\" — the most efficient tax policy in American history. ★",
+      "paragraphs": [
+        "The Attorney General has taken action to make the <strong>Trump family IRS audit-proof for eternity,</strong> a phrase that tax law experts describe as <em>\"extraordinary,\" \"without modern precedent,\"</em> and <em>\"the kind of thing that usually only happens in countries we write editorials about.\"</em>",
+        "The protection — which applies to the President and his family members indefinitely, with no sunset clause, no review mechanism, and no defined scope — was implemented quietly, which tax attorneys note is <em>\"the traditional method for implementing things that would be loudly objected to if implemented loudly.\"</em>",
+        "Outside the IRS building, which sources say has informally retitled its front office the <strong>Trump Family Exemption Office,</strong> a line of regular Americans clutching audit notices stretches around the block. A handwritten sign at the front of the line reads <em>I AM NOT A TRUMP.</em> The sign has not helped.",
+        "One IRS agent, reached by INSANE at his desk inside the building, confirmed that the Trump family files have been marked <strong>CLOSED FOREVER</strong> in the system. \"The rest of you are still very auditable,\" he added, in what sources describe as <em>\"a tone of resigned professionalism.\"</em>",
+        "The AG's office said the action was <em>\"appropriate and lawful.\"</em> Tax law experts said they would need more time to review that characterization. They have a lot of time. The audit protection does not expire."
+      ],
+      "pullQuote": "\"The rest of you are still very auditable.\" — IRS agent, regarding everyone who is not the Trump family",
+      "glossary": {
+        "title": "TAX GLOSSARY: UPDATED EDITION",
+        "entries": [
+          { "word": "Audit (n.)",         "def": "An IRS examination of tax records. Available to: everyone except the Trump family." },
+          { "word": "Eternity (n.)",      "def": "The duration of the Trump family audit exemption. No sunset clause." },
+          { "word": "Precedent (n.)",     "def": "Something this has none of." },
+          { "word": "Appropriate (adj.)", "def": "The AG's characterization. Under review by everyone else." }
+        ]
+      },
+      "fakeAd": {
+        "headline": "AUDIT-PROOF YOUR FAMILY!",
+        "subheadline": "Ask Your Attorney General — Results Vary By Family",
+        "bullets": [
+          "🔒 Permanent IRS exemption: requires AG action",
+          "🔒 No sunset clause: eternity means eternity",
+          "🔒 Coverage: all family members, all returns, all time",
+          "🔒 Available to: one family (currently). Application closed."
+        ],
+        "price": "FREE (IF YOU QUALIFY) / NOT AVAILABLE TO YOU",
+        "disclaimer": "Audit-Proof Family LLC not responsible for taxpayer frustration, constitutional questions, or the line outside the IRS building. This product is not available to the general public. The general public remains auditable. Have your receipts ready."
+      }
+    },
+
+    {
+      "illoId": "kentucky",
+      "type": "story",
+      "flip": true,
+      "scene": "A Kentucky GOP primary ballot box is built like a giant jack-in-the-box toy. The lid has just sprung open, launching Thomas Massie caricature high into the air in a suit and tie, briefcase flying, papers scattering. The crank of the jack-in-the-box is labeled TRUMP ENDORSEMENT. A grinning GOP elephant drives a steamroller labeled ENDORSEMENT MACHINE through the background. Ed Gallrein caricature stands next to a WINNER ribbon. In the foreground, a scoreboard reads LOYALTY: REQUIRED / EIGHT TERMS: INSUFFICIENT. Mad Magazine caricature style, spring-loaded energy.",
+      "eyebrow": "PRIMARIES · KENTUCKY ENDORSEMENT MACHINE EDITION",
+      "heading": "KENTUCKY FRIED INCUMBENT!",
+      "subheading": "MASSIE LOSES PRIMARY TO TRUMP-BACKED GALLREIN — EIGHT TERMS NOT ENOUGH; LOYALTY SCORE INSUFFICIENT",
+      "deck": "Rep. Thomas Massie, Eight-Term Kentucky Republican, Loses GOP Primary To Trump-Backed Ed Gallrein — The Endorsement Machine Claims Another One — Dunk Tank Industry Reports Record Quarter Again",
+      "caption": "★ Eight terms. One endorsement against him. Spring-loaded. ★",
+      "paragraphs": [
+        "Rep. Thomas Massie of Kentucky, who has represented his district for <strong>eight terms</strong> and was known principally for libertarian-leaning votes and occasionally showing up to things, showed up to his own primary this week and lost it — a result that political analysts are calling <em>\"the Endorsement Machine at full operating capacity.\"</em>",
+        "Massie's offense, per the Machine: an insufficient score on the composite loyalty index, specific votes that have been categorized as <em>\"wrong,\"</em> and the general failure to be Ed Gallrein, who had <strong>Trump's endorsement</strong> and therefore everything required.",
+        "Gallrein, who will now face a general election in a district that has sent Republicans to Congress since before most people can remember, described his victory as <em>\"a mandate.\"</em> The Endorsement Machine, asked to comment, continued rolling toward the next primary map.",
+        "Massie, reached after the results came in, did not appear spring-loaded. He appeared tired. <em>\"I served eight terms,\"</em> he said, which is true and was, on this occasion, insufficient.",
+        "The dunk tank industry — which INSANE tracks as a leading indicator of intra-party accountability theater — reported its <strong>second record quarter in a row.</strong> The <em>\"Eight Terms Insufficient\"</em> model is now available in stores."
+      ],
+      "fakeAd": {
+        "headline": "ENDORSEMENT MACHINE™",
+        "subheadline": "Eight Terms? Wrong Votes? Time To Go. We Handle The Rest.",
+        "bullets": [
+          "🗳️ Converts incumbents to former incumbents since 2021",
+          "🗳️ Powered by: one endorsement, applied firmly",
+          "🗳️ Eight terms: not a defense. Not even a factor.",
+          "🗳️ Next stop: already selected. Machine is fueled."
+        ],
+        "price": "FREE FOR CHALLENGERS / COSTS INCUMBENTS EVERYTHING",
+        "disclaimer": "Endorsement Machine™ not responsible for eight-term records, libertarian-leaning votes, or the expression on the incumbent's face. Machine operates in all 50 states. Loyalty score must exceed minimum threshold. Yours probably doesn't."
+      }
+    },
+
+    {
+      "illoId": "cuba",
+      "type": "story",
+      "flip": false,
+      "scene": "Cuba depicted as a tropical island courtroom. A giant federal subpoena is rolled up like a enormous cigar and fired from a cannon toward a startled 94-year-old Raúl Castro caricature in a military uniform, who is catching it with wide eyes. Secretary Rubio caricature stands nearby in a suit holding an aid package with a bow, wearing a diplomatic smile. The cannon is labeled U.S. DEPARTMENT OF JUSTICE. In the background: palm trees, vintage cars, and a sign reading CUBA: NOW ACCEPTING SUBPOENAS. A lawyer in a tiny boat delivers the paperwork at sea. Mad Magazine caricature style.",
+      "eyebrow": "INTERNATIONAL LAW · CIGAR-SHAPED PAPERWORK",
+      "heading": "CUBA: THE SUBPOENA THAT SMOKES!",
+      "subheading": "U.S. INDICTS RAÚL CASTRO, 94 — RUBIO SIMULTANEOUSLY OFFERS AID — MIXED SIGNALS DELIVERED SIMULTANEOUSLY",
+      "deck": "United States Indicts Former Cuban President Raúl Castro On Federal Charges — Secretary Rubio Offers Cuba Humanitarian Aid In Same News Cycle — Mixed Signals Arrive Together By Cannon",
+      "caption": "★ Indictment cannon, diplomatic bow. Standard diplomatic toolkit. ★",
+      "paragraphs": [
+        "The United States Department of Justice this week indicted <strong>Raúl Castro,</strong> the 94-year-old former President of Cuba, on federal charges — a development that legal scholars describe as <em>\"historically significant\"</em> and logistical planners describe as <em>\"difficult to serve.\"</em>",
+        "Simultaneously, Secretary of State Marco Rubio offered <strong>humanitarian aid to Cuba,</strong> a diplomatic gesture that arrived in the same 24-hour news cycle as the indictment, creating what foreign policy analysts call a <em>\"mixed signal situation\"</em> and what Cuba is calling something in Spanish that does not translate charitably.",
+        "The indictment — rolled, per INSANE's art department, like an enormous cigar and fired from a federal cannon in the general direction of Havana — represents the most significant U.S. legal action against a Cuban head of state in modern history. Castro, who is 94 and has not traveled internationally in some time, was reportedly <em>\"surprised\"</em> to receive it.",
+        "Rubio's aid package, which arrived with a bow, represents what State Department sources describe as <em>\"a dual-track approach\"</em> — meaning the United States is simultaneously indicting the leadership and offering groceries to the population, which is the diplomatic equivalent of sending a get-well card and a bill at the same time.",
+        "Cuba has not responded to the indictment. Cuba has not responded to the aid offer. Cuba is, sources note, <em>\"thinking about it.\"</em>"
+      ],
+      "pullQuote": "\"A dual-track approach.\" — State Dept, describing the simultaneous indictment and aid offer to Cuba",
+      "fakeAd": {
+        "headline": "SUBPOENA CANNON™",
+        "subheadline": "For Hard-To-Reach Defendants — Range: International",
+        "bullets": [
+          "⚖️ Cigar-shaped delivery: aerodynamic, on-brand for Cuba",
+          "⚖️ Range: up to 90 miles offshore (Miami to Havana spec)",
+          "⚖️ Aid package bow: available as optional accessory",
+          "⚖️ Mixed signal mode: fires both simultaneously"
+        ],
+        "price": "DEPARTMENT OF JUSTICE PRICING / CALL FOR QUOTE",
+        "disclaimer": "Subpoena Cannon™ not responsible for international legal jurisdiction questions, 94-year-old reaction times, or the mixed signal created by offering aid and indictments simultaneously. Results may vary. Cuba is thinking about it."
+      }
+    },
+
+    {
+      "illoId": "xivputin",
+      "type": "story",
+      "flip": true,
+      "scene": "Xi Jinping and Vladimir Putin caricatures seated at an elaborate banquet table on a giant chessboard pattern floor, raising teacups in a toast. The table is covered with: oil barrels, pipeline sections, AI circuit boards, and tiny Swan Lake ballet dancers performing between the dishes. In the background: a cracked golden missile-defense dome shaped like a snow globe. Behind them, a banner reads GREAT PARTNERSHIP: NO PROBLEMS HERE. A waiter caricature carries a tray labeled DÉTENTE SPECIAL. The chess pieces on the floor include tiny NATO figures in the corner. Mad Magazine caricature style, lavish banquet energy.",
+      "eyebrow": "INTERNATIONAL AFFAIRS · BEIJING BANQUET EDITION",
+      "heading": "XI + PUTIN: DINNER, DANCE & DÉTENTE?",
+      "subheading": "BEIJING SUMMIT: PIPELINES, AI CHIPS, OIL BARRELS, SWAN LAKE, AND A TOAST THAT WENT ON A BIT LONG",
+      "deck": "Xi Jinping And Vladimir Putin Tighten Ties In Beijing Summit — Pipelines, AI Cooperation, Energy Deals, And Cultural Performance — Western Analysts Describe Partnership As 'A Situation'",
+      "caption": "★ The Swan Lake dancers did not know they were a geopolitical metaphor. ★",
+      "paragraphs": [
+        "Xi Jinping and Vladimir Putin met in Beijing this week for what Chinese state media described as a <em>\"comprehensive strategic partnership review\"</em> and what the imagery from the event — two men toasting at a table covered in oil barrels, pipeline sections, and AI circuit boards, with ballet dancers in the background — described as <strong>something with a lot going on.</strong>",
+        "The summit produced agreements on energy cooperation, AI chip development, pipeline routing, and what both sides called <em>\"deepening friendship,\"</em> a phrase that Western analysts have now added to the list of diplomatic terms that produce immediate anxiety.",
+        "The Swan Lake performance that accompanied the state dinner was, per cultural observers, <em>excellent.</em> The dancers were unaware they were performing inside a geopolitical tableau that the rest of the world was watching very carefully. They were, by all accounts, very good.",
+        "A <strong>cracked golden missile-defense dome</strong> — representing the current state of Western deterrence architecture — hovered in the background of several official photographs like a snow globe that someone had already dropped. Neither Xi nor Putin appeared to notice it. Both appeared to be enjoying the soup.",
+        "\"This is a great partnership,\" Putin said, raising his teacup. \"No problems here,\" Xi agreed. The pipelines confirmed. The AI chips agreed. The Swan Lake dancers stuck the landing."
+      ],
+      "pullQuote": "\"No problems here.\" — Xi Jinping, at a banquet table covered in oil barrels, AI chips, and pipeline sections",
+      "fakeAd": {
+        "headline": "BEIJING BANQUET CATERING!",
+        "subheadline": "For Comprehensive Strategic Partnership Reviews — Swan Lake Included",
+        "bullets": [
+          "🍽️ Table setting: oil barrels, pipelines, AI chips, dinnerware",
+          "🍽️ Entertainment: Swan Lake (professional, apolitical)",
+          "🍽️ Toast: comprehensive, slightly long",
+          "🍽️ Dome: cracked golden, snow globe style, decorative"
+        ],
+        "price": "STRATEGIC PRICING / CALL BEIJING FOR AVAILABILITY",
+        "disclaimer": "Beijing Banquet Catering not responsible for geopolitical implications of menu items, the cracked dome in the background, or Western anxiety. Swan Lake dancers not briefed on geopolitical context. They were very good."
+      }
+    },
+
+    {
+      "illoId": "israel",
+      "type": "story",
+      "flip": false,
+      "scene": "The Israeli Knesset building drawn as a giant fizzing effervescent tablet dropping into a large ballot box filled with water. Bubbles rise dramatically. Tiny Knesset lawmakers run around outside the building carrying SNAP ELECTION? signs with panicked expressions. A scoreboard shows CONFIDENCE VOTE: DISSOLVING. In the background the Israeli flag waves next to a large question mark. A political cartoonist character in the corner of the scene holds up a sign reading THIS IS ACTUALLY HAPPENING. Mad Magazine caricature style, parliament-dissolving-in-water visual metaphor executed literally.",
+      "eyebrow": "MIDDLE EAST POLITICS · FIZZING TABLET EDITION",
+      "heading": "ISRAEL'S SNAP-ELECTION SODA FIZZ!",
+      "subheading": "KNESSET MOVES TOWARD POSSIBLE SNAP ELECTION — LAWMAKERS CARRY SIGNS — TABLET IS FIZZING",
+      "deck": "Israeli Knesset Moves Toward Potential Snap Election Amid Coalition Pressure — Political Analysts Describe Government As 'A Dissolving Tablet' — Fizzing: Confirmed",
+      "caption": "★ \"THIS IS ACTUALLY HAPPENING\" — sign held by cartoonist in corner of scene ★",
+      "paragraphs": [
+        "The Israeli Knesset moved this week toward a possible snap election, a development that political analysts describe as <em>\"a significant moment for Israeli democracy\"</em> and that the visual metaphor department at INSANE has been waiting to deploy since the dissolving-tablet comparison first occurred to us three weeks ago.",
+        "The coalition government, which has been under sustained pressure from multiple directions including the ongoing Gaza conflict, the Iran ceasefire's continued fragility, and internal disagreements that Israeli political reporters describe as <em>\"complicated\"</em> and that everyone else describes as <em>\"a lot,\"</em> has reached a point that observers are calling <strong>a confidence threshold moment.</strong>",
+        "Tiny lawmakers carrying <strong>SNAP ELECTION?</strong> signs were photographed outside the Knesset. The question mark is doing significant work. Nobody has announced a date. The tablet is fizzing. The ballot box is getting wet.",
+        "\"We are monitoring the situation closely,\" a Western diplomat said, which is the diplomatic equivalent of watching a tablet fizz and holding a notebook.",
+        "The situation will be monitored. The tablet will finish fizzing at a time of its own choosing. The snap election, if it happens, will produce a result that will require further monitoring. The cartoonist in the corner of the scene is still holding his sign."
+      ],
+      "fakeAd": {
+        "headline": "SNAP ELECTION INSURANCE!",
+        "subheadline": "For Governments Currently Fizzing — Coverage From First Bubble",
+        "bullets": [
+          "🗳️ Dissolution coverage: effervescent events included",
+          "🗳️ Coalition collapse: standard policy feature",
+          "🗳️ Snap election date: covered whenever it is",
+          "🗳️ Sign for lawmakers: SNAP ELECTION? — included"
+        ],
+        "price": "CALL NOW / GOVERNMENT IS FIZZING",
+        "disclaimer": "Snap Election Insurance not responsible for coalition dynamics, the ongoing Gaza situation, the Iran ceasefire, internal party disagreements, or the tablet's timeline. Coverage effective from first bubble. Results of snap election not covered."
+      }
+    },
+
+    {
+      "illoId": "economy",
+      "type": "story",
+      "flip": true,
+      "scene": "A Wall Street bull caricature in a business suit slips on a large oil slick, legs splayed, holding a gas pump receipt in one hand and a tiny balloon labeled INFLATION ANXIETY in the other. In the background: a downward-pointing approval chart labeled GOP ECONOMY POLL — AP-NORC. Grocery store shelves in the background have exaggerated high price tags. Regular Americans in the background hold polling clipboards with increasingly unhappy expressions. A small sign on the gas pump reads GAS: $4.29 / TOTAL: OUCH. Mad Magazine caricature style.",
+      "eyebrow": "ECONOMIC ANXIETY · AP-NORC POLL EDITION",
+      "heading": "ECONOMY POLL: GAS, GROCERIES & GRUMBLES!",
+      "subheading": "AP-NORC: REPUBLICAN APPROVAL OF TRUMP ECONOMY HANDLING WEAKER THAN EARLIER IN THE YEAR",
+      "deck": "New AP-NORC Poll Shows Weakening Republican Approval Of Trump's Economic Performance — Gas, Groceries, And The General Vibe All Cited — Bull Unavailable For Comment (Slipping)",
+      "caption": "★ The inflation anxiety balloon is not a gag prop. It is load-bearing. ★",
+      "paragraphs": [
+        "A new AP-NORC poll released this week shows that <strong>Republican approval of Trump's handling of the economy</strong> has weakened compared to earlier in the year — a data point that the White House has not highlighted in its communications and that the AP-NORC polling operation has highlighted in its.",
+        "The poll, which tracks approval across party lines, found that even among Republicans — traditionally the most favorable audience for Trump economic messaging — the numbers have moved in a direction that polling analysts describe as <em>\"downward\"</em> and that the MAGA hat industry describes as <em>\"a temporary fluctuation.\"</em>",
+        "The cited concerns: <strong>gas prices, grocery costs,</strong> and what respondents described variously as <em>\"the general feeling that things cost more than they did,\" \"I don't know, it's just a lot,\"</em> and <em>\"my receipt at the grocery store.\"</em> The grocery store receipt concern has now appeared in three consecutive INSANE issues and is becoming what our economics desk calls <strong>a signature motif.</strong>",
+        "The Wall Street bull, reached at the scene of his oil-slick incident, was unavailable for comment. The gas pump receipt he was holding at the time of the fall read <strong>GAS: $4.29 / TOTAL: OUCH.</strong> The inflation anxiety balloon was still attached. Both were retrieved by a first responder.",
+        "The poll has a margin of error of plus or minus several points. The gas price has no margin of error. It is the number on the sign."
+      ],
+      "pullQuote": "\"My receipt at the grocery store.\" — AP-NORC poll respondent, summarizing economic concerns",
+      "fakeAd": {
+        "headline": "INFLATION ANXIETY BALLOONS!",
+        "subheadline": "For When The Polling Numbers And Gas Prices Arrive Simultaneously",
+        "bullets": [
+          "🎈 Load-bearing: yes, structurally important",
+          "🎈 Size: grows with each CPI report",
+          "🎈 Color: anxious yellow",
+          "🎈 Pop risk: high — do not show near grocery receipts"
+        ],
+        "price": "$6.99 OR THREE GALLONS OF GAS, WHICHEVER IS LESS",
+        "disclaimer": "Inflation Anxiety Balloons LLC not responsible for poll results, gas prices, grocery receipts, or the general feeling. Balloon not a solution. Balloon is an accurate representation. Results may float."
+      }
+    },
+
+    {
+      "illoId": "spyvspy",
+      "type": "spy-vs-spy",
+      "scene": "Classic Mad Magazine Spy vs Spy composition — white-suited spy and black-suited spy with long pointed noses and trench coats. White spy has a giant bag labeled PUBLIC FUNDS and is carefully sorting money into two piles: ALLIES and EVERYONE ELSE. Black spy sneaks up behind with a larger bag labeled ALSO PUBLIC FUNDS and pours it all into one pile labeled MY ALLIES. Both bags are labeled TAXPAYER PROPERTY. In the wreckage between them: a small sign reading RECEIPTS AVAILABLE / NOT THAT ANYONE ASKED. Dynamic Mad Magazine visual energy.",
+      "title": "SPY vs. SPY",
+      "subtitle": "2026 Edition: \"Graft Management\"",
+      "white": {
+        "panels": [
+          "White Spy receives $1 billion in public funds. White Spy makes a careful, documented allocation plan.",
+          "White Spy distributes funds to: allies (40%), programs (40%), oversight reserve (20%).",
+          "White Spy files receipts. White Spy notes the oversight reserve.",
+          "White Spy is audited. White Spy's filing is thorough. White Spy is very tired."
+        ]
+      },
+      "black": {
+        "panels": [
+          "Black Spy also receives $1 billion in public funds. Black Spy does not make a plan.",
+          "Black Spy distributes funds to: allies (60%), rioters (25%), cop killers (15%), oversight reserve (0%).",
+          "Black Spy does not file receipts. Black Spy is audit-proof. Black Spy has a balloon.",
+          "Black Spy is not audited. Black Spy is very comfortable. Black Spy's balloon says AMERICA FIRST."
+        ]
+      },
+      "result": "SAME MONEY. DIFFERENT OUTCOMES. ONE SPY HAS RECEIPTS. ONE SPY HAS AN EXEMPTION. THE EXEMPTION IS PERMANENT. THE RECEIPTS ARE ON A PUZZLE PAGE SOMEWHERE."
+    },
+
+    {
+      "type": "awards",
+      "illoId": null,
+      "title": "🏆 INSANE AWARDS",
+      "date": "MAY 21, 2026",
+      "categories": [
+        {
+          "name": "MOST CREATIVE USE OF $1 BILLION IN PUBLIC FUNDS",
+          "gold":   "Trump administration (allies, rioters, cop killers — full portfolio)",
+          "silver": "The Loyalty Dividend Program (concept excellence)",
+          "bronze": "The accountant who requested reassignment to the puzzle page"
+        },
+        {
+          "name": "BEST NEW TAX STATUS",
+          "gold":   "Trump Family (audit-proof, forever, no sunset clause)",
+          "silver": "Everyone else (still very auditable — honorable mention for consistency)",
+          "bronze": "The IRS agent who said 'the rest of you are still very auditable'"
+        },
+        {
+          "name": "MOST EFFICIENT PRIMARY MACHINE",
+          "gold":   "The Endorsement Machine (Massie, 8 terms, one endorsement against: done)",
+          "silver": "The Kentucky Ballot Box Jack-In-The-Box (mechanical excellence)",
+          "bronze": "Ed Gallrein (was endorsed, won — clean execution)"
+        },
+        {
+          "name": "BEST SIMULTANEOUS MIXED SIGNAL",
+          "gold":   "U.S. to Cuba: indictment AND aid offer, same news cycle",
+          "silver": "Xi-Putin: partnership AND cracked missile dome, same photo",
+          "bronze": "Knesset: SNAP ELECTION? sign with question mark (diplomatically ambiguous)"
+        },
+        {
+          "name": "MOST LOAD-BEARING ACCESSORY",
+          "gold":   "The Inflation Anxiety Balloon (structural, economic, airborne)",
+          "silver": "The CEASEFIRE Bandage (Vol. 1 No. 1 — still holding, technically)",
+          "bronze": "The question mark on the SNAP ELECTION? sign"
+        },
+        {
+          "name": "MOST WELCOME NEWS",
+          "gold":   "Nashville gets the 2030 Super Bowl (genuinely nice, no asterisk)",
+          "silver": "Swan Lake dancers: excellent performance, apolitical (confirmed)",
+          "bronze": "Ebola science teams: on it, heroic, and not a punchline (confirmed)"
+        }
+      ]
+    },
+
+    {
+      "illoId": "ebola",
+      "type": "story",
+      "flip": false,
+      "scene": "Heroic health workers in full PPE protective gear — hazmat suits, face shields, gloves — working urgently in a field hospital setting in DRC Congo/Uganda. They carry test kits, thermometers, and sample containers. One holds a sign: TEST. TRACE. TREAT. PROTECT. A large green spiky virus labeled EBOLA OUTBREAK is in the background being contained by warning tape and barriers. The workers look determined and focused, not comedic — this is the heroic corner of the magazine. WHO logo and DRC/Uganda flags visible. Bold and respectful Mad Magazine illustration style — dramatic, not satirical.",
+      "eyebrow": "PUBLIC HEALTH · NOT A PUNCHLINE",
+      "heading": "EBOLA: SCIENCE RACES THE CLOCK.",
+      "subheading": "600 SUSPECTED CASES. 139 SUSPECTED DEATHS. DRC AND UGANDA. THE TEAMS ON THE GROUND ARE HEROIC.",
+      "deck": "WHO And Reuters Report 600 Suspected Ebola Cases And 139 Suspected Deaths In Congo And Uganda — The Bundibugyo Strain — Health Workers In The Field Are Working Around The Clock",
+      "caption": "★ Test. Trace. Treat. Protect. The people doing this are doing something important. ★",
+      "paragraphs": [
+        "The WHO and Reuters this week reported <strong>600 suspected Ebola cases and 139 suspected deaths</strong> in the Democratic Republic of Congo and Uganda, figures that represent a significant escalation from last issue's 246 suspected cases and 80 suspected deaths — and that represent, in human terms, a crisis that the people working to contain it are treating with the full weight of what it is.",
+        "The Bundibugyo strain — the variant involved in this outbreak — is one of several Ebola virus species and has been the subject of prior outbreaks in the region. The health workers on the ground in Ituri Province and the border areas of Uganda are conducting contact tracing, sample collection, treatment, and containment operations in conditions that outbreak response specialists describe as <em>\"extremely challenging.\"</em>",
+        "They are not a punchline. This section of INSANE is not satirical. The people testing, tracing, treating, and protecting in DRC and Uganda right now are doing one of the harder jobs available to human beings, and they are doing it well.",
+        "The WHO has declared the outbreak a Public Health Emergency of International Concern. International response teams are active. Vaccination campaigns are underway for contacts. The work is ongoing.",
+        "<strong>Test. Trace. Treat. Protect.</strong> If you want to support outbreak response, the WHO's Health Emergency Appeal is accepting donations. The teams on the ground know what they're doing. They could use the resources."
+      ],
+      "theEnd": {
+        "title": "Science is racing. The teams are heroic.",
+        "sub": "WHO Ebola Response · DRC & Uganda · May 2026"
+      }
+    },
+
+    {
+      "illoId": "classifieds",
+      "type": "story",
+      "flip": false,
+      "scene": "A chaotic classified ads newspaper page come to life — job listings floating everywhere, applicants running toward bulletin boards, a carnival barker in a suit shouting HELP WANTED. One job posting is on a velvet curtain, another on a golden billboard. A masseuse applicant in formal wear reads a suspicious job description. A man in a suit holds a clipboard for Vice President interviews. ICE agent applicants in sunglasses look extremely enthusiastic about the wrong things. A Bible salesman hawks gold-covered books. Mad Magazine visual chaos, jobs fair energy, exaggerated expressions of people reading the ads.",
+      "eyebrow": "HELP WANTED · INSANE CLASSIFIEDS",
+      "heading": "INSANE CLASSIFIEDS!",
+      "subheading": "JOBS! OPPORTUNITIES! POSITIONS SOON TO BE OPEN! (READ CAREFULLY.)",
+      "deck": "This Week's Employment Listings, Products, And Opportunities From The INSANE Marketplace — We Are Not Responsible For The Applicants These Ads Will Attract",
+      "caption": "★ INSANE Magazine assumes no liability for the positions listed below. ★",
+      "paragraphs": [
+        "<strong>MASSAGE THERAPIST — MAR-A-LAGO, PALM BEACH FL</strong><br>Seeking young, attractive, and <em>extremely discreet</em> licensed massage therapists for full-time, live-in positions at a prestigious private club. Must be comfortable with irregular hours, non-disclosure agreements of indefinite scope, and the phrase \"we'll see.\" Experience with important people preferred. References checked only for the applicant; employer references not available. Compensation discussed in person. Do not bring a lawyer. <em>Apply: MarALago-Staffing@notanemailaddress.com</em>",
+        "<strong>VICE PRESIDENT OF THE UNITED STATES — POSITION SOON TO BE OPEN</strong><br>Exciting opportunity! Current occupant may become available imminently. Ideal candidate: enthusiastic, compliant, experienced at standing just far enough away from things, comfortable with ceremonial roles, skilled at nodding while others talk. Must pass loyalty evaluation (pass/fail, no partial credit). Prior constitutional knowledge: actually a disadvantage — please do not cite the 25th Amendment in your cover letter. Location: Washington D.C. (subject to change). <em>Apply: Oval Office, ask for the big desk.</em>",
+        "<strong>ICE ENFORCEMENT AGENTS — MULTIPLE OPENINGS</strong><br>Seeking tough, motivated individuals who are <em>not afraid to get results</em>. Previous law enforcement experience: optional — enthusiasm counts more. Must be comfortable with: irregular target selection, documentation ambiguity, being photographed, and not reading Miranda rights aloud in a way that carries. <strong>Bonus pay for grandma apprehensions.</strong> Kid experience a plus. Sensitivity training: there is none. Benefits: dental, vision, legal indemnification (terms vary). <em>Apply: Submit application at any border. Or not at the border. Doesn't matter.</em>",
+        "<strong>OFFICIAL GOVERNMENT MEDIA SPOKESPERSON</strong><br>Do you have the ability to say <em>\"I'll have to circle back on that\"</em> in 47 different tones? Can you describe a clearly documented event as <em>\"alleged\"</em> with a straight face? Can you stand at a podium while something is actively on fire and describe it as <em>\"a controlled situation\"</em>? Competitive salary. Long hours. The briefing room is not air-conditioned in July. <em>Apply: Press@youknowwhere.gov</em>",
+        "<strong>LOYALTY AUDITOR — REPUBLICAN PARTY</strong><br>Part-time to full-time, election season hours. Review voting records for compliance with current orthodoxy. Issue findings. Operate the Machine. Stamina required — primary calendar is full through 2028. <em>Experience required: knowing which votes were wrong. (You know which ones.)</em>"
+      ],
+      "fakeAd": {
+        "headline": "INSANE CLASSIFIEDS — LEGAL NOTICE",
+        "subheadline": "INSANE Magazine Is Not A Staffing Agency",
+        "bullets": [
+          "📋 We did not write these job descriptions",
+          "📋 We did not have to — they wrote themselves",
+          "📋 INSANE assumes no liability for applicants",
+          "📋 Or for the positions. Or for any of this."
+        ],
+        "price": "CLASSIFIED ADS: $49.99/WEEK OR YOUR DIGNITY",
+        "disclaimer": "INSANE Classifieds not responsible for any employment relationships, loyalty oaths, non-disclosure agreements, apprehension quotas, or Vice Presidential transitions that result from these listings. All positions are satirical. Mostly."
+      }
+    },
+
+    {
+      "illoId": "marketplace",
+      "type": "story",
+      "flip": true,
+      "scene": "A chaotic TV shopping network set featuring a golden studio. Host caricature in a sparkly jacket holds up a large gold-covered Bible with TRUMP BIBLE on the cover in giant letters. Next to them on display pedestals: a pile of golden Trump coins with a spotlight, a MAGA brand survival kit, gold-plated steaks in a box. The studio audience is wild with excitement. Prices flash on screen with multiple asterisks. Fine print scrolls at the bottom faster than anyone can read. Mad Magazine infomercial parody style, maximum greed energy.",
+      "eyebrow": "INSANE MARKETPLACE · FINE PRODUCTS & OPPORTUNITIES",
+      "heading": "INSANE MARKETPLACE!",
+      "subheading": "TRUMP BIBLES, TRUMP COINS, TRUMP STEAKS, AND MORE FINE MERCHANDISE — LIMITED TIME OFFERS THAT HAVE BEEN LIMITED TIME FOR YEARS",
+      "deck": "This Week's Featured Products From The INSANE Marketplace — All Products Inspected By Our Standards Team — Standards Team Has Requested Reassignment",
+      "caption": "★ Fine print is structural. Do not skip. ★",
+      "paragraphs": [
+        "<strong>TRUMP BIBLE™ — GOD'S WORD, GOLD COVER, PRESIDENTIAL FOREWORD</strong><br>The <em>Holy Bible</em> — now with a gold-embossed cover, a signed foreword by someone important, and the complete text of the Constitution appended in the back (selected amendments only). Makes an excellent gift for: patriots, collectors, and people who have not read either document. <strong>$59.99.</strong> Available at: the website. Not available in: bookstores that carry it next to other Bibles, which they will not. <em>*Does not come with a bookmark. Salvation not guaranteed.*</em>",
+        "<strong>TRUMP GOLD COINS™ — LEGAL TENDER* (*NOT LEGAL TENDER)</strong><br>Celebrate history with these <em>stunning</em> gold-colored commemorative coins featuring a heroic profile, eagle imagery, and the words MAKE AMERICA GREAT AGAIN in raised lettering. Not actual gold. Not actual tender. Not redeemable for anything. But <em>extremely heavy</em> and <strong>very shiny.</strong> Buy 10, get a carrying case. Buy 20, get a second carrying case. Buy 30 and we will call you personally to thank you and offer more coins. <strong>$29.99 each or $249.99 for the Freedom Collection.</strong> <em>*Coins are medallions. Medallions are not currency.*</em>",
+        "<strong>MAGA SURVIVAL KIT™ — BE PREPARED FOR WHATEVER THIS IS</strong><br>Includes: 72-hour emergency rations (freeze-dried patriotism), a MAGA hat (weatherproof), a pocket Constitution (selected amendments), a gas receipt holder (for collecting them as evidence), a FREEDOM+ fuel card (not accepted anywhere yet), and a <em>THINGS THAT ARE FINE</em> checklist with every box pre-checked. <strong>$149.99.</strong> Not responsible for the things on the checklist not actually being fine.",
+        "<strong>TRUMP STEAKS™ — THE BEST STEAKS, EVERYBODY SAYS SO</strong><br>Previously discontinued. Back by demand (demand unspecified). <em>\"The world's greatest steaks\"</em> — available in: Well Done Only. Served with ketchup. Not served any other way. Golden packaging. Ships frozen. Arrives fine. <strong>$89.99/lb — same price as Beijing state dinner, diplomatic provenance included.</strong> <em>*Steaks are steaks. Claims about their greatness are the purchaser's to evaluate.*</em>",
+        "<strong>AUDIT-PROOF FAMILY PACKAGE™ — CALL FOR AVAILABILITY</strong><br>Not actually available to you. We included this listing because someone had to say it. <strong>$0 if you qualify / not available if you don't.</strong> <em>You don't.</em>"
+      ],
+      "theEnd": {
+        "title": "Shop Responsibly. Read The Fine Print.",
+        "sub": "INSANE Marketplace · Standards Team Currently On Puzzle Page"
+      }
+    },
+
+    {
+      "illoId": "foldin",
+      "type": "fold-in",
+      "scene": "Mad Magazine back page fold-in — wide format. Left 60 percent (labeled A): shows the Attorney General with an enormous golden AUDIT-PROOF FOREVER stamp, surrounded by Trump family members celebrating, stacks of cash, and the IRS building being converted to the TRUMP FAMILY EXEMPTION OFFICE. Taxpayers outside the building hold their audit notices and stare in. The image is packed with detail and gag labels. Right 40 percent (labeled B): shows a single ordinary American taxpayer at a desk buried in IRS forms, surrounded by receipts, with a look of dawning realization. When A is folded over B, the AG appears to be stamping the ordinary taxpayer's forehead instead. Bold, graphic, classic fold-in visual.",
+      "question": "THE ATTORNEY GENERAL HAS MADE THE TRUMP FAMILY IRS AUDIT-PROOF FOR ETERNITY. SO WHO EXACTLY IS THE IRS FOR NOW?",
+      "answer": "EVERYONE ELSE. FOREVER.",
+      "leftText": "INSANE — FOLD THIS HALF →",
+      "rightText": "← FOLD LEFT SIDE OVER TO FIND OUT"
+    }
+
+  ]
+}

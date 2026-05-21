@@ -17,7 +17,7 @@
     dots.forEach(function (d, i) {
       d.classList.toggle('active', i === current);
     });
-    history.replaceState(null, '', '#' + current);
+    try { history.replaceState(null, '', '#' + current); } catch(e) {}
     // Reset fold-in state when navigating away
     var area = document.getElementById('foldinArea');
     if (area) area.classList.remove('folded');

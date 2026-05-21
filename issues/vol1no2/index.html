@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trump's News Circus! — INSANE Mag</title>
+  <meta name="description" content="Now With Extra Flames — And A Billion In Graft">
+  <meta property="og:title" content="Trump's News Circus! — INSANE Mag">
+  <meta property="og:description" content="Now With Extra Flames — And A Billion In Graft">
+  <meta property="og:image" content="https://insane-mag.bumbloobooks.com/images/vol1no2-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insane-mag.bumbloobooks.com/issues/vol1no2/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Special+Elite&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Default palette (overridden per issue via palette in issue.json) ────────── */
+:root {
+  --bg:           #fdf6e3;   /* newsprint cream */
+  --page-bg:      #fff;
+  --text:         #111111;
+  --accent:       #cc0000;   /* Mad red */
+  --accent2:      #f5c400;   /* Mad yellow */
+  --accent3:      #1a1a8a;   /* blue accent */
+  --nav-bg:       #cc0000;
+  --nav-text:     #ffffff;
+  --dot-active:   #f5c400;
+  --eyebrow:      #cc0000;
+  --ad-bg:        #fffde7;
+  --ad-border:    #f5c400;
+  --spy-white-bg: #f0f0f0;
+  --spy-black-bg: #111111;
+  --cover-text:   #ffffff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Nav bar ────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  height: 50px;
+  border-bottom: 3px solid rgba(0,0,0,0.25);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1.1rem; padding: 8px;
+  opacity: 0.8; transition: opacity 0.15s;
+}
+.nav-btn:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-text);
+  opacity: 0.9;
+}
+.nav-counter {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.nav-back {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-share {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1rem; padding: 8px;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.nav-share:hover { opacity: 1; }
+
+/* ── Dot pager ──────────────────────────────────────────── */
+.dot-row {
+  position: fixed; bottom: 14px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 12px;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text); opacity: 0.2;
+  cursor: pointer; transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+.dot.active {
+  background: var(--dot-active); opacity: 1; transform: scale(1.4);
+}
+
+/* ── Viewport / pager ───────────────────────────────────── */
+.viewport {
+  position: fixed; top: 50px; left: 0; right: 0; bottom: 40px;
+  overflow: hidden;
+}
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  display: flex; align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER-FULL PAGE  (pure full-bleed image, no overlays)
+   ══════════════════════════════════════════════════════════ */
+.cover-full-page {
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cover-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER PAGE
+   ══════════════════════════════════════════════════════════ */
+.cover-page {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+  overflow: hidden;
+}
+.cover-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.82;
+}
+.cover-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8rem; opacity: 0.1;
+}
+.cover-top {
+  position: relative; z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  padding: 12px 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+}
+.cover-mag-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  color: var(--accent2, #f5c400);
+  line-height: 0.85;
+  letter-spacing: 0.06em;
+  text-shadow: 3px 3px 0 #000;
+}
+.cover-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+.cover-lines-wrap {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 8px;
+  gap: 5px;
+}
+.cover-line {
+  background: rgba(204, 0, 0, 0.88);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.85rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  border-left: 4px solid var(--accent2, #f5c400);
+}
+.cover-line:nth-child(even) {
+  background: rgba(0, 0, 0, 0.82);
+  border-left-color: var(--accent, #cc0000);
+}
+.cover-tagline {
+  position: relative; z-index: 2;
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 6px;
+  border-top: 2px solid var(--accent2, #f5c400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDITORIAL PAGE
+   ══════════════════════════════════════════════════════════ */
+.editorial-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editorial-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 28px 60px;
+  margin: 0 auto;
+}
+.editorial-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.editorial-salutation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.editorial-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.editorial-body strong { font-weight: 800; }
+.editorial-body em { font-style: italic; color: var(--accent); }
+.editorial-sig {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--text);
+}
+.editorial-ps {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MASTHEAD PAGE
+   ══════════════════════════════════════════════════════════ */
+.masthead-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.masthead-inner {
+  max-width: 580px;
+  width: 100%;
+  padding: 24px 24px 60px;
+  margin: 0 auto;
+}
+.masthead-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.masthead-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.masthead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  padding: 12px;
+}
+.mast-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.mast-role {
+  font-weight: 800;
+  color: var(--accent);
+}
+.masthead-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  opacity: 0.55;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+/* Subscriber alert box */
+.subscriber-alert {
+  background: var(--accent, #cc0000);
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+}
+.alert-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.alert-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.alert-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.alert-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  color: var(--accent2, #f5c400);
+}
+.alert-disclaimer {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENTS PAGE
+   ══════════════════════════════════════════════════════════ */
+.contents-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ticker */
+.ticker-bar {
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.contents-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 60px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.contents-header {
+  margin-bottom: 18px;
+  border-bottom: 4px solid var(--accent, #cc0000);
+  padding-bottom: 12px;
+}
+.contents-mag {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent);
+  line-height: 0.9;
+}
+.contents-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.contents-edition {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.contents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ci-item {
+  display: grid;
+  grid-template-columns: 28px 24px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 6px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ci-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.ci-emoji {
+  font-size: 1rem;
+  grid-row: 1;
+}
+.ci-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  grid-row: 1;
+}
+.ci-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Scorecard box */
+.scorecard-box {
+  background: var(--accent2, #f5c400);
+  border: 3px solid #000;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.scorecard-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.scorecard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scorecard-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+.scorecard-list strong {
+  color: var(--accent, #cc0000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STORY PAGES
+   ══════════════════════════════════════════════════════════ */
+.story-page {
+  flex-direction: column;
+}
+.story-page.no-illo {
+  flex-direction: column;
+  align-items: center;
+}
+.story-illo {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40vw; min-height: 180px; max-height: 320px;
+  overflow: hidden; position: relative;
+  background: #ddd;
+}
+.story-illo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.illo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; opacity: 0.25;
+}
+.illo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+}
+.story-body {
+  flex: 1;
+  padding: 18px 22px 56px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+.story-eyebrow {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--eyebrow, var(--accent));
+  margin-bottom: 6px;
+  border-left: 3px solid var(--accent, #cc0000);
+  padding-left: 8px;
+}
+.story-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.story-subheading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--accent, #cc0000);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.story-deck {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.story-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
+  line-height: 1.72;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.story-body p strong { font-weight: 800; }
+.story-body p em { color: var(--accent); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  border-top: 3px solid var(--accent2, #f5c400);
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+/* Sidebar list (bullet box) */
+.sidebar-list {
+  background: var(--bg, #fdf6e3);
+  border: 2px solid var(--text);
+  border-left: 5px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.sidebar-list-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sidebar-list ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-list ul li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Fake advertisement */
+.fake-ad {
+  background: var(--ad-bg, #fffde7);
+  border: 3px solid var(--ad-border, #f5c400);
+  border-top: 6px solid var(--accent, #cc0000);
+  padding: 14px 16px;
+  margin: 18px 0 0;
+}
+.ad-headline {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.ad-subheadline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.ad-bullets { margin-bottom: 8px; }
+.ad-bullet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.ad-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.ad-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  opacity: 0.55;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* Glossary box */
+.glossary-box {
+  background: #f0f4ff;
+  border: 2px solid var(--accent3, #1a1a8a);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.glossary-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3, #1a1a8a);
+  margin-bottom: 8px;
+}
+.gloss-entry {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.gloss-word {
+  font-weight: 800;
+  color: var(--accent3, #1a1a8a);
+}
+
+/* The End */
+.the-end {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 3px solid var(--accent2, #f5c400);
+  text-align: center;
+}
+.the-end-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.the-end-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* Desktop split layout for story pages */
+@media (min-width: 700px) {
+  .story-page:not(.no-illo) { flex-direction: row; }
+  .story-page.flip:not(.no-illo) { flex-direction: row-reverse; }
+  .story-illo {
+    flex: 0 0 42%;
+    height: 100%; max-height: none;
+    width: auto;
+  }
+  .story-body { overflow-y: auto; padding: 28px 36px 60px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SPY VS SPY PAGE
+   ══════════════════════════════════════════════════════════ */
+.spy-page {
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--page-bg, #fff);
+}
+.spy-header {
+  background: #000;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.spy-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.spy-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent2, #f5c400);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.spy-illo {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow: hidden;
+}
+.spy-illo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spy-arena {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.spy-col {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+.spy-col h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.spy-white {
+  background: var(--spy-white-bg, #f0f0f0);
+  border-right: 3px solid #000;
+  color: #111;
+}
+.spy-white h3 { color: #111; }
+.spy-black {
+  background: var(--spy-black-bg, #111);
+  color: #f0f0f0;
+}
+.spy-black h3 { color: #fff; }
+.spy-icon { font-size: 2rem; margin-bottom: 6px; }
+.spy-panels p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.spy-divider {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent, #cc0000);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.spy-result {
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 16px;
+  border-top: 3px solid #000;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AWARDS PAGE
+   ══════════════════════════════════════════════════════════ */
+.awards-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.awards-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 28px 24px 60px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.awards-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border-bottom: 5px double var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+.awards-date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.award-category {
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  border-left: 6px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+}
+.award-cat-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.award-medals { display: flex; flex-direction: column; gap: 4px; }
+.medal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.medal.gold   { color: #b8860b; }
+.medal.silver { color: #666; }
+.medal.bronze { color: #8b4513; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOLD-IN PAGE
+   ══════════════════════════════════════════════════════════ */
+.fold-in-page {
+  background: #000;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.foldin-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  overflow: hidden;
+}
+.foldin-header {
+  background: var(--accent, #cc0000);
+  padding: 12px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.foldin-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  color: var(--accent2, #f5c400);
+}
+.foldin-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.foldin-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s;
+}
+.foldin-area.folded {
+  opacity: 0.08;
+  pointer-events: none;
+}
+.foldin-left {
+  flex: 0 0 62%;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px dashed var(--accent2, #f5c400);
+}
+.foldin-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; opacity: 0.6;
+}
+.foldin-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; font-size: 4rem; opacity: 0.1;
+  background: #1a1a1a;
+}
+.foldin-section-top {
+  position: absolute; top: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent2, #f5c400);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 2;
+}
+.foldin-question {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.72);
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.foldin-label-a, .foldin-label-b {
+  position: absolute; bottom: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--accent2, #f5c400);
+  background: rgba(0,0,0,0.8);
+  padding: 2px 8px;
+  z-index: 3;
+}
+.foldin-label-a { right: 8px; }
+.foldin-right {
+  flex: 0 0 38%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.foldin-answer-hidden {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+.foldin-label-b { left: 8px; bottom: 8px; }
+
+/* Revealed answer (shown when folded) */
+.foldin-answer-reveal {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+.foldin-area.folded ~ .foldin-answer-reveal {
+  display: flex;
+}
+.foldin-answer-text {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--accent2, #f5c400);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.foldin-answer-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.foldin-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 3px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.foldin-btn:hover { background: #fff; }
+
+:root {
+  --bg: #fdf6e3;
+  --page-bg: #ffffff;
+  --text: #111111;
+  --accent: #cc0000;
+  --accent2: #f5c400;
+  --accent3: #1a1a8a;
+  --nav-bg: #1a1a8a;
+  --nav-text: #ffffff;
+  --dot-active: #f5c400;
+  --eyebrow: #cc0000;
+  --ad-bg: #fffde7;
+  --ad-border: #f5c400;
+}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">← All Issues</a>
+  </div>
+  <span class="nav-title">Trump's News Circus!</span>
+  <div class="nav-right">
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next">&#8594;</button>
+    <button class="nav-share" onclick="shareIssue()" aria-label="Share">&#9014;</button>
+  </div>
+</nav>
+
+<div class="viewport">
+  <div class="track" id="track">
+<div class="page cover-full-page" id="p0">
+  <img class="cover-full-img" src="../../images/vol1no2-cover.png?v=1779321651119" alt="cover">
+</div>
+
+<div class="page cover-page" id="p1">
+  <img class="cover-img" src="../../images/vol1no2-cover.png?v=1779321651119" alt="cover">
+  <div class="cover-top">
+    <div class="cover-mag-name">INSANE</div>
+    <div class="cover-meta">Vol. 1, No. 2 · May 21, 2026 &nbsp;·&nbsp; May 21, 2026 &nbsp;·&nbsp; $6.99 US / $8.99 CAN</div>
+  </div>
+  <div class="cover-lines-wrap">
+    <div class="cover-line">TRUMP'S NEWS CIRCUS: NOW WITH EXTRA FLAMES!</div>
+    <div class="cover-line">KENTUCKY FRIED INCUMBENT!</div>
+    <div class="cover-line">OVER $1 BILLION IN GRAFT — YOUR TAX DOLLARS AT WORK!</div>
+    <div class="cover-line">ATTORNEY GENERAL: TRUMP FAMILY IRS AUDIT-PROOF FOR ETERNITY!</div>
+    <div class="cover-line">CUBA: THE SUBPOENA THAT SMOKES!</div>
+    <div class="cover-line">XI + PUTIN: DINNER, DANCE &amp; DÉTENTE?</div>
+    <div class="cover-line">EBOLA: SCIENCE RACES THE CLOCK</div>
+  </div>
+  <div class="cover-tagline">SANITY NOT INCLUDED</div>
+</div>
+
+<div class="page editorial-page" id="p2">
+  <div class="editorial-inner">
+    <h2 class="editorial-title">FROM THE EDITOR'S BUNKER</h2>
+    <p class="editorial-salutation">Dear Reader Who Immediately Asked For A Helmet,</p>
+    <div class="editorial-body">
+    <p>We had a plan to pace ourselves this issue. We were going to cover <em>one</em> thing at a time. We made a list. The list caught fire.</p>
+    <p>In the past 36 hours: Trump juggled an Iran war, a Cuba indictment, an IRS deal, and midterm primaries while standing on a Coast Guard ship. The Attorney General quietly made the Trump family <strong>IRS audit-proof for eternity</strong> — a phrase we had to read three times to confirm was real. Over <strong>$1 billion in graft</strong> is being redirected to allies, January 6th rioters, and cop killers, a use of public funds our accountants describe as <em>"extremely creative."</em></p>
+    <p>Meanwhile: Xi and Putin toasted pipelines and AI chips in Beijing. Kentucky ejected Thomas Massie via the Endorsement Machine. Raúl Castro, 94, received a federal indictment rolled like a cigar. The Israeli Knesset is fizzing toward a snap election. The WHO reports <strong>600 suspected Ebola cases</strong> and 139 suspected deaths in Congo and Uganda, and unlike everything else in this issue, that one is not funny at all — the health workers racing to contain it are heroes.</p>
+    <p>On a lighter note: Nashville got the 2030 Super Bowl. The Wall Street bull slipped on an oil slick. And we added a classified ads section this issue because <em>the jobs being advertised are too real to ignore.</em></p>
+    <p>We asked for a helmet. They sent us a subscription form.</p>
+    </div>
+    <p class="editorial-sig">— The Editors</p>
+    <p class="editorial-ps">P.S. — The IRS audit-proof thing is real. We checked. We are very tired.</p>
+  </div>
+</div>
+
+<div class="page masthead-page" id="p3">
+  <div class="masthead-inner">
+    <div class="masthead-logo">INSANE</div>
+    <h2 class="masthead-title">INSANE MAGAZINE MASTHEAD</h2>
+    <div class="masthead-grid">
+      <div class="mast-item"><span class="mast-role">Publisher:</span> <span class="mast-name">A. Panic Jr.</span></div>
+      <div class="mast-item"><span class="mast-role">Editor-in-Chief:</span> <span class="mast-name">Screaming McGee</span></div>
+      <div class="mast-item"><span class="mast-role">Circus Correspondent:</span> <span class="mast-name">Under The Big Top, Filing Now</span></div>
+      <div class="mast-item"><span class="mast-role">IRS Desk:</span> <span class="mast-name">Currently Audit-Proof (Somehow)</span></div>
+      <div class="mast-item"><span class="mast-role">Graft Accountant:</span> <span class="mast-name">$1,000,000,000 / Still Counting</span></div>
+      <div class="mast-item"><span class="mast-role">Kentucky Bureau:</span> <span class="mast-name">Watching The Jack-In-The-Box</span></div>
+      <div class="mast-item"><span class="mast-role">Cuba Correspondent:</span> <span class="mast-name">Dodging Paperwork Cannon</span></div>
+      <div class="mast-item"><span class="mast-role">Beijing Bureau:</span> <span class="mast-name">At The Chessboard Banquet</span></div>
+      <div class="mast-item"><span class="mast-role">Israeli Knesset Watch:</span> <span class="mast-name">Counting Fizzing Tablets</span></div>
+      <div class="mast-item"><span class="mast-role">Ebola Desk:</span> <span class="mast-name">Heroic, Masked, Not Joking</span></div>
+      <div class="mast-item"><span class="mast-role">Classified Ads:</span> <span class="mast-name">Now Accepting Applications</span></div>
+      <div class="mast-item"><span class="mast-role">Legal:</span> <span class="mast-name">Audit-Proof As Of Tuesday</span></div>
+      <div class="mast-item"><span class="mast-role">Sanity Level:</span> <span class="mast-name">Helmet Mandatory</span></div>
+    </div>
+    
+    <div class="subscriber-alert">
+      <div class="alert-title">INSANE MAGAZINE SUBSCRIBER ALERT!</div>
+      <div class="alert-sub">What your $6.99 covers this week</div>
+      <div class="alert-items"><div class="alert-item">☑ 1 flaming juggling act (Iran, Cuba, IRS, Primaries)</div>
+        <div class="alert-item">☑ $1 billion in creative public fund allocation</div>
+        <div class="alert-item">☑ 1 family made IRS audit-proof for eternity</div>
+        <div class="alert-item">☑ 1 94-year-old Cuban dictator indicted by paperwork cannon</div>
+        <div class="alert-item">☑ 1 Kentucky congressman spring-loaded out of office</div>
+        <div class="alert-item">☑ Xi + Putin: pipelines, AI chips, Swan Lake</div>
+        <div class="alert-item">☑ 600 suspected Ebola cases — science is on it</div>
+        <div class="alert-item">☑ Nashville: 2030 Super Bowl (yes, really, nice)</div>
+        <div class="alert-item">☑ Classified ads: jobs you won't believe are being advertised</div></div>
+      <div class="alert-price">$6.99 / STILL CHEAPER THAN THE IRS DEAL</div>
+      <div class="alert-disclaimer">INSANE Magazine is printed on recycled executive orders and surplus indictment paper. Democracy sold separately. Helmet not included. IRS audit-proofing not available to subscribers.</div>
+    </div>
+    <div class="masthead-disclaimer">INSANE Magazine is published whenever the news exceeds the recommended daily allowance, which is always.</div>
+  </div>
+</div>
+
+<div class="page contents-page" id="p4">
+  <div class="ticker-bar"><div class="ticker-inner">BREAKING: TRUMP FAMILY IRS AUDIT-PROOF FOR ETERNITY ✦ $1B+ IN GRAFT TO ALLIES, JAN 6 RIOTERS, COP KILLERS ✦ MASSIE LOSES KENTUCKY PRIMARY TO TRUMP-BACKED GALLREIN ✦ TRUMP SPEAKS AT COAST GUARD AMID IRAN WAR ✦ U.S. INDICTS RAÚL CASTRO; RUBIO OFFERS CUBA AID ✦ XI-PUTIN MEETING: PIPELINES, AI CHIPS, TOASTS ✦ ISRAEL KNESSET MOVES TOWARD SNAP ELECTION ✦ WHO: 600 SUSPECTED EBOLA CASES, 139 DEATHS, DRC/UGANDA ✦ AP-NORC POLL: GOP APPROVAL OF TRUMP ECONOMY WEAKENING ✦ NASHVILLE GETS 2030 SUPER BOWL ✦ &nbsp; ✦ &nbsp; BREAKING: TRUMP FAMILY IRS AUDIT-PROOF FOR ETERNITY ✦ $1B+ IN GRAFT TO ALLIES, JAN 6 RIOTERS, COP KILLERS ✦ MASSIE LOSES KENTUCKY PRIMARY TO TRUMP-BACKED GALLREIN ✦ TRUMP SPEAKS AT COAST GUARD AMID IRAN WAR ✦ U.S. INDICTS RAÚL CASTRO; RUBIO OFFERS CUBA AID ✦ XI-PUTIN MEETING: PIPELINES, AI CHIPS, TOASTS ✦ ISRAEL KNESSET MOVES TOWARD SNAP ELECTION ✦ WHO: 600 SUSPECTED EBOLA CASES, 139 DEATHS, DRC/UGANDA ✦ AP-NORC POLL: GOP APPROVAL OF TRUMP ECONOMY WEAKENING ✦ NASHVILLE GETS 2030 SUPER BOWL ✦</div></div>
+  <div class="contents-inner">
+    <div class="contents-header">
+      <div class="contents-mag">INSANE</div>
+      <h2 class="contents-title">CONTENTS</h2>
+      <div class="contents-edition">MAY 21, 2026 · &quot;ASKED FOR A HELMET&quot; EDITION</div>
+    </div>
+    <div class="contents-list">
+    <div class="ci-item">
+      <span class="ci-num">5</span>
+      <span class="ci-emoji">🎪</span>
+      <span class="ci-title">TRUMP'S NEWS CIRCUS</span>
+      <span class="ci-desc">Flaming juggling at the Coast Guard Academy</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">6</span>
+      <span class="ci-emoji">💰</span>
+      <span class="ci-title">BILLION-DOLLAR GRAFT</span>
+      <span class="ci-desc">Your tax dollars: allies, rioters, cop killers</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">7</span>
+      <span class="ci-emoji">🔒</span>
+      <span class="ci-title">AUDIT-PROOF FOR ETERNITY</span>
+      <span class="ci-desc">The AG's gift to the Trump family IRS file</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">8</span>
+      <span class="ci-emoji">🌽</span>
+      <span class="ci-title">KENTUCKY FRIED INCUMBENT</span>
+      <span class="ci-desc">Massie meets the Endorsement Machine</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">9</span>
+      <span class="ci-emoji">🇨🇺</span>
+      <span class="ci-title">CUBA: THE SUBPOENA THAT SMOKES</span>
+      <span class="ci-desc">Raúl Castro, 94, indicted; Rubio offers aid</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">10</span>
+      <span class="ci-emoji">🥂</span>
+      <span class="ci-title">XI + PUTIN: DINNER &amp; DÉTENTE</span>
+      <span class="ci-desc">Pipelines, AI chips, Swan Lake, chess</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">11</span>
+      <span class="ci-emoji">🇮🇱</span>
+      <span class="ci-title">ISRAEL'S SNAP-ELECTION FIZZ</span>
+      <span class="ci-desc">The Knesset dissolving tablet situation</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">12</span>
+      <span class="ci-emoji">📊</span>
+      <span class="ci-title">ECONOMY POLL: GAS &amp; GRUMBLES</span>
+      <span class="ci-desc">AP-NORC: GOP approval weakening</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">13</span>
+      <span class="ci-emoji">🥷</span>
+      <span class="ci-title">SPY VS. SPY: GRAFT EDITION</span>
+      <span class="ci-desc">Same money, different pocket</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">14</span>
+      <span class="ci-emoji">🏆</span>
+      <span class="ci-title">INSANE AWARDS</span>
+      <span class="ci-desc">Weekly recognition in a crowded field</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">15</span>
+      <span class="ci-emoji">🦠</span>
+      <span class="ci-title">EBOLA: SCIENCE RACES THE CLOCK</span>
+      <span class="ci-desc">600 suspected cases — the heroes on it</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">16</span>
+      <span class="ci-emoji">📋</span>
+      <span class="ci-title">INSANE CLASSIFIEDS</span>
+      <span class="ci-desc">Jobs! Products! Opportunities! (Read carefully.)</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">17</span>
+      <span class="ci-emoji">🛒</span>
+      <span class="ci-title">INSANE MARKETPLACE</span>
+      <span class="ci-desc">Trump Bibles, coins, and more fine products</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">18</span>
+      <span class="ci-emoji">📰</span>
+      <span class="ci-title">BACK PAGE FOLD-IN</span>
+      <span class="ci-desc">Who is the IRS audit protecting, really?</span>
+    </div>
+    </div>
+    
+    <div class="scorecard-box">
+      <div class="scorecard-title">THIS WEEK'S INSANE SCORECARD</div>
+      <ul class="scorecard-list"><li>💰 Public funds creatively reallocated: <strong>$1 billion+</strong></li>
+        <li>🔒 Trump family members IRS audit-proofed: <strong>All of them, forever</strong></li>
+        <li>🎪 Flaming objects juggled simultaneously: <strong>4 (Iran, Cuba, IRS, Primaries)</strong></li>
+        <li>🌽 Kentucky incumbents spring-loaded out: <strong>1 (Massie)</strong></li>
+        <li>🦠 Suspected Ebola cases, DRC/Uganda: <strong>600 (not a punchline)</strong></li>
+        <li>🥂 Xi-Putin toasts over pipelines and AI: <strong>At least 3 (estimated)</strong></li>
+        <li>🏈 Super Bowls awarded to Nashville: <strong>1 (2030, genuinely nice)</strong></li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p5">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-circus.png?v=1779321651120" alt="TRUMP'S NEWS CIRCUS!">
+    <div class="illo-caption">★ &quot;This is fine,&quot; said the ringmaster, as the tent burned. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">COVER STORY · THE NEWS CIRCUS · COAST GUARD EDITION</div>
+    <h2 class="story-heading">TRUMP'S NEWS CIRCUS!</h2>
+    <p class="story-subheading">NOW WITH EXTRA FLAMES — IRAN, CUBA, IRS, AND PRIMARIES, ALL JUGGLED SIMULTANEOUSLY</p>
+    <p class="story-deck">Trump Speaks At Coast Guard Academy Amid Iran War; Endorsement Machine Ejects Massie In Kentucky; Cuba Indicted; IRS Dealt — Ringmaster Has Not Dropped A Single Ball, Technically</p>
+    <p>President Trump delivered the commencement address at the <strong>United States Coast Guard Academy</strong> this week, speaking to graduating cadets about service, sacrifice, and leadership while simultaneously: managing an active Iran war, processing a Cuba indictment, overseeing an IRS restructuring deal, and monitoring midterm primary results — a feat his aides described as <em>"focused multitasking"</em> and everyone else is calling <em>"a juggling act with flaming objects."</em></p>
+    <p>The juggling act is, on technical review, going. None of the flaming balls have landed on anyone important. The tent is on fire in several places. The ringmaster appears to be enjoying himself.</p>
+    <p>The <strong>Endorsement Machine</strong> — the GOP elephant-driven steamroller that has been flattening insufficiently loyal Republicans for two years — claimed its latest casualty in Kentucky, where Thomas Massie lost his primary to Trump-backed <strong>Ed Gallrein.</strong> Massie, who had served eight terms and was known primarily for showing up to votes, showed up to this one and lost it. The machine is reportedly already fueled and looking at the next map.</p>
+    <p>"This is a great day for America," Trump told the graduating cadets. "We have the best Coast Guard. The most beautiful ships. You're going to do things nobody has ever done before." He did not specify what things. The cadets applauded. The ships floated. The balls stayed in the air.</p>
+    <p>For now.</p>
+    <blockquote class="pull-quote">&quot;Focused multitasking.&quot; — Trump aide, describing the simultaneous juggling of four international crises</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">BALLS CURRENTLY IN THE AIR</div>
+      <ul><li>🔥 IRAN WAR — altitude: still high, temperature: rising</li>
+        <li>🔥 CUBA INDICTMENT — trajectory: cigar-shaped, smoking</li>
+        <li>🔥 IRS DEAL — audit-proof, indefinitely airborne</li>
+        <li>🔥 MIDTERM PRIMARIES — Endorsement Machine reloading</li></ul>
+    </div>
+    
+    <div class="fake-ad">
+      <div class="ad-headline">TRUMP'S NEWS CIRCUS™</div>
+      <div class="ad-subheadline">Under The Big Top — All Crises, All The Time!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🎪 Four flaming acts running simultaneously</div>
+        <div class="ad-bullet">🎪 Coast Guard ship included as podium</div>
+        <div class="ad-bullet">🎪 Endorsement Machine: available for primary rentals</div>
+        <div class="ad-bullet">🎪 Tent fire: currently decorative</div></div>
+      <div class="ad-price">FREE TO WATCH / COSTLY TO BE IN</div>
+      <div class="ad-disclaimer">Trump's News Circus LLC not responsible for flaming objects landing in your district. Endorsement Machine rental requires loyalty oath. Tent fire is load-bearing. Do not extinguish without permission.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p6">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-graft.png?v=1779321651120" alt="OVER $1 BILLION IN GRAFT!">
+    <div class="illo-caption">★ The asterisk on AMERICA FIRST is doing a lot of work. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">FINANCE · YOUR TAX DOLLARS AT WORK*</div>
+    <h2 class="story-heading">OVER $1 BILLION IN GRAFT!</h2>
+    <p class="story-subheading">SPOILS FOR ALLIES, JAN 6 RIOTERS, AND COP KILLERS — *DEMOCRACY SOLD SEPARATELY</p>
+    <p class="story-deck">Trump Administration Redirects Over $1 Billion In Public Funds To Political Allies, January 6th Participants, And Individuals Convicted Of Killing Police Officers — Accountants Request Reassignment</p>
+    <p>The Trump administration has directed over <strong>$1 billion in public funds</strong> toward a distribution list that includes political allies, participants in the January 6th Capitol assault, and individuals convicted of killing police officers — a spending allocation that budget analysts describe as <em>"creative,"</em> opposition lawmakers describe as <em>"corruption,"</em> and the White House describes as <em>"taking care of the people who matter."</em></p>
+    <p>The recipients — categorized by INSANE's finance desk as <strong>"Allies," "Rioters,"</strong> and <strong>"Cop Killers"</strong> in descending order of optics — represent what administration sources call a <em>"loyalty dividend"</em> and what the rest of the English language calls something else.</p>
+    <p>January 6th participants who assaulted police officers on the Capitol steps will receive funds from the same public treasury that employs those officers. Several recipients currently carry convictions for violence against law enforcement. The accounting team that processed the allocations has, per sources, requested reassignment to the puzzle page.</p>
+    <p>A sign in the relevant White House office, photographed by a staff member and shared widely before being taken down, read: <strong>"YOUR TAX DOLLARS AT WORK."</strong> Below it, in smaller print: <em>"*Democracy sold separately."</em></p>
+    <p>"We're taking care of our people," a senior official said. Our people was not defined. The billion dollars was.</p>
+    <blockquote class="pull-quote">&quot;We're taking care of our people.&quot; — Senior official, regarding $1B+ distributed to allies, rioters, and cop killers</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">LOYALTY DIVIDEND PROGRAM!</div>
+      <div class="ad-subheadline">Were You There January 6th? There May Be Money For You!</div>
+      <div class="ad-bullets"><div class="ad-bullet">💰 Ally tier: standard briefcase allocation</div>
+        <div class="ad-bullet">💰 Rioter tier: assault-weighted bonus structure</div>
+        <div class="ad-bullet">💰 Cop killer tier: special recognition award</div>
+        <div class="ad-bullet">💰 Taxpayer tier: not a tier</div></div>
+      <div class="ad-price">$1,000,000,000+ / YOUR MONEY, THEIR THANK-YOU</div>
+      <div class="ad-disclaimer">Loyalty Dividend Program not available to: taxpayers, police officers, voters who did not comply, or anyone who described January 6th using the word 'insurrection.' Democracy sold separately. Receipt not provided.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p7">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-irs.png?v=1779321651120" alt="AUDIT-PROOF FOR ETERNITY!">
+    <div class="illo-caption">★ &quot;CLOSED FOREVER&quot; — the most efficient tax policy in American history. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">TAX LAW · THE GIFT THAT KEEPS NOT GIVING</div>
+    <h2 class="story-heading">AUDIT-PROOF FOR ETERNITY!</h2>
+    <p class="story-subheading">ATTORNEY GENERAL MAKES TRUMP FAMILY IRS AUDIT-PROOF — EVERYONE ELSE: STILL VERY AUDITABLE</p>
+    <p class="story-deck">In A Move Tax Law Experts Describe As 'Extraordinary,' The Attorney General Has Shielded The Trump Family From IRS Audits Indefinitely — The Rest Of America's Tax Files Remain Open For Business</p>
+    <p>The Attorney General has taken action to make the <strong>Trump family IRS audit-proof for eternity,</strong> a phrase that tax law experts describe as <em>"extraordinary," "without modern precedent,"</em> and <em>"the kind of thing that usually only happens in countries we write editorials about."</em></p>
+    <p>The protection — which applies to the President and his family members indefinitely, with no sunset clause, no review mechanism, and no defined scope — was implemented quietly, which tax attorneys note is <em>"the traditional method for implementing things that would be loudly objected to if implemented loudly."</em></p>
+    <p>Outside the IRS building, which sources say has informally retitled its front office the <strong>Trump Family Exemption Office,</strong> a line of regular Americans clutching audit notices stretches around the block. A handwritten sign at the front of the line reads <em>I AM NOT A TRUMP.</em> The sign has not helped.</p>
+    <p>One IRS agent, reached by INSANE at his desk inside the building, confirmed that the Trump family files have been marked <strong>CLOSED FOREVER</strong> in the system. "The rest of you are still very auditable," he added, in what sources describe as <em>"a tone of resigned professionalism."</em></p>
+    <p>The AG's office said the action was <em>"appropriate and lawful."</em> Tax law experts said they would need more time to review that characterization. They have a lot of time. The audit protection does not expire.</p>
+    <blockquote class="pull-quote">&quot;The rest of you are still very auditable.&quot; — IRS agent, regarding everyone who is not the Trump family</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">AUDIT-PROOF YOUR FAMILY!</div>
+      <div class="ad-subheadline">Ask Your Attorney General — Results Vary By Family</div>
+      <div class="ad-bullets"><div class="ad-bullet">🔒 Permanent IRS exemption: requires AG action</div>
+        <div class="ad-bullet">🔒 No sunset clause: eternity means eternity</div>
+        <div class="ad-bullet">🔒 Coverage: all family members, all returns, all time</div>
+        <div class="ad-bullet">🔒 Available to: one family (currently). Application closed.</div></div>
+      <div class="ad-price">FREE (IF YOU QUALIFY) / NOT AVAILABLE TO YOU</div>
+      <div class="ad-disclaimer">Audit-Proof Family LLC not responsible for taxpayer frustration, constitutional questions, or the line outside the IRS building. This product is not available to the general public. The general public remains auditable. Have your receipts ready.</div>
+    </div>
+    
+    <div class="glossary-box">
+      <div class="glossary-title">TAX GLOSSARY: UPDATED EDITION</div>
+      <div class="gloss-entry"><span class="gloss-word">Audit (n.):</span> An IRS examination of tax records. Available to: everyone except the Trump family.</div>
+        <div class="gloss-entry"><span class="gloss-word">Eternity (n.):</span> The duration of the Trump family audit exemption. No sunset clause.</div>
+        <div class="gloss-entry"><span class="gloss-word">Precedent (n.):</span> Something this has none of.</div>
+        <div class="gloss-entry"><span class="gloss-word">Appropriate (adj.):</span> The AG's characterization. Under review by everyone else.</div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p8">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-kentucky.png?v=1779321651120" alt="KENTUCKY FRIED INCUMBENT!">
+    <div class="illo-caption">★ Eight terms. One endorsement against him. Spring-loaded. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">PRIMARIES · KENTUCKY ENDORSEMENT MACHINE EDITION</div>
+    <h2 class="story-heading">KENTUCKY FRIED INCUMBENT!</h2>
+    <p class="story-subheading">MASSIE LOSES PRIMARY TO TRUMP-BACKED GALLREIN — EIGHT TERMS NOT ENOUGH; LOYALTY SCORE INSUFFICIENT</p>
+    <p class="story-deck">Rep. Thomas Massie, Eight-Term Kentucky Republican, Loses GOP Primary To Trump-Backed Ed Gallrein — The Endorsement Machine Claims Another One — Dunk Tank Industry Reports Record Quarter Again</p>
+    <p>Rep. Thomas Massie of Kentucky, who has represented his district for <strong>eight terms</strong> and was known principally for libertarian-leaning votes and occasionally showing up to things, showed up to his own primary this week and lost it — a result that political analysts are calling <em>"the Endorsement Machine at full operating capacity."</em></p>
+    <p>Massie's offense, per the Machine: an insufficient score on the composite loyalty index, specific votes that have been categorized as <em>"wrong,"</em> and the general failure to be Ed Gallrein, who had <strong>Trump's endorsement</strong> and therefore everything required.</p>
+    <p>Gallrein, who will now face a general election in a district that has sent Republicans to Congress since before most people can remember, described his victory as <em>"a mandate."</em> The Endorsement Machine, asked to comment, continued rolling toward the next primary map.</p>
+    <p>Massie, reached after the results came in, did not appear spring-loaded. He appeared tired. <em>"I served eight terms,"</em> he said, which is true and was, on this occasion, insufficient.</p>
+    <p>The dunk tank industry — which INSANE tracks as a leading indicator of intra-party accountability theater — reported its <strong>second record quarter in a row.</strong> The <em>"Eight Terms Insufficient"</em> model is now available in stores.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">ENDORSEMENT MACHINE™</div>
+      <div class="ad-subheadline">Eight Terms? Wrong Votes? Time To Go. We Handle The Rest.</div>
+      <div class="ad-bullets"><div class="ad-bullet">🗳️ Converts incumbents to former incumbents since 2021</div>
+        <div class="ad-bullet">🗳️ Powered by: one endorsement, applied firmly</div>
+        <div class="ad-bullet">🗳️ Eight terms: not a defense. Not even a factor.</div>
+        <div class="ad-bullet">🗳️ Next stop: already selected. Machine is fueled.</div></div>
+      <div class="ad-price">FREE FOR CHALLENGERS / COSTS INCUMBENTS EVERYTHING</div>
+      <div class="ad-disclaimer">Endorsement Machine™ not responsible for eight-term records, libertarian-leaning votes, or the expression on the incumbent's face. Machine operates in all 50 states. Loyalty score must exceed minimum threshold. Yours probably doesn't.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p9">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-cuba.png?v=1779321651120" alt="CUBA: THE SUBPOENA THAT SMOKES!">
+    <div class="illo-caption">★ Indictment cannon, diplomatic bow. Standard diplomatic toolkit. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INTERNATIONAL LAW · CIGAR-SHAPED PAPERWORK</div>
+    <h2 class="story-heading">CUBA: THE SUBPOENA THAT SMOKES!</h2>
+    <p class="story-subheading">U.S. INDICTS RAÚL CASTRO, 94 — RUBIO SIMULTANEOUSLY OFFERS AID — MIXED SIGNALS DELIVERED SIMULTANEOUSLY</p>
+    <p class="story-deck">United States Indicts Former Cuban President Raúl Castro On Federal Charges — Secretary Rubio Offers Cuba Humanitarian Aid In Same News Cycle — Mixed Signals Arrive Together By Cannon</p>
+    <p>The United States Department of Justice this week indicted <strong>Raúl Castro,</strong> the 94-year-old former President of Cuba, on federal charges — a development that legal scholars describe as <em>"historically significant"</em> and logistical planners describe as <em>"difficult to serve."</em></p>
+    <p>Simultaneously, Secretary of State Marco Rubio offered <strong>humanitarian aid to Cuba,</strong> a diplomatic gesture that arrived in the same 24-hour news cycle as the indictment, creating what foreign policy analysts call a <em>"mixed signal situation"</em> and what Cuba is calling something in Spanish that does not translate charitably.</p>
+    <p>The indictment — rolled, per INSANE's art department, like an enormous cigar and fired from a federal cannon in the general direction of Havana — represents the most significant U.S. legal action against a Cuban head of state in modern history. Castro, who is 94 and has not traveled internationally in some time, was reportedly <em>"surprised"</em> to receive it.</p>
+    <p>Rubio's aid package, which arrived with a bow, represents what State Department sources describe as <em>"a dual-track approach"</em> — meaning the United States is simultaneously indicting the leadership and offering groceries to the population, which is the diplomatic equivalent of sending a get-well card and a bill at the same time.</p>
+    <p>Cuba has not responded to the indictment. Cuba has not responded to the aid offer. Cuba is, sources note, <em>"thinking about it."</em></p>
+    <blockquote class="pull-quote">&quot;A dual-track approach.&quot; — State Dept, describing the simultaneous indictment and aid offer to Cuba</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">SUBPOENA CANNON™</div>
+      <div class="ad-subheadline">For Hard-To-Reach Defendants — Range: International</div>
+      <div class="ad-bullets"><div class="ad-bullet">⚖️ Cigar-shaped delivery: aerodynamic, on-brand for Cuba</div>
+        <div class="ad-bullet">⚖️ Range: up to 90 miles offshore (Miami to Havana spec)</div>
+        <div class="ad-bullet">⚖️ Aid package bow: available as optional accessory</div>
+        <div class="ad-bullet">⚖️ Mixed signal mode: fires both simultaneously</div></div>
+      <div class="ad-price">DEPARTMENT OF JUSTICE PRICING / CALL FOR QUOTE</div>
+      <div class="ad-disclaimer">Subpoena Cannon™ not responsible for international legal jurisdiction questions, 94-year-old reaction times, or the mixed signal created by offering aid and indictments simultaneously. Results may vary. Cuba is thinking about it.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p10">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-xivputin.png?v=1779321651120" alt="XI + PUTIN: DINNER, DANCE &amp; DÉTENTE?">
+    <div class="illo-caption">★ The Swan Lake dancers did not know they were a geopolitical metaphor. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INTERNATIONAL AFFAIRS · BEIJING BANQUET EDITION</div>
+    <h2 class="story-heading">XI + PUTIN: DINNER, DANCE &amp; DÉTENTE?</h2>
+    <p class="story-subheading">BEIJING SUMMIT: PIPELINES, AI CHIPS, OIL BARRELS, SWAN LAKE, AND A TOAST THAT WENT ON A BIT LONG</p>
+    <p class="story-deck">Xi Jinping And Vladimir Putin Tighten Ties In Beijing Summit — Pipelines, AI Cooperation, Energy Deals, And Cultural Performance — Western Analysts Describe Partnership As 'A Situation'</p>
+    <p>Xi Jinping and Vladimir Putin met in Beijing this week for what Chinese state media described as a <em>"comprehensive strategic partnership review"</em> and what the imagery from the event — two men toasting at a table covered in oil barrels, pipeline sections, and AI circuit boards, with ballet dancers in the background — described as <strong>something with a lot going on.</strong></p>
+    <p>The summit produced agreements on energy cooperation, AI chip development, pipeline routing, and what both sides called <em>"deepening friendship,"</em> a phrase that Western analysts have now added to the list of diplomatic terms that produce immediate anxiety.</p>
+    <p>The Swan Lake performance that accompanied the state dinner was, per cultural observers, <em>excellent.</em> The dancers were unaware they were performing inside a geopolitical tableau that the rest of the world was watching very carefully. They were, by all accounts, very good.</p>
+    <p>A <strong>cracked golden missile-defense dome</strong> — representing the current state of Western deterrence architecture — hovered in the background of several official photographs like a snow globe that someone had already dropped. Neither Xi nor Putin appeared to notice it. Both appeared to be enjoying the soup.</p>
+    <p>"This is a great partnership," Putin said, raising his teacup. "No problems here," Xi agreed. The pipelines confirmed. The AI chips agreed. The Swan Lake dancers stuck the landing.</p>
+    <blockquote class="pull-quote">&quot;No problems here.&quot; — Xi Jinping, at a banquet table covered in oil barrels, AI chips, and pipeline sections</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">BEIJING BANQUET CATERING!</div>
+      <div class="ad-subheadline">For Comprehensive Strategic Partnership Reviews — Swan Lake Included</div>
+      <div class="ad-bullets"><div class="ad-bullet">🍽️ Table setting: oil barrels, pipelines, AI chips, dinnerware</div>
+        <div class="ad-bullet">🍽️ Entertainment: Swan Lake (professional, apolitical)</div>
+        <div class="ad-bullet">🍽️ Toast: comprehensive, slightly long</div>
+        <div class="ad-bullet">🍽️ Dome: cracked golden, snow globe style, decorative</div></div>
+      <div class="ad-price">STRATEGIC PRICING / CALL BEIJING FOR AVAILABILITY</div>
+      <div class="ad-disclaimer">Beijing Banquet Catering not responsible for geopolitical implications of menu items, the cracked dome in the background, or Western anxiety. Swan Lake dancers not briefed on geopolitical context. They were very good.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p11">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-israel.png?v=1779321651120" alt="ISRAEL'S SNAP-ELECTION SODA FIZZ!">
+    <div class="illo-caption">★ &quot;THIS IS ACTUALLY HAPPENING&quot; — sign held by cartoonist in corner of scene ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">MIDDLE EAST POLITICS · FIZZING TABLET EDITION</div>
+    <h2 class="story-heading">ISRAEL'S SNAP-ELECTION SODA FIZZ!</h2>
+    <p class="story-subheading">KNESSET MOVES TOWARD POSSIBLE SNAP ELECTION — LAWMAKERS CARRY SIGNS — TABLET IS FIZZING</p>
+    <p class="story-deck">Israeli Knesset Moves Toward Potential Snap Election Amid Coalition Pressure — Political Analysts Describe Government As 'A Dissolving Tablet' — Fizzing: Confirmed</p>
+    <p>The Israeli Knesset moved this week toward a possible snap election, a development that political analysts describe as <em>"a significant moment for Israeli democracy"</em> and that the visual metaphor department at INSANE has been waiting to deploy since the dissolving-tablet comparison first occurred to us three weeks ago.</p>
+    <p>The coalition government, which has been under sustained pressure from multiple directions including the ongoing Gaza conflict, the Iran ceasefire's continued fragility, and internal disagreements that Israeli political reporters describe as <em>"complicated"</em> and that everyone else describes as <em>"a lot,"</em> has reached a point that observers are calling <strong>a confidence threshold moment.</strong></p>
+    <p>Tiny lawmakers carrying <strong>SNAP ELECTION?</strong> signs were photographed outside the Knesset. The question mark is doing significant work. Nobody has announced a date. The tablet is fizzing. The ballot box is getting wet.</p>
+    <p>"We are monitoring the situation closely," a Western diplomat said, which is the diplomatic equivalent of watching a tablet fizz and holding a notebook.</p>
+    <p>The situation will be monitored. The tablet will finish fizzing at a time of its own choosing. The snap election, if it happens, will produce a result that will require further monitoring. The cartoonist in the corner of the scene is still holding his sign.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">SNAP ELECTION INSURANCE!</div>
+      <div class="ad-subheadline">For Governments Currently Fizzing — Coverage From First Bubble</div>
+      <div class="ad-bullets"><div class="ad-bullet">🗳️ Dissolution coverage: effervescent events included</div>
+        <div class="ad-bullet">🗳️ Coalition collapse: standard policy feature</div>
+        <div class="ad-bullet">🗳️ Snap election date: covered whenever it is</div>
+        <div class="ad-bullet">🗳️ Sign for lawmakers: SNAP ELECTION? — included</div></div>
+      <div class="ad-price">CALL NOW / GOVERNMENT IS FIZZING</div>
+      <div class="ad-disclaimer">Snap Election Insurance not responsible for coalition dynamics, the ongoing Gaza situation, the Iran ceasefire, internal party disagreements, or the tablet's timeline. Coverage effective from first bubble. Results of snap election not covered.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p12">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-economy.png?v=1779321651121" alt="ECONOMY POLL: GAS, GROCERIES &amp; GRUMBLES!">
+    <div class="illo-caption">★ The inflation anxiety balloon is not a gag prop. It is load-bearing. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">ECONOMIC ANXIETY · AP-NORC POLL EDITION</div>
+    <h2 class="story-heading">ECONOMY POLL: GAS, GROCERIES &amp; GRUMBLES!</h2>
+    <p class="story-subheading">AP-NORC: REPUBLICAN APPROVAL OF TRUMP ECONOMY HANDLING WEAKER THAN EARLIER IN THE YEAR</p>
+    <p class="story-deck">New AP-NORC Poll Shows Weakening Republican Approval Of Trump's Economic Performance — Gas, Groceries, And The General Vibe All Cited — Bull Unavailable For Comment (Slipping)</p>
+    <p>A new AP-NORC poll released this week shows that <strong>Republican approval of Trump's handling of the economy</strong> has weakened compared to earlier in the year — a data point that the White House has not highlighted in its communications and that the AP-NORC polling operation has highlighted in its.</p>
+    <p>The poll, which tracks approval across party lines, found that even among Republicans — traditionally the most favorable audience for Trump economic messaging — the numbers have moved in a direction that polling analysts describe as <em>"downward"</em> and that the MAGA hat industry describes as <em>"a temporary fluctuation."</em></p>
+    <p>The cited concerns: <strong>gas prices, grocery costs,</strong> and what respondents described variously as <em>"the general feeling that things cost more than they did," "I don't know, it's just a lot,"</em> and <em>"my receipt at the grocery store."</em> The grocery store receipt concern has now appeared in three consecutive INSANE issues and is becoming what our economics desk calls <strong>a signature motif.</strong></p>
+    <p>The Wall Street bull, reached at the scene of his oil-slick incident, was unavailable for comment. The gas pump receipt he was holding at the time of the fall read <strong>GAS: $4.29 / TOTAL: OUCH.</strong> The inflation anxiety balloon was still attached. Both were retrieved by a first responder.</p>
+    <p>The poll has a margin of error of plus or minus several points. The gas price has no margin of error. It is the number on the sign.</p>
+    <blockquote class="pull-quote">&quot;My receipt at the grocery store.&quot; — AP-NORC poll respondent, summarizing economic concerns</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">INFLATION ANXIETY BALLOONS!</div>
+      <div class="ad-subheadline">For When The Polling Numbers And Gas Prices Arrive Simultaneously</div>
+      <div class="ad-bullets"><div class="ad-bullet">🎈 Load-bearing: yes, structurally important</div>
+        <div class="ad-bullet">🎈 Size: grows with each CPI report</div>
+        <div class="ad-bullet">🎈 Color: anxious yellow</div>
+        <div class="ad-bullet">🎈 Pop risk: high — do not show near grocery receipts</div></div>
+      <div class="ad-price">$6.99 OR THREE GALLONS OF GAS, WHICHEVER IS LESS</div>
+      <div class="ad-disclaimer">Inflation Anxiety Balloons LLC not responsible for poll results, gas prices, grocery receipts, or the general feeling. Balloon not a solution. Balloon is an accurate representation. Results may float.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page spy-page" id="p13">
+  <div class="spy-header">
+    <h2 class="spy-title">SPY vs. SPY</h2>
+    <div class="spy-subtitle">2026 Edition: &quot;Graft Management&quot;</div>
+  </div>
+  <div class="spy-illo"><img src="../../images/vol1no2-spyvspy.png?v=1779321651121" alt="spy vs spy"></div>
+  <div class="spy-arena">
+    <div class="spy-col spy-white">
+      <div class="spy-icon">🤍</div>
+      <h3>WHITE SPY</h3>
+      <div class="spy-panels"><p>White Spy receives $1 billion in public funds. White Spy makes a careful, documented allocation plan.</p>
+        <p>White Spy distributes funds to: allies (40%), programs (40%), oversight reserve (20%).</p>
+        <p>White Spy files receipts. White Spy notes the oversight reserve.</p>
+        <p>White Spy is audited. White Spy's filing is thorough. White Spy is very tired.</p></div>
+    </div>
+    <div class="spy-divider">VS</div>
+    <div class="spy-col spy-black">
+      <div class="spy-icon">🖤</div>
+      <h3>BLACK SPY</h3>
+      <div class="spy-panels"><p>Black Spy also receives $1 billion in public funds. Black Spy does not make a plan.</p>
+        <p>Black Spy distributes funds to: allies (60%), rioters (25%), cop killers (15%), oversight reserve (0%).</p>
+        <p>Black Spy does not file receipts. Black Spy is audit-proof. Black Spy has a balloon.</p>
+        <p>Black Spy is not audited. Black Spy is very comfortable. Black Spy's balloon says AMERICA FIRST.</p></div>
+    </div>
+  </div>
+  <div class="spy-result">SAME MONEY. DIFFERENT OUTCOMES. ONE SPY HAS RECEIPTS. ONE SPY HAS AN EXEMPTION. THE EXEMPTION IS PERMANENT. THE RECEIPTS ARE ON A PUZZLE PAGE SOMEWHERE.</div>
+</div>
+
+<div class="page awards-page" id="p14">
+  <div class="awards-inner">
+    <h2 class="awards-title">🏆 INSANE AWARDS</h2>
+    <div class="awards-date">MAY 21, 2026</div>
+    <div class="award-category">
+      <div class="award-cat-title">MOST CREATIVE USE OF $1 BILLION IN PUBLIC FUNDS</div>
+      <div class="award-medals"><div class="medal gold">🥇 Trump administration (allies, rioters, cop killers — full portfolio)</div>
+      <div class="medal silver">🥈 The Loyalty Dividend Program (concept excellence)</div>
+      <div class="medal bronze">🥉 The accountant who requested reassignment to the puzzle page</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST NEW TAX STATUS</div>
+      <div class="award-medals"><div class="medal gold">🥇 Trump Family (audit-proof, forever, no sunset clause)</div>
+      <div class="medal silver">🥈 Everyone else (still very auditable — honorable mention for consistency)</div>
+      <div class="medal bronze">🥉 The IRS agent who said 'the rest of you are still very auditable'</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST EFFICIENT PRIMARY MACHINE</div>
+      <div class="award-medals"><div class="medal gold">🥇 The Endorsement Machine (Massie, 8 terms, one endorsement against: done)</div>
+      <div class="medal silver">🥈 The Kentucky Ballot Box Jack-In-The-Box (mechanical excellence)</div>
+      <div class="medal bronze">🥉 Ed Gallrein (was endorsed, won — clean execution)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST SIMULTANEOUS MIXED SIGNAL</div>
+      <div class="award-medals"><div class="medal gold">🥇 U.S. to Cuba: indictment AND aid offer, same news cycle</div>
+      <div class="medal silver">🥈 Xi-Putin: partnership AND cracked missile dome, same photo</div>
+      <div class="medal bronze">🥉 Knesset: SNAP ELECTION? sign with question mark (diplomatically ambiguous)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST LOAD-BEARING ACCESSORY</div>
+      <div class="award-medals"><div class="medal gold">🥇 The Inflation Anxiety Balloon (structural, economic, airborne)</div>
+      <div class="medal silver">🥈 The CEASEFIRE Bandage (Vol. 1 No. 1 — still holding, technically)</div>
+      <div class="medal bronze">🥉 The question mark on the SNAP ELECTION? sign</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST WELCOME NEWS</div>
+      <div class="award-medals"><div class="medal gold">🥇 Nashville gets the 2030 Super Bowl (genuinely nice, no asterisk)</div>
+      <div class="medal silver">🥈 Swan Lake dancers: excellent performance, apolitical (confirmed)</div>
+      <div class="medal bronze">🥉 Ebola science teams: on it, heroic, and not a punchline (confirmed)</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p15">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-ebola.png?v=1779321651121" alt="EBOLA: SCIENCE RACES THE CLOCK.">
+    <div class="illo-caption">★ Test. Trace. Treat. Protect. The people doing this are doing something important. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">PUBLIC HEALTH · NOT A PUNCHLINE</div>
+    <h2 class="story-heading">EBOLA: SCIENCE RACES THE CLOCK.</h2>
+    <p class="story-subheading">600 SUSPECTED CASES. 139 SUSPECTED DEATHS. DRC AND UGANDA. THE TEAMS ON THE GROUND ARE HEROIC.</p>
+    <p class="story-deck">WHO And Reuters Report 600 Suspected Ebola Cases And 139 Suspected Deaths In Congo And Uganda — The Bundibugyo Strain — Health Workers In The Field Are Working Around The Clock</p>
+    <p>The WHO and Reuters this week reported <strong>600 suspected Ebola cases and 139 suspected deaths</strong> in the Democratic Republic of Congo and Uganda, figures that represent a significant escalation from last issue's 246 suspected cases and 80 suspected deaths — and that represent, in human terms, a crisis that the people working to contain it are treating with the full weight of what it is.</p>
+    <p>The Bundibugyo strain — the variant involved in this outbreak — is one of several Ebola virus species and has been the subject of prior outbreaks in the region. The health workers on the ground in Ituri Province and the border areas of Uganda are conducting contact tracing, sample collection, treatment, and containment operations in conditions that outbreak response specialists describe as <em>"extremely challenging."</em></p>
+    <p>They are not a punchline. This section of INSANE is not satirical. The people testing, tracing, treating, and protecting in DRC and Uganda right now are doing one of the harder jobs available to human beings, and they are doing it well.</p>
+    <p>The WHO has declared the outbreak a Public Health Emergency of International Concern. International response teams are active. Vaccination campaigns are underway for contacts. The work is ongoing.</p>
+    <p><strong>Test. Trace. Treat. Protect.</strong> If you want to support outbreak response, the WHO's Health Emergency Appeal is accepting donations. The teams on the ground know what they're doing. They could use the resources.</p>
+    
+    
+    
+    
+    
+    <div class="the-end">
+      <p class="the-end-title">Science is racing. The teams are heroic.</p>
+      <p class="the-end-sub">WHO Ebola Response · DRC &amp; Uganda · May 2026</p>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p16">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-classifieds.png?v=1779321651121" alt="INSANE CLASSIFIEDS!">
+    <div class="illo-caption">★ INSANE Magazine assumes no liability for the positions listed below. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">HELP WANTED · INSANE CLASSIFIEDS</div>
+    <h2 class="story-heading">INSANE CLASSIFIEDS!</h2>
+    <p class="story-subheading">JOBS! OPPORTUNITIES! POSITIONS SOON TO BE OPEN! (READ CAREFULLY.)</p>
+    <p class="story-deck">This Week's Employment Listings, Products, And Opportunities From The INSANE Marketplace — We Are Not Responsible For The Applicants These Ads Will Attract</p>
+    <p><strong>MASSAGE THERAPIST — MAR-A-LAGO, PALM BEACH FL</strong><br>Seeking young, attractive, and <em>extremely discreet</em> licensed massage therapists for full-time, live-in positions at a prestigious private club. Must be comfortable with irregular hours, non-disclosure agreements of indefinite scope, and the phrase "we'll see." Experience with important people preferred. References checked only for the applicant; employer references not available. Compensation discussed in person. Do not bring a lawyer. <em>Apply: MarALago-Staffing@notanemailaddress.com</em></p>
+    <p><strong>VICE PRESIDENT OF THE UNITED STATES — POSITION SOON TO BE OPEN</strong><br>Exciting opportunity! Current occupant may become available imminently. Ideal candidate: enthusiastic, compliant, experienced at standing just far enough away from things, comfortable with ceremonial roles, skilled at nodding while others talk. Must pass loyalty evaluation (pass/fail, no partial credit). Prior constitutional knowledge: actually a disadvantage — please do not cite the 25th Amendment in your cover letter. Location: Washington D.C. (subject to change). <em>Apply: Oval Office, ask for the big desk.</em></p>
+    <p><strong>ICE ENFORCEMENT AGENTS — MULTIPLE OPENINGS</strong><br>Seeking tough, motivated individuals who are <em>not afraid to get results</em>. Previous law enforcement experience: optional — enthusiasm counts more. Must be comfortable with: irregular target selection, documentation ambiguity, being photographed, and not reading Miranda rights aloud in a way that carries. <strong>Bonus pay for grandma apprehensions.</strong> Kid experience a plus. Sensitivity training: there is none. Benefits: dental, vision, legal indemnification (terms vary). <em>Apply: Submit application at any border. Or not at the border. Doesn't matter.</em></p>
+    <p><strong>OFFICIAL GOVERNMENT MEDIA SPOKESPERSON</strong><br>Do you have the ability to say <em>"I'll have to circle back on that"</em> in 47 different tones? Can you describe a clearly documented event as <em>"alleged"</em> with a straight face? Can you stand at a podium while something is actively on fire and describe it as <em>"a controlled situation"</em>? Competitive salary. Long hours. The briefing room is not air-conditioned in July. <em>Apply: Press@youknowwhere.gov</em></p>
+    <p><strong>LOYALTY AUDITOR — REPUBLICAN PARTY</strong><br>Part-time to full-time, election season hours. Review voting records for compliance with current orthodoxy. Issue findings. Operate the Machine. Stamina required — primary calendar is full through 2028. <em>Experience required: knowing which votes were wrong. (You know which ones.)</em></p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">INSANE CLASSIFIEDS — LEGAL NOTICE</div>
+      <div class="ad-subheadline">INSANE Magazine Is Not A Staffing Agency</div>
+      <div class="ad-bullets"><div class="ad-bullet">📋 We did not write these job descriptions</div>
+        <div class="ad-bullet">📋 We did not have to — they wrote themselves</div>
+        <div class="ad-bullet">📋 INSANE assumes no liability for applicants</div>
+        <div class="ad-bullet">📋 Or for the positions. Or for any of this.</div></div>
+      <div class="ad-price">CLASSIFIED ADS: $49.99/WEEK OR YOUR DIGNITY</div>
+      <div class="ad-disclaimer">INSANE Classifieds not responsible for any employment relationships, loyalty oaths, non-disclosure agreements, apprehension quotas, or Vice Presidential transitions that result from these listings. All positions are satirical. Mostly.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p17">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no2-marketplace.png?v=1779321651121" alt="INSANE MARKETPLACE!">
+    <div class="illo-caption">★ Fine print is structural. Do not skip. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INSANE MARKETPLACE · FINE PRODUCTS &amp; OPPORTUNITIES</div>
+    <h2 class="story-heading">INSANE MARKETPLACE!</h2>
+    <p class="story-subheading">TRUMP BIBLES, TRUMP COINS, TRUMP STEAKS, AND MORE FINE MERCHANDISE — LIMITED TIME OFFERS THAT HAVE BEEN LIMITED TIME FOR YEARS</p>
+    <p class="story-deck">This Week's Featured Products From The INSANE Marketplace — All Products Inspected By Our Standards Team — Standards Team Has Requested Reassignment</p>
+    <p><strong>TRUMP BIBLE™ — GOD'S WORD, GOLD COVER, PRESIDENTIAL FOREWORD</strong><br>The <em>Holy Bible</em> — now with a gold-embossed cover, a signed foreword by someone important, and the complete text of the Constitution appended in the back (selected amendments only). Makes an excellent gift for: patriots, collectors, and people who have not read either document. <strong>$59.99.</strong> Available at: the website. Not available in: bookstores that carry it next to other Bibles, which they will not. <em>*Does not come with a bookmark. Salvation not guaranteed.*</em></p>
+    <p><strong>TRUMP GOLD COINS™ — LEGAL TENDER* (*NOT LEGAL TENDER)</strong><br>Celebrate history with these <em>stunning</em> gold-colored commemorative coins featuring a heroic profile, eagle imagery, and the words MAKE AMERICA GREAT AGAIN in raised lettering. Not actual gold. Not actual tender. Not redeemable for anything. But <em>extremely heavy</em> and <strong>very shiny.</strong> Buy 10, get a carrying case. Buy 20, get a second carrying case. Buy 30 and we will call you personally to thank you and offer more coins. <strong>$29.99 each or $249.99 for the Freedom Collection.</strong> <em>*Coins are medallions. Medallions are not currency.*</em></p>
+    <p><strong>MAGA SURVIVAL KIT™ — BE PREPARED FOR WHATEVER THIS IS</strong><br>Includes: 72-hour emergency rations (freeze-dried patriotism), a MAGA hat (weatherproof), a pocket Constitution (selected amendments), a gas receipt holder (for collecting them as evidence), a FREEDOM+ fuel card (not accepted anywhere yet), and a <em>THINGS THAT ARE FINE</em> checklist with every box pre-checked. <strong>$149.99.</strong> Not responsible for the things on the checklist not actually being fine.</p>
+    <p><strong>TRUMP STEAKS™ — THE BEST STEAKS, EVERYBODY SAYS SO</strong><br>Previously discontinued. Back by demand (demand unspecified). <em>"The world's greatest steaks"</em> — available in: Well Done Only. Served with ketchup. Not served any other way. Golden packaging. Ships frozen. Arrives fine. <strong>$89.99/lb — same price as Beijing state dinner, diplomatic provenance included.</strong> <em>*Steaks are steaks. Claims about their greatness are the purchaser's to evaluate.*</em></p>
+    <p><strong>AUDIT-PROOF FAMILY PACKAGE™ — CALL FOR AVAILABILITY</strong><br>Not actually available to you. We included this listing because someone had to say it. <strong>$0 if you qualify / not available if you don't.</strong> <em>You don't.</em></p>
+    
+    
+    
+    
+    
+    <div class="the-end">
+      <p class="the-end-title">Shop Responsibly. Read The Fine Print.</p>
+      <p class="the-end-sub">INSANE Marketplace · Standards Team Currently On Puzzle Page</p>
+    </div>
+  </div>
+</div>
+
+<div class="page fold-in-page" id="p18">
+  <div class="foldin-inner">
+    <div class="foldin-header">
+      <h2 class="foldin-title">INSANE BACK PAGE</h2>
+      <div class="foldin-subtitle">THE FAMOUS FOLD-IN &nbsp;✦&nbsp; "FOLD CAREFULLY — UNLIKE THE CEASEFIRE"</div>
+    </div>
+    <div class="foldin-area" id="foldinArea">
+      <div class="foldin-left" id="foldinLeft">
+        <img class="foldin-img" src="../../images/vol1no2-foldin.png?v=1779321651122" alt="fold-in">
+        <div class="foldin-section-top">INSANE — FOLD THIS HALF →</div>
+        <div class="foldin-question">THE ATTORNEY GENERAL HAS MADE THE TRUMP FAMILY IRS AUDIT-PROOF FOR ETERNITY. SO WHO EXACTLY IS THE IRS FOR NOW?</div>
+        <div class="foldin-label-a">A</div>
+      </div>
+      <div class="foldin-right">
+        <div class="foldin-section-top">← FOLD LEFT SIDE OVER TO FIND OUT</div>
+        <div class="foldin-answer-hidden">EVERYONE ELSE. FOREVER.</div>
+        <div class="foldin-label-b">B</div>
+      </div>
+    </div>
+    <div class="foldin-answer-reveal" id="foldinAnswer">
+      <div class="foldin-answer-text">EVERYONE ELSE. FOREVER.</div>
+      <div class="foldin-answer-sub">Fold A over B to reveal the hidden truth</div>
+    </div>
+    <button class="foldin-btn" id="foldinBtn" onclick="toggleFoldin()">📰 FOLD IT!</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>window.STORY_PAGES = 19;</script>
+<script>(function () {
+  'use strict';
+
+  var PAGES   = window.STORY_PAGES || 0;
+  var current = 0;
+  var track   = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots    = [];
+
+  function update() {
+    if (track)   track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    if (counter) counter.textContent   = (current + 1) + ' / ' + PAGES;
+    if (prevBtn) prevBtn.disabled      = current === 0;
+    if (nextBtn) nextBtn.disabled      = current === PAGES - 1;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    try { history.replaceState(null, '', '#' + current); } catch(e) {}
+    // Reset fold-in state when navigating away
+    var area = document.getElementById('foldinArea');
+    if (area) area.classList.remove('folded');
+    var btn = document.getElementById('foldinBtn');
+    if (btn) btn.textContent = '\uD83D\uDCF0 FOLD IT!';
+  }
+
+  window.goTo = function (n) {
+    current = Math.max(0, Math.min(PAGES - 1, n));
+    update();
+  };
+
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  // Build dots
+  var dotRow = document.getElementById('dotRow');
+  if (dotRow) {
+    for (var i = 0; i < PAGES; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.setAttribute('data-i', i);
+      d.addEventListener('click', (function (idx) {
+        return function () { window.goTo(idx); };
+      })(i));
+      dotRow.appendChild(d);
+      dots.push(d);
+    }
+  }
+
+  // Hash navigation
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  // Touch swipe
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft')  window.prev();
+  });
+
+  // Share
+  window.shareIssue = function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        if (btn) {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 2000);
+        }
+      });
+    }
+  };
+
+  // Fold-in toggle
+  window.toggleFoldin = function () {
+    var area = document.getElementById('foldinArea');
+    var btn  = document.getElementById('foldinBtn');
+    if (!area) return;
+    var folded = area.classList.toggle('folded');
+    if (btn) btn.textContent = folded ? '\uD83D\uDCF0 UNFOLD IT!' : '\uD83D\uDCF0 FOLD IT!';
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>

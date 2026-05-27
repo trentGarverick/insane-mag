@@ -1,0 +1,498 @@
+{
+  "id": "vol1no3",
+  "title": "Close To A Deal! Fire When Ready!",
+  "subtitle": "Peace Talks — Please Duck",
+  "eyebrow": "Vol. 1, No. 3 · May 2026",
+  "eyebrowDesc": "Iran deal allegedly close. Strikes definitely continuing. Strait of Hormuz: ducking required. White House UFC octagon: under construction.",
+  "date": "May 2026",
+  "price": "$5.99 US / $7.99 CAN",
+  "order": 3,
+
+  "palette": {
+    "bg":        "#f5f0e8",
+    "pageBg":    "#ffffff",
+    "text":      "#111111",
+    "accent":    "#cc0000",
+    "accent2":   "#f5c400",
+    "accent3":   "#1a3a8a",
+    "navBg":     "#1a3a8a",
+    "navText":   "#ffffff",
+    "dotActive": "#f5c400",
+    "eyebrow":   "#cc0000",
+    "adBg":      "#eef2ff",
+    "adBorder":  "#1a3a8a"
+  },
+
+  "stylePrefix": "Bold satirical magazine illustration in the style of Mad Magazine. Exaggerated political caricatures, thick black outlines, vivid CMYK flat colors, chaotic action composition, vintage print texture, dense background gags, dramatic cinematic framing. 1970s newsstand parody energy. Crowded, readable, biting but absurd.",
+
+  "pages": [
+
+    {
+      "illoId": "cover",
+      "type": "cover-full"
+    },
+
+    {
+      "illoId": "cover",
+      "type": "cover",
+      "coverLines": [
+        "CLOSE TO A DEAL! FIRE WHEN READY!",
+        "WHITE HOUSE CAGE MATCH! DIPLOMACY MOVES INTO THE OCTAGON",
+        "LEAK-PROOF GOVERNMENT! NOW WITH EMPLOYEE NDAs",
+        "STRAIT TALK: OIL TANKERS LEARN THE ART OF THE U-TURN",
+        "THE 30-DAY PEACE PLAN THAT LASTED 30 SECONDS!",
+        "NEGOTIATIONS CONTINUE, ASSUMING EVERYONE SURVIVES THE NEGOTIATIONS"
+      ]
+    },
+
+    {
+      "type": "editorial",
+      "illoId": null,
+      "title": "FROM THE EDITOR'S BUNKER",
+      "salutation": "Dear Reader Who Is Also Please Ducking,",
+      "paragraphs": [
+        "We have been covering this Iran situation for three issues now and we want to say up front: the peace talks are going <em>great.</em> According to the White House, a deal is close. According to the strikes that continued during the peace talks, the deal is also still quite far. According to the peace dove on this week's cover — who is wearing a flak jacket and a helmet and carrying an olive branch while dodging shrapnel — the situation is best described as <strong>\"active.\"</strong>",
+        "The gold negotiating table is floating in the Strait of Hormuz. Oil tankers are making U-turns. The mines labeled FINE PRINT are everywhere. The Iranian negotiators have a mug that says <em>Deal? Please.</em> The Trump team has folders marked <em>Everything Is Fine</em> and <em>Plan B: More Planes.</em> The banner above the whole scene says <strong>PEACE TALKS — PLEASE DUCK.</strong>",
+        "Elsewhere this issue: the White House UFC octagon is <em>under construction on the South Lawn,</em> because diplomacy is apparently moving into the octagon and we feel we should cover the venue. Federal workers are now under NDA, because the way to have a leak-proof government is apparently to make everyone sign something rather than do fewer leakable things. And the oil markets are doing what oil markets do when the Strait of Hormuz becomes a negotiating table: <em>expressing anxiety at the pump.</em>",
+        "We have added a new feature this issue: <strong>MAN (AND WOMAN) IN THE STREET</strong> — ordinary citizens sharing their thoughts. They have thoughts. Many thoughts. We have printed the printable ones. The others are in a separate envelope available at the front desk.",
+        "We asked for a helmet. Again. Still waiting."
+      ],
+      "signature": "— The Editors",
+      "ps": "P.S. — The peace dove is fine. She is tired and her flak jacket chafes but she has not given up. We respect her for it."
+    },
+
+    {
+      "type": "masthead",
+      "illoId": null,
+      "title": "INSANE MAGAZINE MASTHEAD",
+      "staff": [
+        { "role": "Publisher",                "name": "A. Panic Jr." },
+        { "role": "Editor-in-Chief",          "name": "Screaming McGee" },
+        { "role": "Strait of Hormuz Desk",    "name": "Ducking, Filing Simultaneously" },
+        { "role": "Peace Talks Correspondent","name": "Under The Table (Literally)" },
+        { "role": "Strike Coverage",          "name": "Also Under The Table" },
+        { "role": "Oil Markets Editor",       "name": "Watching The U-Turns" },
+        { "role": "White House UFC Desk",     "name": "Ringside, Confused" },
+        { "role": "NDA Compliance Officer",   "name": "[REDACTED]" },
+        { "role": "Federal Worker Sources",   "name": "[ALSO REDACTED]" },
+        { "role": "Man In The Street",        "name": "Very Vocal This Week" },
+        { "role": "Dove Welfare",             "name": "She Is Fine, Chafing" },
+        { "role": "Legal",                    "name": "NDA Prevents Comment" },
+        { "role": "Sanity Level",             "name": "PLEASE DUCK" }
+      ],
+      "subscriberAlert": {
+        "title": "INSANE MAGAZINE SUBSCRIBER ALERT!",
+        "subtitle": "This week's briefing: duck first, read after",
+        "items": [
+          "☑ Iran deal: close (strikes: also continuing)",
+          "☑ Gold negotiating table: afloat in Strait of Hormuz",
+          "☑ Peace dove: flak jacket fitted, olive branch dented",
+          "☑ Frozen assets: in a briefcase, in the water",
+          "☑ Fine print mines: everywhere, naval hazard",
+          "☑ White House UFC octagon: South Lawn, under construction",
+          "☑ Federal NDAs: leak-proof government in progress",
+          "☑ Oil tankers: executing U-turns at scale",
+          "☑ Man/Woman in the Street: extremely vocal, fully printed"
+        ],
+        "price": "$5.99 / STILL CHEAPER THAN FILL-UP AT FREEDOM+",
+        "disclaimer": "INSANE Magazine is printed on surplus NDA forms. Sources have signed everything. The peace dove's flak jacket was provided at editorial expense. Helmet still not included."
+      },
+      "disclaimer": "INSANE Magazine: Smarter Than The News. Dumber Than Politicians. 100% Unclassified."
+    },
+
+    {
+      "type": "contents",
+      "illoId": null,
+      "title": "CONTENTS",
+      "edition": "MAY 2026 · \"PLEASE DUCK\" EDITION",
+      "ticker": "BREAKING: IRAN DEAL 'CLOSE' — U.S. STRIKES ALSO CONTINUING ✦ TRUMP SIGNS TREATY WITH MISSILE-SHAPED PEN ✦ WHITE HOUSE UFC OCTAGON CONSTRUCTION BEGINS SOUTH LAWN ✦ FEDERAL WORKERS ISSUED NDAs — SOURCES NOW [REDACTED] ✦ OIL TANKERS EXECUTE MASS U-TURNS IN STRAIT OF HORMUZ ✦ FROZEN ASSETS BRIEFCASE RECOVERED, STILL FROZEN ✦ PEACE DOVE ALIVE, FLAK JACKET CHAFING ✦",
+      "items": [
+        { "page": 5,  "emoji": "✍️", "title": "CLOSE TO A DEAL!",              "desc": "Signing a treaty with a cruise missile pen" },
+        { "page": 6,  "emoji": "💥", "title": "FIRE WHEN READY!",              "desc": "Strikes continue during the peace talks" },
+        { "page": 7,  "emoji": "🥊", "title": "WHITE HOUSE CAGE MATCH!",       "desc": "The octagon comes to the South Lawn" },
+        { "page": 8,  "emoji": "🤐", "title": "LEAK-PROOF GOVERNMENT!",        "desc": "Federal NDAs: everyone signs, nobody talks" },
+        { "page": 9,  "emoji": "⛽", "title": "STRAIT TALK: THE U-TURN",       "desc": "Oil tankers navigate the new normal" },
+        { "page": 10, "emoji": "🕊️", "title": "PEACE DOVE: STATUS REPORT",    "desc": "She is fine. The flak jacket chafes." },
+        { "page": 11, "emoji": "🗣️", "title": "MAN & WOMAN IN THE STREET",    "desc": "Citizens speak. Loudly. At length." },
+        { "page": 12, "emoji": "🥷", "title": "SPY VS. SPY: IRAN DEAL ED.",   "desc": "Same table, different missiles" },
+        { "page": 13, "emoji": "🏆", "title": "INSANE AWARDS",                 "desc": "Weekly recognition in a crowded Strait" },
+        { "page": 14, "emoji": "📋", "title": "INSANE CLASSIFIEDS",            "desc": "Jobs, opportunities, NDAs available" },
+        { "page": 15, "emoji": "🛒", "title": "INSANE MARKETPLACE",            "desc": "Fine products for the discerning patriot" },
+        { "page": 16, "emoji": "📰", "title": "BACK PAGE FOLD-IN",             "desc": "What does 'close to a deal' actually mean?" }
+      ],
+      "scorecard": {
+        "title": "THIS WEEK'S INSANE SCORECARD",
+        "items": [
+          { "emoji": "✍️", "label": "Deals described as 'close'",                   "value": "1 (Iran)" },
+          { "emoji": "💥", "label": "Strikes that continued during the close deal",  "value": "Multiple (ongoing)" },
+          { "emoji": "⛽", "label": "Oil tankers executing emergency U-turns",        "value": "Dozens (Strait of Hormuz)" },
+          { "emoji": "🤐", "label": "Federal workers now under NDA",                 "value": "[REDACTED]" },
+          { "emoji": "💰", "label": "Frozen assets: temperature",                    "value": "Still frozen" },
+          { "emoji": "🕊️", "label": "Peace doves operational (flak jacket fitted)", "value": "1 (tired but committed)" },
+          { "emoji": "🥊", "label": "UFC octagon construction: completion %",        "value": "South Lawn: 40%" }
+        ]
+      }
+    },
+
+    {
+      "illoId": "deal",
+      "type": "story",
+      "flip": false,
+      "scene": "Trump caricature seated in a gold throne chair at a floating octagonal negotiating table in the Strait of Hormuz. He grins broadly while pressing a giant fountain pen shaped like a cruise missile to a treaty document. A red SEND button sits beside his right hand. Behind him two anxious aides hold folders labeled EVERYTHING IS FINE and PLAN B: MORE PLANES. Across the table, Iranian negotiators in suits duck and shield their heads from explosions and flying debris while a mug near them reads DEAL? PLEASE. A banner above reads PEACE TALKS — PLEASE DUCK. Oil tankers and fighter jets fill the smoky background. Mad Magazine caricature style.",
+      "eyebrow": "COVER STORY · STRAIT OF HORMUZ NEGOTIATIONS",
+      "heading": "CLOSE TO A DEAL!",
+      "subheading": "TRUMP SAYS AN IRAN DEAL IS CLOSE — STRIKES CONFIRM THEY ARE ALSO CLOSE — TO CONTINUING",
+      "deck": "White House Says Iran Nuclear Deal Is Within Reach As U.S. Strikes Continue In The Region — Peace Dove Fitted For Flak Jacket — Negotiating Table Now Afloat",
+      "caption": "★ The SEND button is not part of the treaty. We have been assured of this. ★",
+      "paragraphs": [
+        "The White House announced this week that an Iran nuclear deal is <strong>close,</strong> a characterization that U.S. strike operations in the region confirmed by continuing — because the most effective backdrop for peace negotiations is, apparently, active ordnance.",
+        "Trump, seated at a gold negotiating table that is simultaneously afloat in the Strait of Hormuz, shaped like a UFC octagon, and mounted on what appears to be an aircraft carrier deck, is signing the treaty with a <strong>fountain pen shaped like a cruise missile.</strong> The pen was custom. The treaty has not been initialed by the other side yet. A red button labeled SEND sits within easy reach of his right hand.",
+        "Administration aides standing behind the President hold folders. One says <strong>EVERYTHING IS FINE.</strong> The other says <strong>PLAN B: MORE PLANES.</strong> Both folders are very full. The aides holding them have the expressions of people who have read the folders.",
+        "Across the table, Iranian negotiators are attempting to conduct diplomacy while shielding themselves from debris. A ceramic mug near the lead negotiator reads <em>Deal? Please.</em> The mug is chipped. The negotiators have been at the table for some time.",
+        "\"We're very close,\" Trump told reporters from the aircraft carrier deck. \"Very, very close. The Iranians want a deal. We want a deal. Everybody wants a deal.\" A fighter jet took off from the deck behind him at that moment. He did not appear to notice. The fighter jet appeared to be on its way somewhere."
+      ],
+      "pullQuote": "\"Everybody wants a deal.\" — The President, as a fighter jet launched from the deck behind him",
+      "sidebarList": {
+        "title": "ITEMS ON THE NEGOTIATING TABLE",
+        "items": [
+          "✍️ Treaty document (unsigned by Iran side)",
+          "🚀 Missile-shaped signing pen (custom)",
+          "🔴 SEND button (purpose unconfirmed)",
+          "☕ DEAL? PLEASE mug (chipped, Iranian side)",
+          "📁 EVERYTHING IS FINE folder (full)",
+          "📁 PLAN B: MORE PLANES folder (also full)"
+        ]
+      },
+      "fakeAd": {
+        "headline": "PEACE TALKS SURVIVAL KIT™",
+        "subheadline": "For Negotiations Conducted Under Active Ordnance",
+        "bullets": [
+          "🪖 Flak jacket: fits over dress shirt (diplomat cut)",
+          "🕊️ Peace dove: pre-fitted, olive branch included",
+          "☕ DEAL? PLEASE mug: dishwasher safe, chip-resistant",
+          "📁 Plan B folder: pre-labeled, many pages"
+        ],
+        "price": "$149.99 / PLAN B: PRICELESS",
+        "disclaimer": "Peace Talks Survival Kit™ not responsible for strikes that continue during peace talks, mines labeled FINE PRINT, or the SEND button. Flak jacket rated for shrapnel, not negotiations. Results may vary. Duck."
+      }
+    },
+
+    {
+      "illoId": "strikes",
+      "type": "story",
+      "flip": true,
+      "scene": "Split scene: on the left, a formal press briefing room where a spokesperson stands at a podium with a giant banner reading PEACE TALKS IN PROGRESS. On the right side of the same image, through a window visible behind the spokesperson, fighter jets and explosions light up the sky. The spokesperson gestures enthusiastically toward the PEACE TALKS banner while not turning around. In the foreground, reporters stare at the window, then at the spokesperson, then back at the window. A caption card on the podium reads BOTH THINGS ARE HAPPENING. Mad Magazine caricature style, maximum visual irony.",
+      "eyebrow": "WAR/PEACE · SIMULTANEOUSLY",
+      "heading": "FIRE WHEN READY!",
+      "subheading": "U.S. STRIKES CONTINUE DURING PEACE TALKS — SPOKESPERSON DOES NOT TURN AROUND",
+      "deck": "American Military Operations In The Iran Theater Continue As Diplomatic Negotiations Proceed — Administration Describes Situation As 'A Process' — Window Behind Spokesperson Very Illuminated",
+      "caption": "★ The window is not the story. The window is definitely the story. ★",
+      "paragraphs": [
+        "The United States continued military strikes in the Iran theater this week while simultaneously pursuing peace negotiations — a <em>dual-track approach</em> that the administration describes as <strong>\"maintaining leverage\"</strong> and that the Iranian negotiating team describes as <em>\"extremely difficult to sit across from.\"</em>",
+        "At the White House press briefing, a spokesperson stood at a podium beneath a banner reading PEACE TALKS IN PROGRESS and confirmed that talks were <strong>\"productive and continuing.\"</strong> Behind the spokesperson, through a large window, fighter jets and associated ordnance were visible proceeding in a direction consistent with the theater of operations. The spokesperson did not turn around.",
+        "Reporters in the briefing room noted the window. Several raised their hands. The spokesperson acknowledged the questions in the order received and described the situation as <em>\"a comprehensive approach to a complex regional dynamic.\"</em> The window continued being illuminated.",
+        "\"Both things are happening,\" the spokesperson confirmed, which was the most accurate statement of the briefing and possibly of the month. Both things were, indeed, happening. <strong>The peace talks. The strikes.</strong> At the same time. In the same Strait. With the same participants attempting to sign things and also duck.",
+        "The peace dove, reached for comment, said she had read the briefing transcript and was <em>\"not surprised, but still.\"</em> Her flak jacket needed re-fitting after last week. She has not given up."
+      ],
+      "pullQuote": "\"Both things are happening.\" — White House spokesperson, beneath a PEACE TALKS banner, window lit behind them",
+      "fakeAd": {
+        "headline": "DUAL-TRACK DIPLOMACY SERVICES™",
+        "subheadline": "Negotiate AND Strike — Simultaneously, At No Extra Charge",
+        "bullets": [
+          "💥 Track 1: Peace talks — productive, continuing",
+          "✈️ Track 2: Strikes — also continuing",
+          "🪟 Window: included, very illuminated",
+          "🗣️ Spokesperson: does not turn around (guaranteed)"
+        ],
+        "price": "LEVERAGE: MAINTAINED / IRONY: FREE",
+        "disclaimer": "Dual-Track Diplomacy Services not responsible for the view from the window, the state of the olive branch, or the Iranian negotiators' mug. Both tracks are real. This is the approach. Duck if needed."
+      }
+    },
+
+    {
+      "illoId": "ufc",
+      "type": "story",
+      "flip": false,
+      "scene": "The White House South Lawn with a UFC-style chain-link octagon cage under active construction. Workers in hard hats weld cage sections while a sign reads COMING SOON: WHITE HOUSE CAGE MATCH — DIPLOMACY MOVES INTO THE OCTAGON. Trump caricature stands nearby in a referee shirt over his suit holding a microphone, looking delighted. Foreign diplomats in suits peer through the chain link from outside with varying expressions of alarm. A velvet rope and a clipboard for VIP seating is being installed. The American flag and White House columns are visible. Mad Magazine caricature style, absurd construction site energy.",
+      "eyebrow": "FOREIGN POLICY · SOUTH LAWN CONSTRUCTION UPDATE",
+      "heading": "WHITE HOUSE CAGE MATCH!",
+      "subheading": "DIPLOMACY MOVES INTO THE OCTAGON — SOUTH LAWN CONSTRUCTION UNDERWAY — VIP SEATING: CLIPBOARD REQUIRED",
+      "deck": "White House Diplomatic Approach Now Formally Octagon-Based — Construction Crews On South Lawn — Foreign Governments Receiving Updated Protocol Documents — Mouthguard Advice: Pending",
+      "caption": "★ The velvet rope is a diplomatic fixture. Do not approach without credentials. ★",
+      "paragraphs": [
+        "Construction began this week on what sources close to the South Lawn describe as a <strong>UFC-style diplomatic engagement venue</strong> — a chain-link octagon cage being assembled where garden parties used to be held — confirming what foreign policy observers have been saying for some time: <em>the approach has changed.</em>",
+        "The octagon, which is being fitted with corner posts, a canvas floor, and a sound system capable of playing <em>Eye of the Tiger</em> at diplomatic-event volume, represents what the White House describes as <strong>\"a results-oriented negotiating environment.\"</strong> State Department protocol guides are being updated. The relevant section previously read <em>\"conference table.\"</em> It now reads <em>\"confirm weight class before arrival.\"</em>",
+        "Foreign ambassadors who visited the South Lawn this week reported that the construction crew was <em>\"very efficient\"</em> and that the chain-link fence <em>\"makes a specific kind of statement.\"</em> Several requested clarification on whether attendance at octagon sessions was optional. The clarification has not yet been issued.",
+        "Trump, photographed near the construction site in what appeared to be a referee shirt over his suit, described the venue as <strong>\"beautiful, very strong, the best cage.\"</strong> He did not specify who would be in it first. Diplomatic sources in three countries are currently assuming it is them.",
+        "The velvet rope — installed on the VIP seating side — has a clipboard. The clipboard has a list. Several foreign leaders are reportedly checking whether they are on the list. The list has not been shared publicly. The octagon is nearly ready."
+      ],
+      "pullQuote": "\"Beautiful, very strong, the best cage.\" — The President, regarding the South Lawn diplomatic engagement venue",
+      "fakeAd": {
+        "headline": "WHITE HOUSE CAGE MATCH TICKETS!",
+        "subheadline": "Diplomacy In The Octagon — VIP And General Admission",
+        "bullets": [
+          "🥊 VIP: velvet rope, clipboard, confirm weight class",
+          "🥊 General: chain-link view, standing room",
+          "🥊 Diplomatic immunity: check before entering",
+          "🥊 Eye of the Tiger: included at full volume"
+        ],
+        "price": "VIP: CALL STATE DEPT / GENERAL: SHOW UP AND DUCK",
+        "disclaimer": "White House Cage Match Tickets not responsible for diplomatic incidents, weight class mismatches, or the expression on the ambassador's face. Protocol guides updated. Mouthguard advice still pending. The octagon is ready."
+      }
+    },
+
+    {
+      "illoId": "nda",
+      "type": "story",
+      "flip": true,
+      "scene": "A federal government office where every single worker at every desk is signing an enormous NDA document. The documents are so large they cover the desks entirely. A manager-type figure in a suit walks through the office with a trolley stacked with more NDA forms, stamping SIGNED on each one as workers hand them back. Some workers have tape over their mouths already. One tries to speak — a hand shoots out from off-panel holding another NDA. A sign on the wall reads LEAK-PROOF GOVERNMENT IN PROGRESS. Filing cabinets in the background are labeled TOP SECRET / ALSO REDACTED / [REDACTED]. Mad Magazine bureaucratic satire style.",
+      "eyebrow": "GOVERNMENT TRANSPARENCY · [REDACTED] EDITION",
+      "heading": "LEAK-PROOF GOVERNMENT!",
+      "subheading": "FEDERAL WORKERS NOW UNDER NDA — SOURCES SAY [REDACTED] — GOVERNMENT OFFICIALLY LEAK-PROOF*",
+      "deck": "Trump Administration Issues NDAs To Federal Employees — Officials Say The Move Ensures Confidentiality — Critics Say The Move Ensures Confidentiality Of Things That Should Not Be Confidential — *Leak-Proof Pending Definition Of 'Leak'",
+      "caption": "★ The asterisk on LEAK-PROOF is doing structural work. ★",
+      "paragraphs": [
+        "The Trump administration has issued <strong>non-disclosure agreements to federal workers,</strong> a move that administration officials describe as <em>\"protecting sensitive government operations\"</em> and that critics describe as <em>\"protecting sensitive government operations from the people who pay for government operations.\"</em>",
+        "The NDAs — which are sweeping in scope, indefinite in duration, and signed under conditions that employment lawyers describe as <em>\"not entirely voluntary in the traditional sense\"</em> — cover communications about agency activities, policy decisions, and what one redacted source describes, in a document with most words blacked out, as <strong>\"[REDACTED] [REDACTED] and also [REDACTED].\"</strong>",
+        "INSANE reached out to several federal sources for this story. Three responded. All three responses were: <em>\"I can't talk about that.\"</em> A fourth source sent a blank email. A fifth source sent an email that was entirely redaction marks. We are treating all five responses as confirmation.",
+        "The government's new LEAK-PROOF designation — displayed on a sign in federal office lobbies, per a source who has since gone quiet — carries an asterisk. The asterisk refers to a footnote. The footnote is classified. The classification level of the footnote is also classified.",
+        "\"This ensures confidentiality,\" a spokesperson said, confidently. The spokesperson was not under NDA. The spokesperson's colleagues were. <strong>\"Everything is fine,\"</strong> the spokesperson added. We have heard that phrase before. We recognize the folder it comes from."
+      ],
+      "pullQuote": "\"[REDACTED] [REDACTED] and also [REDACTED].\" — Federal source, responding to INSANE inquiry",
+      "glossary": {
+        "title": "NDA TRANSLATION GUIDE",
+        "entries": [
+          { "word": "[REDACTED] (n.)",      "def": "The thing you were about to say. No longer available." },
+          { "word": "Confidential (adj.)",  "def": "What everything is now. Everything." },
+          { "word": "Source (n.)",          "def": "A person who previously talked. They have since signed." },
+          { "word": "Leak-Proof* (adj.)",   "def": "See footnote. Footnote: classified." }
+        ]
+      },
+      "fakeAd": {
+        "headline": "GOVERNMENT-GRADE NDA FORMS!",
+        "subheadline": "For Organizations That Need Confidentiality At Scale",
+        "bullets": [
+          "📋 Bulk pricing: 10,000 forms for federal office use",
+          "📋 Duration: indefinite (no sunset clause — see Vol 1 No 2)",
+          "📋 Scope: everything. All of it. Sign here.",
+          "📋 Asterisk: included, footnote: classified"
+        ],
+        "price": "$0 TO SIGN / COSTLY TO VIOLATE",
+        "disclaimer": "Government-Grade NDA Forms not responsible for information that escapes despite the forms, which some information does, because information is like that. Forms are binding. The footnote is classified. The asterisk is structural. Sign here."
+      }
+    },
+
+    {
+      "illoId": "uturn",
+      "type": "story",
+      "flip": false,
+      "scene": "The Strait of Hormuz from above, packed with oil tankers all executing sharp U-turns simultaneously, leaving dramatic white wake trails in a chaotic pattern. Each tanker has a panicked captain on the bridge looking at charts. Naval mines labeled FINE PRINT bob between them. A frozen assets briefcase floats open in the water, cash frozen in ice cubes visible inside. Warships and drones patrol the edges. A scoreboard on a buoy reads OIL MARKETS: ANXIOUS. A gas pump on a nearby dock updates its price upward in real time. Mad Magazine aerial-view chaos style.",
+      "eyebrow": "OIL MARKETS · STRAIT OF HORMUZ NAVIGATION UPDATE",
+      "heading": "STRAIT TALK!",
+      "subheading": "OIL TANKERS MASTER THE ART OF THE U-TURN — FROZEN ASSETS REMAIN FROZEN — FINE PRINT MINES EVERYWHERE",
+      "deck": "Strait Of Hormuz Shipping Traffic Adapts To Peace-Talks-Plus-Strikes Environment — Tanker Captains Developing New Navigation Protocols — Gas Pump Prices Update In Real Time",
+      "caption": "★ The U-turn is now a standard navigation maneuver in the Strait. Insurance updated accordingly. ★",
+      "paragraphs": [
+        "Oil tanker captains operating in the Strait of Hormuz this week have developed what maritime analysts are calling <strong>\"an extremely refined U-turn protocol\"</strong> — a navigation technique that involves assessing the current state of the Iran peace talks, the current state of the Iran strikes, and the current state of the mines labeled FINE PRINT, and then turning around very quickly.",
+        "The frozen assets briefcase — which has been floating in the Strait since the sanctions were first imposed and has been photographed by several passing tankers — was recovered briefly this week and confirmed to still contain <strong>cash frozen in ice cubes,</strong> in what financial analysts describe as <em>\"literally accurate\"</em> and what the Iranian government describes as <em>\"the entire problem, right there, in a briefcase.\"</em>",
+        "Oil markets, which track Strait of Hormuz shipping traffic with the intensity of people who have a lot of money in oil markets, have registered what traders are calling <strong>\"anxiety.\"</strong> The anxiety has been expressed, as oil market anxiety traditionally is, at the gas pump. The gas pump is updating its price in real time. The time is <em>right now.</em> The price is going up.",
+        "A buoy installed near the center of the U-turn zone has been fitted with a scoreboard. The scoreboard reads <strong>OIL MARKETS: ANXIOUS.</strong> The buoy was not officially installed by any government. No one has claimed the buoy. The buoy is doing its job.",
+        "\"We are monitoring the situation,\"' a tanker captain radioed to port. <em>\"We are currently completing our third U-turn of the morning. We are fine. The mines are labeled. We can read the labels.\"</em> He did not elaborate on what the labels said. We know what the labels say. They say FINE PRINT."
+      ],
+      "pullQuote": "\"The mines are labeled. We can read the labels.\" — Tanker captain, Strait of Hormuz, third U-turn of the morning",
+      "fakeAd": {
+        "headline": "STRAIT OF HORMUZ U-TURN INSURANCE!",
+        "subheadline": "Coverage For The New Standard Navigation Maneuver",
+        "bullets": [
+          "🚢 U-turn coverage: unlimited per voyage",
+          "🚢 FINE PRINT mine avoidance: recommended add-on",
+          "🚢 Frozen assets: not covered (frozen since sanctions)",
+          "🚢 Gas pump anxiety: covered under general anxiety rider"
+        ],
+        "price": "CALL FOR QUOTE / RATES: ANXIOUS AND RISING",
+        "disclaimer": "Strait of Hormuz U-Turn Insurance not responsible for the peace talks, the strikes, the mines, the briefcase, the ice, or the price at the pump. The buoy scoreboard is not affiliated with us. We agree with the buoy."
+      }
+    },
+
+    {
+      "illoId": "dove",
+      "type": "story",
+      "flip": true,
+      "scene": "A brave peace dove in a tiny fitted flak jacket and military helmet perches on a floating olive branch in the Strait of Hormuz. She holds a slightly dented olive branch in her beak. Around her: explosions, debris, mines, tanker wakes, drone buzzing. She looks tired but absolutely determined. Behind her, a small scoreboard reads STATUS: FINE / FLAK JACKET: CHAFING / MISSION: CONTINUING. A small crowd of diplomats and journalists watches from a distant shore with binoculars, several with clipboards reading STATUS REPORT. Her expression is the expression of someone who has been doing this a long time and is not going to stop. Mad Magazine character illustration, heroic and funny.",
+      "eyebrow": "FIELD REPORT · PEACE DOVE STATUS UPDATE",
+      "heading": "PEACE DOVE: STATUS REPORT",
+      "subheading": "ALIVE. OPERATIONAL. FLAK JACKET CHAFING. OLIVE BRANCH DENTED. MISSION: CONTINUING.",
+      "deck": "INSANE Checks In With The Strait Of Hormuz Peace Dove — She Is Fine — The Chafing Is Real — She Has Not Given Up And Would Like That On The Record",
+      "caption": "★ She would like the chafing noted. It is noted. ★",
+      "paragraphs": [
+        "We are happy to report that the peace dove is <strong>alive and operational.</strong>",
+        "She is tired. The flak jacket, which was fitted last issue and has not been re-fitted despite our offers, chafes at the left wing. The olive branch she is carrying has sustained moderate debris damage and is, in her words, <em>\"not looking its best.\"</em> The Strait is loud. The mines are numerous. The negotiations she is symbolizing have not yet produced a signed document, which means she is in week three of what was described to her as <em>\"a short assignment.\"</em>",
+        "When asked for a status on the peace talks, the dove looked at the scoreboard, looked at the explosions, looked at the SEND button visible in the distance on the negotiating table, and said: <strong>\"Close. I think. It depends on what you mean by close.\"</strong>",
+        "When asked about the strikes continuing during the peace talks, she said: <em>\"I am aware.\"</em>",
+        "When asked whether she was going to give up, she repositioned the olive branch in her beak, adjusted her helmet, and said: <strong>\"No.\"</strong> Then she took off again, toward the negotiating table, which was still afloat, still surrounded by ordnance, and still has not produced a signed treaty. She is flying toward it anyway.",
+        "We respect her for it. We are rooting for her. The flak jacket re-fitting offer remains open."
+      ],
+      "pullQuote": "\"Close. I think. It depends on what you mean by close.\" — The Peace Dove, on the status of the Iran negotiations",
+      "theEnd": {
+        "title": "She Is Still Flying.",
+        "sub": "Peace Dove · Strait of Hormuz · May 2026 · Flak Jacket: Chafing"
+      }
+    },
+
+    {
+      "illoId": "street",
+      "type": "story",
+      "flip": false,
+      "scene": "A busy city street corner in any American city. A large microphone on a stand labeled INSANE MAGAZINE — MAN AND WOMAN IN THE STREET. A diverse group of ordinary Americans — a construction worker, a grandmother, a college student, a truck driver, a teacher, a guy still in pajamas — all with extremely expressive faces and speech bubbles. They are clearly mid-sentence about something they feel strongly about. Their expressions range from furious to exasperated to absolutely certain. A reporter with a notepad stands to the side looking slightly overwhelmed. Mad Magazine crowded street scene style, exaggerated emotional expressions.",
+      "eyebrow": "NEW FEATURE · MAN AND WOMAN IN THE STREET",
+      "heading": "CITIZENS SPEAK!",
+      "subheading": "INSANE MAGAZINE HITS THE STREETS — ORDINARY AMERICANS SHARE THEIR THOUGHTS ON THE CURRENT ADMINISTRATION — WE PRINTED THE PRINTABLE ONES",
+      "deck": "INSANE Asks The Public: What Do You Think Should Be Done? — They Had Thoughts — Many, Many Thoughts — Some Printable — We Have Printed Those",
+      "caption": "★ The reporter's notepad ran out of paper. We ordered more. ★",
+      "paragraphs": [
+        "<strong>DOLORES KRUPNIK, 67, Retired Schoolteacher, Ohio:</strong> <em>\"I taught civics for thirty-one years. Thirty-one years. I explained the three branches of government to twelve-year-olds every September. Every single September. And now I have to explain to twelve-year-olds why the branches are doing what they're doing and I cannot do it. I literally cannot explain it. I tell them 'there are supposed to be checks and balances' and they look at me and they say 'where' and I have nothing. What should be done? Restore the checks. Restore the balances. Start with the checks. I am begging you.\"</em>",
+        "<strong>BARRY KOWALCZYK, 44, Long-Haul Trucker, Pennsylvania:</strong> <em>\"I drive through eleven states. Eleven. You know what I pay for diesel? Don't ask me what I pay for diesel. Do you want to know what I think should be done? I think the people who are supposed to be watching the people who make the diesel prices should actually watch the diesel prices instead of whatever else they're doing. Also the IRS thing. I am not audit-proof. I checked. I am very much auditable. I find that unfair. That's my thought.\"</em>",
+        "<strong>PATRICIA VOSS-ABERNETHY, 29, Graduate Student, Michigan:</strong> <em>\"I have a poster. I have been to every march since January. My sign says VOTE THEM OUT in very large letters because I believe in democracy and also because I'm not sure what else to put on a sign that captures the full scope of my feelings without requiring a second poster. Vote them out. Primary them. Support candidates who have read the Constitution. All of it. Not selected amendments.\"</em>",
+        "<strong>GERRY FITCH, 58, Construction Worker, Texas:</strong> <em>\"I voted for him. Both times. I'm not saying I regret it. I'm saying the gas prices are making me think very hard about what I want from a president. What should be done? Lower the gas prices. That's my position. You can print that.\"</em>",
+        "<strong>MARGARET ODUYA, 73, Grandmother of Seven, Georgia:</strong> <em>\"Lock him up. I'm sorry but that's my answer. You asked. Lock. Him. Up. Through legal means, through the courts, through whatever process is appropriate and constitutionally valid — do it properly and do it soon. I have seven grandchildren. I would like them to grow up in a country that has consequences. Thank you for asking. I've been waiting to say that to a microphone.\"</em>",
+        "<strong>TYLER (LAST NAME WITHHELD), 23, Still In Pajamas, Location Unspecified:</strong> <em>\"Impeach him again. I know. I know how that went before. Do it again. Make it a thing. If we do it enough times maybe something sticks. Also can someone do something about the NDA thing? My cousin works for the government and she can't talk to me anymore at Christmas. It's very quiet. I miss her.\"</em>"
+      ],
+      "pullQuote": "\"Lock him up — through legal means, through the courts, through whatever process is appropriate. I have seven grandchildren.\" — Margaret Oduya, 73, Georgia"
+    },
+
+    {
+      "illoId": "spyvspy",
+      "type": "spy-vs-spy",
+      "scene": "Classic Mad Magazine Spy vs Spy — white spy and black spy both seated at opposite ends of a tiny floating negotiating table in the Strait of Hormuz. White spy carefully drafts a treaty with a normal pen. Black spy replaces the pen with a cruise missile-shaped one when white spy looks away. Both sign. The treaty floats into the water. A SEND button appears between them. Both reach for it simultaneously. A mine labeled FINE PRINT bobs next to the table. Dynamic Mad Magazine visual energy.",
+      "title": "SPY vs. SPY",
+      "subtitle": "2026 Edition: \"Strait of Hormuz Negotiations\"",
+      "white": {
+        "panels": [
+          "White Spy arrives at the floating negotiating table. White Spy brings a normal pen. White Spy is prepared to negotiate seriously.",
+          "White Spy drafts a comprehensive treaty covering nuclear enrichment limits, sanctions relief, and a ceasefire timeline.",
+          "White Spy presents the treaty. Black Spy reviews it carefully. Both sides initial the document.",
+          "White Spy celebrates. White Spy looks for the SEND button. White Spy cannot find the SEND button."
+        ]
+      },
+      "black": {
+        "panels": [
+          "Black Spy arrives at the same table. Black Spy's pen is shaped like a cruise missile. Black Spy grins.",
+          "Black Spy replaces White Spy's normal pen with the missile pen when White Spy looks away.",
+          "Black Spy signs the treaty with the missile pen. The pen makes a sound. The sound is WHOOSH.",
+          "Black Spy finds the SEND button immediately. Black Spy considers the button. Black Spy grins again."
+        ]
+      },
+      "result": "BOTH SPIES SIGNED THE TREATY. THE TREATY IS IN THE WATER. THE SEND BUTTON IS BETWEEN THEM. THE MINES ARE LABELED FINE PRINT. THE PEACE DOVE IS WATCHING FROM A SAFE DISTANCE. SHE IS TAKING NOTES."
+    },
+
+    {
+      "type": "awards",
+      "illoId": null,
+      "title": "🏆 INSANE AWARDS",
+      "date": "MAY 2026",
+      "categories": [
+        {
+          "name": "BEST SIMULTANEOUS PEACE/WAR POSTURE",
+          "gold":   "Trump administration (peace talks AND strikes, same Strait, same week)",
+          "silver": "The PLAN B: MORE PLANES folder (contingency excellence)",
+          "bronze": "The spokesperson who did not turn around (commitment to message)"
+        },
+        {
+          "name": "MOST LOAD-BEARING PIECE OF PUNCTUATION",
+          "gold":   "The asterisk on LEAK-PROOF* (footnote classified, structurally critical)",
+          "silver": "The question mark on SNAP ELECTION? (Vol. 1 No. 2 — still pending)",
+          "bronze": "The period in 'Deal? Please.' (hopeful, exhausted, accurate)"
+        },
+        {
+          "name": "BEST NEW DIPLOMATIC VENUE",
+          "gold":   "White House UFC Octagon, South Lawn (construction 40% complete)",
+          "silver": "Gold negotiating table, Strait of Hormuz (afloat, functional)",
+          "bronze": "The briefing room window (most honest communication of the week)"
+        },
+        {
+          "name": "MOST DETERMINED INDIVIDUAL IN DIFFICULT CIRCUMSTANCES",
+          "gold":   "The Peace Dove (three weeks in, flak jacket chafing, still flying)",
+          "silver": "Margaret Oduya, 73, Georgia (has been waiting to say it to a microphone)",
+          "bronze": "The tanker captain on his third U-turn of the morning"
+        },
+        {
+          "name": "BEST MINE LABEL",
+          "gold":   "FINE PRINT (Strait of Hormuz, naval, legally descriptive)",
+          "silver": "FROZEN ASSETS (briefcase, accurate, floating)",
+          "bronze": "EVERYTHING IS FINE (folder, inaccurate, persistent)"
+        },
+        {
+          "name": "MOST HONEST GOVERNMENT COMMUNICATION",
+          "gold":   "The window behind the spokesperson",
+          "silver": "The DEAL? PLEASE mug (Iranian side, chipped)",
+          "bronze": "Tyler's blank email (federal cousin, NDA'd, Christmas: quiet)"
+        }
+      ]
+    },
+
+    {
+      "illoId": "classifieds",
+      "type": "story",
+      "flip": false,
+      "scene": "Chaotic classified ads bulletin board with job listings pinned everywhere, some on fire. A carnival barker in a suit shouts HELP WANTED. Applicants line up in strange configurations. One posting is on gold paper. A mysterious figure in a suit hands out NDA forms to everyone in the job line before they can read the listings. A banner reads INSANE CLASSIFIEDS — READ CAREFULLY — WE ARE NOT RESPONSIBLE. Mad Magazine visual energy, crowded job fair chaos.",
+      "eyebrow": "HELP WANTED · INSANE CLASSIFIEDS VOLUME 2",
+      "heading": "INSANE CLASSIFIEDS!",
+      "subheading": "MORE JOBS! MORE OPPORTUNITIES! SOME NDAs REQUIRED! (READ EVERY WORD.)",
+      "deck": "This Week's Employment And Opportunity Listings From The INSANE Marketplace — Standards Team Still On Puzzle Page — Legal Has Signed Everything",
+      "caption": "★ NDA forms distributed before interviews. This is the process now. ★",
+      "paragraphs": [
+        "<strong>IRAN PEACE NEGOTIATOR — FLOATING TABLE, STRAIT OF HORMUZ</strong><br>Seeking experienced diplomat comfortable working in: active ordnance environments, octagonal gold furniture, and situations where the other party is signing with a missile-shaped pen. Must be able to maintain composure when debris falls on the treaty document. Mug provided: reads DEAL? PLEASE. Flak jacket: not provided — bring your own. Experience with <em>dual-track approaches</em> required. <em>Apply: Table is floating somewhere near 26°N 56°E. Bring a pen that is actually a pen.</em>",
+        "<strong>WHITE HOUSE UFC OCTAGON RING ANNOUNCER</strong><br>Part-time to full-time, starting when construction hits 100%. Must have: broadcast-quality voice, ability to describe foreign policy decisions in octagon terminology, comfort with the phrase <em>\"AND STILL CHAMPION.\"</em> Weight class experience preferred. The octagon is not metaphorical. Bring comfortable shoes. VIP clipboard experience a plus. <em>Apply: South Lawn, hard hat required during construction phase.</em>",
+        "<strong>FEDERAL GOVERNMENT EMPLOYEE (ALL AGENCIES)</strong><br>Now hiring across all departments. Full benefits. Competitive salary. Stable hours. One condition: upon hiring, you will sign a non-disclosure agreement covering all agency activities, communications, policy decisions, and the contents of the footnote. You will not be told what the footnote says. You will sign anyway because it is the condition of employment. <strong>Christmas conversations with family: may be affected.</strong> <em>Apply: Any federal building. NDA table is right inside the door.</em>",
+        "<strong>OIL TANKER U-TURN INSTRUCTOR</strong><br>Experienced tanker navigators needed to train new captains in emergency U-turn protocol for Strait of Hormuz operations. Must be able to execute a full 180-degree turn of a 300-meter vessel while: monitoring peace talk status updates, identifying FINE PRINT mines by label, and updating port arrival estimates in real time. <strong>Third U-turn of the morning is standard.</strong> Insurance updated. Briefcase floating nearby — do not retrieve. <em>Apply: Any port with Strait of Hormuz exposure. Bring charts.</em>",
+        "<strong>PEACE DOVE FLAK JACKET FITTER (URGENT)</strong><br>Licensed outfitter needed immediately for one (1) exhausted peace dove operating in active ordnance environment, Strait of Hormuz. Current jacket chafes at left wing. Olive branch maintenance also required — branch is dented. Subject is cooperative, professional, and has been on assignment for three weeks past the stated end date. <strong>She has not complained. She deserves better fitting.</strong> <em>Apply: Find the dove. She is the one flying toward the negotiating table. She is easy to spot. She is the only one flying toward it.</em>"
+      ],
+      "fakeAd": {
+        "headline": "INSANE CLASSIFIEDS — LEGAL NOTICE VOL. 2",
+        "subheadline": "We Are Still Not A Staffing Agency",
+        "bullets": [
+          "📋 NDA forms available at all listings",
+          "📋 The dove flak jacket position is urgent and real",
+          "📋 All positions require reading the fine print",
+          "📋 The fine print is labeled. It is also a mine."
+        ],
+        "price": "LISTINGS: $49.99 / FINE PRINT: FREE (HAZARDOUS)",
+        "disclaimer": "INSANE Classifieds Volume 2 not responsible for employment relationships formed, NDAs signed, U-turns executed, or the state of the peace dove's left wing. The flak jacket position is genuinely urgent. Please apply."
+      }
+    },
+
+    {
+      "illoId": "marketplace",
+      "type": "story",
+      "flip": true,
+      "scene": "A chaotic gold-and-red TV shopping channel set. Host in a sparkly jacket holds up: a missile-shaped fountain pen, a flak jacket for doves, a gold FINE PRINT decoder ring, and a SEND button paperweight. Behind the host a screen cycles through increasingly absurd products. Studio audience is wild. Prices with asterisks flash everywhere. Fine print scrolls too fast to read at the bottom of screen. One product is simply labeled 'LEVERAGE.' Mad Magazine infomercial chaos.",
+      "eyebrow": "INSANE MARKETPLACE · VOLUME 2 · FINE PRODUCTS",
+      "heading": "INSANE MARKETPLACE!",
+      "subheading": "CRUISE MISSILE PENS, PEACE DOVE GEAR, FINE PRINT DECODERS AND MORE — LIMITED TIME OFFERS",
+      "deck": "This Week's Featured Products — Standards Team Still On Puzzle Page — All Items Ship From An Undisclosed Location",
+      "caption": "★ The SEND button paperweight is decorative. We are very clear about this. ★",
+      "paragraphs": [
+        "<strong>TRUMP MISSILE-PEN™ — SIGN ANYTHING WITH AUTHORITY</strong><br>A full-size fountain pen in the aerodynamic profile of a cruise missile, gold-plated, weighted for confident treaty signing. Makes a whoosh sound when uncapped. Comes in: <em>Diplomacy Black, Freedom Gold, and Plan B Silver.</em> The whoosh sound is purely decorative. We cannot stress this enough. <strong>$89.99.</strong> Comes with one treaty page, blank. Signing what you sign with it is your business. Not our business. We are a pen company. <em>*Does not deploy. We have checked. Many times. Please stop asking.*</em>",
+        "<strong>PEACE DOVE FIELD KIT™ — FOR DOVES OPERATING IN ACTIVE ENVIRONMENTS</strong><br>Includes: one properly fitted flak jacket (dove-sized, left wing re-enforced), one regulation olive branch (dent-resistant, titanium core), one helmet (adjustable), and one status scoreboard (reads OPERATIONAL by default, can be updated). <strong>Designed in consultation with the Strait of Hormuz peace dove.</strong> She did not endorse it. She does not know it exists. We believe she would appreciate it. The chafing issue is addressed on page 3 of the instruction manual. <strong>$49.99.</strong>",
+        "<strong>FINE PRINT DECODER RING™ — READ WHAT'S IN THE WATER</strong><br>A gold-plated ring with a rotating cipher that translates standard diplomatic fine print into plain language. Tested against: trade agreements, peace treaties, cease-fire addenda, NDA footnotes, and the labels on the Strait of Hormuz mines. <em>Results: mostly what you suspected.</em> <strong>$29.99.</strong> Batteries not included. The batteries are in the footnote. The footnote is classified. <em>*Ring is novelty item. We cannot actually decode classified footnotes. This is a disclaimer.*</em>",
+        "<strong>LEVERAGE™ — A PRODUCT</strong><br>It is leverage. That is the product. <strong>Price upon request.</strong> Available in: maintained and implied. Ships from an undisclosed location. Delivery timeline: when the time is right. <em>Results: comprehensive approach to a complex regional dynamic.</em> Not returnable. Dual-track included at no extra charge.",
+        "<strong>THE SEND BUTTON PAPERWEIGHT™</strong><br>A full-size replica of the red SEND button from the negotiating table, mounted on a heavy gold base for use as a desk paperweight or conversation piece. <strong>DECORATIVE ONLY.</strong> Does not send anything. We have had this tested. It is tested monthly. We have the testing certificates. Nothing is connected to it. It is a paperweight. Please enjoy it as a paperweight. <strong>$39.99.</strong> <em>*INSANE Magazine accepts no responsibility for what people do with this button. It sends nothing. It is a paperweight. We need you to believe us about this.*</em>"
+      ],
+      "theEnd": {
+        "title": "Shop Carefully. Read Everything. Especially The Fine Print.",
+        "sub": "INSANE Marketplace Vol. 2 · Standards Team: Still On Puzzle Page"
+      }
+    },
+
+    {
+      "illoId": "foldin",
+      "type": "fold-in",
+      "scene": "Mad Magazine back page fold-in — wide format. Left 60 percent (labeled A): shows the gold negotiating table floating in the Strait of Hormuz, a treaty being signed with the missile pen, the SEND button, the peace dove in her flak jacket, and the PEACE TALKS — PLEASE DUCK banner. Everything suggests a deal being completed. Rich detail, gag labels everywhere. Right 40 percent (labeled B): shows a large explosion with debris flying outward, labeled THIS. When A is folded over B, the treaty-signing hand appears to be pressing the SEND button instead, and the result clearly reads: NOT THAT KIND OF DEAL. Bold, graphic, classic fold-in visual.",
+      "question": "TRUMP SAYS THE IRAN DEAL IS 'CLOSE.' THE STRIKES ARE ALSO CONTINUING. SO WHEN HE SAYS 'CLOSE TO A DEAL' — WHAT KIND OF DEAL IS HE ACTUALLY CLOSE TO?",
+      "answer": "FIRE WHEN READY.",
+      "leftText": "INSANE — FOLD THIS HALF →",
+      "rightText": "← FOLD LEFT SIDE OVER TO FIND OUT"
+    }
+
+  ]
+}

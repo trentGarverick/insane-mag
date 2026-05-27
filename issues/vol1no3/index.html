@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Close To A Deal! Fire When Ready! — INSANE Mag</title>
+  <meta name="description" content="Peace Talks — Please Duck">
+  <meta property="og:title" content="Close To A Deal! Fire When Ready! — INSANE Mag">
+  <meta property="og:description" content="Peace Talks — Please Duck">
+  <meta property="og:image" content="https://insane-mag.bumbloobooks.com/images/vol1no3-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insane-mag.bumbloobooks.com/issues/vol1no3/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Special+Elite&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Default palette (overridden per issue via palette in issue.json) ────────── */
+:root {
+  --bg:           #fdf6e3;   /* newsprint cream */
+  --page-bg:      #fff;
+  --text:         #111111;
+  --accent:       #cc0000;   /* Mad red */
+  --accent2:      #f5c400;   /* Mad yellow */
+  --accent3:      #1a1a8a;   /* blue accent */
+  --nav-bg:       #cc0000;
+  --nav-text:     #ffffff;
+  --dot-active:   #f5c400;
+  --eyebrow:      #cc0000;
+  --ad-bg:        #fffde7;
+  --ad-border:    #f5c400;
+  --spy-white-bg: #f0f0f0;
+  --spy-black-bg: #111111;
+  --cover-text:   #ffffff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Nav bar ────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  height: 50px;
+  border-bottom: 3px solid rgba(0,0,0,0.25);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1.1rem; padding: 8px;
+  opacity: 0.8; transition: opacity 0.15s;
+}
+.nav-btn:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-text);
+  opacity: 0.9;
+}
+.nav-counter {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.nav-back {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-share {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1rem; padding: 8px;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.nav-share:hover { opacity: 1; }
+
+/* ── Dot pager ──────────────────────────────────────────── */
+.dot-row {
+  position: fixed; bottom: 14px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 12px;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text); opacity: 0.2;
+  cursor: pointer; transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+.dot.active {
+  background: var(--dot-active); opacity: 1; transform: scale(1.4);
+}
+
+/* ── Viewport / pager ───────────────────────────────────── */
+.viewport {
+  position: fixed; top: 50px; left: 0; right: 0; bottom: 40px;
+  overflow: hidden;
+}
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  display: flex; align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER-FULL PAGE  (pure full-bleed image, no overlays)
+   ══════════════════════════════════════════════════════════ */
+.cover-full-page {
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cover-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER PAGE
+   ══════════════════════════════════════════════════════════ */
+.cover-page {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+  overflow: hidden;
+}
+.cover-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.82;
+}
+.cover-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8rem; opacity: 0.1;
+}
+.cover-top {
+  position: relative; z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  padding: 12px 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+}
+.cover-mag-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  color: var(--accent2, #f5c400);
+  line-height: 0.85;
+  letter-spacing: 0.06em;
+  text-shadow: 3px 3px 0 #000;
+}
+.cover-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+.cover-lines-wrap {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 8px;
+  gap: 5px;
+}
+.cover-line {
+  background: rgba(204, 0, 0, 0.88);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.85rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  border-left: 4px solid var(--accent2, #f5c400);
+}
+.cover-line:nth-child(even) {
+  background: rgba(0, 0, 0, 0.82);
+  border-left-color: var(--accent, #cc0000);
+}
+.cover-tagline {
+  position: relative; z-index: 2;
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 6px;
+  border-top: 2px solid var(--accent2, #f5c400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDITORIAL PAGE
+   ══════════════════════════════════════════════════════════ */
+.editorial-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editorial-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 28px 60px;
+  margin: 0 auto;
+}
+.editorial-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.editorial-salutation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.editorial-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.editorial-body strong { font-weight: 800; }
+.editorial-body em { font-style: italic; color: var(--accent); }
+.editorial-sig {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--text);
+}
+.editorial-ps {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MASTHEAD PAGE
+   ══════════════════════════════════════════════════════════ */
+.masthead-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.masthead-inner {
+  max-width: 580px;
+  width: 100%;
+  padding: 24px 24px 60px;
+  margin: 0 auto;
+}
+.masthead-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.masthead-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.masthead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  padding: 12px;
+}
+.mast-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.mast-role {
+  font-weight: 800;
+  color: var(--accent);
+}
+.masthead-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  opacity: 0.55;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+/* Subscriber alert box */
+.subscriber-alert {
+  background: var(--accent, #cc0000);
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+}
+.alert-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.alert-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.alert-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.alert-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  color: var(--accent2, #f5c400);
+}
+.alert-disclaimer {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENTS PAGE
+   ══════════════════════════════════════════════════════════ */
+.contents-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ticker */
+.ticker-bar {
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.contents-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 60px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.contents-header {
+  margin-bottom: 18px;
+  border-bottom: 4px solid var(--accent, #cc0000);
+  padding-bottom: 12px;
+}
+.contents-mag {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent);
+  line-height: 0.9;
+}
+.contents-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.contents-edition {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.contents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ci-item {
+  display: grid;
+  grid-template-columns: 28px 24px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 6px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ci-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.ci-emoji {
+  font-size: 1rem;
+  grid-row: 1;
+}
+.ci-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  grid-row: 1;
+}
+.ci-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Scorecard box */
+.scorecard-box {
+  background: var(--accent2, #f5c400);
+  border: 3px solid #000;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.scorecard-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.scorecard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scorecard-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+.scorecard-list strong {
+  color: var(--accent, #cc0000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STORY PAGES
+   ══════════════════════════════════════════════════════════ */
+.story-page {
+  flex-direction: column;
+}
+.story-page.no-illo {
+  flex-direction: column;
+  align-items: center;
+}
+.story-illo {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40vw; min-height: 180px; max-height: 320px;
+  overflow: hidden; position: relative;
+  background: #ddd;
+}
+.story-illo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.illo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; opacity: 0.25;
+}
+.illo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+}
+.story-body {
+  flex: 1;
+  padding: 18px 22px 56px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+.story-eyebrow {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--eyebrow, var(--accent));
+  margin-bottom: 6px;
+  border-left: 3px solid var(--accent, #cc0000);
+  padding-left: 8px;
+}
+.story-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.story-subheading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--accent, #cc0000);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.story-deck {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.story-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
+  line-height: 1.72;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.story-body p strong { font-weight: 800; }
+.story-body p em { color: var(--accent); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  border-top: 3px solid var(--accent2, #f5c400);
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+/* Sidebar list (bullet box) */
+.sidebar-list {
+  background: var(--bg, #fdf6e3);
+  border: 2px solid var(--text);
+  border-left: 5px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.sidebar-list-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sidebar-list ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-list ul li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Fake advertisement */
+.fake-ad {
+  background: var(--ad-bg, #fffde7);
+  border: 3px solid var(--ad-border, #f5c400);
+  border-top: 6px solid var(--accent, #cc0000);
+  padding: 14px 16px;
+  margin: 18px 0 0;
+}
+.ad-headline {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.ad-subheadline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.ad-bullets { margin-bottom: 8px; }
+.ad-bullet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.ad-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.ad-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  opacity: 0.55;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* Glossary box */
+.glossary-box {
+  background: #f0f4ff;
+  border: 2px solid var(--accent3, #1a1a8a);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.glossary-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3, #1a1a8a);
+  margin-bottom: 8px;
+}
+.gloss-entry {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.gloss-word {
+  font-weight: 800;
+  color: var(--accent3, #1a1a8a);
+}
+
+/* The End */
+.the-end {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 3px solid var(--accent2, #f5c400);
+  text-align: center;
+}
+.the-end-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.the-end-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* Desktop split layout for story pages */
+@media (min-width: 700px) {
+  .story-page:not(.no-illo) { flex-direction: row; }
+  .story-page.flip:not(.no-illo) { flex-direction: row-reverse; }
+  .story-illo {
+    flex: 0 0 42%;
+    height: 100%; max-height: none;
+    width: auto;
+  }
+  .story-body { overflow-y: auto; padding: 28px 36px 60px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SPY VS SPY PAGE
+   ══════════════════════════════════════════════════════════ */
+.spy-page {
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--page-bg, #fff);
+}
+.spy-header {
+  background: #000;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.spy-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.spy-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent2, #f5c400);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.spy-illo {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow: hidden;
+}
+.spy-illo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spy-arena {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.spy-col {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+.spy-col h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.spy-white {
+  background: var(--spy-white-bg, #f0f0f0);
+  border-right: 3px solid #000;
+  color: #111;
+}
+.spy-white h3 { color: #111; }
+.spy-black {
+  background: var(--spy-black-bg, #111);
+  color: #f0f0f0;
+}
+.spy-black h3 { color: #fff; }
+.spy-icon { font-size: 2rem; margin-bottom: 6px; }
+.spy-panels p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.spy-divider {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent, #cc0000);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.spy-result {
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 16px;
+  border-top: 3px solid #000;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AWARDS PAGE
+   ══════════════════════════════════════════════════════════ */
+.awards-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.awards-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 28px 24px 60px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.awards-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border-bottom: 5px double var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+.awards-date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.award-category {
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  border-left: 6px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+}
+.award-cat-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.award-medals { display: flex; flex-direction: column; gap: 4px; }
+.medal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.medal.gold   { color: #b8860b; }
+.medal.silver { color: #666; }
+.medal.bronze { color: #8b4513; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOLD-IN PAGE
+   ══════════════════════════════════════════════════════════ */
+.fold-in-page {
+  background: #000;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.foldin-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  overflow: hidden;
+}
+.foldin-header {
+  background: var(--accent, #cc0000);
+  padding: 12px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.foldin-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  color: var(--accent2, #f5c400);
+}
+.foldin-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.foldin-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s;
+}
+.foldin-area.folded {
+  opacity: 0.08;
+  pointer-events: none;
+}
+.foldin-left {
+  flex: 0 0 62%;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px dashed var(--accent2, #f5c400);
+}
+.foldin-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; opacity: 0.6;
+}
+.foldin-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; font-size: 4rem; opacity: 0.1;
+  background: #1a1a1a;
+}
+.foldin-section-top {
+  position: absolute; top: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent2, #f5c400);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 2;
+}
+.foldin-question {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.72);
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.foldin-label-a, .foldin-label-b {
+  position: absolute; bottom: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--accent2, #f5c400);
+  background: rgba(0,0,0,0.8);
+  padding: 2px 8px;
+  z-index: 3;
+}
+.foldin-label-a { right: 8px; }
+.foldin-right {
+  flex: 0 0 38%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.foldin-answer-hidden {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+.foldin-label-b { left: 8px; bottom: 8px; }
+
+/* Revealed answer (shown when folded) */
+.foldin-answer-reveal {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+.foldin-area.folded ~ .foldin-answer-reveal {
+  display: flex;
+}
+.foldin-answer-text {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--accent2, #f5c400);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.foldin-answer-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.foldin-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 3px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.foldin-btn:hover { background: #fff; }
+
+:root {
+  --bg: #f5f0e8;
+  --page-bg: #ffffff;
+  --text: #111111;
+  --accent: #cc0000;
+  --accent2: #f5c400;
+  --accent3: #1a3a8a;
+  --nav-bg: #1a3a8a;
+  --nav-text: #ffffff;
+  --dot-active: #f5c400;
+  --eyebrow: #cc0000;
+  --ad-bg: #eef2ff;
+  --ad-border: #1a3a8a;
+}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">← All Issues</a>
+  </div>
+  <span class="nav-title">Close To A Deal! Fire When Ready!</span>
+  <div class="nav-right">
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next">&#8594;</button>
+    <button class="nav-share" onclick="shareIssue()" aria-label="Share">&#9014;</button>
+  </div>
+</nav>
+
+<div class="viewport">
+  <div class="track" id="track">
+<div class="page cover-full-page" id="p0">
+  <img class="cover-full-img" src="../../images/vol1no3-cover.png?v=1779878190040" alt="cover">
+</div>
+
+<div class="page cover-page" id="p1">
+  <img class="cover-img" src="../../images/vol1no3-cover.png?v=1779878190040" alt="cover">
+  <div class="cover-top">
+    <div class="cover-mag-name">INSANE</div>
+    <div class="cover-meta">Vol. 1, No. 3 · May 2026 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; $5.99 US / $7.99 CAN</div>
+  </div>
+  <div class="cover-lines-wrap">
+    <div class="cover-line">CLOSE TO A DEAL! FIRE WHEN READY!</div>
+    <div class="cover-line">WHITE HOUSE CAGE MATCH! DIPLOMACY MOVES INTO THE OCTAGON</div>
+    <div class="cover-line">LEAK-PROOF GOVERNMENT! NOW WITH EMPLOYEE NDAs</div>
+    <div class="cover-line">STRAIT TALK: OIL TANKERS LEARN THE ART OF THE U-TURN</div>
+    <div class="cover-line">THE 30-DAY PEACE PLAN THAT LASTED 30 SECONDS!</div>
+    <div class="cover-line">NEGOTIATIONS CONTINUE, ASSUMING EVERYONE SURVIVES THE NEGOTIATIONS</div>
+  </div>
+  <div class="cover-tagline">SANITY NOT INCLUDED</div>
+</div>
+
+<div class="page editorial-page" id="p2">
+  <div class="editorial-inner">
+    <h2 class="editorial-title">FROM THE EDITOR'S BUNKER</h2>
+    <p class="editorial-salutation">Dear Reader Who Is Also Please Ducking,</p>
+    <div class="editorial-body">
+    <p>We have been covering this Iran situation for three issues now and we want to say up front: the peace talks are going <em>great.</em> According to the White House, a deal is close. According to the strikes that continued during the peace talks, the deal is also still quite far. According to the peace dove on this week's cover — who is wearing a flak jacket and a helmet and carrying an olive branch while dodging shrapnel — the situation is best described as <strong>"active."</strong></p>
+    <p>The gold negotiating table is floating in the Strait of Hormuz. Oil tankers are making U-turns. The mines labeled FINE PRINT are everywhere. The Iranian negotiators have a mug that says <em>Deal? Please.</em> The Trump team has folders marked <em>Everything Is Fine</em> and <em>Plan B: More Planes.</em> The banner above the whole scene says <strong>PEACE TALKS — PLEASE DUCK.</strong></p>
+    <p>Elsewhere this issue: the White House UFC octagon is <em>under construction on the South Lawn,</em> because diplomacy is apparently moving into the octagon and we feel we should cover the venue. Federal workers are now under NDA, because the way to have a leak-proof government is apparently to make everyone sign something rather than do fewer leakable things. And the oil markets are doing what oil markets do when the Strait of Hormuz becomes a negotiating table: <em>expressing anxiety at the pump.</em></p>
+    <p>We have added a new feature this issue: <strong>MAN (AND WOMAN) IN THE STREET</strong> — ordinary citizens sharing their thoughts. They have thoughts. Many thoughts. We have printed the printable ones. The others are in a separate envelope available at the front desk.</p>
+    <p>We asked for a helmet. Again. Still waiting.</p>
+    </div>
+    <p class="editorial-sig">— The Editors</p>
+    <p class="editorial-ps">P.S. — The peace dove is fine. She is tired and her flak jacket chafes but she has not given up. We respect her for it.</p>
+  </div>
+</div>
+
+<div class="page masthead-page" id="p3">
+  <div class="masthead-inner">
+    <div class="masthead-logo">INSANE</div>
+    <h2 class="masthead-title">INSANE MAGAZINE MASTHEAD</h2>
+    <div class="masthead-grid">
+      <div class="mast-item"><span class="mast-role">Publisher:</span> <span class="mast-name">A. Panic Jr.</span></div>
+      <div class="mast-item"><span class="mast-role">Editor-in-Chief:</span> <span class="mast-name">Screaming McGee</span></div>
+      <div class="mast-item"><span class="mast-role">Strait of Hormuz Desk:</span> <span class="mast-name">Ducking, Filing Simultaneously</span></div>
+      <div class="mast-item"><span class="mast-role">Peace Talks Correspondent:</span> <span class="mast-name">Under The Table (Literally)</span></div>
+      <div class="mast-item"><span class="mast-role">Strike Coverage:</span> <span class="mast-name">Also Under The Table</span></div>
+      <div class="mast-item"><span class="mast-role">Oil Markets Editor:</span> <span class="mast-name">Watching The U-Turns</span></div>
+      <div class="mast-item"><span class="mast-role">White House UFC Desk:</span> <span class="mast-name">Ringside, Confused</span></div>
+      <div class="mast-item"><span class="mast-role">NDA Compliance Officer:</span> <span class="mast-name">[REDACTED]</span></div>
+      <div class="mast-item"><span class="mast-role">Federal Worker Sources:</span> <span class="mast-name">[ALSO REDACTED]</span></div>
+      <div class="mast-item"><span class="mast-role">Man In The Street:</span> <span class="mast-name">Very Vocal This Week</span></div>
+      <div class="mast-item"><span class="mast-role">Dove Welfare:</span> <span class="mast-name">She Is Fine, Chafing</span></div>
+      <div class="mast-item"><span class="mast-role">Legal:</span> <span class="mast-name">NDA Prevents Comment</span></div>
+      <div class="mast-item"><span class="mast-role">Sanity Level:</span> <span class="mast-name">PLEASE DUCK</span></div>
+    </div>
+    
+    <div class="subscriber-alert">
+      <div class="alert-title">INSANE MAGAZINE SUBSCRIBER ALERT!</div>
+      <div class="alert-sub">This week's briefing: duck first, read after</div>
+      <div class="alert-items"><div class="alert-item">☑ Iran deal: close (strikes: also continuing)</div>
+        <div class="alert-item">☑ Gold negotiating table: afloat in Strait of Hormuz</div>
+        <div class="alert-item">☑ Peace dove: flak jacket fitted, olive branch dented</div>
+        <div class="alert-item">☑ Frozen assets: in a briefcase, in the water</div>
+        <div class="alert-item">☑ Fine print mines: everywhere, naval hazard</div>
+        <div class="alert-item">☑ White House UFC octagon: South Lawn, under construction</div>
+        <div class="alert-item">☑ Federal NDAs: leak-proof government in progress</div>
+        <div class="alert-item">☑ Oil tankers: executing U-turns at scale</div>
+        <div class="alert-item">☑ Man/Woman in the Street: extremely vocal, fully printed</div></div>
+      <div class="alert-price">$5.99 / STILL CHEAPER THAN FILL-UP AT FREEDOM+</div>
+      <div class="alert-disclaimer">INSANE Magazine is printed on surplus NDA forms. Sources have signed everything. The peace dove's flak jacket was provided at editorial expense. Helmet still not included.</div>
+    </div>
+    <div class="masthead-disclaimer">INSANE Magazine: Smarter Than The News. Dumber Than Politicians. 100% Unclassified.</div>
+  </div>
+</div>
+
+<div class="page contents-page" id="p4">
+  <div class="ticker-bar"><div class="ticker-inner">BREAKING: IRAN DEAL 'CLOSE' — U.S. STRIKES ALSO CONTINUING ✦ TRUMP SIGNS TREATY WITH MISSILE-SHAPED PEN ✦ WHITE HOUSE UFC OCTAGON CONSTRUCTION BEGINS SOUTH LAWN ✦ FEDERAL WORKERS ISSUED NDAs — SOURCES NOW [REDACTED] ✦ OIL TANKERS EXECUTE MASS U-TURNS IN STRAIT OF HORMUZ ✦ FROZEN ASSETS BRIEFCASE RECOVERED, STILL FROZEN ✦ PEACE DOVE ALIVE, FLAK JACKET CHAFING ✦ &nbsp; ✦ &nbsp; BREAKING: IRAN DEAL 'CLOSE' — U.S. STRIKES ALSO CONTINUING ✦ TRUMP SIGNS TREATY WITH MISSILE-SHAPED PEN ✦ WHITE HOUSE UFC OCTAGON CONSTRUCTION BEGINS SOUTH LAWN ✦ FEDERAL WORKERS ISSUED NDAs — SOURCES NOW [REDACTED] ✦ OIL TANKERS EXECUTE MASS U-TURNS IN STRAIT OF HORMUZ ✦ FROZEN ASSETS BRIEFCASE RECOVERED, STILL FROZEN ✦ PEACE DOVE ALIVE, FLAK JACKET CHAFING ✦</div></div>
+  <div class="contents-inner">
+    <div class="contents-header">
+      <div class="contents-mag">INSANE</div>
+      <h2 class="contents-title">CONTENTS</h2>
+      <div class="contents-edition">MAY 2026 · &quot;PLEASE DUCK&quot; EDITION</div>
+    </div>
+    <div class="contents-list">
+    <div class="ci-item">
+      <span class="ci-num">5</span>
+      <span class="ci-emoji">✍️</span>
+      <span class="ci-title">CLOSE TO A DEAL!</span>
+      <span class="ci-desc">Signing a treaty with a cruise missile pen</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">6</span>
+      <span class="ci-emoji">💥</span>
+      <span class="ci-title">FIRE WHEN READY!</span>
+      <span class="ci-desc">Strikes continue during the peace talks</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">7</span>
+      <span class="ci-emoji">🥊</span>
+      <span class="ci-title">WHITE HOUSE CAGE MATCH!</span>
+      <span class="ci-desc">The octagon comes to the South Lawn</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">8</span>
+      <span class="ci-emoji">🤐</span>
+      <span class="ci-title">LEAK-PROOF GOVERNMENT!</span>
+      <span class="ci-desc">Federal NDAs: everyone signs, nobody talks</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">9</span>
+      <span class="ci-emoji">⛽</span>
+      <span class="ci-title">STRAIT TALK: THE U-TURN</span>
+      <span class="ci-desc">Oil tankers navigate the new normal</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">10</span>
+      <span class="ci-emoji">🕊️</span>
+      <span class="ci-title">PEACE DOVE: STATUS REPORT</span>
+      <span class="ci-desc">She is fine. The flak jacket chafes.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">11</span>
+      <span class="ci-emoji">🗣️</span>
+      <span class="ci-title">MAN &amp; WOMAN IN THE STREET</span>
+      <span class="ci-desc">Citizens speak. Loudly. At length.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">12</span>
+      <span class="ci-emoji">🥷</span>
+      <span class="ci-title">SPY VS. SPY: IRAN DEAL ED.</span>
+      <span class="ci-desc">Same table, different missiles</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">13</span>
+      <span class="ci-emoji">🏆</span>
+      <span class="ci-title">INSANE AWARDS</span>
+      <span class="ci-desc">Weekly recognition in a crowded Strait</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">14</span>
+      <span class="ci-emoji">📋</span>
+      <span class="ci-title">INSANE CLASSIFIEDS</span>
+      <span class="ci-desc">Jobs, opportunities, NDAs available</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">15</span>
+      <span class="ci-emoji">🛒</span>
+      <span class="ci-title">INSANE MARKETPLACE</span>
+      <span class="ci-desc">Fine products for the discerning patriot</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">16</span>
+      <span class="ci-emoji">📰</span>
+      <span class="ci-title">BACK PAGE FOLD-IN</span>
+      <span class="ci-desc">What does 'close to a deal' actually mean?</span>
+    </div>
+    </div>
+    
+    <div class="scorecard-box">
+      <div class="scorecard-title">THIS WEEK'S INSANE SCORECARD</div>
+      <ul class="scorecard-list"><li>✍️ Deals described as 'close': <strong>1 (Iran)</strong></li>
+        <li>💥 Strikes that continued during the close deal: <strong>Multiple (ongoing)</strong></li>
+        <li>⛽ Oil tankers executing emergency U-turns: <strong>Dozens (Strait of Hormuz)</strong></li>
+        <li>🤐 Federal workers now under NDA: <strong>[REDACTED]</strong></li>
+        <li>💰 Frozen assets: temperature: <strong>Still frozen</strong></li>
+        <li>🕊️ Peace doves operational (flak jacket fitted): <strong>1 (tired but committed)</strong></li>
+        <li>🥊 UFC octagon construction: completion %: <strong>South Lawn: 40%</strong></li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p5">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-deal.png?v=1779878190040" alt="CLOSE TO A DEAL!">
+    <div class="illo-caption">★ The SEND button is not part of the treaty. We have been assured of this. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">COVER STORY · STRAIT OF HORMUZ NEGOTIATIONS</div>
+    <h2 class="story-heading">CLOSE TO A DEAL!</h2>
+    <p class="story-subheading">TRUMP SAYS AN IRAN DEAL IS CLOSE — STRIKES CONFIRM THEY ARE ALSO CLOSE — TO CONTINUING</p>
+    <p class="story-deck">White House Says Iran Nuclear Deal Is Within Reach As U.S. Strikes Continue In The Region — Peace Dove Fitted For Flak Jacket — Negotiating Table Now Afloat</p>
+    <p>The White House announced this week that an Iran nuclear deal is <strong>close,</strong> a characterization that U.S. strike operations in the region confirmed by continuing — because the most effective backdrop for peace negotiations is, apparently, active ordnance.</p>
+    <p>Trump, seated at a gold negotiating table that is simultaneously afloat in the Strait of Hormuz, shaped like a UFC octagon, and mounted on what appears to be an aircraft carrier deck, is signing the treaty with a <strong>fountain pen shaped like a cruise missile.</strong> The pen was custom. The treaty has not been initialed by the other side yet. A red button labeled SEND sits within easy reach of his right hand.</p>
+    <p>Administration aides standing behind the President hold folders. One says <strong>EVERYTHING IS FINE.</strong> The other says <strong>PLAN B: MORE PLANES.</strong> Both folders are very full. The aides holding them have the expressions of people who have read the folders.</p>
+    <p>Across the table, Iranian negotiators are attempting to conduct diplomacy while shielding themselves from debris. A ceramic mug near the lead negotiator reads <em>Deal? Please.</em> The mug is chipped. The negotiators have been at the table for some time.</p>
+    <p>"We're very close," Trump told reporters from the aircraft carrier deck. "Very, very close. The Iranians want a deal. We want a deal. Everybody wants a deal." A fighter jet took off from the deck behind him at that moment. He did not appear to notice. The fighter jet appeared to be on its way somewhere.</p>
+    <blockquote class="pull-quote">&quot;Everybody wants a deal.&quot; — The President, as a fighter jet launched from the deck behind him</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">ITEMS ON THE NEGOTIATING TABLE</div>
+      <ul><li>✍️ Treaty document (unsigned by Iran side)</li>
+        <li>🚀 Missile-shaped signing pen (custom)</li>
+        <li>🔴 SEND button (purpose unconfirmed)</li>
+        <li>☕ DEAL? PLEASE mug (chipped, Iranian side)</li>
+        <li>📁 EVERYTHING IS FINE folder (full)</li>
+        <li>📁 PLAN B: MORE PLANES folder (also full)</li></ul>
+    </div>
+    
+    <div class="fake-ad">
+      <div class="ad-headline">PEACE TALKS SURVIVAL KIT™</div>
+      <div class="ad-subheadline">For Negotiations Conducted Under Active Ordnance</div>
+      <div class="ad-bullets"><div class="ad-bullet">🪖 Flak jacket: fits over dress shirt (diplomat cut)</div>
+        <div class="ad-bullet">🕊️ Peace dove: pre-fitted, olive branch included</div>
+        <div class="ad-bullet">☕ DEAL? PLEASE mug: dishwasher safe, chip-resistant</div>
+        <div class="ad-bullet">📁 Plan B folder: pre-labeled, many pages</div></div>
+      <div class="ad-price">$149.99 / PLAN B: PRICELESS</div>
+      <div class="ad-disclaimer">Peace Talks Survival Kit™ not responsible for strikes that continue during peace talks, mines labeled FINE PRINT, or the SEND button. Flak jacket rated for shrapnel, not negotiations. Results may vary. Duck.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p6">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-strikes.png?v=1779878190041" alt="FIRE WHEN READY!">
+    <div class="illo-caption">★ The window is not the story. The window is definitely the story. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">WAR/PEACE · SIMULTANEOUSLY</div>
+    <h2 class="story-heading">FIRE WHEN READY!</h2>
+    <p class="story-subheading">U.S. STRIKES CONTINUE DURING PEACE TALKS — SPOKESPERSON DOES NOT TURN AROUND</p>
+    <p class="story-deck">American Military Operations In The Iran Theater Continue As Diplomatic Negotiations Proceed — Administration Describes Situation As 'A Process' — Window Behind Spokesperson Very Illuminated</p>
+    <p>The United States continued military strikes in the Iran theater this week while simultaneously pursuing peace negotiations — a <em>dual-track approach</em> that the administration describes as <strong>"maintaining leverage"</strong> and that the Iranian negotiating team describes as <em>"extremely difficult to sit across from."</em></p>
+    <p>At the White House press briefing, a spokesperson stood at a podium beneath a banner reading PEACE TALKS IN PROGRESS and confirmed that talks were <strong>"productive and continuing."</strong> Behind the spokesperson, through a large window, fighter jets and associated ordnance were visible proceeding in a direction consistent with the theater of operations. The spokesperson did not turn around.</p>
+    <p>Reporters in the briefing room noted the window. Several raised their hands. The spokesperson acknowledged the questions in the order received and described the situation as <em>"a comprehensive approach to a complex regional dynamic."</em> The window continued being illuminated.</p>
+    <p>"Both things are happening," the spokesperson confirmed, which was the most accurate statement of the briefing and possibly of the month. Both things were, indeed, happening. <strong>The peace talks. The strikes.</strong> At the same time. In the same Strait. With the same participants attempting to sign things and also duck.</p>
+    <p>The peace dove, reached for comment, said she had read the briefing transcript and was <em>"not surprised, but still."</em> Her flak jacket needed re-fitting after last week. She has not given up.</p>
+    <blockquote class="pull-quote">&quot;Both things are happening.&quot; — White House spokesperson, beneath a PEACE TALKS banner, window lit behind them</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">DUAL-TRACK DIPLOMACY SERVICES™</div>
+      <div class="ad-subheadline">Negotiate AND Strike — Simultaneously, At No Extra Charge</div>
+      <div class="ad-bullets"><div class="ad-bullet">💥 Track 1: Peace talks — productive, continuing</div>
+        <div class="ad-bullet">✈️ Track 2: Strikes — also continuing</div>
+        <div class="ad-bullet">🪟 Window: included, very illuminated</div>
+        <div class="ad-bullet">🗣️ Spokesperson: does not turn around (guaranteed)</div></div>
+      <div class="ad-price">LEVERAGE: MAINTAINED / IRONY: FREE</div>
+      <div class="ad-disclaimer">Dual-Track Diplomacy Services not responsible for the view from the window, the state of the olive branch, or the Iranian negotiators' mug. Both tracks are real. This is the approach. Duck if needed.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p7">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-ufc.png?v=1779878190041" alt="WHITE HOUSE CAGE MATCH!">
+    <div class="illo-caption">★ The velvet rope is a diplomatic fixture. Do not approach without credentials. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">FOREIGN POLICY · SOUTH LAWN CONSTRUCTION UPDATE</div>
+    <h2 class="story-heading">WHITE HOUSE CAGE MATCH!</h2>
+    <p class="story-subheading">DIPLOMACY MOVES INTO THE OCTAGON — SOUTH LAWN CONSTRUCTION UNDERWAY — VIP SEATING: CLIPBOARD REQUIRED</p>
+    <p class="story-deck">White House Diplomatic Approach Now Formally Octagon-Based — Construction Crews On South Lawn — Foreign Governments Receiving Updated Protocol Documents — Mouthguard Advice: Pending</p>
+    <p>Construction began this week on what sources close to the South Lawn describe as a <strong>UFC-style diplomatic engagement venue</strong> — a chain-link octagon cage being assembled where garden parties used to be held — confirming what foreign policy observers have been saying for some time: <em>the approach has changed.</em></p>
+    <p>The octagon, which is being fitted with corner posts, a canvas floor, and a sound system capable of playing <em>Eye of the Tiger</em> at diplomatic-event volume, represents what the White House describes as <strong>"a results-oriented negotiating environment."</strong> State Department protocol guides are being updated. The relevant section previously read <em>"conference table."</em> It now reads <em>"confirm weight class before arrival."</em></p>
+    <p>Foreign ambassadors who visited the South Lawn this week reported that the construction crew was <em>"very efficient"</em> and that the chain-link fence <em>"makes a specific kind of statement."</em> Several requested clarification on whether attendance at octagon sessions was optional. The clarification has not yet been issued.</p>
+    <p>Trump, photographed near the construction site in what appeared to be a referee shirt over his suit, described the venue as <strong>"beautiful, very strong, the best cage."</strong> He did not specify who would be in it first. Diplomatic sources in three countries are currently assuming it is them.</p>
+    <p>The velvet rope — installed on the VIP seating side — has a clipboard. The clipboard has a list. Several foreign leaders are reportedly checking whether they are on the list. The list has not been shared publicly. The octagon is nearly ready.</p>
+    <blockquote class="pull-quote">&quot;Beautiful, very strong, the best cage.&quot; — The President, regarding the South Lawn diplomatic engagement venue</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">WHITE HOUSE CAGE MATCH TICKETS!</div>
+      <div class="ad-subheadline">Diplomacy In The Octagon — VIP And General Admission</div>
+      <div class="ad-bullets"><div class="ad-bullet">🥊 VIP: velvet rope, clipboard, confirm weight class</div>
+        <div class="ad-bullet">🥊 General: chain-link view, standing room</div>
+        <div class="ad-bullet">🥊 Diplomatic immunity: check before entering</div>
+        <div class="ad-bullet">🥊 Eye of the Tiger: included at full volume</div></div>
+      <div class="ad-price">VIP: CALL STATE DEPT / GENERAL: SHOW UP AND DUCK</div>
+      <div class="ad-disclaimer">White House Cage Match Tickets not responsible for diplomatic incidents, weight class mismatches, or the expression on the ambassador's face. Protocol guides updated. Mouthguard advice still pending. The octagon is ready.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p8">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-nda.png?v=1779878190041" alt="LEAK-PROOF GOVERNMENT!">
+    <div class="illo-caption">★ The asterisk on LEAK-PROOF is doing structural work. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">GOVERNMENT TRANSPARENCY · [REDACTED] EDITION</div>
+    <h2 class="story-heading">LEAK-PROOF GOVERNMENT!</h2>
+    <p class="story-subheading">FEDERAL WORKERS NOW UNDER NDA — SOURCES SAY [REDACTED] — GOVERNMENT OFFICIALLY LEAK-PROOF*</p>
+    <p class="story-deck">Trump Administration Issues NDAs To Federal Employees — Officials Say The Move Ensures Confidentiality — Critics Say The Move Ensures Confidentiality Of Things That Should Not Be Confidential — *Leak-Proof Pending Definition Of 'Leak'</p>
+    <p>The Trump administration has issued <strong>non-disclosure agreements to federal workers,</strong> a move that administration officials describe as <em>"protecting sensitive government operations"</em> and that critics describe as <em>"protecting sensitive government operations from the people who pay for government operations."</em></p>
+    <p>The NDAs — which are sweeping in scope, indefinite in duration, and signed under conditions that employment lawyers describe as <em>"not entirely voluntary in the traditional sense"</em> — cover communications about agency activities, policy decisions, and what one redacted source describes, in a document with most words blacked out, as <strong>"[REDACTED] [REDACTED] and also [REDACTED]."</strong></p>
+    <p>INSANE reached out to several federal sources for this story. Three responded. All three responses were: <em>"I can't talk about that."</em> A fourth source sent a blank email. A fifth source sent an email that was entirely redaction marks. We are treating all five responses as confirmation.</p>
+    <p>The government's new LEAK-PROOF designation — displayed on a sign in federal office lobbies, per a source who has since gone quiet — carries an asterisk. The asterisk refers to a footnote. The footnote is classified. The classification level of the footnote is also classified.</p>
+    <p>"This ensures confidentiality," a spokesperson said, confidently. The spokesperson was not under NDA. The spokesperson's colleagues were. <strong>"Everything is fine,"</strong> the spokesperson added. We have heard that phrase before. We recognize the folder it comes from.</p>
+    <blockquote class="pull-quote">&quot;[REDACTED] [REDACTED] and also [REDACTED].&quot; — Federal source, responding to INSANE inquiry</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">GOVERNMENT-GRADE NDA FORMS!</div>
+      <div class="ad-subheadline">For Organizations That Need Confidentiality At Scale</div>
+      <div class="ad-bullets"><div class="ad-bullet">📋 Bulk pricing: 10,000 forms for federal office use</div>
+        <div class="ad-bullet">📋 Duration: indefinite (no sunset clause — see Vol 1 No 2)</div>
+        <div class="ad-bullet">📋 Scope: everything. All of it. Sign here.</div>
+        <div class="ad-bullet">📋 Asterisk: included, footnote: classified</div></div>
+      <div class="ad-price">$0 TO SIGN / COSTLY TO VIOLATE</div>
+      <div class="ad-disclaimer">Government-Grade NDA Forms not responsible for information that escapes despite the forms, which some information does, because information is like that. Forms are binding. The footnote is classified. The asterisk is structural. Sign here.</div>
+    </div>
+    
+    <div class="glossary-box">
+      <div class="glossary-title">NDA TRANSLATION GUIDE</div>
+      <div class="gloss-entry"><span class="gloss-word">[REDACTED] (n.):</span> The thing you were about to say. No longer available.</div>
+        <div class="gloss-entry"><span class="gloss-word">Confidential (adj.):</span> What everything is now. Everything.</div>
+        <div class="gloss-entry"><span class="gloss-word">Source (n.):</span> A person who previously talked. They have since signed.</div>
+        <div class="gloss-entry"><span class="gloss-word">Leak-Proof* (adj.):</span> See footnote. Footnote: classified.</div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p9">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-uturn.png?v=1779878190041" alt="STRAIT TALK!">
+    <div class="illo-caption">★ The U-turn is now a standard navigation maneuver in the Strait. Insurance updated accordingly. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">OIL MARKETS · STRAIT OF HORMUZ NAVIGATION UPDATE</div>
+    <h2 class="story-heading">STRAIT TALK!</h2>
+    <p class="story-subheading">OIL TANKERS MASTER THE ART OF THE U-TURN — FROZEN ASSETS REMAIN FROZEN — FINE PRINT MINES EVERYWHERE</p>
+    <p class="story-deck">Strait Of Hormuz Shipping Traffic Adapts To Peace-Talks-Plus-Strikes Environment — Tanker Captains Developing New Navigation Protocols — Gas Pump Prices Update In Real Time</p>
+    <p>Oil tanker captains operating in the Strait of Hormuz this week have developed what maritime analysts are calling <strong>"an extremely refined U-turn protocol"</strong> — a navigation technique that involves assessing the current state of the Iran peace talks, the current state of the Iran strikes, and the current state of the mines labeled FINE PRINT, and then turning around very quickly.</p>
+    <p>The frozen assets briefcase — which has been floating in the Strait since the sanctions were first imposed and has been photographed by several passing tankers — was recovered briefly this week and confirmed to still contain <strong>cash frozen in ice cubes,</strong> in what financial analysts describe as <em>"literally accurate"</em> and what the Iranian government describes as <em>"the entire problem, right there, in a briefcase."</em></p>
+    <p>Oil markets, which track Strait of Hormuz shipping traffic with the intensity of people who have a lot of money in oil markets, have registered what traders are calling <strong>"anxiety."</strong> The anxiety has been expressed, as oil market anxiety traditionally is, at the gas pump. The gas pump is updating its price in real time. The time is <em>right now.</em> The price is going up.</p>
+    <p>A buoy installed near the center of the U-turn zone has been fitted with a scoreboard. The scoreboard reads <strong>OIL MARKETS: ANXIOUS.</strong> The buoy was not officially installed by any government. No one has claimed the buoy. The buoy is doing its job.</p>
+    <p>"We are monitoring the situation,"' a tanker captain radioed to port. <em>"We are currently completing our third U-turn of the morning. We are fine. The mines are labeled. We can read the labels."</em> He did not elaborate on what the labels said. We know what the labels say. They say FINE PRINT.</p>
+    <blockquote class="pull-quote">&quot;The mines are labeled. We can read the labels.&quot; — Tanker captain, Strait of Hormuz, third U-turn of the morning</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">STRAIT OF HORMUZ U-TURN INSURANCE!</div>
+      <div class="ad-subheadline">Coverage For The New Standard Navigation Maneuver</div>
+      <div class="ad-bullets"><div class="ad-bullet">🚢 U-turn coverage: unlimited per voyage</div>
+        <div class="ad-bullet">🚢 FINE PRINT mine avoidance: recommended add-on</div>
+        <div class="ad-bullet">🚢 Frozen assets: not covered (frozen since sanctions)</div>
+        <div class="ad-bullet">🚢 Gas pump anxiety: covered under general anxiety rider</div></div>
+      <div class="ad-price">CALL FOR QUOTE / RATES: ANXIOUS AND RISING</div>
+      <div class="ad-disclaimer">Strait of Hormuz U-Turn Insurance not responsible for the peace talks, the strikes, the mines, the briefcase, the ice, or the price at the pump. The buoy scoreboard is not affiliated with us. We agree with the buoy.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p10">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-dove.png?v=1779878190041" alt="PEACE DOVE: STATUS REPORT">
+    <div class="illo-caption">★ She would like the chafing noted. It is noted. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">FIELD REPORT · PEACE DOVE STATUS UPDATE</div>
+    <h2 class="story-heading">PEACE DOVE: STATUS REPORT</h2>
+    <p class="story-subheading">ALIVE. OPERATIONAL. FLAK JACKET CHAFING. OLIVE BRANCH DENTED. MISSION: CONTINUING.</p>
+    <p class="story-deck">INSANE Checks In With The Strait Of Hormuz Peace Dove — She Is Fine — The Chafing Is Real — She Has Not Given Up And Would Like That On The Record</p>
+    <p>We are happy to report that the peace dove is <strong>alive and operational.</strong></p>
+    <p>She is tired. The flak jacket, which was fitted last issue and has not been re-fitted despite our offers, chafes at the left wing. The olive branch she is carrying has sustained moderate debris damage and is, in her words, <em>"not looking its best."</em> The Strait is loud. The mines are numerous. The negotiations she is symbolizing have not yet produced a signed document, which means she is in week three of what was described to her as <em>"a short assignment."</em></p>
+    <p>When asked for a status on the peace talks, the dove looked at the scoreboard, looked at the explosions, looked at the SEND button visible in the distance on the negotiating table, and said: <strong>"Close. I think. It depends on what you mean by close."</strong></p>
+    <p>When asked about the strikes continuing during the peace talks, she said: <em>"I am aware."</em></p>
+    <p>When asked whether she was going to give up, she repositioned the olive branch in her beak, adjusted her helmet, and said: <strong>"No."</strong> Then she took off again, toward the negotiating table, which was still afloat, still surrounded by ordnance, and still has not produced a signed treaty. She is flying toward it anyway.</p>
+    <p>We respect her for it. We are rooting for her. The flak jacket re-fitting offer remains open.</p>
+    <blockquote class="pull-quote">&quot;Close. I think. It depends on what you mean by close.&quot; — The Peace Dove, on the status of the Iran negotiations</blockquote>
+    
+    
+    
+    
+    <div class="the-end">
+      <p class="the-end-title">She Is Still Flying.</p>
+      <p class="the-end-sub">Peace Dove · Strait of Hormuz · May 2026 · Flak Jacket: Chafing</p>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p11">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-street.png?v=1779878190041" alt="CITIZENS SPEAK!">
+    <div class="illo-caption">★ The reporter's notepad ran out of paper. We ordered more. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">NEW FEATURE · MAN AND WOMAN IN THE STREET</div>
+    <h2 class="story-heading">CITIZENS SPEAK!</h2>
+    <p class="story-subheading">INSANE MAGAZINE HITS THE STREETS — ORDINARY AMERICANS SHARE THEIR THOUGHTS ON THE CURRENT ADMINISTRATION — WE PRINTED THE PRINTABLE ONES</p>
+    <p class="story-deck">INSANE Asks The Public: What Do You Think Should Be Done? — They Had Thoughts — Many, Many Thoughts — Some Printable — We Have Printed Those</p>
+    <p><strong>DOLORES KRUPNIK, 67, Retired Schoolteacher, Ohio:</strong> <em>"I taught civics for thirty-one years. Thirty-one years. I explained the three branches of government to twelve-year-olds every September. Every single September. And now I have to explain to twelve-year-olds why the branches are doing what they're doing and I cannot do it. I literally cannot explain it. I tell them 'there are supposed to be checks and balances' and they look at me and they say 'where' and I have nothing. What should be done? Restore the checks. Restore the balances. Start with the checks. I am begging you."</em></p>
+    <p><strong>BARRY KOWALCZYK, 44, Long-Haul Trucker, Pennsylvania:</strong> <em>"I drive through eleven states. Eleven. You know what I pay for diesel? Don't ask me what I pay for diesel. Do you want to know what I think should be done? I think the people who are supposed to be watching the people who make the diesel prices should actually watch the diesel prices instead of whatever else they're doing. Also the IRS thing. I am not audit-proof. I checked. I am very much auditable. I find that unfair. That's my thought."</em></p>
+    <p><strong>PATRICIA VOSS-ABERNETHY, 29, Graduate Student, Michigan:</strong> <em>"I have a poster. I have been to every march since January. My sign says VOTE THEM OUT in very large letters because I believe in democracy and also because I'm not sure what else to put on a sign that captures the full scope of my feelings without requiring a second poster. Vote them out. Primary them. Support candidates who have read the Constitution. All of it. Not selected amendments."</em></p>
+    <p><strong>GERRY FITCH, 58, Construction Worker, Texas:</strong> <em>"I voted for him. Both times. I'm not saying I regret it. I'm saying the gas prices are making me think very hard about what I want from a president. What should be done? Lower the gas prices. That's my position. You can print that."</em></p>
+    <p><strong>MARGARET ODUYA, 73, Grandmother of Seven, Georgia:</strong> <em>"Lock him up. I'm sorry but that's my answer. You asked. Lock. Him. Up. Through legal means, through the courts, through whatever process is appropriate and constitutionally valid — do it properly and do it soon. I have seven grandchildren. I would like them to grow up in a country that has consequences. Thank you for asking. I've been waiting to say that to a microphone."</em></p>
+    <p><strong>TYLER (LAST NAME WITHHELD), 23, Still In Pajamas, Location Unspecified:</strong> <em>"Impeach him again. I know. I know how that went before. Do it again. Make it a thing. If we do it enough times maybe something sticks. Also can someone do something about the NDA thing? My cousin works for the government and she can't talk to me anymore at Christmas. It's very quiet. I miss her."</em></p>
+    <blockquote class="pull-quote">&quot;Lock him up — through legal means, through the courts, through whatever process is appropriate. I have seven grandchildren.&quot; — Margaret Oduya, 73, Georgia</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page spy-page" id="p12">
+  <div class="spy-header">
+    <h2 class="spy-title">SPY vs. SPY</h2>
+    <div class="spy-subtitle">2026 Edition: &quot;Strait of Hormuz Negotiations&quot;</div>
+  </div>
+  <div class="spy-illo"><img src="../../images/vol1no3-spyvspy.png?v=1779878190041" alt="spy vs spy"></div>
+  <div class="spy-arena">
+    <div class="spy-col spy-white">
+      <div class="spy-icon">🤍</div>
+      <h3>WHITE SPY</h3>
+      <div class="spy-panels"><p>White Spy arrives at the floating negotiating table. White Spy brings a normal pen. White Spy is prepared to negotiate seriously.</p>
+        <p>White Spy drafts a comprehensive treaty covering nuclear enrichment limits, sanctions relief, and a ceasefire timeline.</p>
+        <p>White Spy presents the treaty. Black Spy reviews it carefully. Both sides initial the document.</p>
+        <p>White Spy celebrates. White Spy looks for the SEND button. White Spy cannot find the SEND button.</p></div>
+    </div>
+    <div class="spy-divider">VS</div>
+    <div class="spy-col spy-black">
+      <div class="spy-icon">🖤</div>
+      <h3>BLACK SPY</h3>
+      <div class="spy-panels"><p>Black Spy arrives at the same table. Black Spy's pen is shaped like a cruise missile. Black Spy grins.</p>
+        <p>Black Spy replaces White Spy's normal pen with the missile pen when White Spy looks away.</p>
+        <p>Black Spy signs the treaty with the missile pen. The pen makes a sound. The sound is WHOOSH.</p>
+        <p>Black Spy finds the SEND button immediately. Black Spy considers the button. Black Spy grins again.</p></div>
+    </div>
+  </div>
+  <div class="spy-result">BOTH SPIES SIGNED THE TREATY. THE TREATY IS IN THE WATER. THE SEND BUTTON IS BETWEEN THEM. THE MINES ARE LABELED FINE PRINT. THE PEACE DOVE IS WATCHING FROM A SAFE DISTANCE. SHE IS TAKING NOTES.</div>
+</div>
+
+<div class="page awards-page" id="p13">
+  <div class="awards-inner">
+    <h2 class="awards-title">🏆 INSANE AWARDS</h2>
+    <div class="awards-date">MAY 2026</div>
+    <div class="award-category">
+      <div class="award-cat-title">BEST SIMULTANEOUS PEACE/WAR POSTURE</div>
+      <div class="award-medals"><div class="medal gold">🥇 Trump administration (peace talks AND strikes, same Strait, same week)</div>
+      <div class="medal silver">🥈 The PLAN B: MORE PLANES folder (contingency excellence)</div>
+      <div class="medal bronze">🥉 The spokesperson who did not turn around (commitment to message)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST LOAD-BEARING PIECE OF PUNCTUATION</div>
+      <div class="award-medals"><div class="medal gold">🥇 The asterisk on LEAK-PROOF* (footnote classified, structurally critical)</div>
+      <div class="medal silver">🥈 The question mark on SNAP ELECTION? (Vol. 1 No. 2 — still pending)</div>
+      <div class="medal bronze">🥉 The period in 'Deal? Please.' (hopeful, exhausted, accurate)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST NEW DIPLOMATIC VENUE</div>
+      <div class="award-medals"><div class="medal gold">🥇 White House UFC Octagon, South Lawn (construction 40% complete)</div>
+      <div class="medal silver">🥈 Gold negotiating table, Strait of Hormuz (afloat, functional)</div>
+      <div class="medal bronze">🥉 The briefing room window (most honest communication of the week)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST DETERMINED INDIVIDUAL IN DIFFICULT CIRCUMSTANCES</div>
+      <div class="award-medals"><div class="medal gold">🥇 The Peace Dove (three weeks in, flak jacket chafing, still flying)</div>
+      <div class="medal silver">🥈 Margaret Oduya, 73, Georgia (has been waiting to say it to a microphone)</div>
+      <div class="medal bronze">🥉 The tanker captain on his third U-turn of the morning</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST MINE LABEL</div>
+      <div class="award-medals"><div class="medal gold">🥇 FINE PRINT (Strait of Hormuz, naval, legally descriptive)</div>
+      <div class="medal silver">🥈 FROZEN ASSETS (briefcase, accurate, floating)</div>
+      <div class="medal bronze">🥉 EVERYTHING IS FINE (folder, inaccurate, persistent)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST HONEST GOVERNMENT COMMUNICATION</div>
+      <div class="award-medals"><div class="medal gold">🥇 The window behind the spokesperson</div>
+      <div class="medal silver">🥈 The DEAL? PLEASE mug (Iranian side, chipped)</div>
+      <div class="medal bronze">🥉 Tyler's blank email (federal cousin, NDA'd, Christmas: quiet)</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p14">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-classifieds.png?v=1779878190042" alt="INSANE CLASSIFIEDS!">
+    <div class="illo-caption">★ NDA forms distributed before interviews. This is the process now. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">HELP WANTED · INSANE CLASSIFIEDS VOLUME 2</div>
+    <h2 class="story-heading">INSANE CLASSIFIEDS!</h2>
+    <p class="story-subheading">MORE JOBS! MORE OPPORTUNITIES! SOME NDAs REQUIRED! (READ EVERY WORD.)</p>
+    <p class="story-deck">This Week's Employment And Opportunity Listings From The INSANE Marketplace — Standards Team Still On Puzzle Page — Legal Has Signed Everything</p>
+    <p><strong>IRAN PEACE NEGOTIATOR — FLOATING TABLE, STRAIT OF HORMUZ</strong><br>Seeking experienced diplomat comfortable working in: active ordnance environments, octagonal gold furniture, and situations where the other party is signing with a missile-shaped pen. Must be able to maintain composure when debris falls on the treaty document. Mug provided: reads DEAL? PLEASE. Flak jacket: not provided — bring your own. Experience with <em>dual-track approaches</em> required. <em>Apply: Table is floating somewhere near 26°N 56°E. Bring a pen that is actually a pen.</em></p>
+    <p><strong>WHITE HOUSE UFC OCTAGON RING ANNOUNCER</strong><br>Part-time to full-time, starting when construction hits 100%. Must have: broadcast-quality voice, ability to describe foreign policy decisions in octagon terminology, comfort with the phrase <em>"AND STILL CHAMPION."</em> Weight class experience preferred. The octagon is not metaphorical. Bring comfortable shoes. VIP clipboard experience a plus. <em>Apply: South Lawn, hard hat required during construction phase.</em></p>
+    <p><strong>FEDERAL GOVERNMENT EMPLOYEE (ALL AGENCIES)</strong><br>Now hiring across all departments. Full benefits. Competitive salary. Stable hours. One condition: upon hiring, you will sign a non-disclosure agreement covering all agency activities, communications, policy decisions, and the contents of the footnote. You will not be told what the footnote says. You will sign anyway because it is the condition of employment. <strong>Christmas conversations with family: may be affected.</strong> <em>Apply: Any federal building. NDA table is right inside the door.</em></p>
+    <p><strong>OIL TANKER U-TURN INSTRUCTOR</strong><br>Experienced tanker navigators needed to train new captains in emergency U-turn protocol for Strait of Hormuz operations. Must be able to execute a full 180-degree turn of a 300-meter vessel while: monitoring peace talk status updates, identifying FINE PRINT mines by label, and updating port arrival estimates in real time. <strong>Third U-turn of the morning is standard.</strong> Insurance updated. Briefcase floating nearby — do not retrieve. <em>Apply: Any port with Strait of Hormuz exposure. Bring charts.</em></p>
+    <p><strong>PEACE DOVE FLAK JACKET FITTER (URGENT)</strong><br>Licensed outfitter needed immediately for one (1) exhausted peace dove operating in active ordnance environment, Strait of Hormuz. Current jacket chafes at left wing. Olive branch maintenance also required — branch is dented. Subject is cooperative, professional, and has been on assignment for three weeks past the stated end date. <strong>She has not complained. She deserves better fitting.</strong> <em>Apply: Find the dove. She is the one flying toward the negotiating table. She is easy to spot. She is the only one flying toward it.</em></p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">INSANE CLASSIFIEDS — LEGAL NOTICE VOL. 2</div>
+      <div class="ad-subheadline">We Are Still Not A Staffing Agency</div>
+      <div class="ad-bullets"><div class="ad-bullet">📋 NDA forms available at all listings</div>
+        <div class="ad-bullet">📋 The dove flak jacket position is urgent and real</div>
+        <div class="ad-bullet">📋 All positions require reading the fine print</div>
+        <div class="ad-bullet">📋 The fine print is labeled. It is also a mine.</div></div>
+      <div class="ad-price">LISTINGS: $49.99 / FINE PRINT: FREE (HAZARDOUS)</div>
+      <div class="ad-disclaimer">INSANE Classifieds Volume 2 not responsible for employment relationships formed, NDAs signed, U-turns executed, or the state of the peace dove's left wing. The flak jacket position is genuinely urgent. Please apply.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p15">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no3-marketplace.png?v=1779878190042" alt="INSANE MARKETPLACE!">
+    <div class="illo-caption">★ The SEND button paperweight is decorative. We are very clear about this. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INSANE MARKETPLACE · VOLUME 2 · FINE PRODUCTS</div>
+    <h2 class="story-heading">INSANE MARKETPLACE!</h2>
+    <p class="story-subheading">CRUISE MISSILE PENS, PEACE DOVE GEAR, FINE PRINT DECODERS AND MORE — LIMITED TIME OFFERS</p>
+    <p class="story-deck">This Week's Featured Products — Standards Team Still On Puzzle Page — All Items Ship From An Undisclosed Location</p>
+    <p><strong>TRUMP MISSILE-PEN™ — SIGN ANYTHING WITH AUTHORITY</strong><br>A full-size fountain pen in the aerodynamic profile of a cruise missile, gold-plated, weighted for confident treaty signing. Makes a whoosh sound when uncapped. Comes in: <em>Diplomacy Black, Freedom Gold, and Plan B Silver.</em> The whoosh sound is purely decorative. We cannot stress this enough. <strong>$89.99.</strong> Comes with one treaty page, blank. Signing what you sign with it is your business. Not our business. We are a pen company. <em>*Does not deploy. We have checked. Many times. Please stop asking.*</em></p>
+    <p><strong>PEACE DOVE FIELD KIT™ — FOR DOVES OPERATING IN ACTIVE ENVIRONMENTS</strong><br>Includes: one properly fitted flak jacket (dove-sized, left wing re-enforced), one regulation olive branch (dent-resistant, titanium core), one helmet (adjustable), and one status scoreboard (reads OPERATIONAL by default, can be updated). <strong>Designed in consultation with the Strait of Hormuz peace dove.</strong> She did not endorse it. She does not know it exists. We believe she would appreciate it. The chafing issue is addressed on page 3 of the instruction manual. <strong>$49.99.</strong></p>
+    <p><strong>FINE PRINT DECODER RING™ — READ WHAT'S IN THE WATER</strong><br>A gold-plated ring with a rotating cipher that translates standard diplomatic fine print into plain language. Tested against: trade agreements, peace treaties, cease-fire addenda, NDA footnotes, and the labels on the Strait of Hormuz mines. <em>Results: mostly what you suspected.</em> <strong>$29.99.</strong> Batteries not included. The batteries are in the footnote. The footnote is classified. <em>*Ring is novelty item. We cannot actually decode classified footnotes. This is a disclaimer.*</em></p>
+    <p><strong>LEVERAGE™ — A PRODUCT</strong><br>It is leverage. That is the product. <strong>Price upon request.</strong> Available in: maintained and implied. Ships from an undisclosed location. Delivery timeline: when the time is right. <em>Results: comprehensive approach to a complex regional dynamic.</em> Not returnable. Dual-track included at no extra charge.</p>
+    <p><strong>THE SEND BUTTON PAPERWEIGHT™</strong><br>A full-size replica of the red SEND button from the negotiating table, mounted on a heavy gold base for use as a desk paperweight or conversation piece. <strong>DECORATIVE ONLY.</strong> Does not send anything. We have had this tested. It is tested monthly. We have the testing certificates. Nothing is connected to it. It is a paperweight. Please enjoy it as a paperweight. <strong>$39.99.</strong> <em>*INSANE Magazine accepts no responsibility for what people do with this button. It sends nothing. It is a paperweight. We need you to believe us about this.*</em></p>
+    
+    
+    
+    
+    
+    <div class="the-end">
+      <p class="the-end-title">Shop Carefully. Read Everything. Especially The Fine Print.</p>
+      <p class="the-end-sub">INSANE Marketplace Vol. 2 · Standards Team: Still On Puzzle Page</p>
+    </div>
+  </div>
+</div>
+
+<div class="page fold-in-page" id="p16">
+  <div class="foldin-inner">
+    <div class="foldin-header">
+      <h2 class="foldin-title">INSANE BACK PAGE</h2>
+      <div class="foldin-subtitle">THE FAMOUS FOLD-IN &nbsp;✦&nbsp; "FOLD CAREFULLY — UNLIKE THE CEASEFIRE"</div>
+    </div>
+    <div class="foldin-area" id="foldinArea">
+      <div class="foldin-left" id="foldinLeft">
+        <img class="foldin-img" src="../../images/vol1no3-foldin.png?v=1779878190042" alt="fold-in">
+        <div class="foldin-section-top">INSANE — FOLD THIS HALF →</div>
+        <div class="foldin-question">TRUMP SAYS THE IRAN DEAL IS 'CLOSE.' THE STRIKES ARE ALSO CONTINUING. SO WHEN HE SAYS 'CLOSE TO A DEAL' — WHAT KIND OF DEAL IS HE ACTUALLY CLOSE TO?</div>
+        <div class="foldin-label-a">A</div>
+      </div>
+      <div class="foldin-right">
+        <div class="foldin-section-top">← FOLD LEFT SIDE OVER TO FIND OUT</div>
+        <div class="foldin-answer-hidden">FIRE WHEN READY.</div>
+        <div class="foldin-label-b">B</div>
+      </div>
+    </div>
+    <div class="foldin-answer-reveal" id="foldinAnswer">
+      <div class="foldin-answer-text">FIRE WHEN READY.</div>
+      <div class="foldin-answer-sub">Fold A over B to reveal the hidden truth</div>
+    </div>
+    <button class="foldin-btn" id="foldinBtn" onclick="toggleFoldin()">📰 FOLD IT!</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>window.STORY_PAGES = 17;</script>
+<script>(function () {
+  'use strict';
+
+  var PAGES   = window.STORY_PAGES || 0;
+  var current = 0;
+  var track   = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots    = [];
+
+  function update() {
+    if (track)   track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    if (counter) counter.textContent   = (current + 1) + ' / ' + PAGES;
+    if (prevBtn) prevBtn.disabled      = current === 0;
+    if (nextBtn) nextBtn.disabled      = current === PAGES - 1;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    try { history.replaceState(null, '', '#' + current); } catch(e) {}
+    // Reset fold-in state when navigating away
+    var area = document.getElementById('foldinArea');
+    if (area) area.classList.remove('folded');
+    var btn = document.getElementById('foldinBtn');
+    if (btn) btn.textContent = '\uD83D\uDCF0 FOLD IT!';
+  }
+
+  window.goTo = function (n) {
+    current = Math.max(0, Math.min(PAGES - 1, n));
+    update();
+  };
+
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  // Build dots
+  var dotRow = document.getElementById('dotRow');
+  if (dotRow) {
+    for (var i = 0; i < PAGES; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.setAttribute('data-i', i);
+      d.addEventListener('click', (function (idx) {
+        return function () { window.goTo(idx); };
+      })(i));
+      dotRow.appendChild(d);
+      dots.push(d);
+    }
+  }
+
+  // Hash navigation
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  // Touch swipe
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft')  window.prev();
+  });
+
+  // Share
+  window.shareIssue = function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        if (btn) {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 2000);
+        }
+      });
+    }
+  };
+
+  // Fold-in toggle
+  window.toggleFoldin = function () {
+    var area = document.getElementById('foldinArea');
+    var btn  = document.getElementById('foldinBtn');
+    if (!area) return;
+    var folded = area.classList.toggle('folded');
+    if (btn) btn.textContent = folded ? '\uD83D\uDCF0 UNFOLD IT!' : '\uD83D\uDCF0 FOLD IT!';
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Big Beautiful News Circus! — INSANE Mag</title>
+  <meta name="description" content="United States of Disarray — Step Right Up!">
+  <meta property="og:title" content="The Big Beautiful News Circus! — INSANE Mag">
+  <meta property="og:description" content="United States of Disarray — Step Right Up!">
+  <meta property="og:image" content="https://insane-mag.bumbloobooks.com/images/vol1no4-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insane-mag.bumbloobooks.com/issues/vol1no4/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Special+Elite&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Default palette (overridden per issue via palette in issue.json) ────────── */
+:root {
+  --bg:           #fdf6e3;   /* newsprint cream */
+  --page-bg:      #fff;
+  --text:         #111111;
+  --accent:       #cc0000;   /* Mad red */
+  --accent2:      #f5c400;   /* Mad yellow */
+  --accent3:      #1a1a8a;   /* blue accent */
+  --nav-bg:       #cc0000;
+  --nav-text:     #ffffff;
+  --dot-active:   #f5c400;
+  --eyebrow:      #cc0000;
+  --ad-bg:        #fffde7;
+  --ad-border:    #f5c400;
+  --spy-white-bg: #f0f0f0;
+  --spy-black-bg: #111111;
+  --cover-text:   #ffffff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Nav bar ────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  height: 50px;
+  border-bottom: 3px solid rgba(0,0,0,0.25);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1.1rem; padding: 8px;
+  opacity: 0.8; transition: opacity 0.15s;
+}
+.nav-btn:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-text);
+  opacity: 0.9;
+}
+.nav-counter {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.nav-back {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-share {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1rem; padding: 8px;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.nav-share:hover { opacity: 1; }
+
+/* ── Dot pager ──────────────────────────────────────────── */
+.dot-row {
+  position: fixed; bottom: 14px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 12px;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text); opacity: 0.2;
+  cursor: pointer; transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+.dot.active {
+  background: var(--dot-active); opacity: 1; transform: scale(1.4);
+}
+
+/* ── Viewport / pager ───────────────────────────────────── */
+.viewport {
+  position: fixed; top: 50px; left: 0; right: 0; bottom: 40px;
+  overflow: hidden;
+}
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  display: flex; align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER-FULL PAGE  (pure full-bleed image, no overlays)
+   ══════════════════════════════════════════════════════════ */
+.cover-full-page {
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cover-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER PAGE
+   ══════════════════════════════════════════════════════════ */
+.cover-page {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+  overflow: hidden;
+}
+.cover-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.82;
+}
+.cover-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8rem; opacity: 0.1;
+}
+.cover-top {
+  position: relative; z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  padding: 12px 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+}
+.cover-mag-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  color: var(--accent2, #f5c400);
+  line-height: 0.85;
+  letter-spacing: 0.06em;
+  text-shadow: 3px 3px 0 #000;
+}
+.cover-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+.cover-lines-wrap {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 8px;
+  gap: 5px;
+}
+.cover-line {
+  background: rgba(204, 0, 0, 0.88);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.85rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  border-left: 4px solid var(--accent2, #f5c400);
+}
+.cover-line:nth-child(even) {
+  background: rgba(0, 0, 0, 0.82);
+  border-left-color: var(--accent, #cc0000);
+}
+.cover-tagline {
+  position: relative; z-index: 2;
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 6px;
+  border-top: 2px solid var(--accent2, #f5c400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDITORIAL PAGE
+   ══════════════════════════════════════════════════════════ */
+.editorial-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editorial-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 28px 60px;
+  margin: 0 auto;
+}
+.editorial-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.editorial-salutation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.editorial-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.editorial-body strong { font-weight: 800; }
+.editorial-body em { font-style: italic; color: var(--accent); }
+.editorial-sig {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--text);
+}
+.editorial-ps {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MASTHEAD PAGE
+   ══════════════════════════════════════════════════════════ */
+.masthead-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.masthead-inner {
+  max-width: 580px;
+  width: 100%;
+  padding: 24px 24px 60px;
+  margin: 0 auto;
+}
+.masthead-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.masthead-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.masthead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  padding: 12px;
+}
+.mast-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.mast-role {
+  font-weight: 800;
+  color: var(--accent);
+}
+.masthead-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  opacity: 0.55;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+/* Subscriber alert box */
+.subscriber-alert {
+  background: var(--accent, #cc0000);
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+}
+.alert-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.alert-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.alert-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.alert-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  color: var(--accent2, #f5c400);
+}
+.alert-disclaimer {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENTS PAGE
+   ══════════════════════════════════════════════════════════ */
+.contents-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ticker */
+.ticker-bar {
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.contents-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 60px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.contents-header {
+  margin-bottom: 18px;
+  border-bottom: 4px solid var(--accent, #cc0000);
+  padding-bottom: 12px;
+}
+.contents-mag {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent);
+  line-height: 0.9;
+}
+.contents-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.contents-edition {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.contents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ci-item {
+  display: grid;
+  grid-template-columns: 28px 24px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 6px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ci-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.ci-emoji {
+  font-size: 1rem;
+  grid-row: 1;
+}
+.ci-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  grid-row: 1;
+}
+.ci-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Scorecard box */
+.scorecard-box {
+  background: var(--accent2, #f5c400);
+  border: 3px solid #000;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.scorecard-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.scorecard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scorecard-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+.scorecard-list strong {
+  color: var(--accent, #cc0000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STORY PAGES
+   ══════════════════════════════════════════════════════════ */
+.story-page {
+  flex-direction: column;
+}
+.story-page.no-illo {
+  flex-direction: column;
+  align-items: center;
+}
+.story-illo {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40vw; min-height: 180px; max-height: 320px;
+  overflow: hidden; position: relative;
+  background: #ddd;
+}
+.story-illo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.illo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; opacity: 0.25;
+}
+.illo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+}
+.story-body {
+  flex: 1;
+  padding: 18px 22px 56px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+.story-eyebrow {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--eyebrow, var(--accent));
+  margin-bottom: 6px;
+  border-left: 3px solid var(--accent, #cc0000);
+  padding-left: 8px;
+}
+.story-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.story-subheading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--accent, #cc0000);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.story-deck {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.story-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
+  line-height: 1.72;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.story-body p strong { font-weight: 800; }
+.story-body p em { color: var(--accent); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  border-top: 3px solid var(--accent2, #f5c400);
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+/* Sidebar list (bullet box) */
+.sidebar-list {
+  background: var(--bg, #fdf6e3);
+  border: 2px solid var(--text);
+  border-left: 5px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.sidebar-list-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sidebar-list ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-list ul li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Fake advertisement */
+.fake-ad {
+  background: var(--ad-bg, #fffde7);
+  border: 3px solid var(--ad-border, #f5c400);
+  border-top: 6px solid var(--accent, #cc0000);
+  padding: 14px 16px;
+  margin: 18px 0 0;
+}
+.ad-headline {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.ad-subheadline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.ad-bullets { margin-bottom: 8px; }
+.ad-bullet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.ad-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.ad-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  opacity: 0.55;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* Glossary box */
+.glossary-box {
+  background: #f0f4ff;
+  border: 2px solid var(--accent3, #1a1a8a);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.glossary-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3, #1a1a8a);
+  margin-bottom: 8px;
+}
+.gloss-entry {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.gloss-word {
+  font-weight: 800;
+  color: var(--accent3, #1a1a8a);
+}
+
+/* The End */
+.the-end {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 3px solid var(--accent2, #f5c400);
+  text-align: center;
+}
+.the-end-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.the-end-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* Desktop split layout for story pages */
+@media (min-width: 700px) {
+  .story-page:not(.no-illo) { flex-direction: row; }
+  .story-page.flip:not(.no-illo) { flex-direction: row-reverse; }
+  .story-illo {
+    flex: 0 0 42%;
+    height: 100%; max-height: none;
+    width: auto;
+  }
+  .story-body { overflow-y: auto; padding: 28px 36px 60px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SPY VS SPY PAGE
+   ══════════════════════════════════════════════════════════ */
+.spy-page {
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--page-bg, #fff);
+}
+.spy-header {
+  background: #000;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.spy-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.spy-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent2, #f5c400);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.spy-illo {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow: hidden;
+}
+.spy-illo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spy-arena {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.spy-col {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+.spy-col h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.spy-white {
+  background: var(--spy-white-bg, #f0f0f0);
+  border-right: 3px solid #000;
+  color: #111;
+}
+.spy-white h3 { color: #111; }
+.spy-black {
+  background: var(--spy-black-bg, #111);
+  color: #f0f0f0;
+}
+.spy-black h3 { color: #fff; }
+.spy-icon { font-size: 2rem; margin-bottom: 6px; }
+.spy-panels p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.spy-divider {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent, #cc0000);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.spy-result {
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 16px;
+  border-top: 3px solid #000;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AWARDS PAGE
+   ══════════════════════════════════════════════════════════ */
+.awards-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.awards-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 28px 24px 60px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.awards-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border-bottom: 5px double var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+.awards-date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.award-category {
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  border-left: 6px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+}
+.award-cat-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.award-medals { display: flex; flex-direction: column; gap: 4px; }
+.medal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.medal.gold   { color: #b8860b; }
+.medal.silver { color: #666; }
+.medal.bronze { color: #8b4513; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOLD-IN PAGE
+   ══════════════════════════════════════════════════════════ */
+.fold-in-page {
+  background: #000;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.foldin-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  overflow: hidden;
+}
+.foldin-header {
+  background: var(--accent, #cc0000);
+  padding: 12px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.foldin-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  color: var(--accent2, #f5c400);
+}
+.foldin-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.foldin-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s;
+}
+.foldin-area.folded {
+  opacity: 0.08;
+  pointer-events: none;
+}
+.foldin-left {
+  flex: 0 0 62%;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px dashed var(--accent2, #f5c400);
+}
+.foldin-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; opacity: 0.6;
+}
+.foldin-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; font-size: 4rem; opacity: 0.1;
+  background: #1a1a1a;
+}
+.foldin-section-top {
+  position: absolute; top: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent2, #f5c400);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 2;
+}
+.foldin-question {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.72);
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.foldin-label-a, .foldin-label-b {
+  position: absolute; bottom: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--accent2, #f5c400);
+  background: rgba(0,0,0,0.8);
+  padding: 2px 8px;
+  z-index: 3;
+}
+.foldin-label-a { right: 8px; }
+.foldin-right {
+  flex: 0 0 38%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.foldin-answer-hidden {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+.foldin-label-b { left: 8px; bottom: 8px; }
+
+/* Revealed answer (shown when folded) */
+.foldin-answer-reveal {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+.foldin-area.folded ~ .foldin-answer-reveal {
+  display: flex;
+}
+.foldin-answer-text {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--accent2, #f5c400);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.foldin-answer-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.foldin-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 3px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.foldin-btn:hover { background: #fff; }
+
+:root {
+  --bg: #fdf6e3;
+  --page-bg: #ffffff;
+  --text: #111111;
+  --accent: #cc0000;
+  --accent2: #f5c400;
+  --accent3: #003399;
+  --nav-bg: #cc0000;
+  --nav-text: #ffffff;
+  --dot-active: #f5c400;
+  --eyebrow: #cc0000;
+  --ad-bg: #fff8e1;
+  --ad-border: #f5c400;
+}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">← All Issues</a>
+  </div>
+  <span class="nav-title">The Big Beautiful News Circus!</span>
+  <div class="nav-right">
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next">&#8594;</button>
+    <button class="nav-share" onclick="shareIssue()" aria-label="Share">&#9014;</button>
+  </div>
+</nav>
+
+<div class="viewport">
+  <div class="track" id="track">
+<div class="page cover-full-page" id="p0">
+  <img class="cover-full-img" src="../../images/vol1no4-cover.png?v=1780661668118" alt="cover">
+</div>
+
+<div class="page cover-page" id="p1">
+  <img class="cover-img" src="../../images/vol1no4-cover.png?v=1780661668119" alt="cover">
+  <div class="cover-top">
+    <div class="cover-mag-name">INSANE</div>
+    <div class="cover-meta">Vol. 1, No. 4 · June 2026 &nbsp;·&nbsp; June 2026 &nbsp;·&nbsp; $6.99 US / CHEAPER THAN A CARTON OF EGGS (FOR NOW)</div>
+  </div>
+  <div class="cover-lines-wrap">
+    <div class="cover-line">THE BIG BEAUTIFUL NEWS CIRCUS!</div>
+    <div class="cover-line">ALLIGATOR ALCATRAZ: SIGN FIRST, DRINK LATER?</div>
+    <div class="cover-line">$70 BILLION FOR BORDER MADNESS</div>
+    <div class="cover-line">CONGRESS REDISCOVERS WAR POWERS (CHECKS EXPIRATION DATE)</div>
+    <div class="cover-line">AI STOCKS LEARN GRAVITY — SPACEX: TO THE MOON, THEN THE TAX HAVEN</div>
+    <div class="cover-line">GREENLAND HAS THE EPSTEIN FILES — MELTING POINT PROTEST!</div>
+  </div>
+  <div class="cover-tagline">SANITY NOT INCLUDED</div>
+</div>
+
+<div class="page editorial-page" id="p2">
+  <div class="editorial-inner">
+    <h2 class="editorial-title">FROM THE EDITOR'S BUNKER</h2>
+    <p class="editorial-salutation">Dear Reader, America's Only Magazine With More Emergency Funding Than Common Sense,</p>
+    <div class="editorial-body">
+    <p>Welcome to the <strong>United States of Disarray.</strong> Step right up. No facts. No filter. Just nonstop nonsense. The Capitol is a circus tent. The ringmaster is juggling flaming torches labeled Iran, War Powers, Ukraine Aid, AI, SpaceX IPO, and ICE STOP simultaneously, and he appears to be <em>enjoying himself.</em></p>
+    <p>This issue covers the full card: <strong>Alligator Alcatraz,</strong> the Everglades detention facility where allegations of coerced signatures, withheld food, and dirty water have turned <em>"due process"</em> into a swamp attraction — and where the only menu item listed is, per detainee accounts, <em>"TODAY'S MENU: NOTHING."</em> We are not laughing at the detainees. We are laughing at the people running it. There is a difference, and we mean it.</p>
+    <p>We also cover: Congress rediscovering the War Powers Act (<em>"okay we'll read it later"</em> — Constitution, rough draft, visible on cover), <strong>$70 billion in border spending</strong> that is making alligators nervous, AI stocks learning gravity in real time, SpaceX's IPO pricing strategy of <em>"to the moon, then the tax haven,"</em> and a polar bear on a shrinking Greenland ice shelf who has apparently obtained the Epstein files and is using them as leverage.</p>
+    <p>The polar bear's position is: <em>release the files or we keep melting.</em> This is the most coherent foreign policy position we have covered in four issues. We are impressed.</p>
+    <p>New this issue: <strong>the INSANE Crossword Puzzle,</strong> in which every answer is either EPSTEIN or FILES, because that is all anyone wants to know and we respect the reader's time. Also: our continuing <strong>Man and Woman in the Street</strong> feature, which remains extremely loud.</p>
+    <p>Also this issue: a very special feature on <strong>Freddie Frump,</strong> the seven-year-old taking on MAGA in his hometown and, improbably, winning. In a week full of very large adults behaving very badly, Freddie is a tonic.</p>
+    </div>
+    <p class="editorial-sig">— The Editors</p>
+    <p class="editorial-ps">P.S. — The polar bear wants the files. We want the files. The polar bear and INSANE Magazine are now in alignment on one issue. History is wild.</p>
+  </div>
+</div>
+
+<div class="page masthead-page" id="p3">
+  <div class="masthead-inner">
+    <div class="masthead-logo">INSANE</div>
+    <h2 class="masthead-title">INSANE MAGAZINE MASTHEAD</h2>
+    <div class="masthead-grid">
+      <div class="mast-item"><span class="mast-role">Publisher:</span> <span class="mast-name">A. Panic Jr.</span></div>
+      <div class="mast-item"><span class="mast-role">Editor-in-Chief:</span> <span class="mast-name">Screaming McGee</span></div>
+      <div class="mast-item"><span class="mast-role">Circus Correspondent:</span> <span class="mast-name">Under The Big Top, Dodging Torches</span></div>
+      <div class="mast-item"><span class="mast-role">Alligator Alcatraz Desk:</span> <span class="mast-name">Everglades Bureau, Wading In</span></div>
+      <div class="mast-item"><span class="mast-role">Border Budget Analyst:</span> <span class="mast-name">$70B / Still Counting Alligators</span></div>
+      <div class="mast-item"><span class="mast-role">War Powers Editor:</span> <span class="mast-name">Has Read The Constitution (Unlike Congress)</span></div>
+      <div class="mast-item"><span class="mast-role">AI Markets Desk:</span> <span class="mast-name">Currently Falling</span></div>
+      <div class="mast-item"><span class="mast-role">SpaceX IPO Coverage:</span> <span class="mast-name">To The Moon, Filing From Cayman Islands</span></div>
+      <div class="mast-item"><span class="mast-role">Greenland Bureau:</span> <span class="mast-name">On The Ice, Very Nervous</span></div>
+      <div class="mast-item"><span class="mast-role">Epstein Files Desk:</span> <span class="mast-name">Still Waiting. Have Been For Years.</span></div>
+      <div class="mast-item"><span class="mast-role">Crossword Editor:</span> <span class="mast-name">Very Efficient (Two Answers: Done)</span></div>
+      <div class="mast-item"><span class="mast-role">Freddie Frump Coverage:</span> <span class="mast-name">Inspired. Actually Inspired.</span></div>
+      <div class="mast-item"><span class="mast-role">Legal:</span> <span class="mast-name">Reviewed By A Monkey With A Press Pass</span></div>
+      <div class="mast-item"><span class="mast-role">Sanity Level:</span> <span class="mast-name">Make America A Spectacle Again</span></div>
+    </div>
+    
+    <div class="subscriber-alert">
+      <div class="alert-title">INSANE MAGAZINE SUBSCRIBER ALERT!</div>
+      <div class="alert-sub">This week's briefing: circus in progress, duck when necessary</div>
+      <div class="alert-items"><div class="alert-item">☑ Capitol circus: torches lit, tent wobbling</div>
+        <div class="alert-item">☑ Alligator Alcatraz: no habeas, just habitat</div>
+        <div class="alert-item">☑ $70 billion for border: alligators not consulted</div>
+        <div class="alert-item">☑ Congress: reading the Constitution (eventually)</div>
+        <div class="alert-item">☑ AI stocks: gravity confirmed, learning it now</div>
+        <div class="alert-item">☑ SpaceX IPO: moon trajectory, tax haven destination</div>
+        <div class="alert-item">☑ Polar bear: has files, making demands, melting</div>
+        <div class="alert-item">☑ Crossword: two answers, zero difficulty, 100% catharsis</div>
+        <div class="alert-item">☑ Freddie Frump: 7 years old, winning anyway</div></div>
+      <div class="alert-price">$6.99 / CHEAPER THAN A CARTON OF EGGS (FOR NOW)</div>
+      <div class="alert-disclaimer">INSANE Magazine is America's only publication with more emergency funding than common sense. Printed on recycled circus posters. Alligators were consulted. They had no comment. The polar bear had many.</div>
+    </div>
+    <div class="masthead-disclaimer">INSANE: No Facts. No Filter. Just Nonstop Nonsense. Step Right Up.</div>
+  </div>
+</div>
+
+<div class="page contents-page" id="p4">
+  <div class="ticker-bar"><div class="ticker-inner">BREAKING: TRUMP JUGGLES IRAN, WAR POWERS, UKRAINE AID, AI, SPACEX IPO SIMULTANEOUSLY ✦ ALLIGATOR ALCATRAZ: COERCED SIGNATURES, NO FOOD, NO WATER ALLEGED ✦ $70B BORDER BILL PASSES ✦ CONGRESS FINDS WAR POWERS ACT, STILL HASN'T READ IT ✦ AI STOCKS DOWN SHARPLY ✦ SPACEX IPO: LARGEST IN HISTORY, CAYMAN ISLANDS ROUTING CONFIRMED ✦ POLAR BEAR DEMANDS EPSTEIN FILES FROM GREENLAND ICE SHELF ✦ &nbsp; ✦ &nbsp; BREAKING: TRUMP JUGGLES IRAN, WAR POWERS, UKRAINE AID, AI, SPACEX IPO SIMULTANEOUSLY ✦ ALLIGATOR ALCATRAZ: COERCED SIGNATURES, NO FOOD, NO WATER ALLEGED ✦ $70B BORDER BILL PASSES ✦ CONGRESS FINDS WAR POWERS ACT, STILL HASN'T READ IT ✦ AI STOCKS DOWN SHARPLY ✦ SPACEX IPO: LARGEST IN HISTORY, CAYMAN ISLANDS ROUTING CONFIRMED ✦ POLAR BEAR DEMANDS EPSTEIN FILES FROM GREENLAND ICE SHELF ✦</div></div>
+  <div class="contents-inner">
+    <div class="contents-header">
+      <div class="contents-mag">INSANE</div>
+      <h2 class="contents-title">CONTENTS</h2>
+      <div class="contents-edition">JUNE 2026 · &quot;UNITED STATES OF DISARRAY&quot; EDITION</div>
+    </div>
+    <div class="contents-list">
+    <div class="ci-item">
+      <span class="ci-num">5</span>
+      <span class="ci-emoji">🎪</span>
+      <span class="ci-title">THE BIG BEAUTIFUL NEWS CIRCUS</span>
+      <span class="ci-desc">United States of Disarray — under the big top</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">6</span>
+      <span class="ci-emoji">🐊</span>
+      <span class="ci-title">ALLIGATOR ALCATRAZ</span>
+      <span class="ci-desc">No habeas. Just habitat. Sign here.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">7</span>
+      <span class="ci-emoji">💰</span>
+      <span class="ci-title">$70 BILLION BORDER MADNESS</span>
+      <span class="ci-desc">The spending bill alligators didn't ask for</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">8</span>
+      <span class="ci-emoji">⚖️</span>
+      <span class="ci-title">CONGRESS REDISCOVERS WAR POWERS</span>
+      <span class="ci-desc">The Constitution: rough draft, better late</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">9</span>
+      <span class="ci-emoji">📉</span>
+      <span class="ci-title">AI STOCKS LEARN GRAVITY</span>
+      <span class="ci-desc">SpaceX IPO: moon, then the tax haven</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">10</span>
+      <span class="ci-emoji">🐻‍❄️</span>
+      <span class="ci-title">POLAR BEAR DEMANDS EPSTEIN FILES</span>
+      <span class="ci-desc">Greenland leverage: melt or release</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">11</span>
+      <span class="ci-emoji">🇺🇦</span>
+      <span class="ci-title">UKRAINE AID, IRAN, OIL JITTERS</span>
+      <span class="ci-desc">Three fronts, one very tired Strait</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">12</span>
+      <span class="ci-emoji">🗣️</span>
+      <span class="ci-title">MAN &amp; WOMAN IN THE STREET</span>
+      <span class="ci-desc">Citizens return. Still have thoughts.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">13</span>
+      <span class="ci-emoji">📚</span>
+      <span class="ci-title">FREDDIE FRUMP: AGE 7, WINNING</span>
+      <span class="ci-desc">The boy taking on MAGA in his hometown</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">14</span>
+      <span class="ci-emoji">🔤</span>
+      <span class="ci-title">THE INSANE CROSSWORD</span>
+      <span class="ci-desc">Every answer is EPSTEIN or FILES. Good luck.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">15</span>
+      <span class="ci-emoji">🥷</span>
+      <span class="ci-title">SPY VS. SPY: CIRCUS EDITION</span>
+      <span class="ci-desc">Both in ringmaster hats. Same result.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">16</span>
+      <span class="ci-emoji">🏆</span>
+      <span class="ci-title">INSANE AWARDS</span>
+      <span class="ci-desc">Crowded field. Remarkable week.</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">17</span>
+      <span class="ci-emoji">📋</span>
+      <span class="ci-title">INSANE CLASSIFIEDS</span>
+      <span class="ci-desc">Help wanted: circus workers, alligator wranglers</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">18</span>
+      <span class="ci-emoji">🛒</span>
+      <span class="ci-title">INSANE MARKETPLACE</span>
+      <span class="ci-desc">Products for the discerning chaos consumer</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">19</span>
+      <span class="ci-emoji">📰</span>
+      <span class="ci-title">BACK PAGE FOLD-IN</span>
+      <span class="ci-desc">What does 'Make America Great Again' really mean?</span>
+    </div>
+    </div>
+    
+    <div class="scorecard-box">
+      <div class="scorecard-title">THIS WEEK'S INSANE SCORECARD</div>
+      <ul class="scorecard-list"><li>🎪 Flaming torches juggled over the Capitol: <strong>6 (Iran, War Powers, Ukraine, AI, SpaceX, ICE)</strong></li>
+        <li>🐊 Alligators in the Everglades detention zone: <strong>Unknown (unaudited)</strong></li>
+        <li>💰 Border bill price tag: <strong>$70 billion</strong></li>
+        <li>📉 AI stock trajectory this week: <strong>Downward (gravity confirmed)</strong></li>
+        <li>🐻‍❄️ Polar bears demanding document releases: <strong>1 (very determined)</strong></li>
+        <li>🔤 Answers in the INSANE crossword puzzle: <strong>2 (EPSTEIN and FILES)</strong></li>
+        <li>👦 Seven-year-olds currently beating MAGA: <strong>1 (Freddie Frump)</strong></li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p5">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-circus.png?v=1780661668120" alt="THE BIG BEAUTIFUL NEWS CIRCUS!">
+    <div class="illo-caption">★ &quot;Make America A Spectacle Again.&quot; — Drum platform, center ring. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">COVER STORY · THE UNITED STATES OF DISARRAY</div>
+    <h2 class="story-heading">THE BIG BEAUTIFUL NEWS CIRCUS!</h2>
+    <p class="story-subheading">STEP RIGHT UP — NO FACTS, NO FILTER, JUST NONSTOP NONSENSE UNDER THE BIG TOP</p>
+    <p class="story-deck">Washington Transforms Into A Collapsing Circus As Immigration Crackdowns, War-Powers Battles, Ukraine Aid, Iran Tensions, AI Panic, And SpaceX IPO Fever All Juggle Flaming Torches Over The Capitol</p>
+    <p>The Capitol is a circus tent. This is not a metaphor. The tent has stripes, a banner reading <strong>WELCOME TO THE UNITED STATES OF DISARRAY,</strong> and a ringmaster juggling <strong>six flaming torches simultaneously</strong> in the center ring — Iran, War Powers, Ukraine Aid, AI, SpaceX IPO, and ICE STOP — with an expression of such comprehensive confidence that everyone watching has split into two groups: those applauding and those calculating which torch lands on them.</p>
+    <p>The torches are all lit. None have dropped yet. Several are spinning. The tent is <em>slightly</em> on fire in the upper-left section near the War Powers torch, which has been burning longer than the others and has acquired a <strong>constitutional glow.</strong> Congress is in the audience. Several members are eating popcorn from a stand labeled PORK POPCORN. One has a Constitution labeled <em>ROUGH DRAFT.</em> He is reading it for the first time. He seems surprised by some of it.</p>
+    <p>The budget, which passed this week in a form that economists describe as <em>"creative,"</em> political opponents describe as <em>"a spectacle,"</em> and the sign over the ticket booth describes as <strong>BUDGET BIZARRE!</strong> — adds $70 billion in border funding, restructures AI policy, extends Iran war authorities, and continues Ukraine aid on terms that the Senate is still reviewing. The review is going slowly. The torches are not slowing down.</p>
+    <p>"This is the most beautiful circus anyone has ever seen," the ringmaster told reporters. <em>"The tent is tremendous. The torches are perfectly controlled. The alligators are fine."</em></p>
+    <p>The alligators are not fine. The alligators are in Everglades. We have a whole section on the alligators.</p>
+    <blockquote class="pull-quote">&quot;The alligators are fine.&quot; — The President. The alligators are not fine.</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">TORCHES CURRENTLY IN THE AIR</div>
+      <ul><li>🔥 IRAN — altitude high, temperature: always</li>
+        <li>🔥 WAR POWERS — spinning, constitutionally glowing</li>
+        <li>🔥 UKRAINE AID — in the air, Senate still reviewing</li>
+        <li>🔥 AI — descending (see: Wall Street story)</li>
+        <li>🔥 SPACEX IPO — ascending (see: tax haven story)</li>
+        <li>🔥 ICE STOP — rotating, Everglades-adjacent</li></ul>
+    </div>
+    
+    <div class="fake-ad">
+      <div class="ad-headline">BIG BEAUTIFUL CIRCUS TICKETS!</div>
+      <div class="ad-subheadline">United States of Disarray — All Seats, All Torches, All The Time</div>
+      <div class="ad-bullets"><div class="ad-bullet">🎪 Center ring: ringmaster, 6 torches, one drum</div>
+        <div class="ad-bullet">🎪 Clown Caucus seating: available, door open</div>
+        <div class="ad-bullet">🎪 Pork Popcorn stand: Congress side only</div>
+        <div class="ad-bullet">🎪 Constitution: rough draft available at door</div></div>
+      <div class="ad-price">FREE TO WATCH / COSTLY TO BE IN</div>
+      <div class="ad-disclaimer">Big Beautiful Circus not responsible for torches that land. Tent fire is in upper-left section, currently contained. Alligators are in a separate venue. Congress is in the audience. This is accurate.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p6">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-alcatraz.png?v=1780661668120" alt="SIGN FIRST, DRINK LATER?">
+    <div class="illo-caption">★ No habeas. Just habitat. The alligator has more rights than due process suggests. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">SPECIAL REPORT · ALLIGATOR ALCATRAZ</div>
+    <h2 class="story-heading">SIGN FIRST, DRINK LATER?</h2>
+    <p class="story-subheading">ALLIGATOR ALCATRAZ: WHERE DUE PROCESS MET THE EVERGLADES AND THE EVERGLADES WON</p>
+    <p class="story-deck">Detainees At The Everglades Facility Allege Coerced Signatures On Deportation Documents, Withheld Food, And Contaminated Water — Officials Describe Conditions As 'Appropriate' — Alligators Unavailable For Comment</p>
+    <p><strong>A note before we begin:</strong> The people detained at the Everglades facility are human beings. The satire in this section is aimed at the people running the operation — not at the people detained. We are very clear about this distinction and we mean it.</p>
+    <p>Detainees at the facility referred to informally as <strong>Alligator Alcatraz</strong> — an Everglades-adjacent immigration detention camp — have alleged in accounts reviewed by multiple news organizations: that deportation documents were placed before them without translation or explanation, that signatures were obtained under conditions that attorneys describe as <em>"coercive,"</em> that food was <strong>withheld</strong> for periods inconsistent with basic detention standards, and that the water available was described by multiple accounts as <strong>not clean.</strong></p>
+    <p>The sign outside the facility, per photographs reviewed by INSANE, reads <em>Everglades Detention Camp.</em> The sign does not mention the alligators. There are alligators. They are in the water. The water is also where the facility's exterior perimeter is located.</p>
+    <p>Officials described conditions as <em>"appropriate and consistent with all applicable standards."</em> Attorneys who have attempted to visit clients at the facility described access as <em>"restricted."</em> One attorney described the intake process as <em>"a document that a frightened person signs before they understand what it says,"</em> which the facility's legal team disputes.</p>
+    <p>The alligators were not available for comment. They have, however, been observed reading documents labeled DUE PROCESS. Their interest appears genuine. Their interpretation is their own.</p>
+    <blockquote class="pull-quote">&quot;Appropriate and consistent with all applicable standards.&quot; — Facility officials, regarding the alleged conditions</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">ALLIGATOR ALCATRAZ TOURS™</div>
+      <div class="ad-subheadline">&quot;No Habeas. Just Habitat.&quot; — The Swamp Attraction Nobody Asked For</div>
+      <div class="ad-bullets"><div class="ad-bullet">🐊 Scenic Everglades location — alligators included</div>
+        <div class="ad-bullet">🐊 Menu: ask at the gate (bring your own)</div>
+        <div class="ad-bullet">🐊 Water: available pending standards review</div>
+        <div class="ad-bullet">🐊 Legal access: restricted (bring documents in advance)</div></div>
+      <div class="ad-price">FREE TO OPERATE / EXPENSIVE TO DEFEND IN COURT</div>
+      <div class="ad-disclaimer">Alligator Alcatraz Tours not responsible for the legal proceedings that this operation will generate. Due process is a constitutional guarantee. The alligators are aware of this. The facility's operators should get more familiar with it.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p7">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-border.png?v=1780661668120" alt="$70 BILLION FOR BORDER MADNESS!">
+    <div class="illo-caption">★ The alligators are on the pile. The alligators did not apply for the pile. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">BUDGET · BORDER INDUSTRIAL COMPLEX</div>
+    <h2 class="story-heading">$70 BILLION FOR BORDER MADNESS!</h2>
+    <p class="story-subheading">CONGRESS PASSES SWEEPING BORDER BILL — ALLIGATORS NOT CONSULTED — WALL GOING GREAT THROUGH SWAMP</p>
+    <p class="story-deck">A $70 Billion Border Security Package Passes Congress — Critics Ask Where It Goes, Supporters Ask What's Next, Alligators Ask Nothing Because Nobody Asked Them Either</p>
+    <p>Congress passed a <strong>$70 billion border security bill</strong> this week, a figure that immigration analysts describe as <em>"substantial,"</em> budget hawks describe as <em>"where exactly does this go,"</em> and the Everglades describe as <em>"the alligators are going to be on the money pile, that's what's going to happen."</em></p>
+    <p>The bill funds: expanded detention capacity (see: Alligator Alcatraz, previous page), enhanced surveillance technology, additional personnel, wall construction in areas where wall construction is a thing that makes sense geographically, and what the bill's supporters describe as <strong>"a comprehensive approach"</strong> and what the alligators on the money pile describe as nothing, because the alligators were not consulted.</p>
+    <p>The Border Industrial Complex — the network of contractors, consultants, and private detention operators who have spent three decades ensuring that border security is always expensive and never finished — welcomed the legislation with what sources described as <em>"barely contained enthusiasm"</em> and what the lobby's public statement called <em>"a necessary investment."</em></p>
+    <p>Across the aisle, critics noted that the bill includes funding streams with limited oversight, spending categories that are broad enough to encompass decisions the legislature has not specifically authorized, and a line item that one senator described, off the record, as <em>"I read it four times and I'm still not sure what it is."</em></p>
+    <p>The alligators have been photographed sitting on the money pile. Nobody has moved them. The money pile is in the Everglades. This is, somehow, where we are.</p>
+    <blockquote class="pull-quote">&quot;I read it four times and I'm still not sure what it is.&quot; — Senator, off the record, regarding a specific line item</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">BORDER INDUSTRIAL COMPLEX™</div>
+      <div class="ad-subheadline">Expensive. Ongoing. Never Finished. That's The Business Model.</div>
+      <div class="ad-bullets"><div class="ad-bullet">💰 $70B contract opportunities — apply now</div>
+        <div class="ad-bullet">💰 Oversight: limited (read the bill)</div>
+        <div class="ad-bullet">💰 Completion timeline: open-ended (by design)</div>
+        <div class="ad-bullet">💰 Alligators: on the money pile (not billable)</div></div>
+      <div class="ad-price">$70,000,000,000 / AND COUNTING</div>
+      <div class="ad-disclaimer">Border Industrial Complex LLC has been in operation since before you were worried about the border and will be in operation after. The alligators are not on the payroll. The alligators are on the money. There is a difference.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p8">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-warpowers.png?v=1780661668120" alt="CONGRESS REDISCOVERS WAR POWERS!">
+    <div class="illo-caption">★ The cobwebs are recent. The document is not. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">CONSTITUTIONAL REDISCOVERY · ARCHIVE EDITION</div>
+    <h2 class="story-heading">CONGRESS REDISCOVERS WAR POWERS!</h2>
+    <p class="story-subheading">LEGISLATORS FIND CONSTITUTIONAL AUTHORITY THEY FORGOT THEY HAD — EXPIRATION DATE: UNCLEAR</p>
+    <p class="story-deck">Congress Moves To Assert War Powers Authority Over Iran Military Operations — The War Powers Resolution, Passed In 1973, Is Retrieved From Archives — Congressional Response Time: 53 Years</p>
+    <p>Congress moved this week to assert its authority under the <strong>War Powers Resolution</strong> — a law passed in 1973 that requires congressional authorization for sustained military operations — in connection with ongoing Iran theater activities, a development that constitutional scholars are calling <em>"long overdue"</em> and that the executive branch is calling <em>"an interesting read."</em></p>
+    <p>The War Powers Resolution, which was retrieved from the congressional archives this week and found to be in good condition aside from moderate cobwebs, establishes that the President must notify Congress within 48 hours of committing forces to hostilities, and must cease operations within 60 days without congressional authorization. The Iran operations have been ongoing for some time. The notification was filed. The 60-day clock is a matter of some interpretation.</p>
+    <p>"We found it," one congressional aide told INSANE, holding the document up. <em>"It was right there. In the filing cabinet. It's been there since 1973."</em> The aide appeared genuinely surprised. We found the aide's surprise surprising. The document has been there for <strong>53 years.</strong></p>
+    <p>Alongside the War Powers Resolution, congressional staffers also recovered: a copy of the <em>Constitution</em> (Rough Draft, some pages creased), a document labeled <strong>CHECKS AND BALANCES: SOME ASSEMBLY REQUIRED,</strong> and the <em>Separation of Powers</em> framework with a sticky note attached reading <em>"USE THIS."</em></p>
+    <p>The sticky note appears to have been applied in 2019. <em>"We're getting to it,"</em> a congressional spokesperson said.</p>
+    <blockquote class="pull-quote">&quot;We found it. It was right there. In the filing cabinet.&quot; — Congressional aide, on the War Powers Resolution</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">CONSTITUTIONAL DOCUMENT RECOVERY SERVICES!</div>
+      <div class="ad-subheadline">Find What Congress Forgot — We Know Where It Is</div>
+      <div class="ad-bullets"><div class="ad-bullet">📜 War Powers Resolution: found (filing cabinet, cobwebs)</div>
+        <div class="ad-bullet">📜 Checks and Balances: some assembly still required</div>
+        <div class="ad-bullet">📜 Separation of Powers: sticky note says USE THIS</div>
+        <div class="ad-bullet">📜 Constitution: rough draft, most pages intact</div></div>
+      <div class="ad-price">FREE — IT'S IN THE FILING CABINET</div>
+      <div class="ad-disclaimer">Constitutional Document Recovery Services not responsible for the 53 years between enactment and retrieval. Documents were there the whole time. The sticky note was applied in 2019. The assembly instructions are still missing. We are looking.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p9">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-wallstreet.png?v=1780661668120" alt="AI STOCKS LEARN GRAVITY!">
+    <div class="illo-caption">★ Gravity: available to all investors. Tax haven: available to the IPO. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">MARKETS · GRAVITY AND ESCAPE VELOCITY</div>
+    <h2 class="story-heading">AI STOCKS LEARN GRAVITY!</h2>
+    <p class="story-subheading">WALL STREET'S AI DARLINGS DISCOVER DOWNWARD DIRECTION — SPACEX IPO GOES TO THE MOON, THEN THE TAX HAVEN</p>
+    <p class="story-deck">Artificial Intelligence Stocks Fall Sharply Amid Valuation Concerns — SpaceX Prices Its IPO As The Largest In U.S. History — Proceeds Route Via Cayman Islands Structure — Gravity: Confirmed For Some Stocks, Optional For Others</p>
+    <p><strong>AI stocks fell sharply this week,</strong> confirming what physics has always maintained but Wall Street has periodically disputed: that valuations subject only to enthusiasm and venture capital eventually encounter the concept of <em>"what does this thing actually earn."</em> The encounter was, per trading floor accounts, <em>"sudden."</em></p>
+    <p>The stocks in question — a category that investors had assigned to a special zone above normal valuation metrics, on the logic that AI is different and transformative and not subject to the rules that apply to, for example, an actual business — descended through the floor of that special zone this week and landed in the regular valuation zone, which has different rules and is considerably less comfortable.</p>
+    <p>Simultaneously, and the word <em>"simultaneously"</em> is doing significant narrative work here: SpaceX priced its <strong>initial public offering</strong> at a valuation that financial analysts are calling <em>"extraordinary," "the largest in U.S. history,"</em> and <em>"going to the moon."</em> The proceeds will flow through a corporate structure that tax analysts describe as <strong>Cayman Islands-routed.</strong> The moon is not in the Cayman Islands. The tax structure is.</p>
+    <p>"AI is still the future," a fund manager told INSANE, from the trading floor, while his terminal displayed a declining graph. <em>"This is a temporary correction."</em> Behind him, the graph continued. He did not turn around. <strong>He reminded us of the spokesperson from Vol. 1 No. 3.</strong></p>
+    <p>SpaceX has not commented on the tax structure. The Cayman Islands also have not commented. The moon has not commented. Gravity has been reached for comment. Gravity said: <em>"I've been here the whole time."</em></p>
+    <blockquote class="pull-quote">&quot;I've been here the whole time.&quot; — Gravity, reached for comment on AI stock valuations</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">GRAVITY: NOW AVAILABLE TO AI INVESTORS!</div>
+      <div class="ad-subheadline">Physics Has Been Here The Whole Time. Welcome.</div>
+      <div class="ad-bullets"><div class="ad-bullet">📉 Gravity: free, universal, previously optional</div>
+        <div class="ad-bullet">📉 AI valuation adjustment: in progress</div>
+        <div class="ad-bullet">🚀 SpaceX IPO: moon-bound, Cayman-routed</div>
+        <div class="ad-bullet">🏝️ Tax haven: not gravity-affected (different rules)</div></div>
+      <div class="ad-price">GRAVITY: FREE / TAX HAVEN ROUTING: CALL YOUR ACCOUNTANT</div>
+      <div class="ad-disclaimer">Gravity LLC has been operating since before financial markets existed. We are not responsible for the special zone above normal valuations. We were always going to be here. The AI stocks have been introduced to us. Further introductions are scheduled.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p10">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-polarbear.png?v=1780661668120" alt="POLAR BEAR DEMANDS EPSTEIN FILES!">
+    <div class="illo-caption">★ The bear's position is: release the files or the ice keeps melting. This is the clearest policy statement of the week. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">GREENLAND · MELTING POINT PRESS CONFERENCE</div>
+    <h2 class="story-heading">POLAR BEAR DEMANDS EPSTEIN FILES!</h2>
+    <p class="story-subheading">GREENLAND ICE SHELF: SHRINKING. POLAR BEAR: NOT MOVING UNTIL FILES RELEASED. LEVERAGE: CONFIRMED.</p>
+    <p class="story-deck">A Polar Bear On The Greenland Ice Shelf Has Obtained What It Claims Are The Epstein Files And Is Using Them As Leverage — Melting Will Continue Until Documents Released — Position: The Most Coherent Of The Week</p>
+    <p>A polar bear on the Greenland ice shelf held a press conference this week at which it presented a manila folder labeled <strong>EPSTEIN FILES</strong> and announced that melting would continue until the documents were publicly released.</p>
+    <p>The bear, which has been identified only as <em>"a polar bear, Greenland, very determined,"</em> stated its position clearly: the files exist, they are of significant public interest, the public has been waiting for them for years, and the Greenland ice sheet will continue its current trajectory until a satisfactory outcome is reached. <strong>"Release the files or we keep melting,"</strong> the bear said, per the official transcript of the press conference, which was conducted from a podium on ice.</p>
+    <p>Political analysts covering the bear's press conference noted that its position — though unusual in origin — is <strong>"more clearly stated than most policy positions we have covered this year"</strong> and that the leverage, while geological in nature, is real. The ice is melting. The files have not been released. These two facts are currently in a relationship.</p>
+    <p>A government official dispatched to respond to the bear held up a sign reading <em>THE FILES DON'T EXIST.</em> The bear drew a large question mark on the sign and handed it back. The official did not have a follow-up prepared.</p>
+    <p>INSANE is on the bear's side on this one. We have been waiting for the files longer than the bear has been standing on the ice. We are also melting slightly.</p>
+    <blockquote class="pull-quote">&quot;Release the files or we keep melting.&quot; — Polar Bear, Greenland, press conference transcript, most coherent position of the week</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">EPSTEIN FILES RELEASE COUNTDOWN™</div>
+      <div class="ad-subheadline">Still Waiting. Have Been. Will Continue.</div>
+      <div class="ad-bullets"><div class="ad-bullet">📁 Files: exist (see: polar bear's folder)</div>
+        <div class="ad-bullet">📁 Release date: TBD (has been TBD for years)</div>
+        <div class="ad-bullet">🧊 Ice shelf status: melting (related, unclear how)</div>
+        <div class="ad-bullet">🐻‍❄️ Bear's patience: finite (unlike the wait for the files)</div></div>
+      <div class="ad-price">TRANSPARENCY: PRICELESS AND FREE / CURRENTLY NOT AVAILABLE</div>
+      <div class="ad-disclaimer">Epstein Files Release Countdown not responsible for the ice shelf, the bear's position, or the government official's sign. The bear has the folder. The folder appears to be real. The question mark is the bear's. We agree with the bear.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p11">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-ukraine.png?v=1780661668120" alt="UKRAINE AID, IRAN TENSION, OIL JITTERS!">
+    <div class="illo-caption">★ The dove has requested a vacation. The request is under review. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INTERNATIONAL · ALL THREE FRONTS SIMULTANEOUSLY</div>
+    <h2 class="story-heading">UKRAINE AID, IRAN TENSION, OIL JITTERS!</h2>
+    <p class="story-subheading">THREE FRONTS. ONE VERY TIRED WEEK. STRAIT OF HORMUZ DOVE REQUESTS VACATION.</p>
+    <p class="story-deck">Ukraine Aid Package Advances As Senate Reviews Terms — Iran Tensions Persist Alongside Peace Talk Progress Described As 'Close' (Still) — Oil Markets Cite Multiple Simultaneous Reasons For Current Prices</p>
+    <p>Ukraine aid is advancing. The Senate is reviewing the terms. The terms are being reviewed carefully, because terms that look good from a distance occasionally look different up close, and the Senate has had experiences with both directions of looking. The aid is in packages. The packages are on a conveyor belt. The conveyor belt is running.</p>
+    <p>In the Strait of Hormuz, the Iran peace talks remain <strong>close.</strong> They have been close since last issue. The peace dove's flak jacket has acquired a second dent. A new FINE PRINT mine has appeared near the negotiating table. The dove has filed a formal vacation request. The request is under review by the same office that is processing the Iran deal, which is to say: <em>the review is ongoing.</em></p>
+    <p>Oil prices, which track <em>everything that is happening</em> with the precision of a market that has a lot of money riding on it, are citing: the Strait situation, the Ukraine situation, the general situation, and what traders describe as <strong>"the ambient energy of the week,"</strong> which they are pricing in at approximately $4.29 per gallon, subject to <em>situational adjustment.</em></p>
+    <p>"We are monitoring all three situations closely," a senior official said, from what appeared to be a very comfortable monitoring chair. <em>"The aid is moving, the talks are close, and the oil is priced accordingly."</em> All three statements are accurate. All three situations are continuing. The monitoring continues.</p>
+    <blockquote class="pull-quote">&quot;The aid is moving, the talks are close, and the oil is priced accordingly.&quot; — Senior official, from monitoring chair</blockquote>
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">THREE-FRONT MONITORING CHAIR™</div>
+      <div class="ad-subheadline">Watch All Three Situations Simultaneously — Premium Comfort</div>
+      <div class="ad-bullets"><div class="ad-bullet">🇺🇦 Ukraine feed: conveyor belt view, terms included</div>
+        <div class="ad-bullet">🕊️ Strait feed: dove cam, flak jacket dent counter</div>
+        <div class="ad-bullet">⛽ Oil feed: price ticker, ambient energy gauge</div>
+        <div class="ad-bullet">💺 Chair: premium, comfortable, does not help</div></div>
+      <div class="ad-price">$4.29/GAL AMBIENT ENERGY SURCHARGE APPLIES</div>
+      <div class="ad-disclaimer">Three-Front Monitoring Chair not responsible for outcomes on any of the three fronts. Chair is comfortable. Monitoring is ongoing. The dove's vacation request is still under review. Oil is priced accordingly.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p12">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-street.png?v=1780661668120" alt="CITIZENS RETURN!">
+    <div class="illo-caption">★ The reporter's first notepad ran out on the third citizen. The second is half full. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">RETURNING FEATURE · MAN AND WOMAN IN THE STREET VOL. 2</div>
+    <h2 class="story-heading">CITIZENS RETURN!</h2>
+    <p class="story-subheading">INSANE MAGAZINE BACK ON THE CORNER — THEY HAVE MORE THOUGHTS — THE REPORTER HAS A SECOND NOTEPAD</p>
+    <p class="story-deck">INSANE Hits The Streets Again — The Public Has Opinions On Circuses, Alligators, Polar Bears, And The General State Of Everything — We Printed All Of Them</p>
+    <p><strong>HAROLD BIRNBAUM, 71, Retired Army Officer, Virginia:</strong> <em>"I served thirty years. Thirty years. I swore an oath to the Constitution. Not a rough draft — the actual Constitution. You know what I think should be done? Everyone in that building should be required to take the same oath I took and then be held to it. Publicly. With consequences. That's my position. I have more positions. Do you have time? I have all day."</em></p>
+    <p><strong>CONSUELA VAZQUEZ-ORIMOTO, 38, Registered Nurse, Arizona:</strong> <em>"I work twelve-hour shifts. Twelve hours. Do you know what I see at the end of a twelve-hour shift? People who needed healthcare they couldn't afford, people who came to this country for something better, and a TV in the break room showing the Capitol circus. What should be done? Fund the hospitals. Free the people who haven't done anything wrong. Release the Epstein files. I have to be back at six. Do you need anything else?"</em></p>
+    <p><strong>JEROME KIPLINGER, 55, High School History Teacher, Ohio:</strong> <em>"I teach the War Powers Act. Every year. To sixteen-year-olds. They understand it. I gave them the same document Congress found in the filing cabinet and they understood it in forty minutes. I would like to offer my services to Congress. My rate is a teacher's salary, which they have not raised in six years, but I'm flexible. What should be done? Hire teachers. For everything. We know how things work. We explain it every day."</em></p>
+    <p><strong>DESTINY WASHINGTON, 19, College Freshman, Georgia:</strong> <em>"Vote. I know. I know people say just vote and I know how that sounds after everything. But I registered five people in my dorm last week. Five. We're going to vote. We're going to vote very loudly. And then if that doesn't fix it, we will register five more people and vote again. The polar bear has the right idea about leverage. We have leverage too. It's called turnout. Watch."</em></p>
+    <p><strong>FRANK SZYMANSKI, 63, Postal Worker, Michigan:</strong> <em>"What should be done? Prosecute them. Through the courts. Through the proper legal channels. All of them. The ones with the files. The ones who hid the files. The ones who knew and didn't say anything. Prosecute them. Then release the files. Then prosecute anyone in the files. In that order. I deliver mail for a living. I understand process. There is a process. Use the process."</em></p>
+    <p><strong>RUTH ABERNATHY-COLE, 80, Retired Librarian, North Carolina:</strong> <em>"I have something to say to young people specifically. You are inheriting this. All of it. The circus, the alligators, the shrinking ice, the files nobody will release — all of it. And I am very sorry. I voted in every election since 1964. Every single one. I did not see this coming. What should be done? Everything. All of it. Immediately. And vote. Destiny is right. Vote like it's the only thing that matters because right now it might be."</em></p>
+    <blockquote class="pull-quote">&quot;Vote like it's the only thing that matters because right now it might be.&quot; — Ruth Abernathy-Cole, 80, retired librarian, North Carolina</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p13">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-freddie.png?v=1780661668121" alt="FREDDIE FRUMP: AGE 7, WINNING!">
+    <div class="illo-caption">★ He is seven. He has a step stool. He is not afraid. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INSANE RECOMMENDS · A VERY GOOD BOY</div>
+    <h2 class="story-heading">FREDDIE FRUMP: AGE 7, WINNING!</h2>
+    <p class="story-subheading">THE BOY TAKING ON MAGA IN HIS HOMETOWN — AND WINNING — IS SEVEN YEARS OLD AND HAS A STEP STOOL</p>
+    <p class="story-deck">While Very Large Adults In Washington Behave Very Badly, A Seven-Year-Old Named Freddie Frump Is Doing The Work — INSANE Recommends His Story Unreservedly</p>
+    <p>In a week full of circuses, alligators, polar bears, and one hundred and forty-three things that made us want to lie down, we want to tell you about <strong>Freddie Frump.</strong></p>
+    <p>Freddie Frump is seven years old. He lives in a small town. MAGA came to his town — to his school, to his school board, to the conversations his parents were having at the dinner table — and Freddie, being seven, did what seven-year-olds apparently do when they encounter something that seems wrong: <strong>he said something about it.</strong> Loudly. At meetings. With a step stool, because the podium was too tall.</p>
+    <p>He is winning. The details of how are in his stories, which are genuinely wonderful and which we are linking here because <em>after everything else in this issue, you deserve something good.</em></p>
+    <p>His adventures include: a parent-teacher conference that did not go as planned, an encounter with due process that the Constitution would recognize, a testimony that adults in the room did not expect from someone his age, and a school board election that he approached with the seriousness of a person who understands what's at stake — which, at seven, he apparently does.</p>
+    <p><strong>Read Freddie's stories:</strong></p>
+    <p>📖 <a href='https://freddiefrump2.netlify.app/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #2 — The Parent-Teacher Conference</a></p>
+    <p>📖 <a href='https://freddiefrump-no3.netlify.app/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #3 — You Have The Right To Remain Seven</a></p>
+    <p>📖 <a href='https://freddiefrumptesifies.bumbloobooks.com/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #4 — Sworn In</a></p>
+    <p>📖 <a href='https://freddiefrumpelection.bumbloobooks.com/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #5 — The School Board Election</a></p>
+    <p>We read all four. We recommend all four. In a week that required a helmet, Freddie Frump did not require a helmet. He required a step stool, a crayon, and the conviction that being right matters even when you're the smallest person in the room.</p>
+    <p><strong>He is seven. He is not afraid. We are rooting for him.</strong></p>
+    
+    
+    
+    
+    
+    <div class="the-end">
+      <p class="the-end-title">Go, Freddie. Go.</p>
+      <p class="the-end-sub">INSANE Magazine recommends Freddie Frump without reservation or asterisk.</p>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page no-illo" id="p14">
+  
+  <div class="story-body">
+    <div class="story-eyebrow">GAMES &amp; PUZZLES · THEMED EDITION</div>
+    <h2 class="story-heading">THE INSANE CROSSWORD PUZZLE</h2>
+    <p class="story-subheading">EVERY ANSWER IS EITHER EPSTEIN OR FILES — DIFFICULTY: ZERO — CATHARSIS: 100%</p>
+    <p class="story-deck">INSANE Magazine's First Crossword Puzzle — All Clues Lead To The Same Two Answers — We Respect Your Time And Your Frustration</p>
+    <p><div style='text-align:center;margin:8px auto 16px;'><div style='display:inline-block;font-family:"Bebas Neue",sans-serif;font-size:0.7rem;letter-spacing:0.15em;color:#cc0000;margin-bottom:8px;'>★ ALL ANSWERS ARE EITHER EPSTEIN OR FILES ★</div><br><table style='border-collapse:collapse;margin:0 auto;'><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>1</small>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>2</small>F</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>P</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>I</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>S</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>L</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>3</small>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>P</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>S</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>T</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>I</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>N</td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>S</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>4</small>F</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>I</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>L</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>S</td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:"Bebas Neue",sans-serif;background:#fffde7;'>N</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr></table></div></p>
+    <p><div style='font-family:"Nunito",sans-serif;font-size:0.82rem;line-height:1.7;max-width:380px;margin:0 auto;'><strong>ACROSS</strong><br>3. His name. That's the clue. His name. (7)<br>4. What the public wants released. What the government has. What you cannot see. (5)<br><br><strong>DOWN</strong><br>1. See 3 Across. Also see 4 Across. Also: <em>why.</em> (7)<br>2. The documents in question. Every question. (5)<br><br><em>★ Puzzle pre-filled because you already knew. Time saved: approximately 45 seconds. Frustration: unchanged. ★</em></div></p>
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page spy-page" id="p15">
+  <div class="spy-header">
+    <h2 class="spy-title">SPY vs. SPY</h2>
+    <div class="spy-subtitle">2026 Edition: &quot;Under The Big Top&quot;</div>
+  </div>
+  <div class="spy-illo"><img src="../../images/vol1no4-spyvspy.png?v=1780661668121" alt="spy vs spy"></div>
+  <div class="spy-arena">
+    <div class="spy-col spy-white">
+      <div class="spy-icon">🤍</div>
+      <h3>WHITE SPY</h3>
+      <div class="spy-panels"><p>White Spy puts on a ringmaster hat. White Spy begins juggling flaming torches carefully, one at a time.</p>
+        <p>White Spy adds Iran. Adds Ukraine. Adds War Powers. All torches spinning perfectly. White Spy sweating.</p>
+        <p>White Spy adds the Constitution torch. Constitution torch is labeled ROUGH DRAFT. It is very heavy.</p>
+        <p>White Spy drops the Constitution torch. Tent catches fire in upper left. White Spy checks the filing cabinet.</p></div>
+    </div>
+    <div class="spy-divider">VS</div>
+    <div class="spy-col spy-black">
+      <div class="spy-icon">🖤</div>
+      <h3>BLACK SPY</h3>
+      <div class="spy-panels"><p>Black Spy puts on a bigger ringmaster hat. Black Spy throws all torches in the air immediately.</p>
+        <p>All six torches spin. Black Spy checks phone. Black Spy is not watching the torches.</p>
+        <p>Black Spy's Constitution torch also falls. Black Spy did not notice it was up there.</p>
+        <p>Both tents on fire. Both spies look at each other. Both look at the torches on the ground. Both shrug.</p></div>
+    </div>
+  </div>
+  <div class="spy-result">BOTH TENTS ON FIRE. BOTH CONSTITUTIONS ON THE FLOOR. BOTH RINGMASTERS SHRUG. THE ALLIGATORS ARE FINE. THE ALLIGATORS WERE ALWAYS GOING TO OUTLAST THIS. THE POLAR BEAR HAS FILED A COMPLAINT.</div>
+</div>
+
+<div class="page awards-page" id="p16">
+  <div class="awards-inner">
+    <h2 class="awards-title">🏆 INSANE AWARDS</h2>
+    <div class="awards-date">JUNE 2026</div>
+    <div class="award-category">
+      <div class="award-cat-title">MOST SIMULTANEOUSLY JUGGLED CRISES</div>
+      <div class="award-medals"><div class="medal gold">🥇 Trump (Iran, War Powers, Ukraine, AI, SpaceX, ICE — 6 torches, all lit)</div>
+      <div class="medal silver">🥈 The Strait of Hormuz (peace talks AND strikes, Vol 1 No 3 — still going)</div>
+      <div class="medal bronze">🥉 The wall (through swamp, still going, alligators unimpressed)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST COHERENT POLICY POSITION OF THE WEEK</div>
+      <div class="award-medals"><div class="medal gold">🥇 The polar bear (release files or ice keeps melting — clear, measurable)</div>
+      <div class="medal silver">🥈 Destiny Washington, 19 (register five people, vote, repeat — executable)</div>
+      <div class="medal bronze">🥉 The War Powers Resolution (clear since 1973 — found in filing cabinet)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST CONSTITUTIONAL REDISCOVERY</div>
+      <div class="award-medals"><div class="medal gold">🥇 Congress (War Powers Resolution — filed cabinet, 53-year retrieval time)</div>
+      <div class="medal silver">🥈 Jerome Kiplinger, teacher (students understood it in 40 minutes)</div>
+      <div class="medal bronze">🥉 The alligator (apparently reading Due Process — sources confirm)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST IMPRESSIVE SEVEN-YEAR-OLD</div>
+      <div class="award-medals"><div class="medal gold">🥇 Freddie Frump (step stool, crayon, not afraid, winning)</div>
+      <div class="medal silver">🥈 Freddie Frump again (school board, sworn in, right to remain seven)</div>
+      <div class="medal bronze">🥉 Freddie Frump a third time (we have four stories and they're all good)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST GRAVITY DEMONSTRATION</div>
+      <div class="award-medals"><div class="medal gold">🥇 AI stocks (confirmed gravity, educational, expensive)</div>
+      <div class="medal silver">🥈 The Constitution torch (dropped by both spies simultaneously)</div>
+      <div class="medal bronze">🥉 SpaceX IPO (defied gravity to moon, re-applied gravity at Cayman Islands)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">CROSSWORD OF THE YEAR</div>
+      <div class="award-medals"><div class="medal gold">🥇 The INSANE Crossword (2 answers, 4 clues, 100% completion rate, deeply cathartic)</div>
+      <div class="medal silver">🥈 The Constitution Puzzle page (congress filing, ongoing, incomplete)</div>
+      <div class="medal bronze">🥉 The IRS footnote from Vol 1 No 2 (still classified, still a mystery)</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p17">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-classifieds.png?v=1780661668121" alt="INSANE CLASSIFIEDS!">
+    <div class="illo-caption">★ The flaming job listings are a feature, not a hazard. We think. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">HELP WANTED · INSANE CLASSIFIEDS VOLUME 3</div>
+    <h2 class="story-heading">INSANE CLASSIFIEDS!</h2>
+    <p class="story-subheading">CIRCUS WORKERS NEEDED! CONSTITUTIONAL EXPERIENCE HELPFUL! ALLIGATORS ASKING QUESTIONS WE CANNOT ANSWER!</p>
+    <p class="story-deck">The INSANE Employment Listings — Volume 3 — Circus Edition — All Positions Open — Standards Team: Still On Puzzle Page (They Finished The Crossword In Under A Minute)</p>
+    <p><strong>CIRCUS TENT FIRE SUPPRESSION TECHNICIAN — U.S. CAPITOL, WASHINGTON D.C.</strong><br>Seeking experienced fire suppression professional comfortable working in: active legislative environments, tents that are technically on fire in the upper-left section, and situations where the people inside the tent have caused the fire and are continuing to operate as normal. Must be able to suppress fires without interrupting torch-juggling acts currently in progress. <em>Constitutional fire suppression experience preferred.</em> Hard hat required. The filing cabinet is also on fire. Bring two extinguishers. <em>Apply: Capitol building, enter through the side that isn't on fire yet.</em></p>
+    <p><strong>ALLIGATOR ALCATRAZ LEGAL OBSERVER — EVERGLADES, FLORIDA</strong><br>Seeking licensed attorney comfortable with: swamp environments, restricted access to clients, documents placed before frightened people without translation, and the general atmosphere of a facility that will generate substantial litigation. Must be willing to wait at the gate. May wait for some time. The alligators will look at you. Look back calmly. Do not sign anything. <em>Apply: Drive to the Everglades. Follow the chain-link fence until you find the gate. Bring water, your own. Bring your bar card. It will matter eventually.</em></p>
+    <p><strong>CONGRESSIONAL FILING CABINET AUDITOR — U.S. CONGRESS</strong><br>Urgent. There are things in these filing cabinets that nobody has read since they were filed. The War Powers Act was there for 53 years. We do not know what else is in there. We need someone to read it. All of it. <em>Required skills: literacy, patience, ability to be surprised by things that have been in plain sight for decades.</em> The filing cabinets are dusty. Bring a dust mask. The sticky note that says USE THIS is still there. Please use it. <em>Apply: Any congressional office. The filing cabinets are unlocked. They have always been unlocked. This is part of the problem.</em></p>
+    <p><strong>POLAR BEAR PRESS SECRETARY — GREENLAND ICE SHELF</strong><br>Seeking experienced communications professional to represent a polar bear who has obtained the Epstein files and is conducting a sustained leverage campaign from a shrinking ice shelf. The bear's position is clear (release the files or we keep melting) and requires no spin, merely amplification. <em>Must be comfortable with: Arctic temperatures, press conferences on ice, the concept of leverage.</em> The bear is a better communicator than most clients. The job is easier than it sounds. The ice situation is the challenging part. <em>Apply: Fly to Greenland. Find the bear. The bear will find you.</em></p>
+    <p><strong>INSANE CROSSWORD EDITOR — PERMANENT POSITION</strong><br>INSANE Magazine seeks a crossword editor for our newly launched puzzle section. The crossword has two answers: EPSTEIN and FILES. We believe there are additional answers available if someone is creative enough to find them. <em>Required: crossword construction experience, familiarity with 7-letter and 5-letter words, patience with a readership that already knows the answers.</em> The previous editor finished the crossword immediately and felt it needed more clues. We believe it is complete as written. This is a philosophical dispute. The position is available. <em>Apply: Send a crossword. If every answer is either EPSTEIN or FILES, you are hired.</em></p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">INSANE CLASSIFIEDS — LEGAL NOTICE VOL. 3</div>
+      <div class="ad-subheadline">Circus Edition — We Are Still Not A Staffing Agency</div>
+      <div class="ad-bullets"><div class="ad-bullet">🎪 Tent fire: feature, not hazard (we think)</div>
+        <div class="ad-bullet">🐊 Alligator positions: wrangler, observer, auditor</div>
+        <div class="ad-bullet">🐻‍❄️ Bear press secretary: excellent communicator, cold</div>
+        <div class="ad-bullet">🔤 Crossword editor: answers known, more needed</div></div>
+      <div class="ad-price">ALL POSITIONS OPEN / STANDARDS TEAM ON PUZZLE PAGE</div>
+      <div class="ad-disclaimer">INSANE Classifieds Vol. 3 not responsible for tent fires, swamp conditions, filing cabinet contents, polar bear leverage, or crossword answers. The filing cabinet has been unlocked the whole time. This is the problem in summary.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p18">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no4-marketplace.png?v=1780661668121" alt="INSANE MARKETPLACE!">
+    <div class="illo-caption">★ The flaming torch set is for adults. Most other things in this issue also require adult supervision. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INSANE MARKETPLACE · CIRCUS EDITION · VOLUME 3</div>
+    <h2 class="story-heading">INSANE MARKETPLACE!</h2>
+    <p class="story-subheading">CIRCUS EDITION — FLAMING TORCHES, CONSTITUTIONAL DOCUMENTS, POLAR BEAR MERCHANDISE, AND MORE</p>
+    <p class="story-deck">This Week's Fine Products From Under The Big Top — All Items Tested Under Circus Conditions — Standards Team: Finished The Crossword, Available For Marketplace Review</p>
+    <p><strong>NEWS CIRCUS HOME EDITION™ — JUGGLE YOUR OWN CRISES!</strong><br>Six foam torches (non-flammable — <em>we learned</em>) in the shape of current news crises: IRAN, WAR POWERS, UKRAINE AID, AI, SPACEX IPO, and one mystery crisis (changes monthly). Learn to juggle all six simultaneously! Includes a drum platform labeled MAKE AMERICA A SPECTACLE AGAIN (assembly required) and a top hat. Instruction manual written at ringmaster level. <em>Not responsible for what happens when you look at what you're juggling.</em> <strong>$49.99.</strong> Mystery crisis ships separately.</p>
+    <p><strong>CONSTITUTIONAL FILING CABINET™ — PRE-LOADED, SLIGHTLY DUSTY</strong><br>A full-size filing cabinet containing labeled facsimiles of: the War Powers Resolution (filed 1973, cobweb patina), the Constitution (Rough Draft, most pages present), Checks and Balances (Some Assembly Required), and a sticky note reading USE THIS (applied 2019, still valid). The documents have been in the cabinet the whole time. <em>Now available to take home.</em> <strong>$89.99.</strong> Free shipping. Dust cloth included. Reading the documents is optional but encouraged. <em>*The cabinet is already in your house. It has been there the whole time. This is an abstract product. The point is the point.*</em></p>
+    <p><strong>POLAR BEAR SOLIDARITY PACKAGE™ — GREENLAND EDITION</strong><br>Show your support for the only leverage campaign with a coherent position this week. Includes: one RELEASE THE FILES tote bag, one MELTING POINT PROTEST bumper sticker, and a miniature ice shelf (decorative, not to scale) with a small polar bear figurine holding a manila folder. The folder is labeled EPSTEIN FILES. It is empty. <em>The real files are with the actual polar bear.</em> <strong>$34.99.</strong> Proceeds go to nothing specific because this is a satirical product. However, consider donating to Greenland ice research. That part is real.</p>
+    <p><strong>FREDDIE FRUMP STEP STOOL™</strong><br>A sturdy, adjustable step stool suitable for small but determined people who need to reach microphones at school board meetings, town halls, or any venue where the podium was not built for someone their size. Comes with a motivational card reading: <em>"You are the smallest person in the room. You are not the least important person in the room. These are different things. Speak."</em> <strong>$19.99.</strong> All profits to: nothing yet, but if Freddie wants a fund, we'll route it there. He's seven. He's going to need resources. <em>★ INSANE Magazine's most sincere product. Zero asterisks. ★</em></p>
+    <p><strong>THE INSANE CROSSWORD BOOK™ — ALL VOLUMES</strong><br>Contains: Volume 1 (this issue). Every answer is EPSTEIN. Every other answer is FILES. <em>"The fastest crossword book in publishing history."</em> Completion time: 45 seconds. Catharsis value: very high. Future volumes planned pending availability of additional answers, which is to say: pending the release of the files, at which point we will have new answers, and the crossword will become more complex, and the world will be slightly less frustrating. <strong>$9.99.</strong> Pre-order Volume 2 now. Volume 2 requires the files. <em>You know what to do.</em></p>
+    
+    
+    
+    
+    
+    <div class="the-end">
+      <p class="the-end-title">Shop Responsibly. Release The Files.</p>
+      <p class="the-end-sub">INSANE Marketplace Vol. 3 · Circus Edition · Standards Team: Available</p>
+    </div>
+  </div>
+</div>
+
+<div class="page fold-in-page" id="p19">
+  <div class="foldin-inner">
+    <div class="foldin-header">
+      <h2 class="foldin-title">INSANE BACK PAGE</h2>
+      <div class="foldin-subtitle">THE FAMOUS FOLD-IN &nbsp;✦&nbsp; "FOLD CAREFULLY — UNLIKE THE CEASEFIRE"</div>
+    </div>
+    <div class="foldin-area" id="foldinArea">
+      <div class="foldin-left" id="foldinLeft">
+        <img class="foldin-img" src="../../images/vol1no4-foldin.png?v=1780661668121" alt="fold-in">
+        <div class="foldin-section-top">INSANE — FOLD THIS HALF →</div>
+        <div class="foldin-question">LOOKING AT THIS BIG BEAUTIFUL NEWS CIRCUS — THE JUGGLING, THE ALLIGATORS, THE POLAR BEAR, THE FALLING STOCKS, THE FLAMING TENT — WHAT DOES 'MAKE AMERICA GREAT AGAIN' ACTUALLY MEAN?</div>
+        <div class="foldin-label-a">A</div>
+      </div>
+      <div class="foldin-right">
+        <div class="foldin-section-top">← FOLD LEFT SIDE OVER TO FIND OUT</div>
+        <div class="foldin-answer-hidden">A SPECTACLE.</div>
+        <div class="foldin-label-b">B</div>
+      </div>
+    </div>
+    <div class="foldin-answer-reveal" id="foldinAnswer">
+      <div class="foldin-answer-text">A SPECTACLE.</div>
+      <div class="foldin-answer-sub">Fold A over B to reveal the hidden truth</div>
+    </div>
+    <button class="foldin-btn" id="foldinBtn" onclick="toggleFoldin()">📰 FOLD IT!</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>window.STORY_PAGES = 20;</script>
+<script>(function () {
+  'use strict';
+
+  var PAGES   = window.STORY_PAGES || 0;
+  var current = 0;
+  var track   = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots    = [];
+
+  function update() {
+    if (track)   track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    if (counter) counter.textContent   = (current + 1) + ' / ' + PAGES;
+    if (prevBtn) prevBtn.disabled      = current === 0;
+    if (nextBtn) nextBtn.disabled      = current === PAGES - 1;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    try { history.replaceState(null, '', '#' + current); } catch(e) {}
+    // Reset fold-in state when navigating away
+    var area = document.getElementById('foldinArea');
+    if (area) area.classList.remove('folded');
+    var btn = document.getElementById('foldinBtn');
+    if (btn) btn.textContent = '\uD83D\uDCF0 FOLD IT!';
+  }
+
+  window.goTo = function (n) {
+    current = Math.max(0, Math.min(PAGES - 1, n));
+    update();
+  };
+
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  // Build dots
+  var dotRow = document.getElementById('dotRow');
+  if (dotRow) {
+    for (var i = 0; i < PAGES; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.setAttribute('data-i', i);
+      d.addEventListener('click', (function (idx) {
+        return function () { window.goTo(idx); };
+      })(i));
+      dotRow.appendChild(d);
+      dots.push(d);
+    }
+  }
+
+  // Hash navigation
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  // Touch swipe
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft')  window.prev();
+  });
+
+  // Share
+  window.shareIssue = function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        if (btn) {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 2000);
+        }
+      });
+    }
+  };
+
+  // Fold-in toggle
+  window.toggleFoldin = function () {
+    var area = document.getElementById('foldinArea');
+    var btn  = document.getElementById('foldinBtn');
+    if (!area) return;
+    var folded = area.classList.toggle('folded');
+    if (btn) btn.textContent = folded ? '\uD83D\uDCF0 UNFOLD IT!' : '\uD83D\uDCF0 FOLD IT!';
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>

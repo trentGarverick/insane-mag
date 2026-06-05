@@ -1,0 +1,576 @@
+{
+  "id": "vol1no4",
+  "title": "The Big Beautiful News Circus!",
+  "subtitle": "United States of Disarray — Step Right Up!",
+  "eyebrow": "Vol. 1, No. 4 · June 2026",
+  "eyebrowDesc": "Capitol circus. Alligator Alcatraz. $70B border madness. AI learns gravity. SpaceX to the moon, then the tax haven. Greenland has the Epstein files.",
+  "date": "June 2026",
+  "price": "$6.99 US / CHEAPER THAN A CARTON OF EGGS (FOR NOW)",
+  "order": 4,
+
+  "palette": {
+    "bg":        "#fdf6e3",
+    "pageBg":    "#ffffff",
+    "text":      "#111111",
+    "accent":    "#cc0000",
+    "accent2":   "#f5c400",
+    "accent3":   "#003399",
+    "navBg":     "#cc0000",
+    "navText":   "#ffffff",
+    "dotActive": "#f5c400",
+    "eyebrow":   "#cc0000",
+    "adBg":      "#fff8e1",
+    "adBorder":  "#f5c400"
+  },
+
+  "stylePrefix": "Bold satirical magazine illustration in the style of Mad Magazine. Exaggerated political caricatures, thick black outlines, vivid CMYK flat colors, chaotic circus energy, vintage print texture, dense background gags. Crowded, dramatic, readable. 1970s newsstand parody energy, biting political satire.",
+
+  "pages": [
+
+    {
+      "illoId": "cover",
+      "type": "cover-full"
+    },
+
+    {
+      "illoId": "cover",
+      "type": "cover",
+      "coverLines": [
+        "THE BIG BEAUTIFUL NEWS CIRCUS!",
+        "ALLIGATOR ALCATRAZ: SIGN FIRST, DRINK LATER?",
+        "$70 BILLION FOR BORDER MADNESS",
+        "CONGRESS REDISCOVERS WAR POWERS (CHECKS EXPIRATION DATE)",
+        "AI STOCKS LEARN GRAVITY — SPACEX: TO THE MOON, THEN THE TAX HAVEN",
+        "GREENLAND HAS THE EPSTEIN FILES — MELTING POINT PROTEST!"
+      ]
+    },
+
+    {
+      "type": "editorial",
+      "illoId": null,
+      "title": "FROM THE EDITOR'S BUNKER",
+      "salutation": "Dear Reader, America's Only Magazine With More Emergency Funding Than Common Sense,",
+      "paragraphs": [
+        "Welcome to the <strong>United States of Disarray.</strong> Step right up. No facts. No filter. Just nonstop nonsense. The Capitol is a circus tent. The ringmaster is juggling flaming torches labeled Iran, War Powers, Ukraine Aid, AI, SpaceX IPO, and ICE STOP simultaneously, and he appears to be <em>enjoying himself.</em>",
+        "This issue covers the full card: <strong>Alligator Alcatraz,</strong> the Everglades detention facility where allegations of coerced signatures, withheld food, and dirty water have turned <em>\"due process\"</em> into a swamp attraction — and where the only menu item listed is, per detainee accounts, <em>\"TODAY'S MENU: NOTHING.\"</em> We are not laughing at the detainees. We are laughing at the people running it. There is a difference, and we mean it.",
+        "We also cover: Congress rediscovering the War Powers Act (<em>\"okay we'll read it later\"</em> — Constitution, rough draft, visible on cover), <strong>$70 billion in border spending</strong> that is making alligators nervous, AI stocks learning gravity in real time, SpaceX's IPO pricing strategy of <em>\"to the moon, then the tax haven,\"</em> and a polar bear on a shrinking Greenland ice shelf who has apparently obtained the Epstein files and is using them as leverage.",
+        "The polar bear's position is: <em>release the files or we keep melting.</em> This is the most coherent foreign policy position we have covered in four issues. We are impressed.",
+        "New this issue: <strong>the INSANE Crossword Puzzle,</strong> in which every answer is either EPSTEIN or FILES, because that is all anyone wants to know and we respect the reader's time. Also: our continuing <strong>Man and Woman in the Street</strong> feature, which remains extremely loud.",
+        "Also this issue: a very special feature on <strong>Freddie Frump,</strong> the seven-year-old taking on MAGA in his hometown and, improbably, winning. In a week full of very large adults behaving very badly, Freddie is a tonic."
+      ],
+      "signature": "— The Editors",
+      "ps": "P.S. — The polar bear wants the files. We want the files. The polar bear and INSANE Magazine are now in alignment on one issue. History is wild."
+    },
+
+    {
+      "type": "masthead",
+      "illoId": null,
+      "title": "INSANE MAGAZINE MASTHEAD",
+      "staff": [
+        { "role": "Publisher",               "name": "A. Panic Jr." },
+        { "role": "Editor-in-Chief",         "name": "Screaming McGee" },
+        { "role": "Circus Correspondent",    "name": "Under The Big Top, Dodging Torches" },
+        { "role": "Alligator Alcatraz Desk", "name": "Everglades Bureau, Wading In" },
+        { "role": "Border Budget Analyst",   "name": "$70B / Still Counting Alligators" },
+        { "role": "War Powers Editor",       "name": "Has Read The Constitution (Unlike Congress)" },
+        { "role": "AI Markets Desk",         "name": "Currently Falling" },
+        { "role": "SpaceX IPO Coverage",     "name": "To The Moon, Filing From Cayman Islands" },
+        { "role": "Greenland Bureau",        "name": "On The Ice, Very Nervous" },
+        { "role": "Epstein Files Desk",      "name": "Still Waiting. Have Been For Years." },
+        { "role": "Crossword Editor",        "name": "Very Efficient (Two Answers: Done)" },
+        { "role": "Freddie Frump Coverage",  "name": "Inspired. Actually Inspired." },
+        { "role": "Legal",                   "name": "Reviewed By A Monkey With A Press Pass" },
+        { "role": "Sanity Level",            "name": "Make America A Spectacle Again" }
+      ],
+      "subscriberAlert": {
+        "title": "INSANE MAGAZINE SUBSCRIBER ALERT!",
+        "subtitle": "This week's briefing: circus in progress, duck when necessary",
+        "items": [
+          "☑ Capitol circus: torches lit, tent wobbling",
+          "☑ Alligator Alcatraz: no habeas, just habitat",
+          "☑ $70 billion for border: alligators not consulted",
+          "☑ Congress: reading the Constitution (eventually)",
+          "☑ AI stocks: gravity confirmed, learning it now",
+          "☑ SpaceX IPO: moon trajectory, tax haven destination",
+          "☑ Polar bear: has files, making demands, melting",
+          "☑ Crossword: two answers, zero difficulty, 100% catharsis",
+          "☑ Freddie Frump: 7 years old, winning anyway"
+        ],
+        "price": "$6.99 / CHEAPER THAN A CARTON OF EGGS (FOR NOW)",
+        "disclaimer": "INSANE Magazine is America's only publication with more emergency funding than common sense. Printed on recycled circus posters. Alligators were consulted. They had no comment. The polar bear had many."
+      },
+      "disclaimer": "INSANE: No Facts. No Filter. Just Nonstop Nonsense. Step Right Up."
+    },
+
+    {
+      "type": "contents",
+      "illoId": null,
+      "title": "CONTENTS",
+      "edition": "JUNE 2026 · \"UNITED STATES OF DISARRAY\" EDITION",
+      "ticker": "BREAKING: TRUMP JUGGLES IRAN, WAR POWERS, UKRAINE AID, AI, SPACEX IPO SIMULTANEOUSLY ✦ ALLIGATOR ALCATRAZ: COERCED SIGNATURES, NO FOOD, NO WATER ALLEGED ✦ $70B BORDER BILL PASSES ✦ CONGRESS FINDS WAR POWERS ACT, STILL HASN'T READ IT ✦ AI STOCKS DOWN SHARPLY ✦ SPACEX IPO: LARGEST IN HISTORY, CAYMAN ISLANDS ROUTING CONFIRMED ✦ POLAR BEAR DEMANDS EPSTEIN FILES FROM GREENLAND ICE SHELF ✦",
+      "items": [
+        { "page": 5,  "emoji": "🎪", "title": "THE BIG BEAUTIFUL NEWS CIRCUS",    "desc": "United States of Disarray — under the big top" },
+        { "page": 6,  "emoji": "🐊", "title": "ALLIGATOR ALCATRAZ",               "desc": "No habeas. Just habitat. Sign here." },
+        { "page": 7,  "emoji": "💰", "title": "$70 BILLION BORDER MADNESS",       "desc": "The spending bill alligators didn't ask for" },
+        { "page": 8,  "emoji": "⚖️", "title": "CONGRESS REDISCOVERS WAR POWERS", "desc": "The Constitution: rough draft, better late" },
+        { "page": 9,  "emoji": "📉", "title": "AI STOCKS LEARN GRAVITY",          "desc": "SpaceX IPO: moon, then the tax haven" },
+        { "page": 10, "emoji": "🐻‍❄️", "title": "POLAR BEAR DEMANDS EPSTEIN FILES","desc": "Greenland leverage: melt or release" },
+        { "page": 11, "emoji": "🇺🇦", "title": "UKRAINE AID, IRAN, OIL JITTERS",  "desc": "Three fronts, one very tired Strait" },
+        { "page": 12, "emoji": "🗣️", "title": "MAN & WOMAN IN THE STREET",        "desc": "Citizens return. Still have thoughts." },
+        { "page": 13, "emoji": "📚", "title": "FREDDIE FRUMP: AGE 7, WINNING",    "desc": "The boy taking on MAGA in his hometown" },
+        { "page": 14, "emoji": "🔤", "title": "THE INSANE CROSSWORD",             "desc": "Every answer is EPSTEIN or FILES. Good luck." },
+        { "page": 15, "emoji": "🥷", "title": "SPY VS. SPY: CIRCUS EDITION",      "desc": "Both in ringmaster hats. Same result." },
+        { "page": 16, "emoji": "🏆", "title": "INSANE AWARDS",                   "desc": "Crowded field. Remarkable week." },
+        { "page": 17, "emoji": "📋", "title": "INSANE CLASSIFIEDS",              "desc": "Help wanted: circus workers, alligator wranglers" },
+        { "page": 18, "emoji": "🛒", "title": "INSANE MARKETPLACE",              "desc": "Products for the discerning chaos consumer" },
+        { "page": 19, "emoji": "📰", "title": "BACK PAGE FOLD-IN",               "desc": "What does 'Make America Great Again' really mean?" }
+      ],
+      "scorecard": {
+        "title": "THIS WEEK'S INSANE SCORECARD",
+        "items": [
+          { "emoji": "🎪", "label": "Flaming torches juggled over the Capitol",      "value": "6 (Iran, War Powers, Ukraine, AI, SpaceX, ICE)" },
+          { "emoji": "🐊", "label": "Alligators in the Everglades detention zone",   "value": "Unknown (unaudited)" },
+          { "emoji": "💰", "label": "Border bill price tag",                          "value": "$70 billion" },
+          { "emoji": "📉", "label": "AI stock trajectory this week",                  "value": "Downward (gravity confirmed)" },
+          { "emoji": "🐻‍❄️", "label": "Polar bears demanding document releases",      "value": "1 (very determined)" },
+          { "emoji": "🔤", "label": "Answers in the INSANE crossword puzzle",         "value": "2 (EPSTEIN and FILES)" },
+          { "emoji": "👦", "label": "Seven-year-olds currently beating MAGA",         "value": "1 (Freddie Frump)" }
+        ]
+      }
+    },
+
+    {
+      "illoId": "circus",
+      "type": "story",
+      "flip": false,
+      "scene": "Trump caricature in a red, white and blue ringmaster coat and top hat stands center stage on a drum platform labeled MAKE AMERICA A SPECTACLE AGAIN. He juggles six flaming torches simultaneously labeled IRAN, WAR POWERS, UKRAINE AID, AI, SPACEX IPO, and ICE STOP. Behind him the Capitol dome is a striped circus tent collapsing slightly, banner reading WELCOME TO THE UNITED STATES OF DISARRAY. Congressional figures in clown makeup stumble around. A GOP elephant flexes nearby. An Uncle Sam figure reads the Constitution labeled ROUGH DRAFT. Circus chaos everywhere — confetti, animals, pork barrel popcorn stand. Mad Magazine chaotic circus style.",
+      "eyebrow": "COVER STORY · THE UNITED STATES OF DISARRAY",
+      "heading": "THE BIG BEAUTIFUL NEWS CIRCUS!",
+      "subheading": "STEP RIGHT UP — NO FACTS, NO FILTER, JUST NONSTOP NONSENSE UNDER THE BIG TOP",
+      "deck": "Washington Transforms Into A Collapsing Circus As Immigration Crackdowns, War-Powers Battles, Ukraine Aid, Iran Tensions, AI Panic, And SpaceX IPO Fever All Juggle Flaming Torches Over The Capitol",
+      "caption": "★ \"Make America A Spectacle Again.\" — Drum platform, center ring. ★",
+      "paragraphs": [
+        "The Capitol is a circus tent. This is not a metaphor. The tent has stripes, a banner reading <strong>WELCOME TO THE UNITED STATES OF DISARRAY,</strong> and a ringmaster juggling <strong>six flaming torches simultaneously</strong> in the center ring — Iran, War Powers, Ukraine Aid, AI, SpaceX IPO, and ICE STOP — with an expression of such comprehensive confidence that everyone watching has split into two groups: those applauding and those calculating which torch lands on them.",
+        "The torches are all lit. None have dropped yet. Several are spinning. The tent is <em>slightly</em> on fire in the upper-left section near the War Powers torch, which has been burning longer than the others and has acquired a <strong>constitutional glow.</strong> Congress is in the audience. Several members are eating popcorn from a stand labeled PORK POPCORN. One has a Constitution labeled <em>ROUGH DRAFT.</em> He is reading it for the first time. He seems surprised by some of it.",
+        "The budget, which passed this week in a form that economists describe as <em>\"creative,\"</em> political opponents describe as <em>\"a spectacle,\"</em> and the sign over the ticket booth describes as <strong>BUDGET BIZARRE!</strong> — adds $70 billion in border funding, restructures AI policy, extends Iran war authorities, and continues Ukraine aid on terms that the Senate is still reviewing. The review is going slowly. The torches are not slowing down.",
+        "\"This is the most beautiful circus anyone has ever seen,\" the ringmaster told reporters. <em>\"The tent is tremendous. The torches are perfectly controlled. The alligators are fine.\"</em>",
+        "The alligators are not fine. The alligators are in Everglades. We have a whole section on the alligators."
+      ],
+      "pullQuote": "\"The alligators are fine.\" — The President. The alligators are not fine.",
+      "sidebarList": {
+        "title": "TORCHES CURRENTLY IN THE AIR",
+        "items": [
+          "🔥 IRAN — altitude high, temperature: always",
+          "🔥 WAR POWERS — spinning, constitutionally glowing",
+          "🔥 UKRAINE AID — in the air, Senate still reviewing",
+          "🔥 AI — descending (see: Wall Street story)",
+          "🔥 SPACEX IPO — ascending (see: tax haven story)",
+          "🔥 ICE STOP — rotating, Everglades-adjacent"
+        ]
+      },
+      "fakeAd": {
+        "headline": "BIG BEAUTIFUL CIRCUS TICKETS!",
+        "subheadline": "United States of Disarray — All Seats, All Torches, All The Time",
+        "bullets": [
+          "🎪 Center ring: ringmaster, 6 torches, one drum",
+          "🎪 Clown Caucus seating: available, door open",
+          "🎪 Pork Popcorn stand: Congress side only",
+          "🎪 Constitution: rough draft available at door"
+        ],
+        "price": "FREE TO WATCH / COSTLY TO BE IN",
+        "disclaimer": "Big Beautiful Circus not responsible for torches that land. Tent fire is in upper-left section, currently contained. Alligators are in a separate venue. Congress is in the audience. This is accurate."
+      }
+    },
+
+    {
+      "illoId": "alcatraz",
+      "type": "story",
+      "flip": true,
+      "scene": "A detention facility in the Everglades, surrounded by swamp water with actual alligators visible in the background. Chain-link fence with razor wire. An ICE officer in tactical gear holds a clipboard labeled SIGN HERE over a detained person who looks exhausted and frightened. A tin bowl on the ground is labeled TODAY'S MENU: NOTHING. A bucket nearby says WATER? NOT YET. In the background a sign reads ALLIGATOR ALCATRAZ — EVERGLADES DETENTION — NO HABEAS, JUST HABITAT. A lawyer in the distance is being blocked at the gate by another officer. One alligator reads a document labeled DUE PROCESS with apparent interest. The people in detention are drawn with dignity. The officials running the facility are the visual absurdity. Mad Magazine style — clear about who the joke is on.",
+      "eyebrow": "SPECIAL REPORT · ALLIGATOR ALCATRAZ",
+      "heading": "SIGN FIRST, DRINK LATER?",
+      "subheading": "ALLIGATOR ALCATRAZ: WHERE DUE PROCESS MET THE EVERGLADES AND THE EVERGLADES WON",
+      "deck": "Detainees At The Everglades Facility Allege Coerced Signatures On Deportation Documents, Withheld Food, And Contaminated Water — Officials Describe Conditions As 'Appropriate' — Alligators Unavailable For Comment",
+      "caption": "★ No habeas. Just habitat. The alligator has more rights than due process suggests. ★",
+      "paragraphs": [
+        "<strong>A note before we begin:</strong> The people detained at the Everglades facility are human beings. The satire in this section is aimed at the people running the operation — not at the people detained. We are very clear about this distinction and we mean it.",
+        "Detainees at the facility referred to informally as <strong>Alligator Alcatraz</strong> — an Everglades-adjacent immigration detention camp — have alleged in accounts reviewed by multiple news organizations: that deportation documents were placed before them without translation or explanation, that signatures were obtained under conditions that attorneys describe as <em>\"coercive,\"</em> that food was <strong>withheld</strong> for periods inconsistent with basic detention standards, and that the water available was described by multiple accounts as <strong>not clean.</strong>",
+        "The sign outside the facility, per photographs reviewed by INSANE, reads <em>Everglades Detention Camp.</em> The sign does not mention the alligators. There are alligators. They are in the water. The water is also where the facility's exterior perimeter is located.",
+        "Officials described conditions as <em>\"appropriate and consistent with all applicable standards.\"</em> Attorneys who have attempted to visit clients at the facility described access as <em>\"restricted.\"</em> One attorney described the intake process as <em>\"a document that a frightened person signs before they understand what it says,\"</em> which the facility's legal team disputes.",
+        "The alligators were not available for comment. They have, however, been observed reading documents labeled DUE PROCESS. Their interest appears genuine. Their interpretation is their own."
+      ],
+      "pullQuote": "\"Appropriate and consistent with all applicable standards.\" — Facility officials, regarding the alleged conditions",
+      "fakeAd": {
+        "headline": "ALLIGATOR ALCATRAZ TOURS™",
+        "subheadline": "\"No Habeas. Just Habitat.\" — The Swamp Attraction Nobody Asked For",
+        "bullets": [
+          "🐊 Scenic Everglades location — alligators included",
+          "🐊 Menu: ask at the gate (bring your own)",
+          "🐊 Water: available pending standards review",
+          "🐊 Legal access: restricted (bring documents in advance)"
+        ],
+        "price": "FREE TO OPERATE / EXPENSIVE TO DEFEND IN COURT",
+        "disclaimer": "Alligator Alcatraz Tours not responsible for the legal proceedings that this operation will generate. Due process is a constitutional guarantee. The alligators are aware of this. The facility's operators should get more familiar with it."
+      }
+    },
+
+    {
+      "illoId": "border",
+      "type": "story",
+      "flip": false,
+      "scene": "A giant pile of money labeled $70 BILLION — BORDER BILL sits in the middle of the Everglades. Confused alligators sit on top of it, looking at each other. ICE agents in tactical gear look at the pile, then at the alligators, then at each other. A construction crew tries to build a wall through swampwater while alligators examine the blueprint. A sign on the half-built wall says GOING GREAT. A senator in the background holds a giant check with a lot of zeros and the memo line reads: AND ALSO ALLIGATORS? A lobbyist in a suit hands a suitcase to someone labeled BORDER INDUSTRIAL COMPLEX. Mad Magazine spending-bill satire style.",
+      "eyebrow": "BUDGET · BORDER INDUSTRIAL COMPLEX",
+      "heading": "$70 BILLION FOR BORDER MADNESS!",
+      "subheading": "CONGRESS PASSES SWEEPING BORDER BILL — ALLIGATORS NOT CONSULTED — WALL GOING GREAT THROUGH SWAMP",
+      "deck": "A $70 Billion Border Security Package Passes Congress — Critics Ask Where It Goes, Supporters Ask What's Next, Alligators Ask Nothing Because Nobody Asked Them Either",
+      "caption": "★ The alligators are on the pile. The alligators did not apply for the pile. ★",
+      "paragraphs": [
+        "Congress passed a <strong>$70 billion border security bill</strong> this week, a figure that immigration analysts describe as <em>\"substantial,\"</em> budget hawks describe as <em>\"where exactly does this go,\"</em> and the Everglades describe as <em>\"the alligators are going to be on the money pile, that's what's going to happen.\"</em>",
+        "The bill funds: expanded detention capacity (see: Alligator Alcatraz, previous page), enhanced surveillance technology, additional personnel, wall construction in areas where wall construction is a thing that makes sense geographically, and what the bill's supporters describe as <strong>\"a comprehensive approach\"</strong> and what the alligators on the money pile describe as nothing, because the alligators were not consulted.",
+        "The Border Industrial Complex — the network of contractors, consultants, and private detention operators who have spent three decades ensuring that border security is always expensive and never finished — welcomed the legislation with what sources described as <em>\"barely contained enthusiasm\"</em> and what the lobby's public statement called <em>\"a necessary investment.\"</em>",
+        "Across the aisle, critics noted that the bill includes funding streams with limited oversight, spending categories that are broad enough to encompass decisions the legislature has not specifically authorized, and a line item that one senator described, off the record, as <em>\"I read it four times and I'm still not sure what it is.\"</em>",
+        "The alligators have been photographed sitting on the money pile. Nobody has moved them. The money pile is in the Everglades. This is, somehow, where we are."
+      ],
+      "pullQuote": "\"I read it four times and I'm still not sure what it is.\" — Senator, off the record, regarding a specific line item",
+      "fakeAd": {
+        "headline": "BORDER INDUSTRIAL COMPLEX™",
+        "subheadline": "Expensive. Ongoing. Never Finished. That's The Business Model.",
+        "bullets": [
+          "💰 $70B contract opportunities — apply now",
+          "💰 Oversight: limited (read the bill)",
+          "💰 Completion timeline: open-ended (by design)",
+          "💰 Alligators: on the money pile (not billable)"
+        ],
+        "price": "$70,000,000,000 / AND COUNTING",
+        "disclaimer": "Border Industrial Complex LLC has been in operation since before you were worried about the border and will be in operation after. The alligators are not on the payroll. The alligators are on the money. There is a difference."
+      }
+    },
+
+    {
+      "illoId": "warpowers",
+      "type": "story",
+      "flip": true,
+      "scene": "A dusty archive room where a surprised congressional aide has just pulled a document labeled WAR POWERS ACT from a filing cabinet. The document is covered in cobwebs. The aide holds it up with an expression of genuine surprise — they appear to have no idea it was there. Around the room: other congresspeople are also finding dusty documents labeled CONSTITUTION (ROUGH DRAFT), CHECKS AND BALANCES (SOME ASSEMBLY REQUIRED), and SEPARATION OF POWERS (ASSEMBLY INSTRUCTIONS MISSING). In the background, a window shows fighter jets and drone activity. One congressman holds up the Constitution upside down and squints at it. Mad Magazine satirical bureaucracy style.",
+      "eyebrow": "CONSTITUTIONAL REDISCOVERY · ARCHIVE EDITION",
+      "heading": "CONGRESS REDISCOVERS WAR POWERS!",
+      "subheading": "LEGISLATORS FIND CONSTITUTIONAL AUTHORITY THEY FORGOT THEY HAD — EXPIRATION DATE: UNCLEAR",
+      "deck": "Congress Moves To Assert War Powers Authority Over Iran Military Operations — The War Powers Resolution, Passed In 1973, Is Retrieved From Archives — Congressional Response Time: 53 Years",
+      "caption": "★ The cobwebs are recent. The document is not. ★",
+      "paragraphs": [
+        "Congress moved this week to assert its authority under the <strong>War Powers Resolution</strong> — a law passed in 1973 that requires congressional authorization for sustained military operations — in connection with ongoing Iran theater activities, a development that constitutional scholars are calling <em>\"long overdue\"</em> and that the executive branch is calling <em>\"an interesting read.\"</em>",
+        "The War Powers Resolution, which was retrieved from the congressional archives this week and found to be in good condition aside from moderate cobwebs, establishes that the President must notify Congress within 48 hours of committing forces to hostilities, and must cease operations within 60 days without congressional authorization. The Iran operations have been ongoing for some time. The notification was filed. The 60-day clock is a matter of some interpretation.",
+        "\"We found it,\" one congressional aide told INSANE, holding the document up. <em>\"It was right there. In the filing cabinet. It's been there since 1973.\"</em> The aide appeared genuinely surprised. We found the aide's surprise surprising. The document has been there for <strong>53 years.</strong>",
+        "Alongside the War Powers Resolution, congressional staffers also recovered: a copy of the <em>Constitution</em> (Rough Draft, some pages creased), a document labeled <strong>CHECKS AND BALANCES: SOME ASSEMBLY REQUIRED,</strong> and the <em>Separation of Powers</em> framework with a sticky note attached reading <em>\"USE THIS.\"</em>",
+        "The sticky note appears to have been applied in 2019. <em>\"We're getting to it,\"</em> a congressional spokesperson said."
+      ],
+      "pullQuote": "\"We found it. It was right there. In the filing cabinet.\" — Congressional aide, on the War Powers Resolution",
+      "fakeAd": {
+        "headline": "CONSTITUTIONAL DOCUMENT RECOVERY SERVICES!",
+        "subheadline": "Find What Congress Forgot — We Know Where It Is",
+        "bullets": [
+          "📜 War Powers Resolution: found (filing cabinet, cobwebs)",
+          "📜 Checks and Balances: some assembly still required",
+          "📜 Separation of Powers: sticky note says USE THIS",
+          "📜 Constitution: rough draft, most pages intact"
+        ],
+        "price": "FREE — IT'S IN THE FILING CABINET",
+        "disclaimer": "Constitutional Document Recovery Services not responsible for the 53 years between enactment and retrieval. Documents were there the whole time. The sticky note was applied in 2019. The assembly instructions are still missing. We are looking."
+      }
+    },
+
+    {
+      "illoId": "wallstreet",
+      "type": "story",
+      "flip": false,
+      "scene": "Split scene: on the left, a Wall Street trading floor in chaos. The AI bull from Vol 1 No 2 is now falling through the floor, stock charts plummeting around him, traders looking at screens with horrified expressions. A banner reads AI STOCKS: LEARNING GRAVITY. On the right, a SpaceX rocket labeled IPO lifts off spectacularly — but instead of going to space, it curves sideways toward a small tropical island with a large sign reading CAYMAN ISLANDS TAX HAVEN. Ticker tape at the bottom: SPACEX IPO: LARGEST IN HISTORY / TO THE MOON / THEN THE TAX HAVEN. Elon Musk caricature waves from the rocket window. Mad Magazine financial satire style.",
+      "eyebrow": "MARKETS · GRAVITY AND ESCAPE VELOCITY",
+      "heading": "AI STOCKS LEARN GRAVITY!",
+      "subheading": "WALL STREET'S AI DARLINGS DISCOVER DOWNWARD DIRECTION — SPACEX IPO GOES TO THE MOON, THEN THE TAX HAVEN",
+      "deck": "Artificial Intelligence Stocks Fall Sharply Amid Valuation Concerns — SpaceX Prices Its IPO As The Largest In U.S. History — Proceeds Route Via Cayman Islands Structure — Gravity: Confirmed For Some Stocks, Optional For Others",
+      "caption": "★ Gravity: available to all investors. Tax haven: available to the IPO. ★",
+      "paragraphs": [
+        "<strong>AI stocks fell sharply this week,</strong> confirming what physics has always maintained but Wall Street has periodically disputed: that valuations subject only to enthusiasm and venture capital eventually encounter the concept of <em>\"what does this thing actually earn.\"</em> The encounter was, per trading floor accounts, <em>\"sudden.\"</em>",
+        "The stocks in question — a category that investors had assigned to a special zone above normal valuation metrics, on the logic that AI is different and transformative and not subject to the rules that apply to, for example, an actual business — descended through the floor of that special zone this week and landed in the regular valuation zone, which has different rules and is considerably less comfortable.",
+        "Simultaneously, and the word <em>\"simultaneously\"</em> is doing significant narrative work here: SpaceX priced its <strong>initial public offering</strong> at a valuation that financial analysts are calling <em>\"extraordinary,\" \"the largest in U.S. history,\"</em> and <em>\"going to the moon.\"</em> The proceeds will flow through a corporate structure that tax analysts describe as <strong>Cayman Islands-routed.</strong> The moon is not in the Cayman Islands. The tax structure is.",
+        "\"AI is still the future,\" a fund manager told INSANE, from the trading floor, while his terminal displayed a declining graph. <em>\"This is a temporary correction.\"</em> Behind him, the graph continued. He did not turn around. <strong>He reminded us of the spokesperson from Vol. 1 No. 3.</strong>",
+        "SpaceX has not commented on the tax structure. The Cayman Islands also have not commented. The moon has not commented. Gravity has been reached for comment. Gravity said: <em>\"I've been here the whole time.\"</em>"
+      ],
+      "pullQuote": "\"I've been here the whole time.\" — Gravity, reached for comment on AI stock valuations",
+      "fakeAd": {
+        "headline": "GRAVITY: NOW AVAILABLE TO AI INVESTORS!",
+        "subheadline": "Physics Has Been Here The Whole Time. Welcome.",
+        "bullets": [
+          "📉 Gravity: free, universal, previously optional",
+          "📉 AI valuation adjustment: in progress",
+          "🚀 SpaceX IPO: moon-bound, Cayman-routed",
+          "🏝️ Tax haven: not gravity-affected (different rules)"
+        ],
+        "price": "GRAVITY: FREE / TAX HAVEN ROUTING: CALL YOUR ACCOUNTANT",
+        "disclaimer": "Gravity LLC has been operating since before financial markets existed. We are not responsible for the special zone above normal valuations. We were always going to be here. The AI stocks have been introduced to us. Further introductions are scheduled."
+      }
+    },
+
+    {
+      "illoId": "polarbear",
+      "type": "story",
+      "flip": true,
+      "scene": "A large polar bear stands on a shrinking Greenland ice shelf, holding a manila folder labeled EPSTEIN FILES in one massive paw and a protest sign reading RELEASE THE FILES OR WE KEEP MELTING in the other. The bear looks directly at the viewer with the expression of someone who has run out of patience. Behind the bear, other polar bears hold similar signs. The ice shelf is visibly reduced. A small podium in front of the bear reads MELTING POINT PRESS CONFERENCE. A reporter takes notes. A government official in a suit at the edge of the frame holds a sign reading THE FILES DONT EXIST to which the bear has drawn a large question mark. Mad Magazine character satire style — the bear is the most reasonable entity in the illustration.",
+      "eyebrow": "GREENLAND · MELTING POINT PRESS CONFERENCE",
+      "heading": "POLAR BEAR DEMANDS EPSTEIN FILES!",
+      "subheading": "GREENLAND ICE SHELF: SHRINKING. POLAR BEAR: NOT MOVING UNTIL FILES RELEASED. LEVERAGE: CONFIRMED.",
+      "deck": "A Polar Bear On The Greenland Ice Shelf Has Obtained What It Claims Are The Epstein Files And Is Using Them As Leverage — Melting Will Continue Until Documents Released — Position: The Most Coherent Of The Week",
+      "caption": "★ The bear's position is: release the files or the ice keeps melting. This is the clearest policy statement of the week. ★",
+      "paragraphs": [
+        "A polar bear on the Greenland ice shelf held a press conference this week at which it presented a manila folder labeled <strong>EPSTEIN FILES</strong> and announced that melting would continue until the documents were publicly released.",
+        "The bear, which has been identified only as <em>\"a polar bear, Greenland, very determined,\"</em> stated its position clearly: the files exist, they are of significant public interest, the public has been waiting for them for years, and the Greenland ice sheet will continue its current trajectory until a satisfactory outcome is reached. <strong>\"Release the files or we keep melting,\"</strong> the bear said, per the official transcript of the press conference, which was conducted from a podium on ice.",
+        "Political analysts covering the bear's press conference noted that its position — though unusual in origin — is <strong>\"more clearly stated than most policy positions we have covered this year\"</strong> and that the leverage, while geological in nature, is real. The ice is melting. The files have not been released. These two facts are currently in a relationship.",
+        "A government official dispatched to respond to the bear held up a sign reading <em>THE FILES DON'T EXIST.</em> The bear drew a large question mark on the sign and handed it back. The official did not have a follow-up prepared.",
+        "INSANE is on the bear's side on this one. We have been waiting for the files longer than the bear has been standing on the ice. We are also melting slightly."
+      ],
+      "pullQuote": "\"Release the files or we keep melting.\" — Polar Bear, Greenland, press conference transcript, most coherent position of the week",
+      "fakeAd": {
+        "headline": "EPSTEIN FILES RELEASE COUNTDOWN™",
+        "subheadline": "Still Waiting. Have Been. Will Continue.",
+        "bullets": [
+          "📁 Files: exist (see: polar bear's folder)",
+          "📁 Release date: TBD (has been TBD for years)",
+          "🧊 Ice shelf status: melting (related, unclear how)",
+          "🐻‍❄️ Bear's patience: finite (unlike the wait for the files)"
+        ],
+        "price": "TRANSPARENCY: PRICELESS AND FREE / CURRENTLY NOT AVAILABLE",
+        "disclaimer": "Epstein Files Release Countdown not responsible for the ice shelf, the bear's position, or the government official's sign. The bear has the folder. The folder appears to be real. The question mark is the bear's. We agree with the bear."
+      }
+    },
+
+    {
+      "illoId": "ukraine",
+      "type": "story",
+      "flip": false,
+      "scene": "A three-panel map situation: left panel shows Ukraine with aid packages arriving on a conveyor belt while Senate staffers read fine print on the boxes. Center panel shows the Strait of Hormuz from Vol 1 No 3 but now more crowded, the peace dove's flak jacket is even more dented, a second FINE PRINT mine has appeared. Right panel shows an oil price gauge going up while a small Wall Street figure slides down a pole. A connecting banner across all three reads: STILL HAPPENING. SIMULTANEOUSLY. ALL OF IT. Mad Magazine geopolitical update style — harried but organized.",
+      "eyebrow": "INTERNATIONAL · ALL THREE FRONTS SIMULTANEOUSLY",
+      "heading": "UKRAINE AID, IRAN TENSION, OIL JITTERS!",
+      "subheading": "THREE FRONTS. ONE VERY TIRED WEEK. STRAIT OF HORMUZ DOVE REQUESTS VACATION.",
+      "deck": "Ukraine Aid Package Advances As Senate Reviews Terms — Iran Tensions Persist Alongside Peace Talk Progress Described As 'Close' (Still) — Oil Markets Cite Multiple Simultaneous Reasons For Current Prices",
+      "caption": "★ The dove has requested a vacation. The request is under review. ★",
+      "paragraphs": [
+        "Ukraine aid is advancing. The Senate is reviewing the terms. The terms are being reviewed carefully, because terms that look good from a distance occasionally look different up close, and the Senate has had experiences with both directions of looking. The aid is in packages. The packages are on a conveyor belt. The conveyor belt is running.",
+        "In the Strait of Hormuz, the Iran peace talks remain <strong>close.</strong> They have been close since last issue. The peace dove's flak jacket has acquired a second dent. A new FINE PRINT mine has appeared near the negotiating table. The dove has filed a formal vacation request. The request is under review by the same office that is processing the Iran deal, which is to say: <em>the review is ongoing.</em>",
+        "Oil prices, which track <em>everything that is happening</em> with the precision of a market that has a lot of money riding on it, are citing: the Strait situation, the Ukraine situation, the general situation, and what traders describe as <strong>\"the ambient energy of the week,\"</strong> which they are pricing in at approximately $4.29 per gallon, subject to <em>situational adjustment.</em>",
+        "\"We are monitoring all three situations closely,\" a senior official said, from what appeared to be a very comfortable monitoring chair. <em>\"The aid is moving, the talks are close, and the oil is priced accordingly.\"</em> All three statements are accurate. All three situations are continuing. The monitoring continues."
+      ],
+      "pullQuote": "\"The aid is moving, the talks are close, and the oil is priced accordingly.\" — Senior official, from monitoring chair",
+      "fakeAd": {
+        "headline": "THREE-FRONT MONITORING CHAIR™",
+        "subheadline": "Watch All Three Situations Simultaneously — Premium Comfort",
+        "bullets": [
+          "🇺🇦 Ukraine feed: conveyor belt view, terms included",
+          "🕊️ Strait feed: dove cam, flak jacket dent counter",
+          "⛽ Oil feed: price ticker, ambient energy gauge",
+          "💺 Chair: premium, comfortable, does not help"
+        ],
+        "price": "$4.29/GAL AMBIENT ENERGY SURCHARGE APPLIES",
+        "disclaimer": "Three-Front Monitoring Chair not responsible for outcomes on any of the three fronts. Chair is comfortable. Monitoring is ongoing. The dove's vacation request is still under review. Oil is priced accordingly."
+      }
+    },
+
+    {
+      "illoId": "street",
+      "type": "story",
+      "flip": true,
+      "scene": "A busy American street corner. A microphone stand labeled INSANE MAGAZINE — MAN AND WOMAN IN THE STREET. This week's crowd is even more expressive than last issue — a postal worker, a nurse, a retired military officer, a college professor, a teenager, and a grandmother with a very large sign. All have extremely specific things to say. The reporter's notepad is already full. They have opened a second notepad. A speech bubble overhead reads: WE HAVE THOUGHTS. WE ALWAYS HAVE THOUGHTS. Mad Magazine crowded opinion-giving street scene.",
+      "eyebrow": "RETURNING FEATURE · MAN AND WOMAN IN THE STREET VOL. 2",
+      "heading": "CITIZENS RETURN!",
+      "subheading": "INSANE MAGAZINE BACK ON THE CORNER — THEY HAVE MORE THOUGHTS — THE REPORTER HAS A SECOND NOTEPAD",
+      "deck": "INSANE Hits The Streets Again — The Public Has Opinions On Circuses, Alligators, Polar Bears, And The General State Of Everything — We Printed All Of Them",
+      "caption": "★ The reporter's first notepad ran out on the third citizen. The second is half full. ★",
+      "paragraphs": [
+        "<strong>HAROLD BIRNBAUM, 71, Retired Army Officer, Virginia:</strong> <em>\"I served thirty years. Thirty years. I swore an oath to the Constitution. Not a rough draft — the actual Constitution. You know what I think should be done? Everyone in that building should be required to take the same oath I took and then be held to it. Publicly. With consequences. That's my position. I have more positions. Do you have time? I have all day.\"</em>",
+        "<strong>CONSUELA VAZQUEZ-ORIMOTO, 38, Registered Nurse, Arizona:</strong> <em>\"I work twelve-hour shifts. Twelve hours. Do you know what I see at the end of a twelve-hour shift? People who needed healthcare they couldn't afford, people who came to this country for something better, and a TV in the break room showing the Capitol circus. What should be done? Fund the hospitals. Free the people who haven't done anything wrong. Release the Epstein files. I have to be back at six. Do you need anything else?\"</em>",
+        "<strong>JEROME KIPLINGER, 55, High School History Teacher, Ohio:</strong> <em>\"I teach the War Powers Act. Every year. To sixteen-year-olds. They understand it. I gave them the same document Congress found in the filing cabinet and they understood it in forty minutes. I would like to offer my services to Congress. My rate is a teacher's salary, which they have not raised in six years, but I'm flexible. What should be done? Hire teachers. For everything. We know how things work. We explain it every day.\"</em>",
+        "<strong>DESTINY WASHINGTON, 19, College Freshman, Georgia:</strong> <em>\"Vote. I know. I know people say just vote and I know how that sounds after everything. But I registered five people in my dorm last week. Five. We're going to vote. We're going to vote very loudly. And then if that doesn't fix it, we will register five more people and vote again. The polar bear has the right idea about leverage. We have leverage too. It's called turnout. Watch.\"</em>",
+        "<strong>FRANK SZYMANSKI, 63, Postal Worker, Michigan:</strong> <em>\"What should be done? Prosecute them. Through the courts. Through the proper legal channels. All of them. The ones with the files. The ones who hid the files. The ones who knew and didn't say anything. Prosecute them. Then release the files. Then prosecute anyone in the files. In that order. I deliver mail for a living. I understand process. There is a process. Use the process.\"</em>",
+        "<strong>RUTH ABERNATHY-COLE, 80, Retired Librarian, North Carolina:</strong> <em>\"I have something to say to young people specifically. You are inheriting this. All of it. The circus, the alligators, the shrinking ice, the files nobody will release — all of it. And I am very sorry. I voted in every election since 1964. Every single one. I did not see this coming. What should be done? Everything. All of it. Immediately. And vote. Destiny is right. Vote like it's the only thing that matters because right now it might be.\"</em>"
+      ],
+      "pullQuote": "\"Vote like it's the only thing that matters because right now it might be.\" — Ruth Abernathy-Cole, 80, retired librarian, North Carolina"
+    },
+
+    {
+      "illoId": "freddie",
+      "type": "story",
+      "flip": false,
+      "scene": "A small but very determined seven-year-old boy — Freddie Frump — stands at a school board podium that is too tall for him, so he's on a step stool, speaking into the microphone with total confidence. Adults in MAGA hats in the audience look surprised and slightly uncomfortable. His school backpack is next to him. A banner behind reads HOMETOWN SCHOOL BOARD MEETING. Other kids and supportive parents cheer from one side. His speech is on a single piece of paper with crayon. The expression on his face is: completely unafraid. This scene is warm and genuinely heroic — not satirical. Mad Magazine illustration style but celebratory.",
+      "eyebrow": "INSANE RECOMMENDS · A VERY GOOD BOY",
+      "heading": "FREDDIE FRUMP: AGE 7, WINNING!",
+      "subheading": "THE BOY TAKING ON MAGA IN HIS HOMETOWN — AND WINNING — IS SEVEN YEARS OLD AND HAS A STEP STOOL",
+      "deck": "While Very Large Adults In Washington Behave Very Badly, A Seven-Year-Old Named Freddie Frump Is Doing The Work — INSANE Recommends His Story Unreservedly",
+      "caption": "★ He is seven. He has a step stool. He is not afraid. ★",
+      "paragraphs": [
+        "In a week full of circuses, alligators, polar bears, and one hundred and forty-three things that made us want to lie down, we want to tell you about <strong>Freddie Frump.</strong>",
+        "Freddie Frump is seven years old. He lives in a small town. MAGA came to his town — to his school, to his school board, to the conversations his parents were having at the dinner table — and Freddie, being seven, did what seven-year-olds apparently do when they encounter something that seems wrong: <strong>he said something about it.</strong> Loudly. At meetings. With a step stool, because the podium was too tall.",
+        "He is winning. The details of how are in his stories, which are genuinely wonderful and which we are linking here because <em>after everything else in this issue, you deserve something good.</em>",
+        "His adventures include: a parent-teacher conference that did not go as planned, an encounter with due process that the Constitution would recognize, a testimony that adults in the room did not expect from someone his age, and a school board election that he approached with the seriousness of a person who understands what's at stake — which, at seven, he apparently does.",
+        "<strong>Read Freddie's stories:</strong>",
+        "📖 <a href='https://freddiefrump2.netlify.app/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #2 — The Parent-Teacher Conference</a>",
+        "📖 <a href='https://freddiefrump-no3.netlify.app/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #3 — You Have The Right To Remain Seven</a>",
+        "📖 <a href='https://freddiefrumptesifies.bumbloobooks.com/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #4 — Sworn In</a>",
+        "📖 <a href='https://freddiefrumpelection.bumbloobooks.com/' style='color:#cc0000;font-weight:bold;'>Freddie Frump #5 — The School Board Election</a>",
+        "We read all four. We recommend all four. In a week that required a helmet, Freddie Frump did not require a helmet. He required a step stool, a crayon, and the conviction that being right matters even when you're the smallest person in the room.",
+        "<strong>He is seven. He is not afraid. We are rooting for him.</strong>"
+      ],
+      "theEnd": {
+        "title": "Go, Freddie. Go.",
+        "sub": "INSANE Magazine recommends Freddie Frump without reservation or asterisk."
+      }
+    },
+
+    {
+      "illoId": null,
+      "type": "story",
+      "flip": false,
+      "eyebrow": "GAMES & PUZZLES · THEMED EDITION",
+      "heading": "THE INSANE CROSSWORD PUZZLE",
+      "subheading": "EVERY ANSWER IS EITHER EPSTEIN OR FILES — DIFFICULTY: ZERO — CATHARSIS: 100%",
+      "deck": "INSANE Magazine's First Crossword Puzzle — All Clues Lead To The Same Two Answers — We Respect Your Time And Your Frustration",
+      "caption": "★ Pre-filled for your convenience. You already knew the answers. ★",
+      "paragraphs": [
+        "<div style='text-align:center;margin:8px auto 16px;'><div style='display:inline-block;font-family:\"Bebas Neue\",sans-serif;font-size:0.7rem;letter-spacing:0.15em;color:#cc0000;margin-bottom:8px;'>★ ALL ANSWERS ARE EITHER EPSTEIN OR FILES ★</div><br><table style='border-collapse:collapse;margin:0 auto;'><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>1</small>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>2</small>F</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>P</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>I</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>S</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>L</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>3</small>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>P</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>S</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>T</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>I</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>N</td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>S</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;position:relative;background:#fffde7;'><small style='position:absolute;top:1px;left:2px;font-size:8px;line-height:1;'>4</small>F</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>I</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>L</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>E</td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>S</td></tr><tr><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;border:2px solid #111;text-align:center;font-size:17px;font-weight:900;font-family:\"Bebas Neue\",sans-serif;background:#fffde7;'>N</td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td><td style='width:32px;height:32px;background:#111;'></td></tr></table></div>",
+        "<div style='font-family:\"Nunito\",sans-serif;font-size:0.82rem;line-height:1.7;max-width:380px;margin:0 auto;'><strong>ACROSS</strong><br>3. His name. That's the clue. His name. (7)<br>4. What the public wants released. What the government has. What you cannot see. (5)<br><br><strong>DOWN</strong><br>1. See 3 Across. Also see 4 Across. Also: <em>why.</em> (7)<br>2. The documents in question. Every question. (5)<br><br><em>★ Puzzle pre-filled because you already knew. Time saved: approximately 45 seconds. Frustration: unchanged. ★</em></div>"
+      ]
+    },
+
+    {
+      "illoId": "spyvspy",
+      "type": "spy-vs-spy",
+      "scene": "Classic Mad Magazine Spy vs Spy — white spy and black spy both dressed as circus ringmasters with tiny top hats over their normal long-nosed heads. Both juggle flaming torches labeled with current news crises. White spy juggles carefully, maintaining perfect form. Black spy's torches are already all in the air and black spy is checking their phone. Both torches labeled CONSTITUTION fall simultaneously. Both spies look up. The torches are falling. The tent is on fire in the upper left corner. Neither spy moves. Dynamic Mad Magazine chaos style.",
+      "title": "SPY vs. SPY",
+      "subtitle": "2026 Edition: \"Under The Big Top\"",
+      "white": {
+        "panels": [
+          "White Spy puts on a ringmaster hat. White Spy begins juggling flaming torches carefully, one at a time.",
+          "White Spy adds Iran. Adds Ukraine. Adds War Powers. All torches spinning perfectly. White Spy sweating.",
+          "White Spy adds the Constitution torch. Constitution torch is labeled ROUGH DRAFT. It is very heavy.",
+          "White Spy drops the Constitution torch. Tent catches fire in upper left. White Spy checks the filing cabinet."
+        ]
+      },
+      "black": {
+        "panels": [
+          "Black Spy puts on a bigger ringmaster hat. Black Spy throws all torches in the air immediately.",
+          "All six torches spin. Black Spy checks phone. Black Spy is not watching the torches.",
+          "Black Spy's Constitution torch also falls. Black Spy did not notice it was up there.",
+          "Both tents on fire. Both spies look at each other. Both look at the torches on the ground. Both shrug."
+        ]
+      },
+      "result": "BOTH TENTS ON FIRE. BOTH CONSTITUTIONS ON THE FLOOR. BOTH RINGMASTERS SHRUG. THE ALLIGATORS ARE FINE. THE ALLIGATORS WERE ALWAYS GOING TO OUTLAST THIS. THE POLAR BEAR HAS FILED A COMPLAINT."
+    },
+
+    {
+      "type": "awards",
+      "illoId": null,
+      "title": "🏆 INSANE AWARDS",
+      "date": "JUNE 2026",
+      "categories": [
+        {
+          "name": "MOST SIMULTANEOUSLY JUGGLED CRISES",
+          "gold":   "Trump (Iran, War Powers, Ukraine, AI, SpaceX, ICE — 6 torches, all lit)",
+          "silver": "The Strait of Hormuz (peace talks AND strikes, Vol 1 No 3 — still going)",
+          "bronze": "The wall (through swamp, still going, alligators unimpressed)"
+        },
+        {
+          "name": "MOST COHERENT POLICY POSITION OF THE WEEK",
+          "gold":   "The polar bear (release files or ice keeps melting — clear, measurable)",
+          "silver": "Destiny Washington, 19 (register five people, vote, repeat — executable)",
+          "bronze": "The War Powers Resolution (clear since 1973 — found in filing cabinet)"
+        },
+        {
+          "name": "BEST CONSTITUTIONAL REDISCOVERY",
+          "gold":   "Congress (War Powers Resolution — filed cabinet, 53-year retrieval time)",
+          "silver": "Jerome Kiplinger, teacher (students understood it in 40 minutes)",
+          "bronze": "The alligator (apparently reading Due Process — sources confirm)"
+        },
+        {
+          "name": "MOST IMPRESSIVE SEVEN-YEAR-OLD",
+          "gold":   "Freddie Frump (step stool, crayon, not afraid, winning)",
+          "silver": "Freddie Frump again (school board, sworn in, right to remain seven)",
+          "bronze": "Freddie Frump a third time (we have four stories and they're all good)"
+        },
+        {
+          "name": "BEST GRAVITY DEMONSTRATION",
+          "gold":   "AI stocks (confirmed gravity, educational, expensive)",
+          "silver": "The Constitution torch (dropped by both spies simultaneously)",
+          "bronze": "SpaceX IPO (defied gravity to moon, re-applied gravity at Cayman Islands)"
+        },
+        {
+          "name": "CROSSWORD OF THE YEAR",
+          "gold":   "The INSANE Crossword (2 answers, 4 clues, 100% completion rate, deeply cathartic)",
+          "silver": "The Constitution Puzzle page (congress filing, ongoing, incomplete)",
+          "bronze": "The IRS footnote from Vol 1 No 2 (still classified, still a mystery)"
+        }
+      ]
+    },
+
+    {
+      "illoId": "classifieds",
+      "type": "story",
+      "flip": false,
+      "scene": "The INSANE Classifieds board is now a three-ring circus itself. Job listings on fire. A ringmaster barks into a megaphone. Applicants queue in bizarre configurations. One listing is labeled ALLIGATOR WRANGLER — BENEFITS: UNCLEAR. Another: CIRCUS TENT FIRE SUPPRESSION — EXPERIENCE: HELPFUL. A constitutional lawyer in a hard hat tries to read a flaming filing cabinet. A clown caucus member hands out popcorn. Mad Magazine circus-job-fair chaos, maximum hilarity.",
+      "eyebrow": "HELP WANTED · INSANE CLASSIFIEDS VOLUME 3",
+      "heading": "INSANE CLASSIFIEDS!",
+      "subheading": "CIRCUS WORKERS NEEDED! CONSTITUTIONAL EXPERIENCE HELPFUL! ALLIGATORS ASKING QUESTIONS WE CANNOT ANSWER!",
+      "deck": "The INSANE Employment Listings — Volume 3 — Circus Edition — All Positions Open — Standards Team: Still On Puzzle Page (They Finished The Crossword In Under A Minute)",
+      "caption": "★ The flaming job listings are a feature, not a hazard. We think. ★",
+      "paragraphs": [
+        "<strong>CIRCUS TENT FIRE SUPPRESSION TECHNICIAN — U.S. CAPITOL, WASHINGTON D.C.</strong><br>Seeking experienced fire suppression professional comfortable working in: active legislative environments, tents that are technically on fire in the upper-left section, and situations where the people inside the tent have caused the fire and are continuing to operate as normal. Must be able to suppress fires without interrupting torch-juggling acts currently in progress. <em>Constitutional fire suppression experience preferred.</em> Hard hat required. The filing cabinet is also on fire. Bring two extinguishers. <em>Apply: Capitol building, enter through the side that isn't on fire yet.</em>",
+        "<strong>ALLIGATOR ALCATRAZ LEGAL OBSERVER — EVERGLADES, FLORIDA</strong><br>Seeking licensed attorney comfortable with: swamp environments, restricted access to clients, documents placed before frightened people without translation, and the general atmosphere of a facility that will generate substantial litigation. Must be willing to wait at the gate. May wait for some time. The alligators will look at you. Look back calmly. Do not sign anything. <em>Apply: Drive to the Everglades. Follow the chain-link fence until you find the gate. Bring water, your own. Bring your bar card. It will matter eventually.</em>",
+        "<strong>CONGRESSIONAL FILING CABINET AUDITOR — U.S. CONGRESS</strong><br>Urgent. There are things in these filing cabinets that nobody has read since they were filed. The War Powers Act was there for 53 years. We do not know what else is in there. We need someone to read it. All of it. <em>Required skills: literacy, patience, ability to be surprised by things that have been in plain sight for decades.</em> The filing cabinets are dusty. Bring a dust mask. The sticky note that says USE THIS is still there. Please use it. <em>Apply: Any congressional office. The filing cabinets are unlocked. They have always been unlocked. This is part of the problem.</em>",
+        "<strong>POLAR BEAR PRESS SECRETARY — GREENLAND ICE SHELF</strong><br>Seeking experienced communications professional to represent a polar bear who has obtained the Epstein files and is conducting a sustained leverage campaign from a shrinking ice shelf. The bear's position is clear (release the files or we keep melting) and requires no spin, merely amplification. <em>Must be comfortable with: Arctic temperatures, press conferences on ice, the concept of leverage.</em> The bear is a better communicator than most clients. The job is easier than it sounds. The ice situation is the challenging part. <em>Apply: Fly to Greenland. Find the bear. The bear will find you.</em>",
+        "<strong>INSANE CROSSWORD EDITOR — PERMANENT POSITION</strong><br>INSANE Magazine seeks a crossword editor for our newly launched puzzle section. The crossword has two answers: EPSTEIN and FILES. We believe there are additional answers available if someone is creative enough to find them. <em>Required: crossword construction experience, familiarity with 7-letter and 5-letter words, patience with a readership that already knows the answers.</em> The previous editor finished the crossword immediately and felt it needed more clues. We believe it is complete as written. This is a philosophical dispute. The position is available. <em>Apply: Send a crossword. If every answer is either EPSTEIN or FILES, you are hired.</em>"
+      ],
+      "fakeAd": {
+        "headline": "INSANE CLASSIFIEDS — LEGAL NOTICE VOL. 3",
+        "subheadline": "Circus Edition — We Are Still Not A Staffing Agency",
+        "bullets": [
+          "🎪 Tent fire: feature, not hazard (we think)",
+          "🐊 Alligator positions: wrangler, observer, auditor",
+          "🐻‍❄️ Bear press secretary: excellent communicator, cold",
+          "🔤 Crossword editor: answers known, more needed"
+        ],
+        "price": "ALL POSITIONS OPEN / STANDARDS TEAM ON PUZZLE PAGE",
+        "disclaimer": "INSANE Classifieds Vol. 3 not responsible for tent fires, swamp conditions, filing cabinet contents, polar bear leverage, or crossword answers. The filing cabinet has been unlocked the whole time. This is the problem in summary."
+      }
+    },
+
+    {
+      "illoId": "marketplace",
+      "type": "story",
+      "flip": true,
+      "scene": "INSANE Marketplace TV studio has been upgraded to a circus tent. Host in a ringmaster jacket holds up products with increasing absurdity. Center display: a flaming torch juggling set labeled NEWS CIRCUS HOME EDITION. Next to it: a CONSTITUTION FILING CABINET (pre-loaded, dusty). A polar bear in the corner holds the Epstein files and a price sign. The audience is in clown makeup. Fine print scrolls at the bottom of the canvas tent wall. Mad Magazine infomercial-meets-circus chaos.",
+      "eyebrow": "INSANE MARKETPLACE · CIRCUS EDITION · VOLUME 3",
+      "heading": "INSANE MARKETPLACE!",
+      "subheading": "CIRCUS EDITION — FLAMING TORCHES, CONSTITUTIONAL DOCUMENTS, POLAR BEAR MERCHANDISE, AND MORE",
+      "deck": "This Week's Fine Products From Under The Big Top — All Items Tested Under Circus Conditions — Standards Team: Finished The Crossword, Available For Marketplace Review",
+      "caption": "★ The flaming torch set is for adults. Most other things in this issue also require adult supervision. ★",
+      "paragraphs": [
+        "<strong>NEWS CIRCUS HOME EDITION™ — JUGGLE YOUR OWN CRISES!</strong><br>Six foam torches (non-flammable — <em>we learned</em>) in the shape of current news crises: IRAN, WAR POWERS, UKRAINE AID, AI, SPACEX IPO, and one mystery crisis (changes monthly). Learn to juggle all six simultaneously! Includes a drum platform labeled MAKE AMERICA A SPECTACLE AGAIN (assembly required) and a top hat. Instruction manual written at ringmaster level. <em>Not responsible for what happens when you look at what you're juggling.</em> <strong>$49.99.</strong> Mystery crisis ships separately.",
+        "<strong>CONSTITUTIONAL FILING CABINET™ — PRE-LOADED, SLIGHTLY DUSTY</strong><br>A full-size filing cabinet containing labeled facsimiles of: the War Powers Resolution (filed 1973, cobweb patina), the Constitution (Rough Draft, most pages present), Checks and Balances (Some Assembly Required), and a sticky note reading USE THIS (applied 2019, still valid). The documents have been in the cabinet the whole time. <em>Now available to take home.</em> <strong>$89.99.</strong> Free shipping. Dust cloth included. Reading the documents is optional but encouraged. <em>*The cabinet is already in your house. It has been there the whole time. This is an abstract product. The point is the point.*</em>",
+        "<strong>POLAR BEAR SOLIDARITY PACKAGE™ — GREENLAND EDITION</strong><br>Show your support for the only leverage campaign with a coherent position this week. Includes: one RELEASE THE FILES tote bag, one MELTING POINT PROTEST bumper sticker, and a miniature ice shelf (decorative, not to scale) with a small polar bear figurine holding a manila folder. The folder is labeled EPSTEIN FILES. It is empty. <em>The real files are with the actual polar bear.</em> <strong>$34.99.</strong> Proceeds go to nothing specific because this is a satirical product. However, consider donating to Greenland ice research. That part is real.",
+        "<strong>FREDDIE FRUMP STEP STOOL™</strong><br>A sturdy, adjustable step stool suitable for small but determined people who need to reach microphones at school board meetings, town halls, or any venue where the podium was not built for someone their size. Comes with a motivational card reading: <em>\"You are the smallest person in the room. You are not the least important person in the room. These are different things. Speak.\"</em> <strong>$19.99.</strong> All profits to: nothing yet, but if Freddie wants a fund, we'll route it there. He's seven. He's going to need resources. <em>★ INSANE Magazine's most sincere product. Zero asterisks. ★</em>",
+        "<strong>THE INSANE CROSSWORD BOOK™ — ALL VOLUMES</strong><br>Contains: Volume 1 (this issue). Every answer is EPSTEIN. Every other answer is FILES. <em>\"The fastest crossword book in publishing history.\"</em> Completion time: 45 seconds. Catharsis value: very high. Future volumes planned pending availability of additional answers, which is to say: pending the release of the files, at which point we will have new answers, and the crossword will become more complex, and the world will be slightly less frustrating. <strong>$9.99.</strong> Pre-order Volume 2 now. Volume 2 requires the files. <em>You know what to do.</em>"
+      ],
+      "theEnd": {
+        "title": "Shop Responsibly. Release The Files.",
+        "sub": "INSANE Marketplace Vol. 3 · Circus Edition · Standards Team: Available"
+      }
+    },
+
+    {
+      "illoId": "foldin",
+      "type": "fold-in",
+      "scene": "Mad Magazine back page fold-in — wide format. Left 60 percent (A): shows the full United States of Disarray scene — Capitol circus tent, ringmaster juggling torches, alligators, polar bear with files, Wall Street falling, SpaceX soaring to tax haven, Congress with filing cabinet. Every element packed in. The word GREAT is spelled out in the circus banner across the top. Right 40 percent (B): shows a mirror, and in the mirror's reflection: the same scene, but darker — the tent is fully on fire, the torches are all on the ground, the alligators are on the money pile, the files are still sealed. When A folds over B, GREAT covers AGAIN, and the banner now reads something much shorter. Bold graphic fold-in composition.",
+      "question": "LOOKING AT THIS BIG BEAUTIFUL NEWS CIRCUS — THE JUGGLING, THE ALLIGATORS, THE POLAR BEAR, THE FALLING STOCKS, THE FLAMING TENT — WHAT DOES 'MAKE AMERICA GREAT AGAIN' ACTUALLY MEAN?",
+      "answer": "A SPECTACLE.",
+      "leftText": "INSANE — FOLD THIS HALF →",
+      "rightText": "← FOLD LEFT SIDE OVER TO FIND OUT"
+    }
+
+  ]
+}

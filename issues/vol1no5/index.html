@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>America's Got Meltdowns! — INSANE Mag</title>
+  <meta name="description" content="The Special Election Issue — Now With Extra Booing">
+  <meta property="og:title" content="America's Got Meltdowns! — INSANE Mag">
+  <meta property="og:description" content="The Special Election Issue — Now With Extra Booing">
+  <meta property="og:image" content="https://insane-mag.bumbloobooks.com/images/vol1no5-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insane-mag.bumbloobooks.com/issues/vol1no5/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Special+Elite&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Default palette (overridden per issue via palette in issue.json) ────────── */
+:root {
+  --bg:           #fdf6e3;   /* newsprint cream */
+  --page-bg:      #fff;
+  --text:         #111111;
+  --accent:       #cc0000;   /* Mad red */
+  --accent2:      #f5c400;   /* Mad yellow */
+  --accent3:      #1a1a8a;   /* blue accent */
+  --nav-bg:       #cc0000;
+  --nav-text:     #ffffff;
+  --dot-active:   #f5c400;
+  --eyebrow:      #cc0000;
+  --ad-bg:        #fffde7;
+  --ad-border:    #f5c400;
+  --spy-white-bg: #f0f0f0;
+  --spy-black-bg: #111111;
+  --cover-text:   #ffffff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Nav bar ────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  height: 50px;
+  border-bottom: 3px solid rgba(0,0,0,0.25);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1.1rem; padding: 8px;
+  opacity: 0.8; transition: opacity 0.15s;
+}
+.nav-btn:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-text);
+  opacity: 0.9;
+}
+.nav-counter {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.nav-back {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-share {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1rem; padding: 8px;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.nav-share:hover { opacity: 1; }
+
+/* ── Dot pager ──────────────────────────────────────────── */
+.dot-row {
+  position: fixed; bottom: 14px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 12px;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text); opacity: 0.2;
+  cursor: pointer; transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+.dot.active {
+  background: var(--dot-active); opacity: 1; transform: scale(1.4);
+}
+
+/* ── Viewport / pager ───────────────────────────────────── */
+.viewport {
+  position: fixed; top: 50px; left: 0; right: 0; bottom: 40px;
+  overflow: hidden;
+}
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  display: flex; align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER-FULL PAGE  (pure full-bleed image, no overlays)
+   ══════════════════════════════════════════════════════════ */
+.cover-full-page {
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cover-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER PAGE
+   ══════════════════════════════════════════════════════════ */
+.cover-page {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+  overflow: hidden;
+}
+.cover-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.82;
+}
+.cover-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8rem; opacity: 0.1;
+}
+.cover-top {
+  position: relative; z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  padding: 12px 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+}
+.cover-mag-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  color: var(--accent2, #f5c400);
+  line-height: 0.85;
+  letter-spacing: 0.06em;
+  text-shadow: 3px 3px 0 #000;
+}
+.cover-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+.cover-lines-wrap {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 8px;
+  gap: 5px;
+}
+.cover-line {
+  background: rgba(204, 0, 0, 0.88);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.85rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  border-left: 4px solid var(--accent2, #f5c400);
+}
+.cover-line:nth-child(even) {
+  background: rgba(0, 0, 0, 0.82);
+  border-left-color: var(--accent, #cc0000);
+}
+.cover-tagline {
+  position: relative; z-index: 2;
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 6px;
+  border-top: 2px solid var(--accent2, #f5c400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDITORIAL PAGE
+   ══════════════════════════════════════════════════════════ */
+.editorial-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editorial-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 28px 60px;
+  margin: 0 auto;
+}
+.editorial-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.editorial-salutation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.editorial-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.editorial-body strong { font-weight: 800; }
+.editorial-body em { font-style: italic; color: var(--accent); }
+.editorial-sig {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--text);
+}
+.editorial-ps {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MASTHEAD PAGE
+   ══════════════════════════════════════════════════════════ */
+.masthead-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.masthead-inner {
+  max-width: 580px;
+  width: 100%;
+  padding: 24px 24px 60px;
+  margin: 0 auto;
+}
+.masthead-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.masthead-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.masthead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  padding: 12px;
+}
+.mast-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.mast-role {
+  font-weight: 800;
+  color: var(--accent);
+}
+.masthead-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  opacity: 0.55;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+/* Subscriber alert box */
+.subscriber-alert {
+  background: var(--accent, #cc0000);
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+}
+.alert-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.alert-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.alert-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.alert-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  color: var(--accent2, #f5c400);
+}
+.alert-disclaimer {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENTS PAGE
+   ══════════════════════════════════════════════════════════ */
+.contents-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ticker */
+.ticker-bar {
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.contents-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 60px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.contents-header {
+  margin-bottom: 18px;
+  border-bottom: 4px solid var(--accent, #cc0000);
+  padding-bottom: 12px;
+}
+.contents-mag {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent);
+  line-height: 0.9;
+}
+.contents-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.contents-edition {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.contents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ci-item {
+  display: grid;
+  grid-template-columns: 28px 24px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 6px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ci-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.ci-emoji {
+  font-size: 1rem;
+  grid-row: 1;
+}
+.ci-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  grid-row: 1;
+}
+.ci-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Scorecard box */
+.scorecard-box {
+  background: var(--accent2, #f5c400);
+  border: 3px solid #000;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.scorecard-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.scorecard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scorecard-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+.scorecard-list strong {
+  color: var(--accent, #cc0000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STORY PAGES
+   ══════════════════════════════════════════════════════════ */
+.story-page {
+  flex-direction: column;
+}
+.story-page.no-illo {
+  flex-direction: column;
+  align-items: center;
+}
+.story-illo {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40vw; min-height: 180px; max-height: 320px;
+  overflow: hidden; position: relative;
+  background: #ddd;
+}
+.story-illo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.illo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; opacity: 0.25;
+}
+.illo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+}
+.story-body {
+  flex: 1;
+  padding: 18px 22px 56px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+.story-eyebrow {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--eyebrow, var(--accent));
+  margin-bottom: 6px;
+  border-left: 3px solid var(--accent, #cc0000);
+  padding-left: 8px;
+}
+.story-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.story-subheading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--accent, #cc0000);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.story-deck {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.story-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
+  line-height: 1.72;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.story-body p strong { font-weight: 800; }
+.story-body p em { color: var(--accent); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  border-top: 3px solid var(--accent2, #f5c400);
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+/* Sidebar list (bullet box) */
+.sidebar-list {
+  background: var(--bg, #fdf6e3);
+  border: 2px solid var(--text);
+  border-left: 5px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.sidebar-list-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sidebar-list ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-list ul li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Fake advertisement */
+.fake-ad {
+  background: var(--ad-bg, #fffde7);
+  border: 3px solid var(--ad-border, #f5c400);
+  border-top: 6px solid var(--accent, #cc0000);
+  padding: 14px 16px;
+  margin: 18px 0 0;
+}
+.ad-headline {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.ad-subheadline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.ad-bullets { margin-bottom: 8px; }
+.ad-bullet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.ad-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.ad-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  opacity: 0.55;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* Glossary box */
+.glossary-box {
+  background: #f0f4ff;
+  border: 2px solid var(--accent3, #1a1a8a);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.glossary-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3, #1a1a8a);
+  margin-bottom: 8px;
+}
+.gloss-entry {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.gloss-word {
+  font-weight: 800;
+  color: var(--accent3, #1a1a8a);
+}
+
+/* The End */
+.the-end {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 3px solid var(--accent2, #f5c400);
+  text-align: center;
+}
+.the-end-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.the-end-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* Desktop split layout for story pages */
+@media (min-width: 700px) {
+  .story-page:not(.no-illo) { flex-direction: row; }
+  .story-page.flip:not(.no-illo) { flex-direction: row-reverse; }
+  .story-illo {
+    flex: 0 0 42%;
+    height: 100%; max-height: none;
+    width: auto;
+  }
+  .story-body { overflow-y: auto; padding: 28px 36px 60px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SPY VS SPY PAGE
+   ══════════════════════════════════════════════════════════ */
+.spy-page {
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--page-bg, #fff);
+}
+.spy-header {
+  background: #000;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.spy-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.spy-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent2, #f5c400);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.spy-illo {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow: hidden;
+}
+.spy-illo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spy-arena {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.spy-col {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+.spy-col h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.spy-white {
+  background: var(--spy-white-bg, #f0f0f0);
+  border-right: 3px solid #000;
+  color: #111;
+}
+.spy-white h3 { color: #111; }
+.spy-black {
+  background: var(--spy-black-bg, #111);
+  color: #f0f0f0;
+}
+.spy-black h3 { color: #fff; }
+.spy-icon { font-size: 2rem; margin-bottom: 6px; }
+.spy-panels p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.spy-divider {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent, #cc0000);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.spy-result {
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 16px;
+  border-top: 3px solid #000;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AWARDS PAGE
+   ══════════════════════════════════════════════════════════ */
+.awards-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.awards-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 28px 24px 60px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.awards-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border-bottom: 5px double var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+.awards-date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.award-category {
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  border-left: 6px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+}
+.award-cat-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.award-medals { display: flex; flex-direction: column; gap: 4px; }
+.medal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.medal.gold   { color: #b8860b; }
+.medal.silver { color: #666; }
+.medal.bronze { color: #8b4513; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOLD-IN PAGE
+   ══════════════════════════════════════════════════════════ */
+.fold-in-page {
+  background: #000;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.foldin-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  overflow: hidden;
+}
+.foldin-header {
+  background: var(--accent, #cc0000);
+  padding: 12px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.foldin-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  color: var(--accent2, #f5c400);
+}
+.foldin-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.foldin-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s;
+}
+.foldin-area.folded {
+  opacity: 0.08;
+  pointer-events: none;
+}
+.foldin-left {
+  flex: 0 0 62%;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px dashed var(--accent2, #f5c400);
+}
+.foldin-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; opacity: 0.6;
+}
+.foldin-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; font-size: 4rem; opacity: 0.1;
+  background: #1a1a1a;
+}
+.foldin-section-top {
+  position: absolute; top: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent2, #f5c400);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 2;
+}
+.foldin-question {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.72);
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.foldin-label-a, .foldin-label-b {
+  position: absolute; bottom: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--accent2, #f5c400);
+  background: rgba(0,0,0,0.8);
+  padding: 2px 8px;
+  z-index: 3;
+}
+.foldin-label-a { right: 8px; }
+.foldin-right {
+  flex: 0 0 38%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.foldin-answer-hidden {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+.foldin-label-b { left: 8px; bottom: 8px; }
+
+/* Revealed answer (shown when folded) */
+.foldin-answer-reveal {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+.foldin-area.folded ~ .foldin-answer-reveal {
+  display: flex;
+}
+.foldin-answer-text {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--accent2, #f5c400);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.foldin-answer-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.foldin-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 3px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.foldin-btn:hover { background: #fff; }
+
+
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">← All Issues</a>
+  </div>
+  <span class="nav-title">America's Got Meltdowns!</span>
+  <div class="nav-right">
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next">&#8594;</button>
+    <button class="nav-share" onclick="shareIssue()" aria-label="Share">&#9014;</button>
+  </div>
+</nav>
+
+<div class="viewport">
+  <div class="track" id="track">
+<div class="page cover-full-page" id="p0">
+  <img class="cover-full-img" src="../../images/vol1no5-cover.png?v=1781042539447" alt="cover">
+</div>
+
+<div class="page cover-page" id="p1">
+  <img class="cover-img" src="../../images/vol1no5-cover.png?v=1781042539447" alt="cover">
+  <div class="cover-top">
+    <div class="cover-mag-name">INSANE</div>
+    <div class="cover-meta"> &nbsp;·&nbsp; JUNE 9, 2026 &nbsp;·&nbsp; $6.99 CHEAP!</div>
+  </div>
+  <div class="cover-lines-wrap">
+    <div class="cover-line">Meet the Press? FLEE the Press!</div>
+    <div class="cover-line">From NBC to MSG: The One-Man Boo Tour</div>
+    <div class="cover-line">Knicks Fans Discover Bipartisan Boo Technology</div>
+    <div class="cover-line">Maine Senate Race: The Oyster Candidate Gets Shucked</div>
+    <div class="cover-line">FISA Wants Your Texts, ICE Wants Your Budget</div>
+    <div class="cover-line">$70 Billion Buys A Lot Of Checkpoints</div>
+    <div class="cover-line">Moon Landing? Please Remove Shoes.</div>
+  </div>
+  <div class="cover-tagline">SANITY NOT INCLUDED</div>
+</div>
+
+<div class="page editorial-page" id="p2">
+  <div class="editorial-inner">
+    <h2 class="editorial-title">FROM THE EDITOR'S BUNKER</h2>
+    <p class="editorial-salutation"></p>
+    <div class="editorial-body">
+    <p>Dear Reader,</p>
+    <p>There are weeks when the news arrives like a polite stream and weeks when it arrives like a fire hose held by a man who has never seen a fire, a hose, or water. This was the second kind.</p>
+    <p>In the span of a single news cycle, the President walked off a Sunday morning interview, got booed by his own fans at a basketball game, watched Congress shovel $70 billion at the border, watched a surveillance law teeter on the edge of a calendar, and watched a Maine oyster farmer absorb more opposition research than a sponge in a flood. We are not making any of this up. We checked. We were disappointed to confirm it.</p>
+    <p>Our cover this week tried to fit all of it onto one page and frankly the page filed a complaint. The central image — the President spinning on a game-show platform labeled <strong>PUBLIC OPINION</strong> — is the only honest illustration we have ever published, in the sense that the platform is, in fact, spinning, and nobody is sure which way.</p>
+    <p>We dedicate this issue to the one fixed point in a whirling universe: <em>the off switch on your television, which still works, and which we beg you to remember exists.</em></p>
+    <p>Stay screened, America. They're checking everything else.</p>
+    <p>— The Editors, INSANE Magazine</p>
+    </div>
+    <p class="editorial-sig">— The Editors</p>
+    
+  </div>
+</div>
+
+<div class="page masthead-page" id="p3">
+  <div class="masthead-inner">
+    <div class="masthead-logo">INSANE</div>
+    <h2 class="masthead-title">INSANE MAGAZINE MASTHEAD</h2>
+    <div class="masthead-grid">
+      
+    </div>
+    
+    <div class="masthead-disclaimer">INSANE Magazine is printed on paper recycled from executive orders. Any resemblance to a functioning democracy is coincidental.</div>
+  </div>
+</div>
+
+<div class="page contents-page" id="p4">
+  <div class="ticker-bar"><div class="ticker-inner">★ BREAKING ★ President walks off interview ★ Same President booed at his own game ★ Boos lead Cheers 115–111 in overtime ★ Congress finds $70 billion in the couch ★ FISA expires Thursday, allegedly ★ Maine oyster farmer leads despite everything ★ Judge voids $100,000 visa fee ★ Helicopter goes for swim near Hormuz ★ Statue of Liberty melts, files for unemployment ★ &nbsp; ✦ &nbsp; ★ BREAKING ★ President walks off interview ★ Same President booed at his own game ★ Boos lead Cheers 115–111 in overtime ★ Congress finds $70 billion in the couch ★ FISA expires Thursday, allegedly ★ Maine oyster farmer leads despite everything ★ Judge voids $100,000 visa fee ★ Helicopter goes for swim near Hormuz ★ Statue of Liberty melts, files for unemployment ★</div></div>
+  <div class="contents-inner">
+    <div class="contents-header">
+      <div class="contents-mag">INSANE</div>
+      <h2 class="contents-title">CONTENTS</h2>
+      <div class="contents-edition"></div>
+    </div>
+    <div class="contents-list">
+    <div class="ci-item">
+      <span class="ci-num">6</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">MEET THE STRESS</span>
+      <span class="ci-desc">The full meltdown, with shrinks, sobbing aides &amp; a standing ovation for the interviewer</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">9</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">FROM NBC TO MSG</span>
+      <span class="ci-desc">The booing heard 'round the Garden</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">10</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">MAINE COURSE: SCANDAL STEW</span>
+      <span class="ci-desc">The oyster candidate gets shucked on primary day</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">11</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">CHECKPOINT NATION</span>
+      <span class="ci-desc">$70 billion, ICE jackets &amp; a money cannon</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">12</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">FISA SECTION 702</span>
+      <span class="ci-desc">Privacy expires Thursday; please remove rights from pockets</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">13</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">DENIED — TOO EXPENSIVE TO EXIST</span>
+      <span class="ci-desc">Judge voids the $100,000 visa fee</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">14</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">MAN &amp; WOMAN IN THE STREET</span>
+      <span class="ci-desc">Six citizens, freshly screened</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">15</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">SPY VS. SPY</span>
+      <span class="ci-desc">Checkpoint Edition</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">16</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">THE INSANE AWARDS</span>
+      <span class="ci-desc">Gold, silver &amp; bronze for a bronze-medal week</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">17</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">CLASSIFIEDS &amp; MARKETPLACE</span>
+      <span class="ci-desc">Now hiring boo technicians</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">18</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">THE FOLD-IN</span>
+      <span class="ci-desc">What does the spinning platform actually decide?</span>
+    </div>
+    </div>
+    
+    <div class="scorecard-box">
+      <div class="scorecard-title">THIS WEEK'S MELTDOWN SCORECARD</div>
+      <ul class="scorecard-list"></ul>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p5">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-meetthestress.png?v=1781042539448" alt="MEET THE STRESS">
+    <div class="illo-caption">★ The anchor holds her ground while the lie-detector files a formal complaint ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">COVER STORY · THE SUNDAY MELTDOWN</div>
+    <h2 class="story-heading">MEET THE STRESS</h2>
+    <p class="story-subheading">PRESIDENT ANSWERS TOUGH QUESTION WITH SURPRISE EXIT</p>
+    <p class="story-deck">On Sunday, June 7, the President sat for a Meet the Press interview, was asked questions, discovered that questions exist, and concluded the segment by removing his own microphone and leaving — a maneuver experts are calling 'the reverse interview.'</p>
+    <p>It began, as these things do, with a question. The anchor — calm, prepared, armed only with publicly available facts — asked the President about election-fraud claims, about California voting, about January 6, and about the curiously named 'anti-weaponization fund.' The President, sensing a trap consisting entirely of things he had personally said, did what any cornered leader of the free world would do: he <strong>removed his own microphone and walked off the set.</strong></p>
+    <p>Eyewitnesses report the exit took approximately four seconds, during which the President set a new personal record for distance traveled away from a follow-up question.</p>
+    <p>The interview had been billed as a routine sit-down. It became, instead, a kind of nature documentary: here is the apex predator of cable news, and here is what happens when you gently ask it for a source.</p>
+    <p>Sources inside the studio say the lie-detector machine — installed purely as a prop — began smoking around the third question and printed a single strip reading <em>'ERROR: QUESTION DETECTED.'</em> Technicians say the machine has since requested early retirement and a quieter assignment, possibly weather.</p>
+    <p>At the center of it all sat the anchor, who did not flinch, did not raise her voice, and did not abandon the question merely because the subject of the question abandoned the building. She simply held the microphone forward and let the silence do the fact-checking.</p>
+    <p>"She just sat there being correct," said one stunned producer. "It was the most aggressive thing I have ever seen a person do while sitting completely still."</p>
+    <p>INSANE would like to formally salute the anchor for the increasingly radical act of <strong>asking a question and then waiting for the answer.</strong> In an era of meltdowns, holding your ground is a competitive sport, and she medaled.</p>
+    <blockquote class="pull-quote">&quot;I asked one follow-up. He treated it like a subpoena.&quot; — A composed professional, paraphrased</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">🩺 EXPERT ANALYSIS (FROM EXPERTS WE INVENTED)</div>
+      <ul><li>🩺 Dr. Hugo Furst, of the Institute For Things — diagnosis: 'Acute Question Allergy. Symptoms include hives, mic-flinging, and a sudden interest in the exit.'</li>
+        <li>🧠 Prof. Ava Lanche, Department of Made-Up Studies — 'Classic Reverse-Interview Syndrome. The patient interviews the door.'</li>
+        <li>📋 The Board of Pretend Psychiatry — 'We are legally and ethically unable to diagnose anyone, so instead we award this performance four out of five fainting couches.'</li>
+        <li>🛋️ Dr. Sy Kologist (no relation to anything) — 'In my professional opinion, which is worthless, that was a lot.'</li></ul>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p6">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-shockedviewers.png?v=1781042539448" alt="VIEWERS REPORT MILD CONCUSSION OF EXPECTATIONS">
+    <div class="illo-caption">★ The exact second 18 million people forgot they were holding mugs ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">REACTION DESK · AMERICA RESPONDS</div>
+    <h2 class="story-heading">VIEWERS REPORT MILD CONCUSSION OF EXPECTATIONS</h2>
+    <p class="story-subheading">A NATION SET DOWN ITS COFFEE AT THE SAME MOMENT</p>
+    <p class="story-deck">We canvassed the viewing public, by which we mean we made up six representative Americans whose reactions are nonetheless emotionally accurate.</p>
+    <p>Reaction to the walk-off was swift, bipartisan, and largely consisted of the word 'whoa' said at increasing volumes.</p>
+    <p>"I tuned in for the weather," said <strong>Donna Pellington of Akron, Ohio.</strong> "By the time I looked up, the man was gone and the chair was still warm. I have never seen furniture so disappointed."</p>
+    <p>"I'm a lifelong supporter and even I said out loud, to my dog, 'buddy, you have to answer the question,'" reported <strong>Carl Sledge of Bristol, Tennessee.</strong> "The dog agreed. The dog has more follow-through."</p>
+    <p>"What got me," said <strong>Maria Castellano of Queens, New York,</strong> "is that the lady just sat there. Didn't blink. I respect that. I couldn't sit that still at the DMV and they have my whole future."</p>
+    <p>"It was like watching someone flip the Monopoly board because they landed on Income Tax," said <strong>Reverend Bo Tweedy of Macon, Georgia.</strong> "And we were only on the second roll."</p>
+    <p>"I rewound it eleven times," said <strong>Pat Quigley of Spokane, Washington.</strong> "Each time, he still left. Television used to have suspense."</p>
+    <p>"I don't follow politics," admitted <strong>Tiffani Roe of Mesa, Arizona,</strong> "but I know a clip when I see one, and that, my friend, is a clip."</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">THE MELTDOWN REWIND™</div>
+      <div class="ad-subheadline">Relive The Moment America Spilled Its Coffee — In 4K!</div>
+      <div class="ad-bullets"><div class="ad-bullet">📺 Watch the chair stay empty in stunning detail!</div>
+        <div class="ad-bullet">⏪ Rewind feature lets him leave AGAIN and AGAIN!</div>
+        <div class="ad-bullet">🍿 Includes one (1) bag of popcorn you will drop!</div>
+        <div class="ad-bullet">🎙️ Bonus: the dangling microphone, isolated track!</div></div>
+      <div class="ad-price">$19.95 + STREAMING-INDUCED EXISTENTIAL FEES</div>
+      <div class="ad-disclaimer">Rewind Inc. not responsible for the eighth viewing, which will feel different. Microphone did nothing wrong. The chair has retained separate counsel. Results may include a sudden urge to also leave the room.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p7">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-sobbingaides.png?v=1781042539448" alt="MUTTERINGS FROM PEOPLE WHO WISH TO REMAIN INVERTEBRATE">
+    <div class="illo-caption">★ A senior official sobs into a lanyard he is contractually obligated to deny owning ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">OVERHEARD · CORRIDORS OF POWER</div>
+    <h2 class="story-heading">MUTTERINGS FROM PEOPLE WHO WISH TO REMAIN INVERTEBRATE</h2>
+    <p class="story-subheading">SENIOR FIGURES REACT, ANONYMOUSLY, INTO THEIR LANYARDS</p>
+    <p class="story-deck">These quotes are entirely fictional and clearly satirical, attributed to no real person, because no real official would ever say anything this candid where a recorder might be running. The despair, however, is to scale.</p>
+    <p>In the hours after the walk-off, the corridors of power filled with the sound of grown professionals discovering that their morning had gotten worse. INSANE collected the following overheard mutterings, all of which are invented, none of which are surprising.</p>
+    <p>A Cabinet secretary, allegedly to a houseplant: <em>"We rehearsed 'don't leave.' We literally rehearsed the not-leaving. There was a slide."</em></p>
+    <p>A senior Congressional leader, reportedly to the ceiling: <em>"I have a town hall Thursday. They're going to ask me about the chair. The chair, Sharon. I have to have a position on the chair."</em></p>
+    <p>A communications director, said into a vending machine: <em>"Just give me the Funyuns and we'll call the day a wash."</em></p>
+    <p>A party strategist, whispered to a colleague: <em>"Okay so the messaging is that it was a power move. Walking out was the plan. We meant to do that." "Did we?" "We have to have."</em></p>
+    <p>A junior aide, to no one: <em>"I went to law school for this. I had options. I could be doing maritime contracts right now. The ocean never walks off."</em></p>
+    <p>And a lone Senator, into the void: <em>"On the one hand, deeply concerning. On the other hand, I have not been asked a single question, and I would like to keep that streak alive."</em></p>
+    <blockquote class="pull-quote">&quot;The chair, Sharon. I have to have a position on the chair.&quot; — A fictional leader, fictionally</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">📋 OFFICIAL RESPONSES, RANKED BY CONTORTION</div>
+      <ul><li>🥇 'It was a strategic exit.' (It was not.)</li>
+        <li>🥈 'He had a hard stop.' (The hard stop was the question.)</li>
+        <li>🥉 'The interview ran long.' (It ran four seconds short.)</li>
+        <li>🏅 'No comment, and also please stop emailing me.' (Most honest.)</li></ul>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p8">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-msgboo.png?v=1781042539448" alt="FROM MEET THE PRESS TO MEET THE JEERS">
+    <div class="illo-caption">★ The crowd discovers that booing, like jazz, is an American original ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">SPORTS DESK · THE SEQUEL NOBODY GREENLIT</div>
+    <h2 class="story-heading">FROM MEET THE PRESS TO MEET THE JEERS</h2>
+    <p class="story-subheading">PRESIDENT APPEARS ON JUMBOTRON, RECEIVES BIPARTISAN BOO</p>
+    <p class="story-deck">Twenty-four hours after walking off a television set, the President walked into Madison Square Garden for Game 3 of the NBA Finals and was greeted by a feature New York has spent two centuries perfecting: the boo.</p>
+    <p>It started as cheers. It is important to be fair: there were cheers. The cheers lasted roughly as long as a New York minute, which is to say less than a minute, after which the boos arrived like weather.</p>
+    <p>The boos came from the rafters, from the floor seats, from the luxury boxes, and — eyewitnesses insist — from at least one hot dog vendor who booed reflexively without looking up.</p>
+    <p>INSANE's official scorecard, kept by hand for accuracy, recorded the final tally at <strong>BOOS 115, CHEERS 111, after overtime.</strong> The boos pulled ahead late in the fourth and never relinquished the lead. Cheers fouled out.</p>
+    <p>Most remarkable was the bipartisanship. "I came here to boo the refs," said one fan, "but I am a flexible man." Another held a foam finger reading <em>WE'RE #BOO,</em> which sold out at the merchandise stand within minutes, leaving the actual team's jerseys untouched.</p>
+    <p>Sports analysts noted that booing at the Garden is among the oldest and most respected local traditions, predating the franchise, the building, and possibly the city. "New Yorkers will boo a sunset if it lingers," one explained. "This is just heritage."</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">FOAM FINGER 2.0 — THE #BOO™</div>
+      <div class="ad-subheadline">Now With Reversible Cheer/Boo Functionality!</div>
+      <div class="ad-bullets"><div class="ad-bullet">👎 Flips instantly from #1 to #BOO — pick a side AT the game!</div>
+        <div class="ad-bullet">📣 Built-in amplifier projects disappointment to the cheap seats!</div>
+        <div class="ad-bullet">🏀 Ignores the actual basketball, just like you!</div>
+        <div class="ad-bullet">🗽 Officially licensed by the Spirit of New York (it owes us money)</div></div>
+      <div class="ad-price">$24 OR ONE (1) GENUINE EMOTION</div>
+      <div class="ad-disclaimer">Foam Finger Co. not responsible for booing things that did not earn it. Reversible function may cause whiplash of conviction. Not for use on sunsets, weddings, or your own children, probably.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p9">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-platner.png?v=1781042539448" alt="MAINE COURSE: SCANDAL STEW">
+    <div class="illo-caption">★ Fresh oysters, stale scandals, and a lobster that needs a vacation ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">DOWN-BALLOT · MAINE PRIMARY DAY</div>
+    <h2 class="story-heading">MAINE COURSE: SCANDAL STEW</h2>
+    <p class="story-subheading">THE OYSTER CANDIDATE GETS SHUCKED — AND SOMEHOW STAYS AFLOAT</p>
+    <p class="story-deck">It is primary day in Maine, where Democrats are choosing a nominee to face Senator Susan Collins, and where the frontrunner has absorbed a quantity of opposition research normally reserved for entire administrations.</p>
+    <p>Graham Platner is a former Marine, an oyster farmer, and the kind of populist who polls well right up until someone opens a folder. This week, several folders were opened.</p>
+    <p>The frontrunner has faced scrutiny over explicit texts, allegations regarding his treatment of women, and a tattoo critics linked to Nazi imagery — which he has since covered up and apologized for. By the standards of a normal candidacy, any one of these would be disqualifying. By the standards of 2026, it was Tuesday.</p>
+    <p>And yet. Despite the scandal stew simmering on every burner, Platner remained the frontrunner heading into the primary, buoyed by genuine grassroots enthusiasm and high-profile progressive backing, including Senator Bernie Sanders, who suggested the public cared more about groceries than gossip.</p>
+    <p>"We've got a housing crisis and people can't afford healthcare," Sanders said, more or less, declining to spend his energy on the candidate's marriage.</p>
+    <p>INSANE takes no position on the race, but we do take a position on the lobster, who has been dragging the opposition-research file up and down the dock for three days and would like overtime. "I'm a crustacean, not a forklift," the lobster did not say, because lobsters cannot speak, a fact we confirmed with the oyster, who also could not speak, leaving this entire paragraph unsourced and proud of it.</p>
+    <p>Voters head to the polls today. The oysters remain neutral. The scandals remain, per the sign, stale but available.</p>
+    <blockquote class="pull-quote">&quot;FRESH OYSTERS / STALE SCANDALS&quot; — A sign that has seen things</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">🦞 THE MAINE MENU</div>
+      <ul><li>🦞 Appetizer: A tattoo, since covered, much regretted</li>
+        <li>🦪 Soup: Scandal stew, simmered since March</li>
+        <li>📱 Entrée: Explicit texts, served cold</li>
+        <li>🗳️ Dessert: A commanding lead, inexplicably intact</li>
+        <li>🧂 On the side: One (1) exhausted endorsing Senator</li></ul>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p10">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-checkpoint.png?v=1781042539448" alt="CHECKPOINT NATION">
+    <div class="illo-caption">★ The money cannon is fully operational; the metaphor budget is not ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">POLICY DESK · THE BIG SCREENING</div>
+    <h2 class="story-heading">CHECKPOINT NATION</h2>
+    <p class="story-subheading">$70 BILLION BUYS A LOT OF CONVEYOR BELTS</p>
+    <p class="story-deck">House Republicans advanced a roughly $70 billion immigration-enforcement package — and turned the Capitol into the world's most expensive airport security line in the process.</p>
+    <p>The package, which Democrats opposed, funnels enormous sums into enforcement through 2029: reports put it at roughly <strong>$38 billion for ICE, $26 billion for CBP, and $5 billion for DHS.</strong> To help visualize $70 billion, picture a money cannon. Now picture it on.</p>
+    <p>Tucked into the fight were the add-ons that make a spending bill feel handcrafted: a ballroom fund and an 'anti-weaponization' fund of approximately $1 billion, a phrase that means whatever the reader fears most.</p>
+    <p>"We're not building a wall, we're building a <em>customer experience,</em>" explained a fictional spokesperson we invented to avoid quoting a real one. "Everyone gets screened. Phones, visas, pilots, the Moon. The Moon especially. We don't trust the Moon."</p>
+    <p>At Checkpoint Nation, the lines are long, the scanners are loud, and the conveyor belt moves immigrants, oil barrels, and the occasional confused basketball with equal suspicion. A sign overhead reminds travelers to remove their shoes, their rights, and any expectation of an itemized receipt.</p>
+    <p>Asked where the $1 billion anti-weaponization fund actually goes, officials gestured vaguely at the money cannon, which was, at that moment, weaponizing.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">THE MONEY CANNON 70B™</div>
+      <div class="ad-subheadline">When You Absolutely Must Aim $70 Billion At A Problem!</div>
+      <div class="ad-bullets"><div class="ad-bullet">💵 Fires cash at any target — walls, jackets, ballrooms!</div>
+        <div class="ad-bullet">🎯 'Anti-Weaponization' mode is, ironically, a weapon!</div>
+        <div class="ad-bullet">🧨 No itemized receipt — that's the feature, not the bug!</div>
+        <div class="ad-bullet">📅 Funded clear through 2029, like a curse!</div></div>
+      <div class="ad-price">$70,000,000,000 (TAXPAYER FINANCING AVAILABLE — MANDATORY)</div>
+      <div class="ad-disclaimer">Cannon Co. not responsible for where the money lands, which is rarely where promised. 'Anti-Weaponization Fund' may be weaponized. Ballroom not included but somehow funded. Recoil may knock down a republic.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p11">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-fisa.png?v=1781042539449" alt="REMOVE RIGHTS FROM POCKETS">
+    <div class="illo-caption">★ Uncle Sam upgrades to X-ray vision; your texts upgrade to public ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">SURVEILLANCE DESK · TICK TOCK</div>
+    <h2 class="story-heading">REMOVE RIGHTS FROM POCKETS</h2>
+    <p class="story-subheading">FISA SECTION 702 SET TO EXPIRE JUNE 12 — PROBABLY — MAYBE</p>
+    <p class="story-deck">The surveillance authority known as Section 702 is set to expire June 12, and lawmakers are once again fighting over whether agencies should need a warrant to search Americans' communications swept up while targeting foreigners.</p>
+    <p>Section 702 lets the government collect communications of foreign targets abroad. The catch — the part that keeps coming back to Congress like a houseguest who never reads the room — is that Americans' messages get swept up 'incidentally,' a word doing more heavy lifting than any other word in Washington.</p>
+    <p>The debate, boiled down: should officials need a warrant before searching that incidentally collected pile for an American's communications? One side says yes, obviously. The other side says warrants are slow and the houseguest is already comfortable.</p>
+    <p>With the clock ticking toward Thursday, the Privacy Express Lane is open. Travelers are asked to remove their shoes, their phones, and their reasonable expectation that 'incidentally' means 'rarely.'</p>
+    <p>"It's a perfectly balanced system," said a fictional official we made up. "We balance your privacy against our curiosity, and curiosity has a really good lawyer."</p>
+    <p>If Congress does nothing, the authority lapses Thursday. If Congress does something, it will likely be at 11:58 PM Wednesday, which is the constitutionally mandated deadline for all American governance.</p>
+    <blockquote class="pull-quote">&quot;'Incidentally' is the hardest-working word in Washington.&quot; — INSANE Style Desk</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">📱 WHAT 'INCIDENTAL' COLLECTION INCLUDES</div>
+      <ul><li>📱 Your texts, if you texted near a foreigner</li>
+        <li>📞 Your calls, if a foreigner was also calling</li>
+        <li>🍕 Your pizza order, if the pizza had a passport</li>
+        <li>💭 Your group chat, which honestly deserves it</li></ul>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p12">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-h1b.png?v=1781042539449" alt="DENIED — THE FEE, THIS TIME">
+    <div class="illo-caption">★ The scanner stamps DENIED; the gavel stamps the scanner ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">COURTS DESK · TOO EXPENSIVE TO EXIST</div>
+    <h2 class="story-heading">DENIED — THE FEE, THIS TIME</h2>
+    <p class="story-subheading">BOSTON JUDGE VOIDS $100,000 H-1B VISA CHARGE</p>
+    <p class="story-deck">A federal judge in Boston ruled against the administration's $100,000 H-1B visa fee, finding it exceeded executive authority and amounted to a tax imposed without Congress — which, it turns out, is still Congress's whole job.</p>
+    <p>The administration's idea was simple: charge $100,000 for an H-1B visa and watch the demand for skilled foreign workers politely evaporate. The flaw was also simple: a $100,000 charge that walks like a tax and quacks like a tax is, a judge ruled, a tax — and only Congress gets to impose those.</p>
+    <p>"You cannot invent a six-figure fee to exist," the judge did not say in exactly those words, but the ruling vibed accordingly.</p>
+    <p>The decision is a reprieve for tech firms and the engineers they employ, several of whom had begun pricing out whether it was cheaper to simply relocate the entire company to a country that lets people in for under a Tesla.</p>
+    <p>INSANE's economics desk notes that '$100,000 to exist' was, briefly, the most honest pricing the immigration system has ever offered, in that it at least listed the price up front.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">THE EXISTENCE FEE™ — VOIDED EDITION</div>
+      <div class="ad-subheadline">Was $100,000! Now: A Judge's Disapproving Glare!</div>
+      <div class="ad-bullets"><div class="ad-bullet">⚖️ Court-ordered price reduction from 'a house' to 'zero'!</div>
+        <div class="ad-bullet">🖥️ Engineers may now exist at standard rates!</div>
+        <div class="ad-bullet">🔨 Comes with one (1) gavel-shaped sense of relief!</div>
+        <div class="ad-bullet">🌍 Relocating your whole company: no longer mandatory!</div></div>
+      <div class="ad-price">$0 (BY ORDER OF A FEDERAL JUDGE IN BOSTON)</div>
+      <div class="ad-disclaimer">Existence LLC not responsible for appeals, which are coming. Free existence may be temporary pending further litigation. Glare not transferable. Gavel is decorative and legally non-binding, unlike the actual gavel, which ruined our whole business model.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p13">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-street.png?v=1781042539449" alt="MAN &amp; WOMAN IN THE STREET">
+    <div class="illo-caption">★ Democracy in action, pending secondary screening ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">RECURRING FEATURE · MAN &amp; WOMAN IN THE STREET</div>
+    <h2 class="story-heading">MAN &amp; WOMAN IN THE STREET</h2>
+    <p class="story-subheading">WE ASKED SIX FRESHLY-SCREENED CITIZENS WHAT'S GOING ON</p>
+    <p class="story-deck">Our roving reporter approached six Americans at random, wanded them for metaphors, and recorded their unfiltered thoughts. Names and locations printed exactly as muttered.</p>
+    <p><strong>"He walked off the interview, then got booed at the game, then expected a different Tuesday. That's not a week, that's a haunted house."</strong> — Wendell Stroop, Toledo, Ohio</p>
+    <p><strong>"They want $70 billion for checkpoints but I still can't get my mail before noon. Aim the money cannon at the post office."</strong> — Lurleen Babcock, Hattiesburg, Mississippi</p>
+    <p><strong>"I read my texts are 'incidentally' collected. Incidentally? My phone owes me dinner first."</strong> — Devon Park, Sacramento, California</p>
+    <p><strong>"The lobster's been dragging that file for three days. Give the lobster a union."</strong> — Marguerite O'Dell, Bangor, Maine</p>
+    <p><strong>"They charged a hundred grand to let an engineer exist. A judge said no. Good. Existence should be at least competitively priced."</strong> — Hammond Reyes, Austin, Texas</p>
+    <p><strong>"The Statue of Liberty is melting and I, for one, think she's earned a sit-down."</strong> — Phyllis Trundle, Hoboken, New Jersey</p>
+    <blockquote class="pull-quote">&quot;That's not a week, that's a haunted house.&quot; — Wendell Stroop, Toledo, Ohio</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page spy-page" id="p14">
+  <div class="spy-header">
+    <h2 class="spy-title">SPY VS. SPY</h2>
+    <div class="spy-subtitle">CHECKPOINT EDITION</div>
+  </div>
+  <div class="spy-illo"><img src="../../images/vol1no5-spyvspy.png?v=1781042539449" alt="spy vs spy"></div>
+  <div class="spy-arena">
+    <div class="spy-col spy-white">
+      <div class="spy-icon">🤍</div>
+      <h3>WHITE SPY</h3>
+      <div class="spy-panels"><p>White Spy approaches the Checkpoint Nation scanner with a briefcase labeled 'TRUTH.'</p>
+        <p>He removes his shoes, his phone, his rights, and his dignity, as instructed.</p>
+        <p>The scanner flags the briefcase. 'QUESTION DETECTED,' it beeps.</p>
+        <p>White Spy walks off the security set, removing his own microphone. He has learned from television.</p></div>
+    </div>
+    <div class="spy-divider">VS</div>
+    <div class="spy-col spy-black">
+      <div class="spy-icon">🖤</div>
+      <h3>BLACK SPY</h3>
+      <div class="spy-panels"><p>Black Spy approaches with a briefcase labeled '$70 BILLION.'</p>
+        <p>The scanner waves him through instantly. Money sets off no alarms.</p>
+        <p>Black Spy boos White Spy on the way past, just to stay in practice.</p>
+        <p>Black Spy proceeds to the Moon line, where he is asked to remove his shoes.</p></div>
+    </div>
+  </div>
+  <div class="spy-result">BOTH SPIES WERE SCREENED. ONE CARRIED TRUTH AND WAS DETAINED. ONE CARRIED MONEY AND WAS PROMOTED. CHECKPOINT NATION IS WORKING EXACTLY AS DESIGNED.</div>
+</div>
+
+<div class="page awards-page" id="p15">
+  <div class="awards-inner">
+    <h2 class="awards-title">🏆 THE INSANE AWARDS</h2>
+    <div class="awards-date">JUNE 2026</div>
+    <div class="award-category">
+      <div class="award-cat-title">BEST EXIT FROM A LIVE BROADCAST</div>
+      <div class="award-medals"><div class="medal gold">🥇 The President (4 seconds, no follow-up)</div>
+      <div class="medal silver">🥈 The lie-detector machine (requested reassignment)</div>
+      <div class="medal bronze">🥉 The studio crew (dove behind cameras)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST COMPOSED HUMAN ON TELEVISION</div>
+      <div class="award-medals"><div class="medal gold">🥇 The anchor who just sat there being correct</div>
+      <div class="medal silver">🥈 The empty chair (held its position)</div>
+      <div class="medal bronze">🥉 Everyone's mug, briefly airborne</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST BOO AT A SPORTING EVENT</div>
+      <div class="award-medals"><div class="medal gold">🥇 Madison Square Garden (115, OT)</div>
+      <div class="medal silver">🥈 The reflexive hot dog vendor</div>
+      <div class="medal bronze">🥉 The #BOO foam finger (sold out)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST EXPENSIVE THING TO EXIST</div>
+      <div class="award-medals"><div class="medal gold">🥇 An H-1B visa ($100,000, voided)</div>
+      <div class="medal silver">🥈 A border checkpoint ($70 billion)</div>
+      <div class="medal bronze">🥉 The 'anti-weaponization' fund ($1B, undefined)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">HARDEST-WORKING CRUSTACEAN</div>
+      <div class="award-medals"><div class="medal gold">🥇 The Maine lobster (3 days, no overtime)</div>
+      <div class="medal silver">🥈 The oyster (neutral, silent, wise)</div>
+      <div class="medal bronze">🥉 The opposition-research file (still wet)</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p16">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no5-classifieds.png?v=1781042539449" alt="INSANE CLASSIFIEDS">
+    <div class="illo-caption">★ All positions require secondary screening and a foam finger ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">RECURRING FEATURE · THE INSANE CLASSIFIEDS</div>
+    <h2 class="story-heading">INSANE CLASSIFIEDS</h2>
+    <p class="story-subheading">NOW HIRING. APPLY AT THE CHECKPOINT.</p>
+    <p class="story-deck">Opportunity knocks, then is asked to remove its shoes.</p>
+    <p><strong>BOO TECHNICIAN</strong> — Madison Square Garden seeks experienced boo professionals to maintain quality control during overtime. Must boo on cue, bipartisanly. Foam finger provided. Cheering experience disqualifying.</p>
+    <p><strong>MICROPHONE, GENTLY USED</strong> — One (1) lapel mic, removed abruptly, flung approximately six feet. Still works. Has trust issues. Best offer.</p>
+    <p><strong>CHAIR, SLIGHTLY ABANDONED</strong> — Television news chair, barely used, held its position admirably under pressure. Comes with the lingering disappointment of a nation. Pickup only.</p>
+    <p><strong>FORKLIFT WANTED (CRUSTACEAN PREFERRED)</strong> — Maine campaign seeks assistance dragging opposition research up and down a dock. Lobster currently doing it solo and filing grievances. Union welcome.</p>
+    <p><strong>LIE DETECTOR, RETIRED</strong> — Seeking quieter assignment, possibly weather. Will no longer detect questions. Has seen enough. References available, all of them concerned.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">INSANE MARKETPLACE</div>
+      <div class="ad-subheadline">As Screened On TV!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🎙️ THE WALK-OFF KIT: mic + chair + dramatic exit instructions. $49.</div>
+        <div class="ad-bullet">👎 #BOO FOAM FINGER: reversible, amplified, regrettable. $24.</div>
+        <div class="ad-bullet">🦞 LOBSTER-GRADE FILE FOLDER: waterproof, scandal-rated, dock-tested. $18.</div>
+        <div class="ad-bullet">📱 INCIDENTAL-COLLECTION PHONE CASE: 'They're reading this anyway' edition. $12.</div>
+        <div class="ad-bullet">🌙 MOON-LANDING SHOE REMOVER: for your trip through security. $8.</div></div>
+      <div class="ad-price">ORDER NOW — OPERATORS ARE BEING SCREENED</div>
+      <div class="ad-disclaimer">INSANE Marketplace not responsible for items that arrive having walked off mid-shipment. The chair is final sale. The foam finger may reverse on its own. The Moon shoe remover does not work on the Moon, where there are no shoes, a fact we find suspicious.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page fold-in-page" id="p17">
+  <div class="foldin-inner">
+    <div class="foldin-header">
+      <h2 class="foldin-title">INSANE BACK PAGE</h2>
+      <div class="foldin-subtitle">THE FAMOUS FOLD-IN &nbsp;✦&nbsp; "FOLD CAREFULLY — UNLIKE THE CEASEFIRE"</div>
+    </div>
+    <div class="foldin-area" id="foldinArea">
+      <div class="foldin-left" id="foldinLeft">
+        <img class="foldin-img" src="../../images/vol1no5-foldin.png?v=1781042539449" alt="fold-in">
+        <div class="foldin-section-top">INSANE — FOLD THIS HALF IN →</div>
+        <div class="foldin-question">WHEN YOU ASK WHAT THE SPINNING PLATFORM OF PUBLIC OPINION ACTUALLY DECIDES</div>
+        <div class="foldin-label-a">A</div>
+      </div>
+      <div class="foldin-right">
+        <div class="foldin-section-top">← FOLD LEFT SIDE OVER TO FIND OUT</div>
+        <div class="foldin-answer-hidden">NOTHING. IT JUST SPINS. WE WATCH.</div>
+        <div class="foldin-label-b">B</div>
+      </div>
+    </div>
+    <div class="foldin-answer-reveal" id="foldinAnswer">
+      <div class="foldin-answer-text">NOTHING. IT JUST SPINS. WE WATCH.</div>
+      <div class="foldin-answer-sub">Fold A over B to reveal the hidden truth</div>
+    </div>
+    <button class="foldin-btn" id="foldinBtn" onclick="toggleFoldin()">📰 FOLD IT!</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>window.STORY_PAGES = 18;</script>
+<script>(function () {
+  'use strict';
+
+  var PAGES   = window.STORY_PAGES || 0;
+  var current = 0;
+  var track   = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots    = [];
+
+  function update() {
+    if (track)   track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    if (counter) counter.textContent   = (current + 1) + ' / ' + PAGES;
+    if (prevBtn) prevBtn.disabled      = current === 0;
+    if (nextBtn) nextBtn.disabled      = current === PAGES - 1;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    try { history.replaceState(null, '', '#' + current); } catch(e) {}
+    // Reset fold-in state when navigating away
+    var area = document.getElementById('foldinArea');
+    if (area) area.classList.remove('folded');
+    var btn = document.getElementById('foldinBtn');
+    if (btn) btn.textContent = '\uD83D\uDCF0 FOLD IT!';
+  }
+
+  window.goTo = function (n) {
+    current = Math.max(0, Math.min(PAGES - 1, n));
+    update();
+  };
+
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  // Build dots
+  var dotRow = document.getElementById('dotRow');
+  if (dotRow) {
+    for (var i = 0; i < PAGES; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.setAttribute('data-i', i);
+      d.addEventListener('click', (function (idx) {
+        return function () { window.goTo(idx); };
+      })(i));
+      dotRow.appendChild(d);
+      dots.push(d);
+    }
+  }
+
+  // Hash navigation
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  // Touch swipe
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft')  window.prev();
+  });
+
+  // Share
+  window.shareIssue = function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        if (btn) {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 2000);
+        }
+      });
+    }
+  };
+
+  // Fold-in toggle
+  window.toggleFoldin = function () {
+    var area = document.getElementById('foldinArea');
+    var btn  = document.getElementById('foldinBtn');
+    if (!area) return;
+    var folded = area.classList.toggle('folded');
+    if (btn) btn.textContent = folded ? '\uD83D\uDCF0 UNFOLD IT!' : '\uD83D\uDCF0 FOLD IT!';
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>

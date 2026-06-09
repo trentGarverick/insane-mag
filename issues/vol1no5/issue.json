@@ -1,0 +1,483 @@
+{
+  "id": "vol1no5",
+  "volume": "VOL. 1",
+  "number": "NO. 5",
+  "date": "JUNE 9, 2026",
+  "title": "America's Got Meltdowns!",
+  "subtitle": "The Special Election Issue — Now With Extra Booing",
+  "price": "$6.99 CHEAP!",
+  "theme": {
+    "bg": "#fdf6e3",
+    "text": "#1a1a1a",
+    "accent": "#cc0000",
+    "accent2": "#f5c400",
+    "adBg": "#fffde7",
+    "adBorder": "#f5c400"
+  },
+  "stylePrefix": "Mad Magazine satirical cartoon illustration, hand-drawn ink and watercolor style, exaggerated caricature, busy detailed comic linework, bright saturated colors, crosshatching, vintage humor magazine aesthetic. ",
+  "pages": [
+
+    {
+      "type": "cover-full",
+      "illoId": "cover",
+      "image": "vol1no5-cover.png"
+    },
+
+    {
+      "type": "cover",
+      "illoId": "cover",
+      "image": "vol1no5-cover.png",
+      "kicker": "SPECIAL ELECTION ISSUE",
+      "title": "AMERICA'S GOT MELTDOWNS!",
+      "coverLines": [
+        "Meet the Press? FLEE the Press!",
+        "From NBC to MSG: The One-Man Boo Tour",
+        "Knicks Fans Discover Bipartisan Boo Technology",
+        "Maine Senate Race: The Oyster Candidate Gets Shucked",
+        "FISA Wants Your Texts, ICE Wants Your Budget",
+        "$70 Billion Buys A Lot Of Checkpoints",
+        "Moon Landing? Please Remove Shoes."
+      ]
+    },
+
+    {
+      "type": "editorial",
+      "illoId": null,
+      "eyebrow": "FROM THE EDITOR'S PADDED OFFICE",
+      "heading": "A NATION ON SPIN CYCLE",
+      "paragraphs": [
+        "Dear Reader,",
+        "There are weeks when the news arrives like a polite stream and weeks when it arrives like a fire hose held by a man who has never seen a fire, a hose, or water. This was the second kind.",
+        "In the span of a single news cycle, the President walked off a Sunday morning interview, got booed by his own fans at a basketball game, watched Congress shovel $70 billion at the border, watched a surveillance law teeter on the edge of a calendar, and watched a Maine oyster farmer absorb more opposition research than a sponge in a flood. We are not making any of this up. We checked. We were disappointed to confirm it.",
+        "Our cover this week tried to fit all of it onto one page and frankly the page filed a complaint. The central image — the President spinning on a game-show platform labeled <strong>PUBLIC OPINION</strong> — is the only honest illustration we have ever published, in the sense that the platform is, in fact, spinning, and nobody is sure which way.",
+        "We dedicate this issue to the one fixed point in a whirling universe: <em>the off switch on your television, which still works, and which we beg you to remember exists.</em>",
+        "Stay screened, America. They're checking everything else.",
+        "— The Editors, INSANE Magazine"
+      ]
+    },
+
+    {
+      "type": "masthead",
+      "illoId": null,
+      "heading": "THE INSANE MASTHEAD",
+      "subheading": "Staff currently being screened at Checkpoint Nation",
+      "roles": [
+        { "title": "EDITOR-IN-CHIEF", "name": "Removing his shoes for the seventh time" },
+        { "title": "MANAGING EDITOR", "name": "Detained at the metaphor scanner" },
+        { "title": "POLITICAL DESK", "name": "Filed under 'ANTI-WEAPONIZATION FUND, $1B'" },
+        { "title": "SCIENCE & MOON BUREAU", "name": "Still in the security line, rocket idling" },
+        { "title": "SPORTS CORRESPONDENT", "name": "Counting the boos manually for accuracy" },
+        { "title": "FACT-CHECK DIVISION", "name": "Got a job offer from NBC this week" },
+        { "title": "DON MARTIN MEMORIAL SOUND-EFFECTS", "name": "SHKLORTCH! FWAPP! BOOOO!" }
+      ],
+      "alertTitle": "⚠️ SUBSCRIBER ALERT",
+      "alertText": "Your subscription has been flagged for additional screening. Please present your phone, your visa, your basketball, and a notarized statement explaining why you wished to receive a magazine. PRIVACY EXPRESS LANE — remove rights from pockets."
+    },
+
+    {
+      "type": "contents",
+      "illoId": null,
+      "heading": "WHAT'S IN THIS DISASTER",
+      "ticker": "★ BREAKING ★ President walks off interview ★ Same President booed at his own game ★ Boos lead Cheers 115–111 in overtime ★ Congress finds $70 billion in the couch ★ FISA expires Thursday, allegedly ★ Maine oyster farmer leads despite everything ★ Judge voids $100,000 visa fee ★ Helicopter goes for swim near Hormuz ★ Statue of Liberty melts, files for unemployment ★",
+      "items": [
+        { "page": "6", "title": "MEET THE STRESS", "desc": "The full meltdown, with shrinks, sobbing aides & a standing ovation for the interviewer" },
+        { "page": "9", "title": "FROM NBC TO MSG", "desc": "The booing heard 'round the Garden" },
+        { "page": "10", "title": "MAINE COURSE: SCANDAL STEW", "desc": "The oyster candidate gets shucked on primary day" },
+        { "page": "11", "title": "CHECKPOINT NATION", "desc": "$70 billion, ICE jackets & a money cannon" },
+        { "page": "12", "title": "FISA SECTION 702", "desc": "Privacy expires Thursday; please remove rights from pockets" },
+        { "page": "13", "title": "DENIED — TOO EXPENSIVE TO EXIST", "desc": "Judge voids the $100,000 visa fee" },
+        { "page": "14", "title": "MAN & WOMAN IN THE STREET", "desc": "Six citizens, freshly screened" },
+        { "page": "15", "title": "SPY VS. SPY", "desc": "Checkpoint Edition" },
+        { "page": "16", "title": "THE INSANE AWARDS", "desc": "Gold, silver & bronze for a bronze-medal week" },
+        { "page": "17", "title": "CLASSIFIEDS & MARKETPLACE", "desc": "Now hiring boo technicians" },
+        { "page": "18", "title": "THE FOLD-IN", "desc": "What does the spinning platform actually decide?" }
+      ],
+      "scorecard": {
+        "title": "THIS WEEK'S MELTDOWN SCORECARD",
+        "rows": [
+          { "label": "Interviews Walked Off", "value": "1 (so far)" },
+          { "label": "Boos vs. Cheers", "value": "115–111, OT" },
+          { "label": "$ Aimed At Border", "value": "$70,000,000,000" },
+          { "label": "Days Until Privacy Expires", "value": "3" },
+          { "label": "Cost To Exist (Per Visa)", "value": "$0 (court-ordered)" },
+          { "label": "Statues Currently Liquid", "value": "1" }
+        ]
+      }
+    },
+
+    {
+      "illoId": "meetthestress",
+      "type": "story",
+      "flip": false,
+      "scene": "A television studio in chaos. A blustering orange-haired President in a too-long red tie is mid-tantrum, ripping a lapel microphone off his suit and flinging it, his face contorted in fury, mouth wide open. He is half-rising out of a chair. Across a glossy news desk labeled 'MEET THE STRESS' (with a small peacock logo), a calm, poised, professional Black female news anchor sits perfectly composed, holding her microphone forward like a metal detector, one eyebrow raised, completely unflustered. Between them a chunky 1950s lie-detector machine spits out a long paper strip reading 'ERROR: QUESTION DETECTED' in jagged red ink. Studio crew dive for cover behind cameras. A wall monitor reads 'LIVE'. Mad Magazine busy detailed comic style.",
+      "eyebrow": "COVER STORY · THE SUNDAY MELTDOWN",
+      "heading": "MEET THE STRESS",
+      "subheading": "PRESIDENT ANSWERS TOUGH QUESTION WITH SURPRISE EXIT",
+      "deck": "On Sunday, June 7, the President sat for a Meet the Press interview, was asked questions, discovered that questions exist, and concluded the segment by removing his own microphone and leaving — a maneuver experts are calling 'the reverse interview.'",
+      "caption": "★ The anchor holds her ground while the lie-detector files a formal complaint ★",
+      "paragraphs": [
+        "It began, as these things do, with a question. The anchor — calm, prepared, armed only with publicly available facts — asked the President about election-fraud claims, about California voting, about January 6, and about the curiously named 'anti-weaponization fund.' The President, sensing a trap consisting entirely of things he had personally said, did what any cornered leader of the free world would do: he <strong>removed his own microphone and walked off the set.</strong>",
+        "Eyewitnesses report the exit took approximately four seconds, during which the President set a new personal record for distance traveled away from a follow-up question.",
+        "The interview had been billed as a routine sit-down. It became, instead, a kind of nature documentary: here is the apex predator of cable news, and here is what happens when you gently ask it for a source.",
+        "Sources inside the studio say the lie-detector machine — installed purely as a prop — began smoking around the third question and printed a single strip reading <em>'ERROR: QUESTION DETECTED.'</em> Technicians say the machine has since requested early retirement and a quieter assignment, possibly weather.",
+        "At the center of it all sat the anchor, who did not flinch, did not raise her voice, and did not abandon the question merely because the subject of the question abandoned the building. She simply held the microphone forward and let the silence do the fact-checking.",
+        "\"She just sat there being correct,\" said one stunned producer. \"It was the most aggressive thing I have ever seen a person do while sitting completely still.\"",
+        "INSANE would like to formally salute the anchor for the increasingly radical act of <strong>asking a question and then waiting for the answer.</strong> In an era of meltdowns, holding your ground is a competitive sport, and she medaled."
+      ],
+      "pullQuote": "\"I asked one follow-up. He treated it like a subpoena.\" — A composed professional, paraphrased",
+      "sidebarList": {
+        "title": "🩺 EXPERT ANALYSIS (FROM EXPERTS WE INVENTED)",
+        "items": [
+          "🩺 Dr. Hugo Furst, of the Institute For Things — diagnosis: 'Acute Question Allergy. Symptoms include hives, mic-flinging, and a sudden interest in the exit.'",
+          "🧠 Prof. Ava Lanche, Department of Made-Up Studies — 'Classic Reverse-Interview Syndrome. The patient interviews the door.'",
+          "📋 The Board of Pretend Psychiatry — 'We are legally and ethically unable to diagnose anyone, so instead we award this performance four out of five fainting couches.'",
+          "🛋️ Dr. Sy Kologist (no relation to anything) — 'In my professional opinion, which is worthless, that was a lot.'"
+        ]
+      }
+    },
+
+    {
+      "illoId": "shockedviewers",
+      "type": "story",
+      "flip": true,
+      "scene": "A split-screen montage of American living rooms. In each one, an ordinary person stares at a television in open-mouthed shock, popcorn frozen mid-air, a dropped remote, a dog hiding under a coffee table. On every TV screen is a frozen image of an empty news-studio chair with a tiny microphone dangling. One viewer holds a phone filming the screen. Mad Magazine caricature style, warm domestic interiors, exaggerated expressions of disbelief.",
+      "eyebrow": "REACTION DESK · AMERICA RESPONDS",
+      "heading": "VIEWERS REPORT MILD CONCUSSION OF EXPECTATIONS",
+      "subheading": "A NATION SET DOWN ITS COFFEE AT THE SAME MOMENT",
+      "deck": "We canvassed the viewing public, by which we mean we made up six representative Americans whose reactions are nonetheless emotionally accurate.",
+      "caption": "★ The exact second 18 million people forgot they were holding mugs ★",
+      "paragraphs": [
+        "Reaction to the walk-off was swift, bipartisan, and largely consisted of the word 'whoa' said at increasing volumes.",
+        "\"I tuned in for the weather,\" said <strong>Donna Pellington of Akron, Ohio.</strong> \"By the time I looked up, the man was gone and the chair was still warm. I have never seen furniture so disappointed.\"",
+        "\"I'm a lifelong supporter and even I said out loud, to my dog, 'buddy, you have to answer the question,'\" reported <strong>Carl Sledge of Bristol, Tennessee.</strong> \"The dog agreed. The dog has more follow-through.\"",
+        "\"What got me,\" said <strong>Maria Castellano of Queens, New York,</strong> \"is that the lady just sat there. Didn't blink. I respect that. I couldn't sit that still at the DMV and they have my whole future.\"",
+        "\"It was like watching someone flip the Monopoly board because they landed on Income Tax,\" said <strong>Reverend Bo Tweedy of Macon, Georgia.</strong> \"And we were only on the second roll.\"",
+        "\"I rewound it eleven times,\" said <strong>Pat Quigley of Spokane, Washington.</strong> \"Each time, he still left. Television used to have suspense.\"",
+        "\"I don't follow politics,\" admitted <strong>Tiffani Roe of Mesa, Arizona,</strong> \"but I know a clip when I see one, and that, my friend, is a clip.\""
+      ],
+      "fakeAd": {
+        "headline": "THE MELTDOWN REWIND™",
+        "subheadline": "Relive The Moment America Spilled Its Coffee — In 4K!",
+        "bullets": [
+          "📺 Watch the chair stay empty in stunning detail!",
+          "⏪ Rewind feature lets him leave AGAIN and AGAIN!",
+          "🍿 Includes one (1) bag of popcorn you will drop!",
+          "🎙️ Bonus: the dangling microphone, isolated track!"
+        ],
+        "price": "$19.95 + STREAMING-INDUCED EXISTENTIAL FEES",
+        "disclaimer": "Rewind Inc. not responsible for the eighth viewing, which will feel different. Microphone did nothing wrong. The chair has retained separate counsel. Results may include a sudden urge to also leave the room."
+      }
+    },
+
+    {
+      "illoId": "sobbingaides",
+      "type": "story",
+      "flip": false,
+      "scene": "A dim Capitol hallway and a White House corridor side by side. Several anonymous suited aides and Congressional staffers huddle in corners, whispering into phones and crying into their laminated lanyards. One presses his forehead against a marble pillar. One stress-eats from a vending machine. Speech bubbles float above them filled with worried squiggles. A janitor mops up a puddle labeled 'morale.' Mad Magazine style, exaggerated despair, comic gloom.",
+      "eyebrow": "OVERHEARD · CORRIDORS OF POWER",
+      "heading": "MUTTERINGS FROM PEOPLE WHO WISH TO REMAIN INVERTEBRATE",
+      "subheading": "SENIOR FIGURES REACT, ANONYMOUSLY, INTO THEIR LANYARDS",
+      "deck": "These quotes are entirely fictional and clearly satirical, attributed to no real person, because no real official would ever say anything this candid where a recorder might be running. The despair, however, is to scale.",
+      "caption": "★ A senior official sobs into a lanyard he is contractually obligated to deny owning ★",
+      "paragraphs": [
+        "In the hours after the walk-off, the corridors of power filled with the sound of grown professionals discovering that their morning had gotten worse. INSANE collected the following overheard mutterings, all of which are invented, none of which are surprising.",
+        "A Cabinet secretary, allegedly to a houseplant: <em>\"We rehearsed 'don't leave.' We literally rehearsed the not-leaving. There was a slide.\"</em>",
+        "A senior Congressional leader, reportedly to the ceiling: <em>\"I have a town hall Thursday. They're going to ask me about the chair. The chair, Sharon. I have to have a position on the chair.\"</em>",
+        "A communications director, said into a vending machine: <em>\"Just give me the Funyuns and we'll call the day a wash.\"</em>",
+        "A party strategist, whispered to a colleague: <em>\"Okay so the messaging is that it was a power move. Walking out was the plan. We meant to do that.\" \"Did we?\" \"We have to have.\"</em>",
+        "A junior aide, to no one: <em>\"I went to law school for this. I had options. I could be doing maritime contracts right now. The ocean never walks off.\"</em>",
+        "And a lone Senator, into the void: <em>\"On the one hand, deeply concerning. On the other hand, I have not been asked a single question, and I would like to keep that streak alive.\"</em>"
+      ],
+      "pullQuote": "\"The chair, Sharon. I have to have a position on the chair.\" — A fictional leader, fictionally",
+      "sidebarList": {
+        "title": "📋 OFFICIAL RESPONSES, RANKED BY CONTORTION",
+        "items": [
+          "🥇 'It was a strategic exit.' (It was not.)",
+          "🥈 'He had a hard stop.' (The hard stop was the question.)",
+          "🥉 'The interview ran long.' (It ran four seconds short.)",
+          "🏅 'No comment, and also please stop emailing me.' (Most honest.)"
+        ]
+      }
+    },
+
+    {
+      "illoId": "msgboo",
+      "type": "story",
+      "flip": true,
+      "scene": "Interior of a packed Madison Square Garden during an NBA Finals game. A giant jumbotron shows the President's scowling face, and the crowd in the rafters is on its feet BOOING furiously, mouths wide, thumbs down, waving giant foam fingers that read 'WE'RE #BOO'. A scoreboard graphic overlaid on the jumbotron reads 'BOOS 115 — CHEERS 111 — OVERTIME'. Basketball action is tiny and ignored at the bottom. Fans in Knicks gear. Mad Magazine busy crowd scene, dynamic, comic.",
+      "eyebrow": "SPORTS DESK · THE SEQUEL NOBODY GREENLIT",
+      "heading": "FROM MEET THE PRESS TO MEET THE JEERS",
+      "subheading": "PRESIDENT APPEARS ON JUMBOTRON, RECEIVES BIPARTISAN BOO",
+      "deck": "Twenty-four hours after walking off a television set, the President walked into Madison Square Garden for Game 3 of the NBA Finals and was greeted by a feature New York has spent two centuries perfecting: the boo.",
+      "caption": "★ The crowd discovers that booing, like jazz, is an American original ★",
+      "paragraphs": [
+        "It started as cheers. It is important to be fair: there were cheers. The cheers lasted roughly as long as a New York minute, which is to say less than a minute, after which the boos arrived like weather.",
+        "The boos came from the rafters, from the floor seats, from the luxury boxes, and — eyewitnesses insist — from at least one hot dog vendor who booed reflexively without looking up.",
+        "INSANE's official scorecard, kept by hand for accuracy, recorded the final tally at <strong>BOOS 115, CHEERS 111, after overtime.</strong> The boos pulled ahead late in the fourth and never relinquished the lead. Cheers fouled out.",
+        "Most remarkable was the bipartisanship. \"I came here to boo the refs,\" said one fan, \"but I am a flexible man.\" Another held a foam finger reading <em>WE'RE #BOO,</em> which sold out at the merchandise stand within minutes, leaving the actual team's jerseys untouched.",
+        "Sports analysts noted that booing at the Garden is among the oldest and most respected local traditions, predating the franchise, the building, and possibly the city. \"New Yorkers will boo a sunset if it lingers,\" one explained. \"This is just heritage.\""
+      ],
+      "fakeAd": {
+        "headline": "FOAM FINGER 2.0 — THE #BOO™",
+        "subheadline": "Now With Reversible Cheer/Boo Functionality!",
+        "bullets": [
+          "👎 Flips instantly from #1 to #BOO — pick a side AT the game!",
+          "📣 Built-in amplifier projects disappointment to the cheap seats!",
+          "🏀 Ignores the actual basketball, just like you!",
+          "🗽 Officially licensed by the Spirit of New York (it owes us money)"
+        ],
+        "price": "$24 OR ONE (1) GENUINE EMOTION",
+        "disclaimer": "Foam Finger Co. not responsible for booing things that did not earn it. Reversible function may cause whiplash of conviction. Not for use on sunsets, weddings, or your own children, probably."
+      }
+    },
+
+    {
+      "illoId": "platner",
+      "type": "story",
+      "flip": false,
+      "scene": "A coastal Maine scene. A giant cartoon lobster wearing a backwards green 'MAINE' cap and a 'PLATNER FOR SENATE' sash drags a soaked, dripping accordion file folder labeled 'OPPOSITION RESEARCH' across a dock. Behind it, a weathered oyster shack has a hand-painted sign: 'FRESH OYSTERS / STALE SCANDALS'. A glum oysterman in a knit cap shucks an oyster that has a tiny scandal cloud puffing out of it. A lighthouse blinks in the background. Mad Magazine style, salty coastal humor.",
+      "eyebrow": "DOWN-BALLOT · MAINE PRIMARY DAY",
+      "heading": "MAINE COURSE: SCANDAL STEW",
+      "subheading": "THE OYSTER CANDIDATE GETS SHUCKED — AND SOMEHOW STAYS AFLOAT",
+      "deck": "It is primary day in Maine, where Democrats are choosing a nominee to face Senator Susan Collins, and where the frontrunner has absorbed a quantity of opposition research normally reserved for entire administrations.",
+      "caption": "★ Fresh oysters, stale scandals, and a lobster that needs a vacation ★",
+      "paragraphs": [
+        "Graham Platner is a former Marine, an oyster farmer, and the kind of populist who polls well right up until someone opens a folder. This week, several folders were opened.",
+        "The frontrunner has faced scrutiny over explicit texts, allegations regarding his treatment of women, and a tattoo critics linked to Nazi imagery — which he has since covered up and apologized for. By the standards of a normal candidacy, any one of these would be disqualifying. By the standards of 2026, it was Tuesday.",
+        "And yet. Despite the scandal stew simmering on every burner, Platner remained the frontrunner heading into the primary, buoyed by genuine grassroots enthusiasm and high-profile progressive backing, including Senator Bernie Sanders, who suggested the public cared more about groceries than gossip.",
+        "\"We've got a housing crisis and people can't afford healthcare,\" Sanders said, more or less, declining to spend his energy on the candidate's marriage.",
+        "INSANE takes no position on the race, but we do take a position on the lobster, who has been dragging the opposition-research file up and down the dock for three days and would like overtime. \"I'm a crustacean, not a forklift,\" the lobster did not say, because lobsters cannot speak, a fact we confirmed with the oyster, who also could not speak, leaving this entire paragraph unsourced and proud of it.",
+        "Voters head to the polls today. The oysters remain neutral. The scandals remain, per the sign, stale but available."
+      ],
+      "pullQuote": "\"FRESH OYSTERS / STALE SCANDALS\" — A sign that has seen things",
+      "sidebarList": {
+        "title": "🦞 THE MAINE MENU",
+        "items": [
+          "🦞 Appetizer: A tattoo, since covered, much regretted",
+          "🦪 Soup: Scandal stew, simmered since March",
+          "📱 Entrée: Explicit texts, served cold",
+          "🗳️ Dessert: A commanding lead, inexplicably intact",
+          "🧂 On the side: One (1) exhausted endorsing Senator"
+        ]
+      }
+    },
+
+    {
+      "illoId": "checkpoint",
+      "type": "story",
+      "flip": true,
+      "scene": "The U.S. Capitol dome reimagined as an airport TSA security terminal, with a huge banner reading 'CHECKPOINT NATION — PAPERS, PHONES, PILOTS, PLEASE'. A gigantic cartoon money cannon labeled '$70 BILLION' blasts a fountain of cash, and the bills are landing on a pile of ICE jackets, sections of border wall, and giant handcuffs. Conveyor belts carry immigrants, phones, oil barrels, and basketballs through X-ray scanners. Uniformed agents wave wands. Mad Magazine busy detailed comic chaos.",
+      "eyebrow": "POLICY DESK · THE BIG SCREENING",
+      "heading": "CHECKPOINT NATION",
+      "subheading": "$70 BILLION BUYS A LOT OF CONVEYOR BELTS",
+      "deck": "House Republicans advanced a roughly $70 billion immigration-enforcement package — and turned the Capitol into the world's most expensive airport security line in the process.",
+      "caption": "★ The money cannon is fully operational; the metaphor budget is not ★",
+      "paragraphs": [
+        "The package, which Democrats opposed, funnels enormous sums into enforcement through 2029: reports put it at roughly <strong>$38 billion for ICE, $26 billion for CBP, and $5 billion for DHS.</strong> To help visualize $70 billion, picture a money cannon. Now picture it on.",
+        "Tucked into the fight were the add-ons that make a spending bill feel handcrafted: a ballroom fund and an 'anti-weaponization' fund of approximately $1 billion, a phrase that means whatever the reader fears most.",
+        "\"We're not building a wall, we're building a <em>customer experience,</em>\" explained a fictional spokesperson we invented to avoid quoting a real one. \"Everyone gets screened. Phones, visas, pilots, the Moon. The Moon especially. We don't trust the Moon.\"",
+        "At Checkpoint Nation, the lines are long, the scanners are loud, and the conveyor belt moves immigrants, oil barrels, and the occasional confused basketball with equal suspicion. A sign overhead reminds travelers to remove their shoes, their rights, and any expectation of an itemized receipt.",
+        "Asked where the $1 billion anti-weaponization fund actually goes, officials gestured vaguely at the money cannon, which was, at that moment, weaponizing."
+      ],
+      "fakeAd": {
+        "headline": "THE MONEY CANNON 70B™",
+        "subheadline": "When You Absolutely Must Aim $70 Billion At A Problem!",
+        "bullets": [
+          "💵 Fires cash at any target — walls, jackets, ballrooms!",
+          "🎯 'Anti-Weaponization' mode is, ironically, a weapon!",
+          "🧨 No itemized receipt — that's the feature, not the bug!",
+          "📅 Funded clear through 2029, like a curse!"
+        ],
+        "price": "$70,000,000,000 (TAXPAYER FINANCING AVAILABLE — MANDATORY)",
+        "disclaimer": "Cannon Co. not responsible for where the money lands, which is rarely where promised. 'Anti-Weaponization Fund' may be weaponized. Ballroom not included but somehow funded. Recoil may knock down a republic."
+      }
+    },
+
+    {
+      "illoId": "fisa",
+      "type": "story",
+      "flip": false,
+      "scene": "Uncle Sam wearing huge cartoonish X-ray glasses peers through a giant smartphone the size of a billboard, his eyes glowing as he reads someone's private texts. A sign beside him reads 'PRIVACY EXPRESS LANE — REMOVE RIGHTS FROM POCKETS'. A calendar on the wall has 'JUNE 12' circled in red and labeled 'EXPIRES?'. A tiny citizen tries to shield their phone. Mad Magazine style, satirical surveillance imagery.",
+      "eyebrow": "SURVEILLANCE DESK · TICK TOCK",
+      "heading": "REMOVE RIGHTS FROM POCKETS",
+      "subheading": "FISA SECTION 702 SET TO EXPIRE JUNE 12 — PROBABLY — MAYBE",
+      "deck": "The surveillance authority known as Section 702 is set to expire June 12, and lawmakers are once again fighting over whether agencies should need a warrant to search Americans' communications swept up while targeting foreigners.",
+      "caption": "★ Uncle Sam upgrades to X-ray vision; your texts upgrade to public ★",
+      "paragraphs": [
+        "Section 702 lets the government collect communications of foreign targets abroad. The catch — the part that keeps coming back to Congress like a houseguest who never reads the room — is that Americans' messages get swept up 'incidentally,' a word doing more heavy lifting than any other word in Washington.",
+        "The debate, boiled down: should officials need a warrant before searching that incidentally collected pile for an American's communications? One side says yes, obviously. The other side says warrants are slow and the houseguest is already comfortable.",
+        "With the clock ticking toward Thursday, the Privacy Express Lane is open. Travelers are asked to remove their shoes, their phones, and their reasonable expectation that 'incidentally' means 'rarely.'",
+        "\"It's a perfectly balanced system,\" said a fictional official we made up. \"We balance your privacy against our curiosity, and curiosity has a really good lawyer.\"",
+        "If Congress does nothing, the authority lapses Thursday. If Congress does something, it will likely be at 11:58 PM Wednesday, which is the constitutionally mandated deadline for all American governance."
+      ],
+      "pullQuote": "\"'Incidentally' is the hardest-working word in Washington.\" — INSANE Style Desk",
+      "sidebarList": {
+        "title": "📱 WHAT 'INCIDENTAL' COLLECTION INCLUDES",
+        "items": [
+          "📱 Your texts, if you texted near a foreigner",
+          "📞 Your calls, if a foreigner was also calling",
+          "🍕 Your pizza order, if the pizza had a passport",
+          "💭 Your group chat, which honestly deserves it"
+        ]
+      }
+    },
+
+    {
+      "illoId": "h1b",
+      "type": "story",
+      "flip": true,
+      "scene": "A software engineer with a backpack and a laptop is being fed through a giant airport-style scanner machine. A massive rubber stamp on a mechanical arm slams down on a paper labeled 'H-1B VISA — $100,000 FEE', the stamp reading 'DENIED — TOO EXPENSIVE TO EXIST'. But a judge's gavel made of gold descends from above, smashing the stamp. A Boston courthouse pillar is visible. Mad Magazine style, exaggerated bureaucratic comedy.",
+      "eyebrow": "COURTS DESK · TOO EXPENSIVE TO EXIST",
+      "heading": "DENIED — THE FEE, THIS TIME",
+      "subheading": "BOSTON JUDGE VOIDS $100,000 H-1B VISA CHARGE",
+      "deck": "A federal judge in Boston ruled against the administration's $100,000 H-1B visa fee, finding it exceeded executive authority and amounted to a tax imposed without Congress — which, it turns out, is still Congress's whole job.",
+      "caption": "★ The scanner stamps DENIED; the gavel stamps the scanner ★",
+      "paragraphs": [
+        "The administration's idea was simple: charge $100,000 for an H-1B visa and watch the demand for skilled foreign workers politely evaporate. The flaw was also simple: a $100,000 charge that walks like a tax and quacks like a tax is, a judge ruled, a tax — and only Congress gets to impose those.",
+        "\"You cannot invent a six-figure fee to exist,\" the judge did not say in exactly those words, but the ruling vibed accordingly.",
+        "The decision is a reprieve for tech firms and the engineers they employ, several of whom had begun pricing out whether it was cheaper to simply relocate the entire company to a country that lets people in for under a Tesla.",
+        "INSANE's economics desk notes that '$100,000 to exist' was, briefly, the most honest pricing the immigration system has ever offered, in that it at least listed the price up front."
+      ],
+      "fakeAd": {
+        "headline": "THE EXISTENCE FEE™ — VOIDED EDITION",
+        "subheadline": "Was $100,000! Now: A Judge's Disapproving Glare!",
+        "bullets": [
+          "⚖️ Court-ordered price reduction from 'a house' to 'zero'!",
+          "🖥️ Engineers may now exist at standard rates!",
+          "🔨 Comes with one (1) gavel-shaped sense of relief!",
+          "🌍 Relocating your whole company: no longer mandatory!"
+        ],
+        "price": "$0 (BY ORDER OF A FEDERAL JUDGE IN BOSTON)",
+        "disclaimer": "Existence LLC not responsible for appeals, which are coming. Free existence may be temporary pending further litigation. Glare not transferable. Gavel is decorative and legally non-binding, unlike the actual gavel, which ruined our whole business model."
+      }
+    },
+
+    {
+      "illoId": "street",
+      "type": "story",
+      "flip": false,
+      "scene": "A sidewalk lineup of six wildly different ordinary American citizens being interviewed, each standing behind a small airport-style podium with a metal-detector wand pointed at them, microphones thrust in their faces. Each has an exaggerated, opinionated expression. A 'CHECKPOINT NATION' banner hangs above. Mad Magazine caricature style, diverse expressive crowd, comic.",
+      "eyebrow": "RECURRING FEATURE · MAN & WOMAN IN THE STREET",
+      "heading": "MAN & WOMAN IN THE STREET",
+      "subheading": "WE ASKED SIX FRESHLY-SCREENED CITIZENS WHAT'S GOING ON",
+      "deck": "Our roving reporter approached six Americans at random, wanded them for metaphors, and recorded their unfiltered thoughts. Names and locations printed exactly as muttered.",
+      "caption": "★ Democracy in action, pending secondary screening ★",
+      "paragraphs": [
+        "<strong>\"He walked off the interview, then got booed at the game, then expected a different Tuesday. That's not a week, that's a haunted house.\"</strong> — Wendell Stroop, Toledo, Ohio",
+        "<strong>\"They want $70 billion for checkpoints but I still can't get my mail before noon. Aim the money cannon at the post office.\"</strong> — Lurleen Babcock, Hattiesburg, Mississippi",
+        "<strong>\"I read my texts are 'incidentally' collected. Incidentally? My phone owes me dinner first.\"</strong> — Devon Park, Sacramento, California",
+        "<strong>\"The lobster's been dragging that file for three days. Give the lobster a union.\"</strong> — Marguerite O'Dell, Bangor, Maine",
+        "<strong>\"They charged a hundred grand to let an engineer exist. A judge said no. Good. Existence should be at least competitively priced.\"</strong> — Hammond Reyes, Austin, Texas",
+        "<strong>\"The Statue of Liberty is melting and I, for one, think she's earned a sit-down.\"</strong> — Phyllis Trundle, Hoboken, New Jersey"
+      ],
+      "pullQuote": "\"That's not a week, that's a haunted house.\" — Wendell Stroop, Toledo, Ohio"
+    },
+
+    {
+      "type": "spy-vs-spy",
+      "illoId": "spyvspy",
+      "title": "SPY VS. SPY",
+      "subtitle": "CHECKPOINT EDITION",
+      "scene": "Classic Spy vs. Spy: two identical pointy-faced spies, one in white, one in black, both wearing wide-brimmed hats, facing off at an airport-style security checkpoint with conveyor belts and X-ray scanners. One spy tries to smuggle a bomb labeled 'TRUTH' through the scanner. Mad Magazine Antonio Prohías black-and-white spy comic style, sharp angular linework.",
+      "white": {
+        "panels": [
+          "White Spy approaches the Checkpoint Nation scanner with a briefcase labeled 'TRUTH.'",
+          "He removes his shoes, his phone, his rights, and his dignity, as instructed.",
+          "The scanner flags the briefcase. 'QUESTION DETECTED,' it beeps.",
+          "White Spy walks off the security set, removing his own microphone. He has learned from television."
+        ]
+      },
+      "black": {
+        "panels": [
+          "Black Spy approaches with a briefcase labeled '$70 BILLION.'",
+          "The scanner waves him through instantly. Money sets off no alarms.",
+          "Black Spy boos White Spy on the way past, just to stay in practice.",
+          "Black Spy proceeds to the Moon line, where he is asked to remove his shoes."
+        ]
+      },
+      "result": "BOTH SPIES WERE SCREENED. ONE CARRIED TRUTH AND WAS DETAINED. ONE CARRIED MONEY AND WAS PROMOTED. CHECKPOINT NATION IS WORKING EXACTLY AS DESIGNED."
+    },
+
+    {
+      "type": "awards",
+      "illoId": "awards",
+      "title": "🏆 THE INSANE AWARDS",
+      "date": "JUNE 2026",
+      "categories": [
+        {
+          "name": "BEST EXIT FROM A LIVE BROADCAST",
+          "gold": "The President (4 seconds, no follow-up)",
+          "silver": "The lie-detector machine (requested reassignment)",
+          "bronze": "The studio crew (dove behind cameras)"
+        },
+        {
+          "name": "MOST COMPOSED HUMAN ON TELEVISION",
+          "gold": "The anchor who just sat there being correct",
+          "silver": "The empty chair (held its position)",
+          "bronze": "Everyone's mug, briefly airborne"
+        },
+        {
+          "name": "BEST BOO AT A SPORTING EVENT",
+          "gold": "Madison Square Garden (115, OT)",
+          "silver": "The reflexive hot dog vendor",
+          "bronze": "The #BOO foam finger (sold out)"
+        },
+        {
+          "name": "MOST EXPENSIVE THING TO EXIST",
+          "gold": "An H-1B visa ($100,000, voided)",
+          "silver": "A border checkpoint ($70 billion)",
+          "bronze": "The 'anti-weaponization' fund ($1B, undefined)"
+        },
+        {
+          "name": "HARDEST-WORKING CRUSTACEAN",
+          "gold": "The Maine lobster (3 days, no overtime)",
+          "silver": "The oyster (neutral, silent, wise)",
+          "bronze": "The opposition-research file (still wet)"
+        }
+      ]
+    },
+
+    {
+      "type": "story",
+      "illoId": "classifieds",
+      "flip": false,
+      "scene": "A vintage newspaper classifieds page come to life, with tiny cartoon scenes in each ad box: a 'BOO TECHNICIAN WANTED' ad showing a foam finger, a 'CHAIR, SLIGHTLY ABANDONED' ad, a lobster holding a 'HELP WANTED' sign. Mad Magazine style, busy crowded classified-ad layout, comic.",
+      "eyebrow": "RECURRING FEATURE · THE INSANE CLASSIFIEDS",
+      "heading": "INSANE CLASSIFIEDS",
+      "subheading": "NOW HIRING. APPLY AT THE CHECKPOINT.",
+      "deck": "Opportunity knocks, then is asked to remove its shoes.",
+      "caption": "★ All positions require secondary screening and a foam finger ★",
+      "paragraphs": [
+        "<strong>BOO TECHNICIAN</strong> — Madison Square Garden seeks experienced boo professionals to maintain quality control during overtime. Must boo on cue, bipartisanly. Foam finger provided. Cheering experience disqualifying.",
+        "<strong>MICROPHONE, GENTLY USED</strong> — One (1) lapel mic, removed abruptly, flung approximately six feet. Still works. Has trust issues. Best offer.",
+        "<strong>CHAIR, SLIGHTLY ABANDONED</strong> — Television news chair, barely used, held its position admirably under pressure. Comes with the lingering disappointment of a nation. Pickup only.",
+        "<strong>FORKLIFT WANTED (CRUSTACEAN PREFERRED)</strong> — Maine campaign seeks assistance dragging opposition research up and down a dock. Lobster currently doing it solo and filing grievances. Union welcome.",
+        "<strong>LIE DETECTOR, RETIRED</strong> — Seeking quieter assignment, possibly weather. Will no longer detect questions. Has seen enough. References available, all of them concerned."
+      ],
+      "fakeAd": {
+        "headline": "INSANE MARKETPLACE",
+        "subheadline": "As Screened On TV!",
+        "bullets": [
+          "🎙️ THE WALK-OFF KIT: mic + chair + dramatic exit instructions. $49.",
+          "👎 #BOO FOAM FINGER: reversible, amplified, regrettable. $24.",
+          "🦞 LOBSTER-GRADE FILE FOLDER: waterproof, scandal-rated, dock-tested. $18.",
+          "📱 INCIDENTAL-COLLECTION PHONE CASE: 'They're reading this anyway' edition. $12.",
+          "🌙 MOON-LANDING SHOE REMOVER: for your trip through security. $8."
+        ],
+        "price": "ORDER NOW — OPERATORS ARE BEING SCREENED",
+        "disclaimer": "INSANE Marketplace not responsible for items that arrive having walked off mid-shipment. The chair is final sale. The foam finger may reverse on its own. The Moon shoe remover does not work on the Moon, where there are no shoes, a fact we find suspicious."
+      }
+    },
+
+    {
+      "illoId": "foldin",
+      "type": "fold-in",
+      "scene": "Mad Magazine back-page fold-in. The wide unfolded image shows the President on a giant spinning game-show platform labeled 'PUBLIC OPINION', surrounded by cameras, a basketball jumbotron, a money cannon, and a Maine lobster, everything whirling. When the left third is folded over to meet the marked line, the hidden combined image and text reveal a punchline. Bright Mad Magazine comic style, designed for the fold to work.",
+      "question": "WHEN YOU ASK WHAT THE SPINNING PLATFORM OF PUBLIC OPINION ACTUALLY DECIDES",
+      "answer": "NOTHING. IT JUST SPINS. WE WATCH.",
+      "leftText": "INSANE — FOLD THIS HALF IN →",
+      "rightText": "← FOLD LEFT SIDE OVER TO FIND OUT"
+    }
+
+  ]
+}

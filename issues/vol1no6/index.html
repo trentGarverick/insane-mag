@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Reflecting Pool Reflects Everything! — INSANE Mag</title>
+  <meta name="description" content="The 250th Anniversary Pre-Apology Issue">
+  <meta property="og:title" content="The Reflecting Pool Reflects Everything! — INSANE Mag">
+  <meta property="og:description" content="The 250th Anniversary Pre-Apology Issue">
+  <meta property="og:image" content="https://insane-mag.bumbloobooks.com/images/vol1no6-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insane-mag.bumbloobooks.com/issues/vol1no6/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Special+Elite&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Default palette (overridden per issue via palette in issue.json) ────────── */
+:root {
+  --bg:           #fdf6e3;   /* newsprint cream */
+  --page-bg:      #fff;
+  --text:         #111111;
+  --accent:       #cc0000;   /* Mad red */
+  --accent2:      #f5c400;   /* Mad yellow */
+  --accent3:      #1a1a8a;   /* blue accent */
+  --nav-bg:       #cc0000;
+  --nav-text:     #ffffff;
+  --dot-active:   #f5c400;
+  --eyebrow:      #cc0000;
+  --ad-bg:        #fffde7;
+  --ad-border:    #f5c400;
+  --spy-white-bg: #f0f0f0;
+  --spy-black-bg: #111111;
+  --cover-text:   #ffffff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Nav bar ────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  height: 50px;
+  border-bottom: 3px solid rgba(0,0,0,0.25);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1.1rem; padding: 8px;
+  opacity: 0.8; transition: opacity 0.15s;
+}
+.nav-btn:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-text);
+  opacity: 0.9;
+}
+.nav-counter {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.nav-back {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-share {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1rem; padding: 8px;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.nav-share:hover { opacity: 1; }
+
+/* ── Dot pager ──────────────────────────────────────────── */
+.dot-row {
+  position: fixed; bottom: 14px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 12px;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text); opacity: 0.2;
+  cursor: pointer; transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+.dot.active {
+  background: var(--dot-active); opacity: 1; transform: scale(1.4);
+}
+
+/* ── Viewport / pager ───────────────────────────────────── */
+.viewport {
+  position: fixed; top: 50px; left: 0; right: 0; bottom: 40px;
+  overflow: hidden;
+}
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  display: flex; align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER-FULL PAGE  (pure full-bleed image, no overlays)
+   ══════════════════════════════════════════════════════════ */
+.cover-full-page {
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cover-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER PAGE
+   ══════════════════════════════════════════════════════════ */
+.cover-page {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+  overflow: hidden;
+}
+.cover-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.82;
+}
+.cover-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8rem; opacity: 0.1;
+}
+.cover-top {
+  position: relative; z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  padding: 12px 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+}
+.cover-mag-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  color: var(--accent2, #f5c400);
+  line-height: 0.85;
+  letter-spacing: 0.06em;
+  text-shadow: 3px 3px 0 #000;
+}
+.cover-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+.cover-lines-wrap {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 8px;
+  gap: 5px;
+}
+.cover-line {
+  background: rgba(204, 0, 0, 0.88);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.85rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  border-left: 4px solid var(--accent2, #f5c400);
+}
+.cover-line:nth-child(even) {
+  background: rgba(0, 0, 0, 0.82);
+  border-left-color: var(--accent, #cc0000);
+}
+.cover-tagline {
+  position: relative; z-index: 2;
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 6px;
+  border-top: 2px solid var(--accent2, #f5c400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDITORIAL PAGE
+   ══════════════════════════════════════════════════════════ */
+.editorial-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editorial-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 28px 60px;
+  margin: 0 auto;
+}
+.editorial-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.editorial-salutation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.editorial-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.editorial-body strong { font-weight: 800; }
+.editorial-body em { font-style: italic; color: var(--accent); }
+.editorial-sig {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--text);
+}
+.editorial-ps {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MASTHEAD PAGE
+   ══════════════════════════════════════════════════════════ */
+.masthead-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.masthead-inner {
+  max-width: 580px;
+  width: 100%;
+  padding: 24px 24px 60px;
+  margin: 0 auto;
+}
+.masthead-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.masthead-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.masthead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  padding: 12px;
+}
+.mast-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.mast-role {
+  font-weight: 800;
+  color: var(--accent);
+}
+.masthead-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  opacity: 0.55;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+/* Subscriber alert box */
+.subscriber-alert {
+  background: var(--accent, #cc0000);
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+}
+.alert-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.alert-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.alert-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.alert-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  color: var(--accent2, #f5c400);
+}
+.alert-disclaimer {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENTS PAGE
+   ══════════════════════════════════════════════════════════ */
+.contents-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ticker */
+.ticker-bar {
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.contents-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 60px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.contents-header {
+  margin-bottom: 18px;
+  border-bottom: 4px solid var(--accent, #cc0000);
+  padding-bottom: 12px;
+}
+.contents-mag {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent);
+  line-height: 0.9;
+}
+.contents-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.contents-edition {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.contents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ci-item {
+  display: grid;
+  grid-template-columns: 28px 24px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 6px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ci-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.ci-emoji {
+  font-size: 1rem;
+  grid-row: 1;
+}
+.ci-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  grid-row: 1;
+}
+.ci-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Scorecard box */
+.scorecard-box {
+  background: var(--accent2, #f5c400);
+  border: 3px solid #000;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.scorecard-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.scorecard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scorecard-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+.scorecard-list strong {
+  color: var(--accent, #cc0000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STORY PAGES
+   ══════════════════════════════════════════════════════════ */
+.story-page {
+  flex-direction: column;
+}
+.story-page.no-illo {
+  flex-direction: column;
+  align-items: center;
+}
+.story-illo {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40vw; min-height: 180px; max-height: 320px;
+  overflow: hidden; position: relative;
+  background: #ddd;
+}
+.story-illo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.illo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; opacity: 0.25;
+}
+.illo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+}
+.story-body {
+  flex: 1;
+  padding: 18px 22px 56px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+.story-eyebrow {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--eyebrow, var(--accent));
+  margin-bottom: 6px;
+  border-left: 3px solid var(--accent, #cc0000);
+  padding-left: 8px;
+}
+.story-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.story-subheading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--accent, #cc0000);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.story-deck {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.story-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
+  line-height: 1.72;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.story-body p strong { font-weight: 800; }
+.story-body p em { color: var(--accent); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  border-top: 3px solid var(--accent2, #f5c400);
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+/* Sidebar list (bullet box) */
+.sidebar-list {
+  background: var(--bg, #fdf6e3);
+  border: 2px solid var(--text);
+  border-left: 5px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.sidebar-list-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sidebar-list ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-list ul li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Fake advertisement */
+.fake-ad {
+  background: var(--ad-bg, #fffde7);
+  border: 3px solid var(--ad-border, #f5c400);
+  border-top: 6px solid var(--accent, #cc0000);
+  padding: 14px 16px;
+  margin: 18px 0 0;
+}
+.ad-headline {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.ad-subheadline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.ad-bullets { margin-bottom: 8px; }
+.ad-bullet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.ad-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.ad-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  opacity: 0.55;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* Glossary box */
+.glossary-box {
+  background: #f0f4ff;
+  border: 2px solid var(--accent3, #1a1a8a);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.glossary-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3, #1a1a8a);
+  margin-bottom: 8px;
+}
+.gloss-entry {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.gloss-word {
+  font-weight: 800;
+  color: var(--accent3, #1a1a8a);
+}
+
+/* The End */
+.the-end {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 3px solid var(--accent2, #f5c400);
+  text-align: center;
+}
+.the-end-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.the-end-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* Desktop split layout for story pages */
+@media (min-width: 700px) {
+  .story-page:not(.no-illo) { flex-direction: row; }
+  .story-page.flip:not(.no-illo) { flex-direction: row-reverse; }
+  .story-illo {
+    flex: 0 0 42%;
+    height: 100%; max-height: none;
+    width: auto;
+  }
+  .story-body { overflow-y: auto; padding: 28px 36px 60px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SPY VS SPY PAGE
+   ══════════════════════════════════════════════════════════ */
+.spy-page {
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--page-bg, #fff);
+}
+.spy-header {
+  background: #000;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.spy-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.spy-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent2, #f5c400);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.spy-illo {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow: hidden;
+}
+.spy-illo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spy-arena {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.spy-col {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+.spy-col h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.spy-white {
+  background: var(--spy-white-bg, #f0f0f0);
+  border-right: 3px solid #000;
+  color: #111;
+}
+.spy-white h3 { color: #111; }
+.spy-black {
+  background: var(--spy-black-bg, #111);
+  color: #f0f0f0;
+}
+.spy-black h3 { color: #fff; }
+.spy-icon { font-size: 2rem; margin-bottom: 6px; }
+.spy-panels p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.spy-divider {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent, #cc0000);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.spy-result {
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 16px;
+  border-top: 3px solid #000;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AWARDS PAGE
+   ══════════════════════════════════════════════════════════ */
+.awards-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.awards-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 28px 24px 60px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.awards-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border-bottom: 5px double var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+.awards-date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.award-category {
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  border-left: 6px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+}
+.award-cat-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.award-medals { display: flex; flex-direction: column; gap: 4px; }
+.medal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.medal.gold   { color: #b8860b; }
+.medal.silver { color: #666; }
+.medal.bronze { color: #8b4513; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOLD-IN PAGE
+   ══════════════════════════════════════════════════════════ */
+.fold-in-page {
+  background: #000;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.foldin-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  overflow: hidden;
+}
+.foldin-header {
+  background: var(--accent, #cc0000);
+  padding: 12px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.foldin-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  color: var(--accent2, #f5c400);
+}
+.foldin-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.foldin-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s;
+}
+.foldin-area.folded {
+  opacity: 0.08;
+  pointer-events: none;
+}
+.foldin-left {
+  flex: 0 0 62%;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px dashed var(--accent2, #f5c400);
+}
+.foldin-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; opacity: 0.6;
+}
+.foldin-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; font-size: 4rem; opacity: 0.1;
+  background: #1a1a1a;
+}
+.foldin-section-top {
+  position: absolute; top: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent2, #f5c400);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 2;
+}
+.foldin-question {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.72);
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.foldin-label-a, .foldin-label-b {
+  position: absolute; bottom: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--accent2, #f5c400);
+  background: rgba(0,0,0,0.8);
+  padding: 2px 8px;
+  z-index: 3;
+}
+.foldin-label-a { right: 8px; }
+.foldin-right {
+  flex: 0 0 38%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.foldin-answer-hidden {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+.foldin-label-b { left: 8px; bottom: 8px; }
+
+/* Revealed answer (shown when folded) */
+.foldin-answer-reveal {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+.foldin-area.folded ~ .foldin-answer-reveal {
+  display: flex;
+}
+.foldin-answer-text {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--accent2, #f5c400);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.foldin-answer-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.foldin-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 3px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.foldin-btn:hover { background: #fff; }
+
+
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">← All Issues</a>
+  </div>
+  <span class="nav-title">The Reflecting Pool Reflects Everything!</span>
+  <div class="nav-right">
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next">&#8594;</button>
+    <button class="nav-share" onclick="shareIssue()" aria-label="Share">&#9014;</button>
+  </div>
+</nav>
+
+<div class="viewport">
+  <div class="track" id="track">
+<div class="page cover-full-page" id="p0">
+  <img class="cover-full-img" src="../../images/vol1no6-cover.png?v=1782042955792" alt="cover">
+</div>
+
+<div class="page cover-page" id="p1">
+  <img class="cover-img" src="../../images/vol1no6-cover.png?v=1782042955792" alt="cover">
+  <div class="cover-top">
+    <div class="cover-mag-name">INSANE</div>
+    <div class="cover-meta"> &nbsp;·&nbsp; JUNE 21, 2026 &nbsp;·&nbsp; $6.99 CHEAP!</div>
+  </div>
+  <div class="cover-lines-wrap">
+    <div class="cover-line">How To Spend Millions Making Water Wetter</div>
+    <div class="cover-line">Vandals! Algae! Olympians! Blame!</div>
+    <div class="cover-line">Free Inside: Do-It-Yourself No-Bid Contract Kit</div>
+    <div class="cover-line">Greenland Polar Bear Militia Begins Drills</div>
+    <div class="cover-line">Strait of Hormuz Commuter Report: Light Honking</div>
+    <div class="cover-line">Totally Normal Gift: One (1) Qatari Jumbo Jet</div>
+    <div class="cover-line">The Magazine That Drains The Swamp — Then Blames Someone Else</div>
+  </div>
+  <div class="cover-tagline">SANITY NOT INCLUDED</div>
+</div>
+
+<div class="page editorial-page" id="p2">
+  <div class="editorial-inner">
+    <h2 class="editorial-title">FROM THE EDITOR'S BUNKER</h2>
+    <p class="editorial-salutation"></p>
+    <div class="editorial-body">
+    <p>Dear Reader,</p>
+    <p>Every so often a single story arrives so perfectly shaped that it becomes a parable, a diorama, a snow globe you can shake to watch an entire era swirl around inside it. This week, that snow globe was full of algae.</p>
+    <p>The Lincoln Memorial Reflecting Pool — a shallow rectangle of water whose entire job is to lie still and reflect things — was renovated for more than $14 million. It was painted 'American flag blue.' Within roughly two weeks the blue began peeling off in long rubbery flaps and the water turned the green of a forgotten aquarium. Workers arrived with shop-vacs and hydrogen peroxide. The President announced that vandals were responsible, and that a man would need to go to jail. The man, it turned out, was a 67-year-old three-time Olympic canoeist who said he touched a loose flap out of curiosity.</p>
+    <p>We did not invent any of that. We want to be very clear, because we understand the temptation to assume we did. We are a satire magazine and even <em>we</em> would have rejected this plot for being too on-the-nose.</p>
+    <p>The pool was supposed to reflect the monuments around it. Instead it reflected the whole project: the rushed announcement, the no-bid contract, the patriotic paint, the peeling, the blame, the bystander in handcuffs, and the promise to drain it all and start over. <strong>The pool did its one job after all. It reflected everything.</strong></p>
+    <p>Mind the algae, America. It always comes back.</p>
+    <p>— The Editors, INSANE Magazine</p>
+    </div>
+    <p class="editorial-sig">— The Editors</p>
+    
+  </div>
+</div>
+
+<div class="page masthead-page" id="p3">
+  <div class="masthead-inner">
+    <div class="masthead-logo">INSANE</div>
+    <h2 class="masthead-title">INSANE MAGAZINE MASTHEAD</h2>
+    <div class="masthead-grid">
+      
+    </div>
+    
+    <div class="masthead-disclaimer">INSANE Magazine is printed on paper recycled from executive orders. Any resemblance to a functioning democracy is coincidental.</div>
+  </div>
+</div>
+
+<div class="page contents-page" id="p4">
+  <div class="ticker-bar"><div class="ticker-inner">★ BREAKING ★ $14M pool turns green in two weeks ★ Blue paint peels, floats, surrenders ★ President blames vandals, cites no evidence ★ Olympian, 67, arrested for touching a flap ★ No-bid contract went to a golf-club pool guy ★ Nanobubbles deployed, algae unimpressed ★ Interior compares dead algae to sunk navy ★ Pool to be drained, again, probably ★ Greenland bears begin weekend drills ★ Hormuz traffic: expect light honking ★ &nbsp; ✦ &nbsp; ★ BREAKING ★ $14M pool turns green in two weeks ★ Blue paint peels, floats, surrenders ★ President blames vandals, cites no evidence ★ Olympian, 67, arrested for touching a flap ★ No-bid contract went to a golf-club pool guy ★ Nanobubbles deployed, algae unimpressed ★ Interior compares dead algae to sunk navy ★ Pool to be drained, again, probably ★ Greenland bears begin weekend drills ★ Hormuz traffic: expect light honking ★</div></div>
+  <div class="contents-inner">
+    <div class="contents-header">
+      <div class="contents-mag">INSANE</div>
+      <h2 class="contents-title">CONTENTS</h2>
+      <div class="contents-edition"></div>
+    </div>
+    <div class="contents-list">
+    <div class="ci-item">
+      <span class="ci-num">6</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">THE POOL THAT REFLECTED THE PRESIDENCY</span>
+      <span class="ci-desc">$14 million, two weeks, one shade of green</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">7</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">THE NO-BID POOL GUY</span>
+      <span class="ci-desc">Urgency exemptions, gold invoices &amp; a golf-club résumé</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">8</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">VANDALS! SAD! VERY SAD!</span>
+      <span class="ci-desc">An Olympian touches a flap, faces years in jail</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">9</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">THE NANOBUBBLE 3000</span>
+      <span class="ci-desc">Kills algae, creates excuses</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">10</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">STRAIT OF HORMUZ COMMUTER REPORT</span>
+      <span class="ci-desc">Delays, missiles, toll talk &amp; light honking</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">11</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">GREENLAND POLAR BEAR MILITIA</span>
+      <span class="ci-desc">Weekend drills begin; igloos available to rent</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">12</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">TOTALLY NORMAL GIFT</span>
+      <span class="ci-desc">A Qatari jumbo jet, wrapped in a bow</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">13</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">MAN &amp; WOMAN IN THE STREET</span>
+      <span class="ci-desc">Six citizens react to the green water</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">14</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">PATRIOTIC SWAMP WATER</span>
+      <span class="ci-desc">The official INSANE recipe page</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">15</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">FIND THE VANDAL!</span>
+      <span class="ci-desc">Kids' activity page — every suspect is a duck</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">16</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">SPY VS. SPY</span>
+      <span class="ci-desc">Pool Maintenance Edition</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">17</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">THE INSANE AWARDS</span>
+      <span class="ci-desc">Gold, silver &amp; bronze for a green-medal week</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">18</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">CLASSIFIEDS &amp; MARKETPLACE</span>
+      <span class="ci-desc">Now hiring blame managers</span>
+    </div>
+    <div class="ci-item">
+      <span class="ci-num">19</span>
+      <span class="ci-emoji"></span>
+      <span class="ci-title">THE FOLD-IN</span>
+      <span class="ci-desc">Who did this?</span>
+    </div>
+    </div>
+    
+    <div class="scorecard-box">
+      <div class="scorecard-title">THIS WEEK'S REFLECTING POOL SCORECARD</div>
+      <ul class="scorecard-list"></ul>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p5">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-thepool.png?v=1782042955792" alt="THE POOL THAT REFLECTED THE PRESIDENCY">
+    <div class="illo-caption">★ The pool reflects the monuments, the receipt, and the entire decade ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">COVER STORY · THE MAIN EVENT</div>
+    <h2 class="story-heading">THE POOL THAT REFLECTED THE PRESIDENCY</h2>
+    <p class="story-subheading">$14 MILLION LATER, THE WATER IS THE WRONG COLOR</p>
+    <p class="story-deck">It was supposed to be 'American flag blue.' Ahead of the nation's 250th anniversary, the Lincoln Memorial Reflecting Pool was renovated, repainted, and refilled. Within about two weeks, the blue began peeling off and the water turned a confident, unpatriotic green.</p>
+    <p>The Reflecting Pool has one job. It is a shallow rectangle of water and its entire purpose, since 1922, has been to hold still and reflect the things around it. This is, by the standards of federal infrastructure, an extremely achievable goal.</p>
+    <p>The President declared the pool 'absolutely filthy' and an 'embarrassment to our Country,' and ordered it fixed and recolored to a 'dark blue of the American Flag' ahead of the semiquincentennial. He praised the chosen material personally, calling it <em>thick, strong, flexible,</em> and possessed of a natural, beautiful color.</p>
+    <p>The material survived, by most accounts, less than two weeks at the bottom of a pool before photos showed it peeling away and floating cheerfully to the surface like it had somewhere better to be.</p>
+    <p>Then the algae came back. Algae has returned to this pool after essentially every renovation since the Coolidge administration, a fact the Interior Department itself cited, which raises the question of why anyone expected a fresh coat of paint to settle a 104-year-old argument the algae has been winning the whole time.</p>
+    <p>The cost, originally estimated at $1.8 million, climbed past <strong>$14.65 million</strong> — roughly $4 million over even the revised estimate — with one unexplained $460,000 transaction that the federal database lists and no human being has yet explained.</p>
+    <p>Workers arrived with shop-vacs, gallons of hydrogen peroxide, and a machine that blows ozone nanobubbles. As of this writing the pool remains green in large sections, the blue continues to peel, and the monuments around it are being reflected, faithfully, in a swamp.</p>
+    <blockquote class="pull-quote">&quot;The pool has one job. The job is reflection. It is now reflecting our entire situation back at us, which feels like overreach.&quot; — INSANE Civic Desk</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">🦆 A TIMELINE OF STILL WATER</div>
+      <ul><li>💙 April: President orders pool fixed and made 'American flag blue'</li>
+        <li>🎨 Early June: Pool refilled, declared gorgeous, thick, strong, flexible</li>
+        <li>🟢 ~2 weeks later: Blue peels, floats to top, algae returns triumphant</li>
+        <li>🧪 This week: Hydrogen peroxide, shop-vacs, nanobubbles deployed</li>
+        <li>💧 Now: 'Probably' needs to be drained again. Start over. America turns 250.</li></ul>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p6">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-nobidguy.png?v=1782042955793" alt="MEET THE NO-BID POOL GUY">
+    <div class="illo-caption">★ The bucket leaks money and paint at roughly the same rate ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">FOLLOW THE MONEY · CONTRACTS DESK</div>
+    <h2 class="story-heading">MEET THE NO-BID POOL GUY</h2>
+    <p class="story-subheading">FIRST FEDERAL CONTRACT, FINEST GOLF-CLUB RÉSUMÉ</p>
+    <p class="story-deck">The resurfacing work went to a Virginia coatings firm whose prior credential, by multiple accounts, was doing pool work at the President's own golf club — awarded without competitive bidding, citing 'unusual and compelling urgency' around the 250th anniversary.</p>
+    <p>There is a phrase in federal contracting — 'unusual and compelling urgency' — that lets the government skip the competitive bidding process when there's no time to lose. It is meant for emergencies: disasters, wartime, things that cannot wait.</p>
+    <p>It was used here for the color of a pool.</p>
+    <p>The contract to waterproof and repaint went to Atlantic Industrial Coatings, a Virginia firm reportedly making its <strong>first-ever federal contract</strong>, whose relevant experience was said to include pool work at the President's Sterling golf club. There was, briefly, some confusion about who the contractor even was, after the President mentioned speaking to 'a man he knew' about the job and then walked that back.</p>
+    <p>Reporting also pointed to a separate $1.7 million no-bid filtration contract for 'nanobubble' technology, awarded to a firm connected to a donor-linked trust. The phrase 'donor-linked trust' is doing the same heavy lifting as 'incidentally' did last issue. Washington runs on phrases that mean more the longer you stare at them.</p>
+    <p>INSANE's contracts desk has reviewed the urgency exemption and found it compelling, in that we are compelled to ask what the emergency was. The pool had been still for a century. It could, arguably, have waited for a second bid.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">THE NO-BID CONTRACT KIT™</div>
+      <div class="ad-subheadline">Free Inside This Issue! Skip Bidding — Cite Urgency!</div>
+      <div class="ad-bullets"><div class="ad-bullet">📋 Pre-stamped 'UNUSUAL &amp; COMPELLING URGENCY' forms!</div>
+        <div class="ad-bullet">🏌️ 'Golf Club Résumé' template — turn one pool into a federal career!</div>
+        <div class="ad-bullet">🪣 Includes one (1) URGENCY EXEMPTION bucket (leaks)!</div>
+        <div class="ad-bullet">💰 Gold-edged invoice paper — make $1.8M look like $14.65M!</div></div>
+      <div class="ad-price">FREE* (*BILLED TO TAXPAYER AT 800% MARKUP)</div>
+      <div class="ad-disclaimer">Kit Co. not responsible for cost overruns, which are the point. Urgency may not be unusual or compelling. Golf-club experience does not qualify you to coat a national monument, but it has not stopped anyone yet. Bucket leaks by design.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p7">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-vandals.png?v=1782042955793" alt="VANDALS! SAD! VERY SAD!">
+    <div class="illo-caption">★ The most dangerous man in America, allegedly, holds a flap ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">JUSTICE DESK · THE VANDAL MENACE</div>
+    <h2 class="story-heading">VANDALS! SAD! VERY SAD!</h2>
+    <p class="story-subheading">OLYMPIAN, 67, DETAINED FIVE HOURS FOR TOUCHING A FLAP</p>
+    <p class="story-deck">When the blue began peeling, the President announced that vandals were responsible — providing no evidence — and that 'many additional people' had been arrested for serious crimes carrying years in jail. One of the arrested was a 67-year-old three-time Olympic canoeist who says he touched a loose piece out of curiosity.</p>
+    <p>The peeling was a problem. Problems require culprits. And so, overnight and without evidence, the culprit was identified: vandals. Shadowy, monument-destroying vandals, who had somehow sabotaged a coating that several engineers suspected of being entirely capable of peeling on its own.</p>
+    <p>"These are very serious crimes having to do with the destruction of National Monuments. Years in jail," the President wrote, of the pool surface.</p>
+    <p>The most prominent person swept up was David Hearn, 67, a three-time U.S. Olympic canoeist, who told reporters he touched a partially detached flap of blue material out of curiosity and was promptly detained for about five hours.</p>
+    <p>"I didn't vandalize anything," Hearn said. "I didn't destroy or break or peel anything. By the time I realized what was going on, I was being put in handcuffs."</p>
+    <p>He is due in court on July 9, where the prosecution will face the challenge of explaining how a flap that was already floating got blamed on a man who, by his account, simply confirmed with one finger that it was, in fact, floating.</p>
+    <p>INSANE would like to note for the record that touching a thing to see if it is loose is the single most human act there is, and that if curiosity is now a federal monument crime, the entire species should turn itself in.</p>
+    <blockquote class="pull-quote">&quot;I just touched it!&quot; — David Hearn, 67, three-time Olympian, alleged flap-toucher</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">🚨 OTHER CRIMES NOW PUNISHABLE BY YEARS IN JAIL</div>
+      <ul><li>🖐️ Touching a flap to see if it's loose (it was)</li>
+        <li>👀 Looking at the pool with a skeptical expression</li>
+        <li>📸 Photographing the algae for posterity</li>
+        <li>🦆 Being a duck near the scene (ducks are being processed)</li></ul>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p8">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-nanobubble.png?v=1782042955793" alt="BEHOLD THE NANOBUBBLE 3000">
+    <div class="illo-caption">★ The bubbles spell NOT OUR FAULT, which is the machine's primary function ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">TECHNOLOGY DESK · THE SOLUTION</div>
+    <h2 class="story-heading">BEHOLD THE NANOBUBBLE 3000</h2>
+    <p class="story-subheading">KILLS ALGAE — CREATES EXCUSES</p>
+    <p class="story-deck">Faced with a pool that had turned green, officials deployed hydrogen peroxide, shop-vacs, and what the Interior Department described as 'advanced nanobubbler technology.' The algae remained, as of press time, deeply unbothered.</p>
+    <p>When water turns green, modern government has options. You can drain it. You can treat it. Or you can deploy a machine with a number in its name and let the number do the reassuring.</p>
+    <p>The Nanobubble approach involves pumping tiny ozone bubbles into the water to combat algae — a real technology, deployed here at real expense, for a roughly $1.7 million no-bid contract. Workers also poured jugs of hydrogen peroxide directly into the pool, which an Interior spokesperson assured the public has 'no harmful side effects to marine life,' a sentence that assumes the marine life had been consulted.</p>
+    <p>The Interior Department further explained that algae has 'plagued every Lincoln Reflecting Pool reopening since 1922,' which is true, and which is also the strongest possible argument that the algae is not vandalism but simply the pool's natural personality.</p>
+    <p>In perhaps the week's most remarkable government communication, Interior compared the dead algae being vacuumed off the pool floor to 'the destroyed Iranian Navy resting on the bottom of the Persian Gulf.' INSANE has read that sentence eleven times and can confirm it does not improve.</p>
+    <p>The nanobubbles, meanwhile, continue to rise, pop, and — if you watch closely — spell out the official position.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">NANOBUBBLE 3000™</div>
+      <div class="ad-subheadline">The Number Is Right There In The Name. You're Welcome.</div>
+      <div class="ad-bullets"><div class="ad-bullet">🫧 Blows ozone bubbles that spell reassuring phrases!</div>
+        <div class="ad-bullet">🟢 Kills algae* (*algae not included in 'kills')!</div>
+        <div class="ad-bullet">🇮🇷 Now with naval-defeat comparison mode!</div>
+        <div class="ad-bullet">💵 $1.7M, no-bid, donor-adjacent — engineering excellence!</div></div>
+      <div class="ad-price">$1,700,000 (URGENT, OBVIOUSLY)</div>
+      <div class="ad-disclaimer">Bubble Co. not responsible for algae, which has been winning since 1922 and is not impressed by your machine. Bubbles may spell things you did not authorize. Comparisons to sunk navies are for morale and should not be taken as marine-biology guidance.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p9">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-hormuz.png?v=1782042955793" alt="STRAIT OF HORMUZ COMMUTER REPORT">
+    <div class="illo-caption">★ Rush hour in the Strait: take a number, mind the missiles ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">INTERNATIONAL DESK · COMMUTER REPORT</div>
+    <h2 class="story-heading">STRAIT OF HORMUZ COMMUTER REPORT</h2>
+    <p class="story-subheading">EXPECT DELAYS, MISSILES, TOLL TALK &amp; LIGHT HONKING</p>
+    <p class="story-deck">Good morning, commuters. Traffic through the world's most important oil chokepoint is moving — despite renewed talk of closure, which the U.S. military denied, saying tankers continued through the strait.</p>
+    <p>And now to our traffic correspondent, who is hovering over the Strait of Hormuz, where conditions this morning are described as 'tense but flowing.'</p>
+    <p>Reports of a full closure have been denied by the U.S. military, which noted that vessels continued moving through the strait. So if you're commuting by supertanker today, you're cleared to proceed, though you may experience residual anxiety in the left lane.</p>
+    <p>Expect the usual: bumper-to-bumper tankers, periodic toll-talk, the occasional missile in the carpool lane, and light honking. One vessel was observed displaying 'PLEASE TAKE A NUMBER,' which our correspondent notes is either a joke or the single most efficient idea the region has produced in years.</p>
+    <p>Oil prices, as always, ride the situation like a roller coaster with no posted height requirement. Analysts advise commuters to remain calm, keep two tanker-lengths of distance, and remember that the strait, like the Reflecting Pool, has been a problem for a very long time and will likely be a problem for a very long time more.</p>
+    <p>Back to you in the studio, where the coffee is also, somehow, tense.</p>
+    <blockquote class="pull-quote">&quot;PLEASE TAKE A NUMBER.&quot; — A tanker, displaying more governance than expected</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p10">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-greenland.png?v=1782042955793" alt="GREENLAND POLAR BEAR MILITIA BEGINS DRILLS">
+    <div class="illo-caption">★ The militia drills every weekend; the igloos are reasonably priced ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">ARCTIC DESK · NORTHERN MANEUVERS</div>
+    <h2 class="story-heading">GREENLAND POLAR BEAR MILITIA BEGINS DRILLS</h2>
+    <p class="story-subheading">NOT FOR SALE — BUT IGLOOS AVAILABLE TO RENT</p>
+    <p class="story-deck">Amid renewed pressure to acquire or control Greenland — which has strained relations with European NATO allies — the island's most committed residents have organized. They are large. They are cold-adapted. They are not interested in your offer.</p>
+    <p>Greenland is not for sale. This has been stated repeatedly, by Greenland, in a tone that suggests it would prefer not to keep saying it. The renewed push to acquire or control the island has unsettled European NATO members and delighted exactly one constituency: the polar bears, who have discovered the concept of leverage.</p>
+    <p>INSANE's Arctic bureau reports that a volunteer polar bear militia has begun holding weekend drills, marching in loose formation across the ice with wooden rifles and an admirable sense of purpose. Their stated position, per a sign held by their apparent leader, is: <strong>NOT FOR SALE, BUT WE DO RENT IGLOOS.</strong></p>
+    <p>This is, our correspondent notes, the most reasonable diplomatic posture currently on offer anywhere in the Arctic: a firm no on the sovereignty question, paired with a flexible yes on short-term lodging.</p>
+    <p>Asked for comment, the bears growled, which our translator rendered as 'first and last month's rent, no parties, and the security deposit covers seal damage only.'</p>
+    <p>NATO officials, reached for comment, asked to be left out of it.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">RENT-AN-IGLOO™ (GREENLAND)</div>
+      <div class="ad-subheadline">The Island's Not For Sale — But The Lodging Is Negotiable!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🐻 Hosted by an actual polar bear militia (very secure)!</div>
+        <div class="ad-bullet">❄️ First &amp; last month's rent; security deposit covers seal damage!</div>
+        <div class="ad-bullet">🏳️ NATO-adjacent location with stunning geopolitical views!</div>
+        <div class="ad-bullet">🚫 Not for sale. Stop asking. We mean it.</div></div>
+      <div class="ad-price">FROM 3 SEALS/NIGHT OR EQUIVALENT IN RESPECT</div>
+      <div class="ad-disclaimer">Igloo LLC not responsible for melting, which is a separate and much larger problem we are not equipped to discuss. No parties. The militia is volunteer but takes its drilling seriously. Sovereignty is non-negotiable; the thermostat is also non-negotiable, it's cold, that's the whole point.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p11">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-gift.png?v=1782042955793" alt="TOTALLY NORMAL GIFT">
+    <div class="illo-caption">★ When a gift requires a banner insisting it's normal, INSANE takes notes ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">PROTOCOL DESK · GIFTS &amp; GRATITUDE</div>
+    <h2 class="story-heading">TOTALLY NORMAL GIFT</h2>
+    <p class="story-subheading">JUST A REGULAR-SIZED JUMBO JET WITH A BOW ON IT</p>
+    <p class="story-deck">Nothing to see here, says the banner on the enormous gifted aircraft. INSANE files this under our recurring department, 'Things Being Described As Normal At High Volume.'</p>
+    <p>There is a useful rule in life: the more loudly something insists it is normal, the more questions it tends to generate. A luxury jumbo jet, wrapped in a bow and towing a banner reading TOTALLY NORMAL GIFT, is a near-perfect demonstration of this rule in flight.</p>
+    <p>INSANE takes no position on any specific aircraft. We simply observe that ordinary gifts — socks, a casserole, a nice card — do not typically require aerial signage clarifying their ordinariness.</p>
+    <p>Our protocol desk reviewed the relevant ethics guidance and found it, like the pool, in the process of being drained.</p>
+    <p>We wish the jet well, wherever it lands, and whoever ends up holding the bow.</p>
+    <blockquote class="pull-quote">&quot;It's totally normal.&quot; — A banner, towed behind the thing it is describing</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page flip" id="p12">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-street.png?v=1782042955794" alt="MAN &amp; WOMAN IN THE STREET">
+    <div class="illo-caption">★ Democracy reflects on itself, in approximately four feet of green water ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">RECURRING FEATURE · MAN &amp; WOMAN IN THE STREET</div>
+    <h2 class="story-heading">MAN &amp; WOMAN IN THE STREET</h2>
+    <p class="story-subheading">WE ASKED SIX CITIZENS WHAT THEY THINK OF THE GREEN WATER</p>
+    <p class="story-deck">Our roving reporter visited the National Mall, dodged the algae patrol, and recorded six unfiltered American opinions. Names and locations printed exactly as muttered.</p>
+    <p><strong>"They spent fourteen million dollars to turn blue water green. I could've done that for free with a goldfish and some neglect."</strong> — Eunice Garber, Dayton, Ohio</p>
+    <p><strong>"My nephew touched a flap and now he's a federal vandal. He's six. He touches everything. That's his whole personality."</strong> — Reginald Poole, Silver Spring, Maryland</p>
+    <p><strong>"I flew in for the 250th and instead I got a swamp with a security detail. Honestly? More patriotic. This is exactly what the founders dealt with."</strong> — Bonnie Tisch, Provo, Utah</p>
+    <p><strong>"They compared the dead algae to a sunk navy. I work in PR. I would've been fired for that. I'm a little jealous, frankly."</strong> — Marcus Ferrante, Hoboken, New Jersey</p>
+    <p><strong>"The bear militia rents igloos now. That's the most stable real-estate market I've heard about all year."</strong> — Della Knox, Anchorage, Alaska</p>
+    <p><strong>"I just wanted to see Lincoln reflected in the water. Instead Lincoln's reflected in a receipt. Which, in fairness, is also very American."</strong> — Father Tim Halloran, Scranton, Pennsylvania</p>
+    <blockquote class="pull-quote">&quot;I could've done that for free with a goldfish and some neglect.&quot; — Eunice Garber, Dayton, Ohio</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p13">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-recipe.png?v=1782042955794" alt="PATRIOTIC SWAMP WATER">
+    <div class="illo-caption">★ Garnish with one (1) peeling blue flap and a bewildered Olympian ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">TEST KITCHEN · THE INSANE RECIPE PAGE</div>
+    <h2 class="story-heading">PATRIOTIC SWAMP WATER</h2>
+    <p class="story-subheading">SERVES ONE (1) NATIONAL MONUMENT</p>
+    <p class="story-deck">The official INSANE 250th Anniversary punch. Do not drink. Do not touch. Do not photograph (years in jail). One part blue paint, two parts algae, fourteen million parts taxpayer.</p>
+    <p><strong>Step 1 — Announce the recipe.</strong> Loudly declare the existing water 'absolutely filthy.' Promise it will be 'gorgeous, beautiful.' Skip the taste-testing committee and cite urgency.</p>
+    <p><strong>Step 2 — Add the blue.</strong> Pour in one (1) cup American Flag Blue paint. Insist it is thick, strong, and flexible. Refill the bowl and declare victory before it sets.</p>
+    <p><strong>Step 3 — Wait two weeks.</strong> Allow the blue to peel and float to the top. This is not a flaw. This is the dish revealing its true nature.</p>
+    <p><strong>Step 4 — Welcome the algae.</strong> Stir in two (2) cups fresh pond algae. It will arrive on its own regardless, as it has since 1922, but stirring makes you feel involved.</p>
+    <p><strong>Step 5 — Deploy the technology.</strong> Add three (3) tablespoons hydrogen peroxide and a pinch of ozone nanobubbles. Assure all marine life there are no side effects. Do not consult the marine life.</p>
+    <p><strong>Step 6 — Finish with blame.</strong> Fold in one (1) tablespoon unsubstantiated blame. Garnish with a handcuffed bystander. Drain the entire bowl. Begin again. Serve to a nation turning 250.</p>
+    <blockquote class="pull-quote">&quot;One part blue paint, two parts algae, fourteen million parts taxpayer.&quot; — The Official INSANE 250th Recipe</blockquote>
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">🥣 INGREDIENTS (DO NOT ACTUALLY MAKE THIS)</div>
+      <ul><li>🔵 1 cup American Flag Blue paint (thick, strong, flexible, peels)</li>
+        <li>🟢 2 cups fresh pond algae (undefeated since 1922)</li>
+        <li>💵 14,000,000 parts taxpayer dollars</li>
+        <li>🧪 3 tbsp hydrogen peroxide (allegedly harmless)</li>
+        <li>🫧 1 pinch ozone nanobubbles</li>
+        <li>👉 1 tbsp unsubstantiated blame, to taste</li></ul>
+    </div>
+    
+    <div class="fake-ad">
+      <div class="ad-headline">NANOBUBBLE 3000™ — KITCHEN EDITION</div>
+      <div class="ad-subheadline">Kills Algae. Creates Excuses. Now Food-Adjacent!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🫧 Aerate your swamp water to a patriotic froth!</div>
+        <div class="ad-bullet">🟢 Algae returns anyway — that's the recipe, not a bug!</div>
+        <div class="ad-bullet">🍽️ Pairs with a no-bid contract and a gold invoice!</div>
+        <div class="ad-bullet">🚫 Surgeon General, NPS &amp; several ducks advise against every step!</div></div>
+      <div class="ad-price">$14,650,000 (SERVES 1 MONUMENT, BADLY)</div>
+      <div class="ad-disclaimer">Test Kitchen LLC not responsible for anyone who actually drinks this, touches this, or photographs this. The garnish has retained counsel. Marine life was not consulted and is, frankly, upset.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p14">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-findthevandal.png?v=1782042955794" alt="FIND THE VANDAL!">
+    <div class="illo-caption">★ Every suspect is a duck, except the invoice ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">KIDS' CORNER · ACTIVITY PAGE</div>
+    <h2 class="story-heading">FIND THE VANDAL!</h2>
+    <p class="story-subheading">ONE OF THESE SUSPECTS DID IT. (HINT: IT'S NOT A DUCK.)</p>
+    <p class="story-deck">Officials are certain the Reflecting Pool was vandalized. Can YOU spot the culprit in this official lineup? Grab a crayon and circle the guilty party!</p>
+    <p>Welcome, junior detectives! The Reflecting Pool turned green and somebody is definitely, certainly, no-evidence-required to blame. The authorities have assembled six suspects. Your job is to find the vandal!</p>
+    <p><strong>Suspect #1:</strong> A duck. Was near the water. Ducks are always near the water. Highly suspicious.</p>
+    <p><strong>Suspect #2:</strong> A duck. Touched the surface with one webbed foot. Curiosity is a crime now.</p>
+    <p><strong>Suspect #3:</strong> A duck. Has an alibi (was paddling) but who can really say.</p>
+    <p><strong>Suspect #4:</strong> A duck. Quacked skeptically at the algae. Disrespectful.</p>
+    <p><strong>Suspect #5:</strong> A duck. Wearing a tiny hazmat floatie, which honestly seems prepared, not guilty.</p>
+    <p><strong>Suspect #6:</strong> A $14,650,000 invoice with a face drawn on it. Was present at every stage. Grew dramatically over time. Cannot account for $460,000. Hmm.</p>
+    <p><em>Did you find the vandal? Of course you did. It was never the ducks. Release the ducks. Color the invoice red.</em></p>
+    
+    
+    <div class="sidebar-list">
+      <div class="sidebar-list-title">🖍️ BONUS PUZZLES</div>
+      <ul><li>🔵 MAZE: Help the blue paint find its way OFF the bottom of the pool! (It already did.)</li>
+        <li>🔢 CONNECT THE DOTS: Reveal the hidden picture! (It's another receipt.)</li>
+        <li>🦆 COUNT THE DUCKS: There are too many ducks. There is no right answer. That's the lesson.</li>
+        <li>🟢 COLOR BY NUMBER: Every number is green.</li></ul>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div class="page spy-page" id="p15">
+  <div class="spy-header">
+    <h2 class="spy-title">SPY VS. SPY</h2>
+    <div class="spy-subtitle">POOL MAINTENANCE EDITION</div>
+  </div>
+  <div class="spy-illo"><img src="../../images/vol1no6-spyvspy.png?v=1782042955794" alt="spy vs spy"></div>
+  <div class="spy-arena">
+    <div class="spy-col spy-white">
+      <div class="spy-icon">🤍</div>
+      <h3>WHITE SPY</h3>
+      <div class="spy-panels"><p>White Spy repaints the pool a beautiful patriotic blue. He is very proud.</p>
+        <p>He bills the job at $14 million and cites 'urgency.' No second spy was asked to bid.</p>
+        <p>Two weeks pass. The blue peels off and floats to the top, entirely on its own.</p>
+        <p>White Spy blames vandals. He arrests a passing duck. The duck did not do it.</p></div>
+    </div>
+    <div class="spy-divider">VS</div>
+    <div class="spy-col spy-black">
+      <div class="spy-icon">🖤</div>
+      <h3>BLACK SPY</h3>
+      <div class="spy-panels"><p>Black Spy does nothing at all. He simply waits.</p>
+        <p>Algae returns to the pool, as it has every year since 1922, requiring no sabotage.</p>
+        <p>Black Spy points at the green water and says 'YOUR fault.' He bills $1.7 million for a bubble machine.</p>
+        <p>Black Spy also arrests a duck, for balance. It is a different duck. It also did not do it.</p></div>
+    </div>
+  </div>
+  <div class="spy-result">BOTH SPIES WERE PAID. NEITHER FIXED THE POOL. THE ALGAE, WHICH ARRIVED FREE OF CHARGE AND ASKED FOR NOTHING, REMAINS UNDEFEATED SINCE 1922.</div>
+</div>
+
+<div class="page awards-page" id="p16">
+  <div class="awards-inner">
+    <h2 class="awards-title">🏆 THE INSANE AWARDS</h2>
+    <div class="awards-date">JUNE 2026</div>
+    <div class="award-category">
+      <div class="award-cat-title">FASTEST BLUE-TO-GREEN TRANSITION</div>
+      <div class="award-medals"><div class="medal gold">🥇 The Reflecting Pool (~14 days)</div>
+      <div class="medal silver">🥈 The phrase 'thick, strong, flexible'</div>
+      <div class="medal bronze">🥉 Public confidence in the project</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">BEST USE OF 'URGENCY'</div>
+      <div class="award-medals"><div class="medal gold">🥇 A no-bid pool-paint contract</div>
+      <div class="medal silver">🥈 The $1.7M nanobubble machine</div>
+      <div class="medal bronze">🥉 The unexplained $460,000 transaction</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST UNFAIRLY ACCUSED</div>
+      <div class="award-medals"><div class="medal gold">🥇 David Hearn, 67, flap-toucher</div>
+      <div class="medal silver">🥈 Every duck on the National Mall</div>
+      <div class="medal bronze">🥉 Curiosity itself</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST UNHINGED GOVERNMENT STATEMENT</div>
+      <div class="award-medals"><div class="medal gold">🥇 Comparing dead algae to a sunk navy</div>
+      <div class="medal silver">🥈 'No harmful side effects to marine life'</div>
+      <div class="medal bronze">🥉 'TOTALLY NORMAL GIFT' (the banner)</div></div>
+    </div>
+  <div class="award-category">
+      <div class="award-cat-title">MOST UNDEFEATED SINCE 1922</div>
+      <div class="award-medals"><div class="medal gold">🥇 The algae</div>
+      <div class="medal silver">🥈 The algae (it's that good)</div>
+      <div class="medal bronze">🥉 Also the algae</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page story-page" id="p17">
+  
+  <div class="story-illo">
+    <img src="../../images/vol1no6-classifieds.png?v=1782042955794" alt="INSANE CLASSIFIEDS">
+    <div class="illo-caption">★ All positions require an urgency exemption and a willingness to vacuum ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">RECURRING FEATURE · THE INSANE CLASSIFIEDS</div>
+    <h2 class="story-heading">INSANE CLASSIFIEDS</h2>
+    <p class="story-subheading">NOW HIRING. PLEASE DO NOT TOUCH THE LISTINGS.</p>
+    <p class="story-deck">Opportunity floats to the surface, then is blamed on vandals.</p>
+    <p><strong>BLAME MANAGER</strong> — Fast-growing administration seeks experienced professional to assign fault for self-inflicted problems. Must point convincingly at vandals, ducks, the previous century. $50,000 (it's a line item, we checked).</p>
+    <p><strong>NO-BID CONTRACTOR</strong> — No experience required; golf-club pool work strongly preferred. Must be able to turn $1.8M into $14.65M while citing urgency. Gold invoice paper provided.</p>
+    <p><strong>FLAP, BLUE, GENTLY PEELED</strong> — One (1) strip of American-flag-blue pool liner, lightly detached, floats beautifully. Touched by an Olympian (adds value or jail time, unclear). Best offer.</p>
+    <p><strong>SHOP-VAC OPERATOR</strong> — National Mall. Vacuum dead algae off pool floor. Must be comfortable comparing your work to the sinking of a navy. Hydrogen peroxide provided, allegedly harmless.</p>
+    <p><strong>DUCK LEGAL DEFENSE FUND</strong> — Seeking pro-bono attorneys to represent the wrongfully processed waterfowl of the National Mall. They did not do it. They never do it. Free worms for the right candidate.</p>
+    
+    
+    
+    <div class="fake-ad">
+      <div class="ad-headline">INSANE MARKETPLACE</div>
+      <div class="ad-subheadline">As Peeled On The National Mall!</div>
+      <div class="ad-bullets"><div class="ad-bullet">🪣 URGENCY EXEMPTION BUCKET: leaks money &amp; paint, just like the original. $14M.</div>
+        <div class="ad-bullet">🫧 POCKET NANOBUBBLER: spells your excuses in bubbles. $1.7M (no-bid).</div>
+        <div class="ad-bullet">🔵 D.I.Y. PEELING-FLAP KIT: peels in 14 days guaranteed! $40.</div>
+        <div class="ad-bullet">🦆 'I AM NOT THE VANDAL' DUCK BADGE: legal disclaimer included. $9.</div>
+        <div class="ad-bullet">📜 GOLD-EDGED INVOICE PAPER: make any number look official. $250/ream.</div></div>
+      <div class="ad-price">ORDER NOW — DO NOT TOUCH UNTIL IT ARRIVES</div>
+      <div class="ad-disclaimer">INSANE Marketplace not responsible for items that turn green within two weeks. The flap is final sale and may already be floating. Touching your order may constitute vandalism. The duck badge is not legally binding but the duck appreciates the gesture.</div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="page fold-in-page" id="p18">
+  <div class="foldin-inner">
+    <div class="foldin-header">
+      <h2 class="foldin-title">INSANE BACK PAGE</h2>
+      <div class="foldin-subtitle">THE FAMOUS FOLD-IN &nbsp;✦&nbsp; "FOLD CAREFULLY — UNLIKE THE CEASEFIRE"</div>
+    </div>
+    <div class="foldin-area" id="foldinArea">
+      <div class="foldin-left" id="foldinLeft">
+        <img class="foldin-img" src="../../images/vol1no6-foldin.png?v=1782042955794" alt="fold-in">
+        <div class="foldin-section-top">INSANE — FOLD THIS HALF IN →</div>
+        <div class="foldin-question">WHEN YOU LOOK INTO THE REFLECTING POOL AND ASK WHO DID THIS</div>
+        <div class="foldin-label-a">A</div>
+      </div>
+      <div class="foldin-right">
+        <div class="foldin-section-top">← FOLD LEFT SIDE OVER TO SEE THE REFLECTION</div>
+        <div class="foldin-answer-hidden">THE REFLECTION ANSWERS. IT ALWAYS DID. THAT'S ITS JOB.</div>
+        <div class="foldin-label-b">B</div>
+      </div>
+    </div>
+    <div class="foldin-answer-reveal" id="foldinAnswer">
+      <div class="foldin-answer-text">THE REFLECTION ANSWERS. IT ALWAYS DID. THAT'S ITS JOB.</div>
+      <div class="foldin-answer-sub">Fold A over B to reveal the hidden truth</div>
+    </div>
+    <button class="foldin-btn" id="foldinBtn" onclick="toggleFoldin()">📰 FOLD IT!</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>window.STORY_PAGES = 19;</script>
+<script>(function () {
+  'use strict';
+
+  var PAGES   = window.STORY_PAGES || 0;
+  var current = 0;
+  var track   = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots    = [];
+
+  function update() {
+    if (track)   track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    if (counter) counter.textContent   = (current + 1) + ' / ' + PAGES;
+    if (prevBtn) prevBtn.disabled      = current === 0;
+    if (nextBtn) nextBtn.disabled      = current === PAGES - 1;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    try { history.replaceState(null, '', '#' + current); } catch(e) {}
+    // Reset fold-in state when navigating away
+    var area = document.getElementById('foldinArea');
+    if (area) area.classList.remove('folded');
+    var btn = document.getElementById('foldinBtn');
+    if (btn) btn.textContent = '\uD83D\uDCF0 FOLD IT!';
+  }
+
+  window.goTo = function (n) {
+    current = Math.max(0, Math.min(PAGES - 1, n));
+    update();
+  };
+
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  // Build dots
+  var dotRow = document.getElementById('dotRow');
+  if (dotRow) {
+    for (var i = 0; i < PAGES; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.setAttribute('data-i', i);
+      d.addEventListener('click', (function (idx) {
+        return function () { window.goTo(idx); };
+      })(i));
+      dotRow.appendChild(d);
+      dots.push(d);
+    }
+  }
+
+  // Hash navigation
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  // Touch swipe
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft')  window.prev();
+  });
+
+  // Share
+  window.shareIssue = function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        if (btn) {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 2000);
+        }
+      });
+    }
+  };
+
+  // Fold-in toggle
+  window.toggleFoldin = function () {
+    var area = document.getElementById('foldinArea');
+    var btn  = document.getElementById('foldinBtn');
+    if (!area) return;
+    var folded = area.classList.toggle('folded');
+    if (btn) btn.textContent = folded ? '\uD83D\uDCF0 UNFOLD IT!' : '\uD83D\uDCF0 FOLD IT!';
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>

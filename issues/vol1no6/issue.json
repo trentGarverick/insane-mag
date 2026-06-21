@@ -1,0 +1,507 @@
+{
+  "id": "vol1no6",
+  "volume": "VOL. 1",
+  "number": "NO. 6",
+  "date": "JUNE 21, 2026",
+  "title": "The Reflecting Pool Reflects Everything!",
+  "subtitle": "The 250th Anniversary Pre-Apology Issue",
+  "price": "$6.99 CHEAP!",
+  "theme": {
+    "bg": "#fdf6e3",
+    "text": "#1a1a1a",
+    "accent": "#cc0000",
+    "accent2": "#f5c400",
+    "adBg": "#fffde7",
+    "adBorder": "#f5c400"
+  },
+  "stylePrefix": "Mad Magazine satirical cartoon illustration, hand-drawn ink and watercolor style, exaggerated caricature, busy detailed comic linework, bright saturated colors, crosshatching, vintage humor magazine aesthetic. ",
+  "pages": [
+
+    {
+      "type": "cover-full",
+      "illoId": "cover",
+      "image": "vol1no6-cover.png"
+    },
+
+    {
+      "type": "cover",
+      "illoId": "cover",
+      "image": "vol1no6-cover.png",
+      "kicker": "THE 250TH ANNIVERSARY PRE-APOLOGY ISSUE",
+      "title": "THE REFLECTING POOL REFLECTS EVERYTHING!",
+      "coverLines": [
+        "How To Spend Millions Making Water Wetter",
+        "Vandals! Algae! Olympians! Blame!",
+        "Free Inside: Do-It-Yourself No-Bid Contract Kit",
+        "Greenland Polar Bear Militia Begins Drills",
+        "Strait of Hormuz Commuter Report: Light Honking",
+        "Totally Normal Gift: One (1) Qatari Jumbo Jet",
+        "The Magazine That Drains The Swamp — Then Blames Someone Else"
+      ]
+    },
+
+    {
+      "type": "editorial",
+      "illoId": null,
+      "eyebrow": "FROM THE EDITOR'S DRAINED OFFICE",
+      "heading": "STILL WATERS RUN EXPENSIVE",
+      "paragraphs": [
+        "Dear Reader,",
+        "Every so often a single story arrives so perfectly shaped that it becomes a parable, a diorama, a snow globe you can shake to watch an entire era swirl around inside it. This week, that snow globe was full of algae.",
+        "The Lincoln Memorial Reflecting Pool — a shallow rectangle of water whose entire job is to lie still and reflect things — was renovated for more than $14 million. It was painted 'American flag blue.' Within roughly two weeks the blue began peeling off in long rubbery flaps and the water turned the green of a forgotten aquarium. Workers arrived with shop-vacs and hydrogen peroxide. The President announced that vandals were responsible, and that a man would need to go to jail. The man, it turned out, was a 67-year-old three-time Olympic canoeist who said he touched a loose flap out of curiosity.",
+        "We did not invent any of that. We want to be very clear, because we understand the temptation to assume we did. We are a satire magazine and even <em>we</em> would have rejected this plot for being too on-the-nose.",
+        "The pool was supposed to reflect the monuments around it. Instead it reflected the whole project: the rushed announcement, the no-bid contract, the patriotic paint, the peeling, the blame, the bystander in handcuffs, and the promise to drain it all and start over. <strong>The pool did its one job after all. It reflected everything.</strong>",
+        "Mind the algae, America. It always comes back.",
+        "— The Editors, INSANE Magazine"
+      ]
+    },
+
+    {
+      "type": "masthead",
+      "illoId": null,
+      "heading": "THE INSANE MASTHEAD",
+      "subheading": "Staff currently being vacuumed off the bottom of the pool",
+      "roles": [
+        { "title": "EDITOR-IN-CHIEF", "name": "Standing on a peeling blue flap, insisting it's a feature" },
+        { "title": "MANAGING EDITOR", "name": "Filed under 'Blame Management, $50,000'" },
+        { "title": "CONTRACTS DESK", "name": "Awarded to himself, no competitive bidding, urgent" },
+        { "title": "ALGAE CORRESPONDENT", "name": "Been here since 1922, not going anywhere" },
+        { "title": "NANOBUBBLE TECHNICIAN", "name": "Blowing bubbles that spell NOT OUR FAULT" },
+        { "title": "MONUMENT SECURITY", "name": "Detaining anyone who touches anything, five hours minimum" },
+        { "title": "DON MARTIN MEMORIAL SOUND-EFFECTS", "name": "SHLORP! PEEEEL! BLUB BLUB BLUB!" }
+      ],
+      "alertTitle": "⚠️ SUBSCRIBER ALERT",
+      "alertText": "Your subscription has been flagged as potential vandalism. Please do not touch this magazine. Touching the magazine constitutes destruction of a National Periodical, punishable by years in jail, per a post. If you have already touched it, remain calm and await a five-hour detainment. Thank you, taxpayer."
+    },
+
+    {
+      "type": "contents",
+      "illoId": null,
+      "heading": "WHAT'S IN THIS PUDDLE",
+      "ticker": "★ BREAKING ★ $14M pool turns green in two weeks ★ Blue paint peels, floats, surrenders ★ President blames vandals, cites no evidence ★ Olympian, 67, arrested for touching a flap ★ No-bid contract went to a golf-club pool guy ★ Nanobubbles deployed, algae unimpressed ★ Interior compares dead algae to sunk navy ★ Pool to be drained, again, probably ★ Greenland bears begin weekend drills ★ Hormuz traffic: expect light honking ★",
+      "items": [
+        { "page": "6", "title": "THE POOL THAT REFLECTED THE PRESIDENCY", "desc": "$14 million, two weeks, one shade of green" },
+        { "page": "7", "title": "THE NO-BID POOL GUY", "desc": "Urgency exemptions, gold invoices & a golf-club résumé" },
+        { "page": "8", "title": "VANDALS! SAD! VERY SAD!", "desc": "An Olympian touches a flap, faces years in jail" },
+        { "page": "9", "title": "THE NANOBUBBLE 3000", "desc": "Kills algae, creates excuses" },
+        { "page": "10", "title": "STRAIT OF HORMUZ COMMUTER REPORT", "desc": "Delays, missiles, toll talk & light honking" },
+        { "page": "11", "title": "GREENLAND POLAR BEAR MILITIA", "desc": "Weekend drills begin; igloos available to rent" },
+        { "page": "12", "title": "TOTALLY NORMAL GIFT", "desc": "A Qatari jumbo jet, wrapped in a bow" },
+        { "page": "13", "title": "MAN & WOMAN IN THE STREET", "desc": "Six citizens react to the green water" },
+        { "page": "14", "title": "PATRIOTIC SWAMP WATER", "desc": "The official INSANE recipe page" },
+        { "page": "15", "title": "FIND THE VANDAL!", "desc": "Kids' activity page — every suspect is a duck" },
+        { "page": "16", "title": "SPY VS. SPY", "desc": "Pool Maintenance Edition" },
+        { "page": "17", "title": "THE INSANE AWARDS", "desc": "Gold, silver & bronze for a green-medal week" },
+        { "page": "18", "title": "CLASSIFIEDS & MARKETPLACE", "desc": "Now hiring blame managers" },
+        { "page": "19", "title": "THE FOLD-IN", "desc": "Who did this?" }
+      ],
+      "scorecard": {
+        "title": "THIS WEEK'S REFLECTING POOL SCORECARD",
+        "rows": [
+          { "label": "Renovation Cost", "value": "$14.65 million" },
+          { "label": "Original Estimate", "value": "$1.8 million" },
+          { "label": "Days Until It Turned Green", "value": "~14" },
+          { "label": "Competitive Bids Solicited", "value": "0" },
+          { "label": "Olympians Detained", "value": "1 (for 5 hours)" },
+          { "label": "Evidence Of Vandalism", "value": "Pending" }
+        ]
+      }
+    },
+
+    {
+      "illoId": "thepool",
+      "type": "story",
+      "flip": false,
+      "scene": "The Lincoln Memorial Reflecting Pool, half bright American-flag-blue and half slimy green algae swamp. Long rubbery strips of blue coating peel up and curl out of the water like banana peels. A small Abraham Lincoln statue in the memorial behind it covers its face with one marble hand. The Washington Monument's reflection in the water is replaced by a giant cash-register receipt. Ducks paddle through the algae wearing tiny hazmat floaties. Mad Magazine busy detailed comic style.",
+      "eyebrow": "COVER STORY · THE MAIN EVENT",
+      "heading": "THE POOL THAT REFLECTED THE PRESIDENCY",
+      "subheading": "$14 MILLION LATER, THE WATER IS THE WRONG COLOR",
+      "deck": "It was supposed to be 'American flag blue.' Ahead of the nation's 250th anniversary, the Lincoln Memorial Reflecting Pool was renovated, repainted, and refilled. Within about two weeks, the blue began peeling off and the water turned a confident, unpatriotic green.",
+      "caption": "★ The pool reflects the monuments, the receipt, and the entire decade ★",
+      "paragraphs": [
+        "The Reflecting Pool has one job. It is a shallow rectangle of water and its entire purpose, since 1922, has been to hold still and reflect the things around it. This is, by the standards of federal infrastructure, an extremely achievable goal.",
+        "The President declared the pool 'absolutely filthy' and an 'embarrassment to our Country,' and ordered it fixed and recolored to a 'dark blue of the American Flag' ahead of the semiquincentennial. He praised the chosen material personally, calling it <em>thick, strong, flexible,</em> and possessed of a natural, beautiful color.",
+        "The material survived, by most accounts, less than two weeks at the bottom of a pool before photos showed it peeling away and floating cheerfully to the surface like it had somewhere better to be.",
+        "Then the algae came back. Algae has returned to this pool after essentially every renovation since the Coolidge administration, a fact the Interior Department itself cited, which raises the question of why anyone expected a fresh coat of paint to settle a 104-year-old argument the algae has been winning the whole time.",
+        "The cost, originally estimated at $1.8 million, climbed past <strong>$14.65 million</strong> — roughly $4 million over even the revised estimate — with one unexplained $460,000 transaction that the federal database lists and no human being has yet explained.",
+        "Workers arrived with shop-vacs, gallons of hydrogen peroxide, and a machine that blows ozone nanobubbles. As of this writing the pool remains green in large sections, the blue continues to peel, and the monuments around it are being reflected, faithfully, in a swamp."
+      ],
+      "pullQuote": "\"The pool has one job. The job is reflection. It is now reflecting our entire situation back at us, which feels like overreach.\" — INSANE Civic Desk",
+      "sidebarList": {
+        "title": "🦆 A TIMELINE OF STILL WATER",
+        "items": [
+          "💙 April: President orders pool fixed and made 'American flag blue'",
+          "🎨 Early June: Pool refilled, declared gorgeous, thick, strong, flexible",
+          "🟢 ~2 weeks later: Blue peels, floats to top, algae returns triumphant",
+          "🧪 This week: Hydrogen peroxide, shop-vacs, nanobubbles deployed",
+          "💧 Now: 'Probably' needs to be drained again. Start over. America turns 250."
+        ]
+      }
+    },
+
+    {
+      "illoId": "nobidguy",
+      "type": "story",
+      "flip": true,
+      "scene": "A shady but cheerful contractor character in sunglasses, a tool belt, and a red 'I DONATE / YOU PAY' cap, holding an enormous gold-edged invoice reading '$14 MILLION+' and a bucket labeled 'URGENCY EXEMPTION' that leaks both money and blue paint. Behind him a tiny golf flag pokes out of a sand trap, and a paint roller sheds long blue rubber strips into the water. He wears a name tag: 'NO-BID POOL GUY'. Mad Magazine caricature style.",
+      "eyebrow": "FOLLOW THE MONEY · CONTRACTS DESK",
+      "heading": "MEET THE NO-BID POOL GUY",
+      "subheading": "FIRST FEDERAL CONTRACT, FINEST GOLF-CLUB RÉSUMÉ",
+      "deck": "The resurfacing work went to a Virginia coatings firm whose prior credential, by multiple accounts, was doing pool work at the President's own golf club — awarded without competitive bidding, citing 'unusual and compelling urgency' around the 250th anniversary.",
+      "caption": "★ The bucket leaks money and paint at roughly the same rate ★",
+      "paragraphs": [
+        "There is a phrase in federal contracting — 'unusual and compelling urgency' — that lets the government skip the competitive bidding process when there's no time to lose. It is meant for emergencies: disasters, wartime, things that cannot wait.",
+        "It was used here for the color of a pool.",
+        "The contract to waterproof and repaint went to Atlantic Industrial Coatings, a Virginia firm reportedly making its <strong>first-ever federal contract</strong>, whose relevant experience was said to include pool work at the President's Sterling golf club. There was, briefly, some confusion about who the contractor even was, after the President mentioned speaking to 'a man he knew' about the job and then walked that back.",
+        "Reporting also pointed to a separate $1.7 million no-bid filtration contract for 'nanobubble' technology, awarded to a firm connected to a donor-linked trust. The phrase 'donor-linked trust' is doing the same heavy lifting as 'incidentally' did last issue. Washington runs on phrases that mean more the longer you stare at them.",
+        "INSANE's contracts desk has reviewed the urgency exemption and found it compelling, in that we are compelled to ask what the emergency was. The pool had been still for a century. It could, arguably, have waited for a second bid."
+      ],
+      "fakeAd": {
+        "headline": "THE NO-BID CONTRACT KIT™",
+        "subheadline": "Free Inside This Issue! Skip Bidding — Cite Urgency!",
+        "bullets": [
+          "📋 Pre-stamped 'UNUSUAL & COMPELLING URGENCY' forms!",
+          "🏌️ 'Golf Club Résumé' template — turn one pool into a federal career!",
+          "🪣 Includes one (1) URGENCY EXEMPTION bucket (leaks)!",
+          "💰 Gold-edged invoice paper — make $1.8M look like $14.65M!"
+        ],
+        "price": "FREE* (*BILLED TO TAXPAYER AT 800% MARKUP)",
+        "disclaimer": "Kit Co. not responsible for cost overruns, which are the point. Urgency may not be unusual or compelling. Golf-club experience does not qualify you to coat a national monument, but it has not stopped anyone yet. Bucket leaks by design."
+      }
+    },
+
+    {
+      "illoId": "vandals",
+      "type": "story",
+      "flip": false,
+      "scene": "A bewildered, harmless-looking elderly man in a USA Olympic tank top and bike helmet, with an Olympic medal around his neck, stands in handcuffs holding a single tiny loose flap of blue pool liner, a small speech bubble reading 'I just touched it!'. A squad of absurdly over-equipped monument police in tactical gear point at him dramatically. Behind them the President in a hard hat gestures and shouts. Mad Magazine style, exaggerated contrast between harmless man and overwhelming force.",
+      "eyebrow": "JUSTICE DESK · THE VANDAL MENACE",
+      "heading": "VANDALS! SAD! VERY SAD!",
+      "subheading": "OLYMPIAN, 67, DETAINED FIVE HOURS FOR TOUCHING A FLAP",
+      "deck": "When the blue began peeling, the President announced that vandals were responsible — providing no evidence — and that 'many additional people' had been arrested for serious crimes carrying years in jail. One of the arrested was a 67-year-old three-time Olympic canoeist who says he touched a loose piece out of curiosity.",
+      "caption": "★ The most dangerous man in America, allegedly, holds a flap ★",
+      "paragraphs": [
+        "The peeling was a problem. Problems require culprits. And so, overnight and without evidence, the culprit was identified: vandals. Shadowy, monument-destroying vandals, who had somehow sabotaged a coating that several engineers suspected of being entirely capable of peeling on its own.",
+        "\"These are very serious crimes having to do with the destruction of National Monuments. Years in jail,\" the President wrote, of the pool surface.",
+        "The most prominent person swept up was David Hearn, 67, a three-time U.S. Olympic canoeist, who told reporters he touched a partially detached flap of blue material out of curiosity and was promptly detained for about five hours.",
+        "\"I didn't vandalize anything,\" Hearn said. \"I didn't destroy or break or peel anything. By the time I realized what was going on, I was being put in handcuffs.\"",
+        "He is due in court on July 9, where the prosecution will face the challenge of explaining how a flap that was already floating got blamed on a man who, by his account, simply confirmed with one finger that it was, in fact, floating.",
+        "INSANE would like to note for the record that touching a thing to see if it is loose is the single most human act there is, and that if curiosity is now a federal monument crime, the entire species should turn itself in."
+      ],
+      "pullQuote": "\"I just touched it!\" — David Hearn, 67, three-time Olympian, alleged flap-toucher",
+      "sidebarList": {
+        "title": "🚨 OTHER CRIMES NOW PUNISHABLE BY YEARS IN JAIL",
+        "items": [
+          "🖐️ Touching a flap to see if it's loose (it was)",
+          "👀 Looking at the pool with a skeptical expression",
+          "📸 Photographing the algae for posterity",
+          "🦆 Being a duck near the scene (ducks are being processed)"
+        ]
+      }
+    },
+
+    {
+      "illoId": "nanobubble",
+      "type": "story",
+      "flip": true,
+      "scene": "A big industrial machine labeled 'NANOBUBBLE 3000' on the pool's edge, hoses dripping, blowing a stream of soap bubbles into the air that spell out the words 'NOT OUR FAULT'. National Park Service workers in the background vacuum green algae off the pool bottom with shop-vacs. A small American flag sticker on the machine. Mad Magazine comic style, busy detail.",
+      "eyebrow": "TECHNOLOGY DESK · THE SOLUTION",
+      "heading": "BEHOLD THE NANOBUBBLE 3000",
+      "subheading": "KILLS ALGAE — CREATES EXCUSES",
+      "deck": "Faced with a pool that had turned green, officials deployed hydrogen peroxide, shop-vacs, and what the Interior Department described as 'advanced nanobubbler technology.' The algae remained, as of press time, deeply unbothered.",
+      "caption": "★ The bubbles spell NOT OUR FAULT, which is the machine's primary function ★",
+      "paragraphs": [
+        "When water turns green, modern government has options. You can drain it. You can treat it. Or you can deploy a machine with a number in its name and let the number do the reassuring.",
+        "The Nanobubble approach involves pumping tiny ozone bubbles into the water to combat algae — a real technology, deployed here at real expense, for a roughly $1.7 million no-bid contract. Workers also poured jugs of hydrogen peroxide directly into the pool, which an Interior spokesperson assured the public has 'no harmful side effects to marine life,' a sentence that assumes the marine life had been consulted.",
+        "The Interior Department further explained that algae has 'plagued every Lincoln Reflecting Pool reopening since 1922,' which is true, and which is also the strongest possible argument that the algae is not vandalism but simply the pool's natural personality.",
+        "In perhaps the week's most remarkable government communication, Interior compared the dead algae being vacuumed off the pool floor to 'the destroyed Iranian Navy resting on the bottom of the Persian Gulf.' INSANE has read that sentence eleven times and can confirm it does not improve.",
+        "The nanobubbles, meanwhile, continue to rise, pop, and — if you watch closely — spell out the official position."
+      ],
+      "fakeAd": {
+        "headline": "NANOBUBBLE 3000™",
+        "subheadline": "The Number Is Right There In The Name. You're Welcome.",
+        "bullets": [
+          "🫧 Blows ozone bubbles that spell reassuring phrases!",
+          "🟢 Kills algae* (*algae not included in 'kills')!",
+          "🇮🇷 Now with naval-defeat comparison mode!",
+          "💵 $1.7M, no-bid, donor-adjacent — engineering excellence!"
+        ],
+        "price": "$1,700,000 (URGENT, OBVIOUSLY)",
+        "disclaimer": "Bubble Co. not responsible for algae, which has been winning since 1922 and is not impressed by your machine. Bubbles may spell things you did not authorize. Comparisons to sunk navies are for morale and should not be taken as marine-biology guidance."
+      }
+    },
+
+    {
+      "illoId": "hormuz",
+      "type": "story",
+      "flip": false,
+      "scene": "An aerial cartoon view of the Strait of Hormuz jammed bumper-to-bumper with oil tankers like a freeway traffic jam at rush hour. One tanker honks with cartoon sound lines, another displays an electronic sign reading 'PLEASE TAKE A NUMBER'. A tiny missile zips overhead like a delayed commuter. A 'TOLL AHEAD' sign floats on a buoy. Mad Magazine busy comic style.",
+      "eyebrow": "INTERNATIONAL DESK · COMMUTER REPORT",
+      "heading": "STRAIT OF HORMUZ COMMUTER REPORT",
+      "subheading": "EXPECT DELAYS, MISSILES, TOLL TALK & LIGHT HONKING",
+      "deck": "Good morning, commuters. Traffic through the world's most important oil chokepoint is moving — despite renewed talk of closure, which the U.S. military denied, saying tankers continued through the strait.",
+      "caption": "★ Rush hour in the Strait: take a number, mind the missiles ★",
+      "paragraphs": [
+        "And now to our traffic correspondent, who is hovering over the Strait of Hormuz, where conditions this morning are described as 'tense but flowing.'",
+        "Reports of a full closure have been denied by the U.S. military, which noted that vessels continued moving through the strait. So if you're commuting by supertanker today, you're cleared to proceed, though you may experience residual anxiety in the left lane.",
+        "Expect the usual: bumper-to-bumper tankers, periodic toll-talk, the occasional missile in the carpool lane, and light honking. One vessel was observed displaying 'PLEASE TAKE A NUMBER,' which our correspondent notes is either a joke or the single most efficient idea the region has produced in years.",
+        "Oil prices, as always, ride the situation like a roller coaster with no posted height requirement. Analysts advise commuters to remain calm, keep two tanker-lengths of distance, and remember that the strait, like the Reflecting Pool, has been a problem for a very long time and will likely be a problem for a very long time more.",
+        "Back to you in the studio, where the coffee is also, somehow, tense."
+      ],
+      "pullQuote": "\"PLEASE TAKE A NUMBER.\" — A tanker, displaying more governance than expected"
+    },
+
+    {
+      "illoId": "greenland",
+      "type": "story",
+      "flip": true,
+      "scene": "A squad of cartoon polar bears wearing tiny military helmets and carrying wooden toy rifles, marching in formation on a Greenland ice field doing weekend drills. One bear holds a hand-painted sign reading 'NOT FOR SALE, BUT WE DO RENT IGLOOS'. A small Greenland flag flies. A nervous NATO flag peeks from behind an iceberg. Mad Magazine style, absurd and charming.",
+      "eyebrow": "ARCTIC DESK · NORTHERN MANEUVERS",
+      "heading": "GREENLAND POLAR BEAR MILITIA BEGINS DRILLS",
+      "subheading": "NOT FOR SALE — BUT IGLOOS AVAILABLE TO RENT",
+      "deck": "Amid renewed pressure to acquire or control Greenland — which has strained relations with European NATO allies — the island's most committed residents have organized. They are large. They are cold-adapted. They are not interested in your offer.",
+      "caption": "★ The militia drills every weekend; the igloos are reasonably priced ★",
+      "paragraphs": [
+        "Greenland is not for sale. This has been stated repeatedly, by Greenland, in a tone that suggests it would prefer not to keep saying it. The renewed push to acquire or control the island has unsettled European NATO members and delighted exactly one constituency: the polar bears, who have discovered the concept of leverage.",
+        "INSANE's Arctic bureau reports that a volunteer polar bear militia has begun holding weekend drills, marching in loose formation across the ice with wooden rifles and an admirable sense of purpose. Their stated position, per a sign held by their apparent leader, is: <strong>NOT FOR SALE, BUT WE DO RENT IGLOOS.</strong>",
+        "This is, our correspondent notes, the most reasonable diplomatic posture currently on offer anywhere in the Arctic: a firm no on the sovereignty question, paired with a flexible yes on short-term lodging.",
+        "Asked for comment, the bears growled, which our translator rendered as 'first and last month's rent, no parties, and the security deposit covers seal damage only.'",
+        "NATO officials, reached for comment, asked to be left out of it."
+      ],
+      "fakeAd": {
+        "headline": "RENT-AN-IGLOO™ (GREENLAND)",
+        "subheadline": "The Island's Not For Sale — But The Lodging Is Negotiable!",
+        "bullets": [
+          "🐻 Hosted by an actual polar bear militia (very secure)!",
+          "❄️ First & last month's rent; security deposit covers seal damage!",
+          "🏳️ NATO-adjacent location with stunning geopolitical views!",
+          "🚫 Not for sale. Stop asking. We mean it."
+        ],
+        "price": "FROM 3 SEALS/NIGHT OR EQUIVALENT IN RESPECT",
+        "disclaimer": "Igloo LLC not responsible for melting, which is a separate and much larger problem we are not equipped to discuss. No parties. The militia is volunteer but takes its drilling seriously. Sovereignty is non-negotiable; the thermostat is also non-negotiable, it's cold, that's the whole point."
+      }
+    },
+
+    {
+      "illoId": "gift",
+      "type": "story",
+      "flip": false,
+      "scene": "A luxury Qatari jumbo jet flying overhead wrapped in an enormous red gift bow, towing a banner that reads 'TOTALLY NORMAL GIFT'. On the ground below, tiny figures wave receipts and ethics handbooks. Mad Magazine style, deadpan absurdity.",
+      "eyebrow": "PROTOCOL DESK · GIFTS & GRATITUDE",
+      "heading": "TOTALLY NORMAL GIFT",
+      "subheading": "JUST A REGULAR-SIZED JUMBO JET WITH A BOW ON IT",
+      "deck": "Nothing to see here, says the banner on the enormous gifted aircraft. INSANE files this under our recurring department, 'Things Being Described As Normal At High Volume.'",
+      "caption": "★ When a gift requires a banner insisting it's normal, INSANE takes notes ★",
+      "paragraphs": [
+        "There is a useful rule in life: the more loudly something insists it is normal, the more questions it tends to generate. A luxury jumbo jet, wrapped in a bow and towing a banner reading TOTALLY NORMAL GIFT, is a near-perfect demonstration of this rule in flight.",
+        "INSANE takes no position on any specific aircraft. We simply observe that ordinary gifts — socks, a casserole, a nice card — do not typically require aerial signage clarifying their ordinariness.",
+        "Our protocol desk reviewed the relevant ethics guidance and found it, like the pool, in the process of being drained.",
+        "We wish the jet well, wherever it lands, and whoever ends up holding the bow."
+      ],
+      "pullQuote": "\"It's totally normal.\" — A banner, towed behind the thing it is describing"
+    },
+
+    {
+      "illoId": "street",
+      "type": "story",
+      "flip": true,
+      "scene": "A lineup of six wildly different ordinary Americans standing at the edge of a green algae-filled reflecting pool, each with an exaggerated opinionated expression, microphones thrust at them. One holds a phone taking a selfie with the algae. Mad Magazine caricature style, diverse expressive crowd.",
+      "eyebrow": "RECURRING FEATURE · MAN & WOMAN IN THE STREET",
+      "heading": "MAN & WOMAN IN THE STREET",
+      "subheading": "WE ASKED SIX CITIZENS WHAT THEY THINK OF THE GREEN WATER",
+      "deck": "Our roving reporter visited the National Mall, dodged the algae patrol, and recorded six unfiltered American opinions. Names and locations printed exactly as muttered.",
+      "caption": "★ Democracy reflects on itself, in approximately four feet of green water ★",
+      "paragraphs": [
+        "<strong>\"They spent fourteen million dollars to turn blue water green. I could've done that for free with a goldfish and some neglect.\"</strong> — Eunice Garber, Dayton, Ohio",
+        "<strong>\"My nephew touched a flap and now he's a federal vandal. He's six. He touches everything. That's his whole personality.\"</strong> — Reginald Poole, Silver Spring, Maryland",
+        "<strong>\"I flew in for the 250th and instead I got a swamp with a security detail. Honestly? More patriotic. This is exactly what the founders dealt with.\"</strong> — Bonnie Tisch, Provo, Utah",
+        "<strong>\"They compared the dead algae to a sunk navy. I work in PR. I would've been fired for that. I'm a little jealous, frankly.\"</strong> — Marcus Ferrante, Hoboken, New Jersey",
+        "<strong>\"The bear militia rents igloos now. That's the most stable real-estate market I've heard about all year.\"</strong> — Della Knox, Anchorage, Alaska",
+        "<strong>\"I just wanted to see Lincoln reflected in the water. Instead Lincoln's reflected in a receipt. Which, in fairness, is also very American.\"</strong> — Father Tim Halloran, Scranton, Pennsylvania"
+      ],
+      "pullQuote": "\"I could've done that for free with a goldfish and some neglect.\" — Eunice Garber, Dayton, Ohio"
+    },
+
+    {
+      "illoId": "recipe",
+      "type": "story",
+      "flip": false,
+      "scene": "A Mad Magazine style cartoon recipe card scene: a giant reflecting-pool-shaped punch bowl, half blue and half green algae, with a paint can pouring in blue, a clump of algae being added, and a firehose of cash labeled 'TAXPAYER' filling the rest. A chef in a hard hat stirs the bowl with a paint roller. Bright comic style.",
+      "eyebrow": "TEST KITCHEN · THE INSANE RECIPE PAGE",
+      "heading": "PATRIOTIC SWAMP WATER",
+      "subheading": "SERVES ONE (1) NATIONAL MONUMENT",
+      "deck": "The official INSANE 250th Anniversary punch. Do not drink. Do not touch. Do not photograph (years in jail). One part blue paint, two parts algae, fourteen million parts taxpayer.",
+      "caption": "★ Garnish with one (1) peeling blue flap and a bewildered Olympian ★",
+      "paragraphs": [
+        "<strong>Step 1 — Announce the recipe.</strong> Loudly declare the existing water 'absolutely filthy.' Promise it will be 'gorgeous, beautiful.' Skip the taste-testing committee and cite urgency.",
+        "<strong>Step 2 — Add the blue.</strong> Pour in one (1) cup American Flag Blue paint. Insist it is thick, strong, and flexible. Refill the bowl and declare victory before it sets.",
+        "<strong>Step 3 — Wait two weeks.</strong> Allow the blue to peel and float to the top. This is not a flaw. This is the dish revealing its true nature.",
+        "<strong>Step 4 — Welcome the algae.</strong> Stir in two (2) cups fresh pond algae. It will arrive on its own regardless, as it has since 1922, but stirring makes you feel involved.",
+        "<strong>Step 5 — Deploy the technology.</strong> Add three (3) tablespoons hydrogen peroxide and a pinch of ozone nanobubbles. Assure all marine life there are no side effects. Do not consult the marine life.",
+        "<strong>Step 6 — Finish with blame.</strong> Fold in one (1) tablespoon unsubstantiated blame. Garnish with a handcuffed bystander. Drain the entire bowl. Begin again. Serve to a nation turning 250."
+      ],
+      "pullQuote": "\"One part blue paint, two parts algae, fourteen million parts taxpayer.\" — The Official INSANE 250th Recipe",
+      "sidebarList": {
+        "title": "🥣 INGREDIENTS (DO NOT ACTUALLY MAKE THIS)",
+        "items": [
+          "🔵 1 cup American Flag Blue paint (thick, strong, flexible, peels)",
+          "🟢 2 cups fresh pond algae (undefeated since 1922)",
+          "💵 14,000,000 parts taxpayer dollars",
+          "🧪 3 tbsp hydrogen peroxide (allegedly harmless)",
+          "🫧 1 pinch ozone nanobubbles",
+          "👉 1 tbsp unsubstantiated blame, to taste"
+        ]
+      },
+      "fakeAd": {
+        "headline": "NANOBUBBLE 3000™ — KITCHEN EDITION",
+        "subheadline": "Kills Algae. Creates Excuses. Now Food-Adjacent!",
+        "bullets": [
+          "🫧 Aerate your swamp water to a patriotic froth!",
+          "🟢 Algae returns anyway — that's the recipe, not a bug!",
+          "🍽️ Pairs with a no-bid contract and a gold invoice!",
+          "🚫 Surgeon General, NPS & several ducks advise against every step!"
+        ],
+        "price": "$14,650,000 (SERVES 1 MONUMENT, BADLY)",
+        "disclaimer": "Test Kitchen LLC not responsible for anyone who actually drinks this, touches this, or photographs this. The garnish has retained counsel. Marine life was not consulted and is, frankly, upset."
+      }
+    },
+
+    {
+      "illoId": "findthevandal",
+      "type": "story",
+      "flip": false,
+      "scene": "A Mad Magazine style kids' activity 'spot the suspect' lineup page. A police lineup wall with height markings, occupied by five nearly-identical cartoon ducks of slightly different expressions and one tall paper INVOICE with a face drawn on it standing among the ducks. A magnifying glass hovers. Playful, bright, comic.",
+      "eyebrow": "KIDS' CORNER · ACTIVITY PAGE",
+      "heading": "FIND THE VANDAL!",
+      "subheading": "ONE OF THESE SUSPECTS DID IT. (HINT: IT'S NOT A DUCK.)",
+      "deck": "Officials are certain the Reflecting Pool was vandalized. Can YOU spot the culprit in this official lineup? Grab a crayon and circle the guilty party!",
+      "caption": "★ Every suspect is a duck, except the invoice ★",
+      "paragraphs": [
+        "Welcome, junior detectives! The Reflecting Pool turned green and somebody is definitely, certainly, no-evidence-required to blame. The authorities have assembled six suspects. Your job is to find the vandal!",
+        "<strong>Suspect #1:</strong> A duck. Was near the water. Ducks are always near the water. Highly suspicious.",
+        "<strong>Suspect #2:</strong> A duck. Touched the surface with one webbed foot. Curiosity is a crime now.",
+        "<strong>Suspect #3:</strong> A duck. Has an alibi (was paddling) but who can really say.",
+        "<strong>Suspect #4:</strong> A duck. Quacked skeptically at the algae. Disrespectful.",
+        "<strong>Suspect #5:</strong> A duck. Wearing a tiny hazmat floatie, which honestly seems prepared, not guilty.",
+        "<strong>Suspect #6:</strong> A $14,650,000 invoice with a face drawn on it. Was present at every stage. Grew dramatically over time. Cannot account for $460,000. Hmm.",
+        "<em>Did you find the vandal? Of course you did. It was never the ducks. Release the ducks. Color the invoice red.</em>"
+      ],
+      "sidebarList": {
+        "title": "🖍️ BONUS PUZZLES",
+        "items": [
+          "🔵 MAZE: Help the blue paint find its way OFF the bottom of the pool! (It already did.)",
+          "🔢 CONNECT THE DOTS: Reveal the hidden picture! (It's another receipt.)",
+          "🦆 COUNT THE DUCKS: There are too many ducks. There is no right answer. That's the lesson.",
+          "🟢 COLOR BY NUMBER: Every number is green."
+        ]
+      }
+    },
+
+    {
+      "type": "spy-vs-spy",
+      "illoId": "spyvspy",
+      "title": "SPY VS. SPY",
+      "subtitle": "POOL MAINTENANCE EDITION",
+      "scene": "Classic Spy vs. Spy: two identical pointy-faced spies, one white, one black, both in wide-brimmed hats, sabotaging each other at the edge of a reflecting pool. One pours blue paint, the other pours algae. Mad Magazine Antonio Prohías black-and-white spy comic style, sharp angular linework.",
+      "white": {
+        "panels": [
+          "White Spy repaints the pool a beautiful patriotic blue. He is very proud.",
+          "He bills the job at $14 million and cites 'urgency.' No second spy was asked to bid.",
+          "Two weeks pass. The blue peels off and floats to the top, entirely on its own.",
+          "White Spy blames vandals. He arrests a passing duck. The duck did not do it."
+        ]
+      },
+      "black": {
+        "panels": [
+          "Black Spy does nothing at all. He simply waits.",
+          "Algae returns to the pool, as it has every year since 1922, requiring no sabotage.",
+          "Black Spy points at the green water and says 'YOUR fault.' He bills $1.7 million for a bubble machine.",
+          "Black Spy also arrests a duck, for balance. It is a different duck. It also did not do it."
+        ]
+      },
+      "result": "BOTH SPIES WERE PAID. NEITHER FIXED THE POOL. THE ALGAE, WHICH ARRIVED FREE OF CHARGE AND ASKED FOR NOTHING, REMAINS UNDEFEATED SINCE 1922."
+    },
+
+    {
+      "type": "awards",
+      "illoId": "awards",
+      "title": "🏆 THE INSANE AWARDS",
+      "date": "JUNE 2026",
+      "categories": [
+        {
+          "name": "FASTEST BLUE-TO-GREEN TRANSITION",
+          "gold": "The Reflecting Pool (~14 days)",
+          "silver": "The phrase 'thick, strong, flexible'",
+          "bronze": "Public confidence in the project"
+        },
+        {
+          "name": "BEST USE OF 'URGENCY'",
+          "gold": "A no-bid pool-paint contract",
+          "silver": "The $1.7M nanobubble machine",
+          "bronze": "The unexplained $460,000 transaction"
+        },
+        {
+          "name": "MOST UNFAIRLY ACCUSED",
+          "gold": "David Hearn, 67, flap-toucher",
+          "silver": "Every duck on the National Mall",
+          "bronze": "Curiosity itself"
+        },
+        {
+          "name": "MOST UNHINGED GOVERNMENT STATEMENT",
+          "gold": "Comparing dead algae to a sunk navy",
+          "silver": "'No harmful side effects to marine life'",
+          "bronze": "'TOTALLY NORMAL GIFT' (the banner)"
+        },
+        {
+          "name": "MOST UNDEFEATED SINCE 1922",
+          "gold": "The algae",
+          "silver": "The algae (it's that good)",
+          "bronze": "Also the algae"
+        }
+      ]
+    },
+
+    {
+      "type": "story",
+      "illoId": "classifieds",
+      "flip": false,
+      "scene": "A vintage newspaper classifieds page come to life, tiny cartoon scenes in each ad box: a 'BLAME MANAGER WANTED' ad, a peeling blue flap for sale, a shop-vac, a duck holding a 'NOT GUILTY' sign. Mad Magazine style, busy crowded classified layout.",
+      "eyebrow": "RECURRING FEATURE · THE INSANE CLASSIFIEDS",
+      "heading": "INSANE CLASSIFIEDS",
+      "subheading": "NOW HIRING. PLEASE DO NOT TOUCH THE LISTINGS.",
+      "deck": "Opportunity floats to the surface, then is blamed on vandals.",
+      "caption": "★ All positions require an urgency exemption and a willingness to vacuum ★",
+      "paragraphs": [
+        "<strong>BLAME MANAGER</strong> — Fast-growing administration seeks experienced professional to assign fault for self-inflicted problems. Must point convincingly at vandals, ducks, the previous century. $50,000 (it's a line item, we checked).",
+        "<strong>NO-BID CONTRACTOR</strong> — No experience required; golf-club pool work strongly preferred. Must be able to turn $1.8M into $14.65M while citing urgency. Gold invoice paper provided.",
+        "<strong>FLAP, BLUE, GENTLY PEELED</strong> — One (1) strip of American-flag-blue pool liner, lightly detached, floats beautifully. Touched by an Olympian (adds value or jail time, unclear). Best offer.",
+        "<strong>SHOP-VAC OPERATOR</strong> — National Mall. Vacuum dead algae off pool floor. Must be comfortable comparing your work to the sinking of a navy. Hydrogen peroxide provided, allegedly harmless.",
+        "<strong>DUCK LEGAL DEFENSE FUND</strong> — Seeking pro-bono attorneys to represent the wrongfully processed waterfowl of the National Mall. They did not do it. They never do it. Free worms for the right candidate."
+      ],
+      "fakeAd": {
+        "headline": "INSANE MARKETPLACE",
+        "subheadline": "As Peeled On The National Mall!",
+        "bullets": [
+          "🪣 URGENCY EXEMPTION BUCKET: leaks money & paint, just like the original. $14M.",
+          "🫧 POCKET NANOBUBBLER: spells your excuses in bubbles. $1.7M (no-bid).",
+          "🔵 D.I.Y. PEELING-FLAP KIT: peels in 14 days guaranteed! $40.",
+          "🦆 'I AM NOT THE VANDAL' DUCK BADGE: legal disclaimer included. $9.",
+          "📜 GOLD-EDGED INVOICE PAPER: make any number look official. $250/ream."
+        ],
+        "price": "ORDER NOW — DO NOT TOUCH UNTIL IT ARRIVES",
+        "disclaimer": "INSANE Marketplace not responsible for items that turn green within two weeks. The flap is final sale and may already be floating. Touching your order may constitute vandalism. The duck badge is not legally binding but the duck appreciates the gesture."
+      }
+    },
+
+    {
+      "illoId": "foldin",
+      "type": "fold-in",
+      "scene": "Mad Magazine back-page fold-in. The wide unfolded image shows the Lincoln Memorial Reflecting Pool, green and peeling, with everyone — the President, the no-bid guy, the police, the algae — pointing fingers in every direction asking 'WHO DID THIS?'. When the left third is folded over to meet the marked line, the pool becomes a mirror and the combined reflection points squarely back at the White House. Bright Mad Magazine comic style, designed for the fold to work.",
+      "question": "WHEN YOU LOOK INTO THE REFLECTING POOL AND ASK WHO DID THIS",
+      "answer": "THE REFLECTION ANSWERS. IT ALWAYS DID. THAT'S ITS JOB.",
+      "leftText": "INSANE — FOLD THIS HALF IN →",
+      "rightText": "← FOLD LEFT SIDE OVER TO SEE THE REFLECTION"
+    }
+
+  ]
+}

@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>America Reflects — And Immediately Needs Draining! — INSANE Mag</title>
+  <meta name="description" content="The 250th-Birthday Pool Party Issue — BYO Algae">
+  <meta property="og:title" content="America Reflects — And Immediately Needs Draining! — INSANE Mag">
+  <meta property="og:description" content="The 250th-Birthday Pool Party Issue — BYO Algae">
+  <meta property="og:image" content="https://insane-mag.bumbloobooks.com/images/vol1no7-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insane-mag.bumbloobooks.com/issues/vol1no7/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Special+Elite&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Default palette (overridden per issue via palette in issue.json) ────────── */
+:root {
+  --bg:           #fdf6e3;   /* newsprint cream */
+  --page-bg:      #fff;
+  --text:         #111111;
+  --accent:       #cc0000;   /* Mad red */
+  --accent2:      #f5c400;   /* Mad yellow */
+  --accent3:      #1a1a8a;   /* blue accent */
+  --nav-bg:       #cc0000;
+  --nav-text:     #ffffff;
+  --dot-active:   #f5c400;
+  --eyebrow:      #cc0000;
+  --ad-bg:        #fffde7;
+  --ad-border:    #f5c400;
+  --spy-white-bg: #f0f0f0;
+  --spy-black-bg: #111111;
+  --cover-text:   #ffffff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Nav bar ────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  height: 50px;
+  border-bottom: 3px solid rgba(0,0,0,0.25);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1.1rem; padding: 8px;
+  opacity: 0.8; transition: opacity 0.15s;
+}
+.nav-btn:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-text);
+  opacity: 0.9;
+}
+.nav-counter {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.nav-back {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-share {
+  background: none; border: none; cursor: pointer;
+  color: var(--nav-text); font-size: 1rem; padding: 8px;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.nav-share:hover { opacity: 1; }
+
+/* ── Dot pager ──────────────────────────────────────────── */
+.dot-row {
+  position: fixed; bottom: 14px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 12px;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text); opacity: 0.2;
+  cursor: pointer; transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+.dot.active {
+  background: var(--dot-active); opacity: 1; transform: scale(1.4);
+}
+
+/* ── Viewport / pager ───────────────────────────────────── */
+.viewport {
+  position: fixed; top: 50px; left: 0; right: 0; bottom: 40px;
+  overflow: hidden;
+}
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  display: flex; align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER-FULL PAGE  (pure full-bleed image, no overlays)
+   ══════════════════════════════════════════════════════════ */
+.cover-full-page {
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cover-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER PAGE
+   ══════════════════════════════════════════════════════════ */
+.cover-page {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+  overflow: hidden;
+}
+.cover-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.82;
+}
+.cover-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8rem; opacity: 0.1;
+}
+.cover-top {
+  position: relative; z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  padding: 12px 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+}
+.cover-mag-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  color: var(--accent2, #f5c400);
+  line-height: 0.85;
+  letter-spacing: 0.06em;
+  text-shadow: 3px 3px 0 #000;
+}
+.cover-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+.cover-lines-wrap {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 8px;
+  gap: 5px;
+}
+.cover-line {
+  background: rgba(204, 0, 0, 0.88);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.85rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  border-left: 4px solid var(--accent2, #f5c400);
+}
+.cover-line:nth-child(even) {
+  background: rgba(0, 0, 0, 0.82);
+  border-left-color: var(--accent, #cc0000);
+}
+.cover-tagline {
+  position: relative; z-index: 2;
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 6px;
+  border-top: 2px solid var(--accent2, #f5c400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDITORIAL PAGE
+   ══════════════════════════════════════════════════════════ */
+.editorial-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editorial-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 28px 60px;
+  margin: 0 auto;
+}
+.editorial-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.editorial-salutation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.editorial-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.editorial-body strong { font-weight: 800; }
+.editorial-body em { font-style: italic; color: var(--accent); }
+.editorial-sig {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--text);
+}
+.editorial-ps {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MASTHEAD PAGE
+   ══════════════════════════════════════════════════════════ */
+.masthead-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.masthead-inner {
+  max-width: 580px;
+  width: 100%;
+  padding: 24px 24px 60px;
+  margin: 0 auto;
+}
+.masthead-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  border-bottom: 4px solid var(--accent2, #f5c400);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.masthead-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.masthead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  padding: 12px;
+}
+.mast-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.mast-role {
+  font-weight: 800;
+  color: var(--accent);
+}
+.masthead-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  opacity: 0.55;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+/* Subscriber alert box */
+.subscriber-alert {
+  background: var(--accent, #cc0000);
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+}
+.alert-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.alert-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.alert-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.alert-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  color: var(--accent2, #f5c400);
+}
+.alert-disclaimer {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENTS PAGE
+   ══════════════════════════════════════════════════════════ */
+.contents-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ticker */
+.ticker-bar {
+  background: #000;
+  color: var(--accent2, #f5c400);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.contents-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 60px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.contents-header {
+  margin-bottom: 18px;
+  border-bottom: 4px solid var(--accent, #cc0000);
+  padding-bottom: 12px;
+}
+.contents-mag {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent);
+  line-height: 0.9;
+}
+.contents-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.contents-edition {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.contents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ci-item {
+  display: grid;
+  grid-template-columns: 28px 24px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 6px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ci-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.ci-emoji {
+  font-size: 1rem;
+  grid-row: 1;
+}
+.ci-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  grid-row: 1;
+}
+.ci-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Scorecard box */
+.scorecard-box {
+  background: var(--accent2, #f5c400);
+  border: 3px solid #000;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.scorecard-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.scorecard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scorecard-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+.scorecard-list strong {
+  color: var(--accent, #cc0000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STORY PAGES
+   ══════════════════════════════════════════════════════════ */
+.story-page {
+  flex-direction: column;
+}
+.story-page.no-illo {
+  flex-direction: column;
+  align-items: center;
+}
+.story-illo {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40vw; min-height: 180px; max-height: 320px;
+  overflow: hidden; position: relative;
+  background: #ddd;
+}
+.story-illo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.illo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; opacity: 0.25;
+}
+.illo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+}
+.story-body {
+  flex: 1;
+  padding: 18px 22px 56px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+.story-eyebrow {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--eyebrow, var(--accent));
+  margin-bottom: 6px;
+  border-left: 3px solid var(--accent, #cc0000);
+  padding-left: 8px;
+}
+.story-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.story-subheading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--accent, #cc0000);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.story-deck {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.story-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
+  line-height: 1.72;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+.story-body p strong { font-weight: 800; }
+.story-body p em { color: var(--accent); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  border-top: 3px solid var(--accent2, #f5c400);
+  border-bottom: 3px solid var(--accent2, #f5c400);
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+/* Sidebar list (bullet box) */
+.sidebar-list {
+  background: var(--bg, #fdf6e3);
+  border: 2px solid var(--text);
+  border-left: 5px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.sidebar-list-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sidebar-list ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-list ul li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Fake advertisement */
+.fake-ad {
+  background: var(--ad-bg, #fffde7);
+  border: 3px solid var(--ad-border, #f5c400);
+  border-top: 6px solid var(--accent, #cc0000);
+  padding: 14px 16px;
+  margin: 18px 0 0;
+}
+.ad-headline {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: var(--accent, #cc0000);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.ad-subheadline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.ad-bullets { margin-bottom: 8px; }
+.ad-bullet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.ad-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.ad-disclaimer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  opacity: 0.55;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* Glossary box */
+.glossary-box {
+  background: #f0f4ff;
+  border: 2px solid var(--accent3, #1a1a8a);
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.glossary-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3, #1a1a8a);
+  margin-bottom: 8px;
+}
+.gloss-entry {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.gloss-word {
+  font-weight: 800;
+  color: var(--accent3, #1a1a8a);
+}
+
+/* The End */
+.the-end {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 3px solid var(--accent2, #f5c400);
+  text-align: center;
+}
+.the-end-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.the-end-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* Desktop split layout for story pages */
+@media (min-width: 700px) {
+  .story-page:not(.no-illo) { flex-direction: row; }
+  .story-page.flip:not(.no-illo) { flex-direction: row-reverse; }
+  .story-illo {
+    flex: 0 0 42%;
+    height: 100%; max-height: none;
+    width: auto;
+  }
+  .story-body { overflow-y: auto; padding: 28px 36px 60px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SPY VS SPY PAGE
+   ══════════════════════════════════════════════════════════ */
+.spy-page {
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--page-bg, #fff);
+}
+.spy-header {
+  background: #000;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.spy-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.spy-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent2, #f5c400);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.spy-illo {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow: hidden;
+}
+.spy-illo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spy-arena {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.spy-col {
+  flex: 1;
+  padding: 16px 14px 12px;
+  overflow-y: auto;
+}
+.spy-col h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.spy-white {
+  background: var(--spy-white-bg, #f0f0f0);
+  border-right: 3px solid #000;
+  color: #111;
+}
+.spy-white h3 { color: #111; }
+.spy-black {
+  background: var(--spy-black-bg, #111);
+  color: #f0f0f0;
+}
+.spy-black h3 { color: #fff; }
+.spy-icon { font-size: 2rem; margin-bottom: 6px; }
+.spy-panels p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.spy-divider {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent, #cc0000);
+  color: #fff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.spy-result {
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 16px;
+  border-top: 3px solid #000;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AWARDS PAGE
+   ══════════════════════════════════════════════════════════ */
+.awards-page {
+  background: var(--page-bg, #fff);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.awards-inner {
+  max-width: 600px;
+  width: 100%;
+  padding: 28px 24px 60px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.awards-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border-bottom: 5px double var(--accent2, #f5c400);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+.awards-date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.award-category {
+  margin-bottom: 20px;
+  border: 2px solid var(--text);
+  border-left: 6px solid var(--accent, #cc0000);
+  padding: 12px 14px;
+}
+.award-cat-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.award-medals { display: flex; flex-direction: column; gap: 4px; }
+.medal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.medal.gold   { color: #b8860b; }
+.medal.silver { color: #666; }
+.medal.bronze { color: #8b4513; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOLD-IN PAGE
+   ══════════════════════════════════════════════════════════ */
+.fold-in-page {
+  background: #000;
+  color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.foldin-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  overflow: hidden;
+}
+.foldin-header {
+  background: var(--accent, #cc0000);
+  padding: 12px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.foldin-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  color: var(--accent2, #f5c400);
+}
+.foldin-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.foldin-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s;
+}
+.foldin-area.folded {
+  opacity: 0.08;
+  pointer-events: none;
+}
+.foldin-left {
+  flex: 0 0 62%;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px dashed var(--accent2, #f5c400);
+}
+.foldin-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; opacity: 0.6;
+}
+.foldin-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; font-size: 4rem; opacity: 0.1;
+  background: #1a1a1a;
+}
+.foldin-section-top {
+  position: absolute; top: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent2, #f5c400);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 2;
+}
+.foldin-question {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.72);
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.foldin-label-a, .foldin-label-b {
+  position: absolute; bottom: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--accent2, #f5c400);
+  background: rgba(0,0,0,0.8);
+  padding: 2px 8px;
+  z-index: 3;
+}
+.foldin-label-a { right: 8px; }
+.foldin-right {
+  flex: 0 0 38%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.foldin-answer-hidden {
+  position: absolute;
+  bottom: 32px; left: 0; right: 0;
+  padding: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+.foldin-label-b { left: 8px; bottom: 8px; }
+
+/* Revealed answer (shown when folded) */
+.foldin-answer-reveal {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+.foldin-area.folded ~ .foldin-answer-reveal {
+  display: flex;
+}
+.foldin-answer-text {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--accent2, #f5c400);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.foldin-answer-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.foldin-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  background: var(--accent2, #f5c400);
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 3px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.foldin-btn:hover { background: #fff; }
+
+
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">← All Issues</a>
+  </div>
+  <span class="nav-title">America Reflects — And Immediately Needs Draining!</span>
+  <div class="nav-right">
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next">&#8594;</button>
+    <button class="nav-share" onclick="shareIssue()" aria-label="Share">&#9014;</button>
+  </div>
+</nav>
+
+<div class="viewport">
+  <div class="track" id="track">
+<div class="page cover-full-page" id="p0">
+  <img class="cover-full-img" src="../../images/vol1no7-cover.png?v=1782381019080" alt="cover">
+</div>
+
+<div class="page cover-page" id="p1">
+  <img class="cover-img" src="../../images/vol1no7-cover.png?v=1782381019080" alt="cover">
+  <div class="cover-top">
+    <div class="cover-mag-name">INSANE</div>
+    <div class="cover-meta">VOL. 1 · NO. 7 &nbsp;·&nbsp; JUNE 24, 2026 &nbsp;·&nbsp; $6.99</div>
+  </div>
+  <div class="cover-lines-wrap">
+    <div class="cover-line">AMERICA REFLECTS — AND IMMEDIATELY NEEDS DRAINING!</div>
+    <div class="cover-line">“INFINITY!!!” INSPECTIONS — BATTERIES NOT INCLUDED</div>
+    <div class="cover-line">WAR POWERS: NOW AVAILABLE IN SYMBOLIC SIZE</div>
+    <div class="cover-line">BIPARTISAN BILL USED AS HOSTAGE FURNITURE</div>
+    <div class="cover-line">350-FOOT GASH — EVIDENCE PENDING</div>
+    <div class="cover-line">PLUS: THE MAMDANI SUBWAY CAR DERAILS THE ESTABLISHMENT!</div>
+  </div>
+  <div class="cover-tagline">SANITY NOT INCLUDED</div>
+</div>
+
+<div class="page editorial-page" id="p2">
+  <div class="editorial-inner">
+    <h2 class="editorial-title">FROM THE EDITOR'S BUNKER</h2>
+    <p class="editorial-salutation">Dear Reflective Reader,</p>
+    <div class="editorial-body">
+    <p>We stood at the edge of the Lincoln Memorial Reflecting Pool this week, gazed into its $16-million algae-green surface, and asked the eternal question of our republic: <em>who did this?</em> The pool, performing the one job a reflecting pool has ever had, showed us the answer. We are not allowed to print the answer. The answer has retained counsel.</p>
+    <p>It has been a banner 36 hours. The Senate voted 50–48 to tell the President to stop a war — the first time in the 50-year history of the law that both chambers have agreed on anything this strongly, and also, we are told, a vote with roughly the legal force of a strongly-worded Yelp review. The President called the four Republicans who crossed over “Losers.” The Republicans called it “a briefing they never got.” The war continued to cost $87.6 billion regardless, which the White House would now like Congress to please pay for, along with some Ebola money and $11.1 billion for farmers, all in the same sandbag.</p>
+    <p>Meanwhile Iran agreed, according to the President, to “highest level” nuclear inspections — “Infinity!!!” Iran, according to Iran, agreed to no such thing. Both statements were issued on the same afternoon, from the same planet, about the same uranium. We have printed both, side by side, in a feature we are calling “The Accord That Disagrees With Itself.”</p>
+    <p>And in a rare outbreak of Congress doing its literal job, both chambers passed the largest housing bill in a generation — 85–5 and 358–32 — only for the President to cancel the signing ceremony two hours before it began, chaining his signature to a separate voter-ID bill like a houseboat lashed to a buoy. The housing bill becomes law in ten days whether he signs it or not, which is the legislative equivalent of refusing to blow out a candle that is going to go out anyway.</p>
+    <p>Down in New York, a subway car full of Mamdani-endorsed socialists crashed directly into the Democratic establishment and took two incumbents with it. We cover that too. We cover everything. We are exhausted. The pool is still green.</p>
+    <p>Drain responsibly. Happy 250th. BYO algae.</p>
+    </div>
+    <p class="editorial-sig">— The Editors, dabbing at their waders</p>
+    <p class="editorial-ps">P.S. The duck on the cover wearing the snorkel is a credentialed IAEA inspector. He has clearance for the shallow end only. The deep end is “pending a final deal and sanctions relief.”</p>
+  </div>
+</div>
+
+<div class="page masthead-page" id="p3">
+  <div class="masthead-inner">
+    <div class="masthead-logo">INSANE</div>
+    <h2 class="masthead-title">INSANE</h2>
+    <div class="masthead-grid">
+      <div class="mast-item"><span class="mast-role">Editor-in-Chief:</span> <span class="mast-name">Algernon Q. Bloom, fished out of the pool</span></div>
+      <div class="mast-item"><span class="mast-role">Drainage Correspondent:</span> <span class="mast-name">Marsh Wetherby (waders, own)</span></div>
+      <div class="mast-item"><span class="mast-role">War Powers Desk:</span> <span class="mast-name">Symbolica Gesture-Jones</span></div>
+      <div class="mast-item"><span class="mast-role">Iran Accord Translator:</span> <span class="mast-name">Both/And, simultaneously</span></div>
+      <div class="mast-item"><span class="mast-role">Housing Bill Hostage Negotiator:</span> <span class="mast-name">Pending the SAVE Act</span></div>
+      <div class="mast-item"><span class="mast-role">Pump Buoy Watch:</span> <span class="mast-name">Crude T. Falling-Slowly</span></div>
+      <div class="mast-item"><span class="mast-role">NYC Bureau (3rd rail):</span> <span class="mast-name">Darlene Subway-Car, in transit</span></div>
+      <div class="mast-item"><span class="mast-role">Duckling Hazmat Coordinator:</span> <span class="mast-name">Lil' Goggles, age 2 weeks</span></div>
+      <div class="mast-item"><span class="mast-role">Algae:</span> <span class="mast-name">Algae (1922–present, undefeated)</span></div>
+    </div>
+    
+    <div class="subscriber-alert">
+      <div class="alert-title">INSANE MAGAZINE SUBSCRIBER ALERT!</div>
+      <div class="alert-sub">The 250th-Anniversary Reflecting Pool Commemorative Bucket Is Here!</div>
+      <div class="alert-items"><div class="alert-item">🪣 One (1) gallon of CERTIFIED MONUMENT ALGAE, ladled fresh!</div>
+        <div class="alert-item">🎨 Genuine peeling “American Flag Blue” paint chip — possibly load-bearing!</div>
+        <div class="alert-item">🦆 Adopt-a-Duckling hazmat goggles (duckling not included, lawsuit pending)!</div>
+        <div class="alert-item">📜 Pocket war-powers resolution — symbolic size, fits in any junk drawer!</div></div>
+      <div class="alert-price">$16,000,000 (OR JUST WHATEVER, HONESTLY)</div>
+      <div class="alert-disclaimer">Bucket contents may reflect the management. Not for drinking, swimming, christening, or photographing during a 250th-birthday flyover. The 350-foot gash is sold separately and remains evidence-pending.</div>
+    </div>
+    <div class="masthead-disclaimer">INSANE Magazine is printed on paper recycled from executive orders. Any resemblance to a functioning democracy is coincidental.</div>
+  </div>
+</div>
+
+<div class="page contents-page" id="p4">
+  
+  <div class="contents-inner">
+    <div class="contents-header">
+      <div class="contents-mag">INSANE</div>
+      <h2 class="contents-title">WHAT'S DRAINING THIS ISSUE</h2>
+      <div class="contents-edition">VOL. 1 · NO. 7</div>
+    </div>
+    <div class="contents-list">
+    
+    </div>
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p5">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">THE POOL THAT REFLECTS EVERYTHING</h2>
+    
+    
+    <p>The Lincoln Memorial Reflecting Pool was renovated for the nation's 250th birthday at a cost of $16 million, and in return for that sum the American people received a pool that is, at press time, the color of a smoothie made entirely of regret. The water is algae-green. The new paint — a shade officially logged as “American Flag Blue” — is peeling into the water in patriotic flakes. Ducklings paddle through it wearing what our photographer swears are tiny safety goggles.</p>
+    <p>Democrats are demanding investigations. The President has blamed vandals, citing a claimed “350-foot gash” in the pool liner, for which — and we want to be precise here — no public evidence has yet been produced. The sign at the water's edge reads <strong>“350-FOOT GASH — EVIDENCE PENDING,”</strong> which is also, increasingly, the official motto of the Republic.</p>
+    <p>“Someone did this,” a source close to the pool told us, gesturing at the pool, which was at that moment reflecting the source perfectly. “A bad someone. A vandal someone. Definitely not anyone who signed the invoice.” When we pointed out that the reflection appeared to be pointing back at the source, the source said the reflection was “fake news water” and left.</p>
+    <p>Contractors and the White House defend the work, noting that the pool is, technically, still a pool, and that algae is a “naturally occurring patriot” that “loves this country.” The National Park Service was unavailable, having last been seen wading out toward the center holding a net and weeping softly into it.</p>
+    <p>INSANE reached out to the algae for comment. The algae, which has been winning continuously since the pool opened in 1922, declined, citing momentum.</p>
+    <blockquote class="pull-quote">The pool was asked who did this. Being a reflecting pool, it answered. That was the whole problem.</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p6">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">THE ACCORD THAT DISAGREES WITH ITSELF</h2>
+    
+    
+    <p>In one of the great achievements of modern diplomacy, the United States and Iran this week reached an accord that the two parties describe completely differently while standing in the same room. The President holds up a document with two columns. The left column is headed <strong>WHAT TRUMP SAID.</strong> The right column is headed <strong>WHAT IRAN SAYS.</strong> The columns do not match. They were never going to match. Matching was not in the framework.</p>
+    <p>Per the President, Iran agreed to “highest level” nuclear inspections, “anywhere, anytime,” “Infinity!!!” — a unit of inspection that, our science desk confirms, does not come with batteries and cannot be independently verified, much like infinity itself.</p>
+    <p>Per Iran, Iran has agreed to no “Infinity.” Iranian officials say inspectors may return under an interim framework, but that access to the facilities the U.S. recently bombed — the interesting ones, with the underwater uranium barrels our cover artist so lovingly rendered — depends on a final deal and on sanctions relief. “Not so fast,” the right column reads. “We will decide.”</p>
+    <p>The IAEA, caught in the middle wearing a snorkel, confirms that <em>some</em> inspections will happen under the interim framework, and that the rest will happen approximately when everyone agrees on what they agreed to. Our IAEA inspector duck has been cleared for the shallow end. He reports the shallow end is fine. The deep end remains “pending.”</p>
+    <p>We ran both columns past a neutral arbitrator. The arbitrator read the left column, read the right column, read them again, and is now also a reflecting pool.</p>
+    <blockquote class="pull-quote">“Infinity!!!” said the left column. “We will decide,” said the right column. They are the same document. This is the document.</blockquote>
+    
+    
+    
+    <div class="glossary-box">
+      <div class="glossary-title">INFINITY INSPECTIONS: A GLOSSARY</div>
+      
+    </div>
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p7">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">WAR POWERS: NOW AVAILABLE IN SYMBOLIC SIZE</h2>
+    
+    
+    <p>For the first time in the 50-year life of the War Powers law, both chambers of Congress have passed a resolution directing the President to remove U.S. forces from hostilities — this one with Iran. The Senate vote was 50–48. It was the tenth attempt. It was, by every account, a stunning turnaround. It is also, by every account including its own, largely symbolic and may carry the legal force of a firmly-folded paper boat.</p>
+    <p>Four Republicans crossed over: Cassidy, Murkowski, Collins, and Paul. One Democrat, Fetterman, voted against. Two Republicans, McConnell and McCormick, did not vote at all — and had they shown up and voted no, the whole thing would have tied 50–50 and sunk. The resolution thus passed because two of its likely opponents were elsewhere, which is the most honest thing that has happened in the Capitol all year.</p>
+    <p>Senator Cassidy explained his vote by saying the administration had never actually told Americans what was going on, and that he would keep voting for war powers until somebody briefed him. This is a man asking, repeatedly and on the record, to please be told what the war is. He has not been told. He keeps voting. The war keeps going. The briefing remains, like the gash, pending.</p>
+    <p>The President responded by calling the four crossover Republicans “Losers” who had “made my job more difficult,” and described the resolution as “poorly timed and meaningless.” The resolution, for its part, was introduced as a concurrent resolution, meaning it does not go to the President's desk for a signature, meaning he cannot veto it, meaning everyone is now yelling about a document that has no inbox.</p>
+    <p>Our War Powers Desk, paddling its tiny boat across the Reflecting Pool, reports that the resolution floats beautifully, directs the current admirably, and changes the current not at all.</p>
+    <blockquote class="pull-quote">It passed because two senators who'd have killed it weren't there. It directs the President to do a thing. The thing is optional. Welcome to war powers in symbolic size.</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p8">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">THE HOSTAGE HOUSEBOAT</h2>
+    
+    
+    <p>In a near-miracle, both chambers of Congress passed the 21st Century ROAD to Housing Act — 85–5 in the Senate, 358–32 in the House — the most significant housing legislation since 1990. It speeds construction and, notably, limits big institutional investors from buying up single-family homes. It was a rare, gleaming, fully-bipartisan thing, bobbing in the pool like a houseboat that actually works.</p>
+    <p>Two hours before the scheduled signing ceremony at the Capitol, the President canceled it. He will not sign the housing bill, he announced, until Congress passes the separate SAVE America Act, a proof-of-citizenship voter-ID measure he has declared a “National Emergency.” In our cover illustration this is depicted accurately: the houseboat is labeled HOUSING BILL and chained to a buoy labeled SAVE ACT FIRST. We changed nothing. That's the news.</p>
+    <p>Here is the part that makes the hostage situation especially philosophical: under the Constitution, a bill that has passed both chambers becomes law in ten days whether the President signs it or not, as long as Congress stays in session — and this one passed with veto-proof majorities besides. The President is, in effect, refusing to blow out a candle that is going out on its own, while announcing that the candle is his hostage.</p>
+    <p>Senator Warren, a lead author, noted that huge bipartisan majorities passed a bill to lower housing costs and that the President is refusing, at the eleventh hour, to sign it. Speaker Johnson supported the refusal while also confirming the President will probably sign it within ten days anyway, which is the political equivalent of standing very firm in a doorway that has no door.</p>
+    <p>INSANE attempted to interview the houseboat. It declined, citing the chain.</p>
+    <blockquote class="pull-quote">It becomes law in ten days whether he signs it or not. He has taken hostage a bill that escapes on its own. This is the strongest possible position to negotiate from, if your goal is a press release.</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p9">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">MAN &amp; WOMAN IN THE STREET</h2>
+    
+    
+    <p><strong>DALE HORNBECK, 54, surveyor, Tysons Corner, VA:</strong> “I measured the gash myself. It's not 350 feet. It's not 3 feet. There is no gash. There's a pool, and it's green, and a man is standing in it with a paint roller. I'm a surveyor. I survey. That's my survey.”</p>
+    <p><strong>PRISCILLA VANCE-OKONKWO, 39, accountant, Silver Spring, MD:</strong> “Sixteen million dollars. For context, you could repaint this pool eight thousand times at Home Depot prices, and at least one of those times it would stay blue. I did the math. The math is also green now. Everything I touch turns green.”</p>
+    <p><strong>BUTCH KRZYZEWSKI, 61, retired, Parma, OH:</strong> “War powers, my foot. They voted fifty to forty-eight to tell the man to stop, and the man said no, and that was that. You know what's got more force of law than that resolution? My ex-wife's note on the fridge. At least I'm scared of that one.”</p>
+    <p><strong>SUNNY DELACROIX-PFEIFFER, 27, barista, Columbus, OH:</strong> “The President says Iran agreed to infinity inspections and Iran says they didn't agree to anything and both of them said it Tuesday. I serve eleven-dollar oat lattes to people who are calmer than this. And those people are NOT calm.”</p>
+    <p><strong>WENDELL ABERNATHY-GROSS, 72, war powers enthusiast, Manassas, VA:</strong> “I've waited fifty years for both chambers to pass a war powers resolution. FIFTY YEARS. And it finally happens, and it turns out it's the symbolic kind. It's like waiting your whole life to catch a fish and the fish is a folded-up piece of paper that says FISH.”</p>
+    <p><strong>DUCKLING #4, 2 weeks, Reflecting Pool, DC:</strong> “[Wearing hazmat goggles. Declined to comment. Paddled toward the deep end the IAEA has not been cleared to inspect. We worry about Duckling #4.]”</p>
+    <blockquote class="pull-quote">“It's like waiting your whole life to catch a fish and the fish is a folded-up piece of paper that says FISH.”</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p10">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">THE $87.6 BILLION SANDBAG</h2>
+    
+    
+    <p>Into the Reflecting Pool, with a splash heard across the Mall, the White House has lobbed a request for $87.6 billion in supplemental funding. The bag is itemized on the side like a heroic grocery receipt: roughly $67.15 billion for military needs tied largely to the Iran war, plus money for the Ebola response, plus $11.1 billion for farmers, all bundled together so that voting against the war means voting against the farmers and also, somehow, against not getting Ebola.</p>
+    <p>This is a classic of the genre: the omnibus splash. You cannot remove the war money without getting Ebola on your hands and dropping the farmers in the pool. The bag is designed to be un-untieable. Our Splash Correspondent attempted to untie it and is now, himself, partially Ebola response.</p>
+    <p>The timing is exquisite. Days after the Senate voted 50–48 that the war should stop, the administration has asked Congress to please fund the war it just voted to stop, which Congress will likely do, because the alternative is explaining to a farmer why his $11.1 billion was attached to a war the funder of which has been directed, symbolically, to end.</p>
+    <p>The sandbag now sits in the shallow end, leaking $50,000 of “blame management” into the surrounding algae. The ducklings have unionized.</p>
+    <blockquote class="pull-quote">You cannot vote against the war money without dropping the farmers in the pool. That is not a bug in the sandbag. That is the sandbag.</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p11">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">PUMP BUOYS &amp; THE GREAT OIL PROBE</h2>
+    
+    
+    <p>Crude prices dropped. The price at the pump did not drop as fast. In response, the President ordered the Department of Justice to take a look at the oil companies — later naming Exxon and Chevron specifically — over allegations that they are not lowering pump prices quickly enough to suit the moment.</p>
+    <p>On our cover, the gas pumps bob in the Reflecting Pool like buoys, which is the most accurate possible depiction of American energy policy: floating, bobbing, technically present, going wherever the current goes, dispensing fuel into an algae bloom.</p>
+    <p>The oil companies, for their part, note that they are large, that prices are complicated, and that crude does not become a gallon of regular unleaded merely because a President has gestured at it on a Tuesday. The DOJ noted that it would “take a look,” which is what the DOJ says about everything, and then took a look, in the way that one looks at a pool one has been told contains a 350-foot gash one cannot see.</p>
+    <p>INSANE's economists confirm prices are sticky on the way down. This is called “rockets and feathers”: prices rise like rockets and fall like feathers. The feathers, in this case, are floating in the pool, next to the pumps, next to the ducklings, next to the algae, which is winning.</p>
+    <blockquote class="pull-quote">Crude fell like a rocket. The pump price is falling like a feather. The feather is in the pool. Everything is in the pool.</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page story-page" id="p12">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    
+  </div>
+  <div class="story-body">
+    
+    <h2 class="story-heading">THE MAMDANI SUBWAY CAR DERAILS THE ESTABLISHMENT</h2>
+    
+    
+    <p>Up from New York, crashing into the corner of our cover like a runaway train, comes the night the Democratic establishment got derailed. Three congressional candidates endorsed by Mayor Zohran Mamdani won their primaries on Tuesday — and two of them did it by ousting sitting incumbents.</p>
+    <p>Former City Comptroller Brad Lander defeated Rep. Dan Goldman handily, around 66% to 34%, in the 10th District. Community organizer Darializa Avila Chevalier edged out five-term Rep. Adriano Espaillat by roughly three points in the 13th — one of the biggest New York House upsets since a young bartender named Ocasio-Cortez beat Joe Crowley back in 2018. And State Assemblymember Claire Valdez took the open 7th District seat outright.</p>
+    <p>House Democratic Leader Hakeem Jeffries campaigned aggressively against the Mamdani slate. The Mamdani slate won anyway. Mamdani called the trio “our team,” having filmed an ad with them that aired after Game 1 of the NBA Finals in which he passed a basketball back and forth with his three future congressmen. This is, we note, a more functional handoff than anything happening at the Reflecting Pool.</p>
+    <p>The subway car on our cover bears the slogan MAMDANI EFFECT and the words INCUMBENTS OUT. We did not editorialize. We drew the train. The train did the rest. The train always does.</p>
+    <blockquote class="pull-quote">Jeffries campaigned against them. The train ran anyway. The train does not check the schedule with leadership.</blockquote>
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page spy-page" id="p13">
+  <div class="spy-header">
+    <h2 class="spy-title">SPY vs. SPY</h2>
+    
+  </div>
+  
+  <div class="spy-arena">
+    <div class="spy-col spy-white">
+      <div class="spy-icon">🤍</div>
+      <h3>WHITE SPY</h3>
+      <div class="spy-panels"></div>
+    </div>
+    <div class="spy-divider">VS</div>
+    <div class="spy-col spy-black">
+      <div class="spy-icon">🖤</div>
+      <h3>BLACK SPY</h3>
+      <div class="spy-panels"></div>
+    </div>
+  </div>
+  <div class="spy-result"></div>
+</div>
+
+<div class="page story-page" id="p14">
+  
+  <div class="story-illo">
+    <div class="illo-placeholder">🖼️</div>
+    <div class="illo-caption">★ INSANE Magazine assumes no liability for the positions below. All listings are satire. Do not actually wade in. ★</div>
+  </div>
+  <div class="story-body">
+    <div class="story-eyebrow">HELP WANTED · INSANE CLASSIFIEDS</div>
+    <h2 class="story-heading">INSANE CLASSIFIEDS!</h2>
+    <p class="story-subheading">JOBS! OPPORTUNITIES! POSITIONS BOBBING IN THE POOL! (READ WHILE TREADING WATER.)</p>
+    <p class="story-deck">This Week's Employment Listings, Personals, And Opportunities From The INSANE Marketplace — Now Soggy — We Are Not Responsible For The Applicants These Ads Will Attract Or What The Water Reflects Back At Them</p>
+    <p><strong>POOL CONTRACTOR — LINCOLN MEMORIAL, WASHINGTON DC</strong><br>Prestigious federal monument seeks coatings contractor for high-visibility renovation. Prior experience: one (1) decorative pond preferred but not required. Must be comfortable painting a surface “American Flag Blue” and having it turn algae-green within fourteen (14) days. Estimate of $1.8 million will be honored as a starting point only; final invoice flexible up to and including $16 million. No-bid, no-fuss, no-idea. Knowledge of a “350-foot gash” a plus — gash need not actually exist. <em>Apply: leave résumé floating, surface-side up.</em></p>
+    <p><strong>IAEA NUCLEAR INSPECTOR — INTERIM FRAMEWORK, SHALLOW END ONLY</strong><br>International body seeks credentialed inspector for “highest level” inspections, “Infinity!!!”, batteries not included. Snorkel provided. Clearance for shallow end only; deep end access pending a final deal and sanctions relief. Must be comfortable being described by one party as having full access and by the other party as having no agreement whatsoever, simultaneously, in the same room. Duck applicants encouraged. <em>Apply: tread water near the underwater uranium barrels and wait.</em></p>
+    <p><strong>WAR POWERS RESOLUTION — SYMBOLIC SIZE, IMMEDIATE OPENING</strong><br>Historic document seeks meaning. Passed both chambers of Congress for the first time in 50 years; now seeking any legal force whatsoever. Floats beautifully. Directs the President to do a thing he is fully entitled to ignore. Ideal candidate: a court willing to take this seriously. Compensation: the satisfaction of a job nominally done. <em>Apply: introduce as a concurrent resolution so no one has to sign anything.</em></p>
+    <p><strong>HOUSING BILL — SEEKS SIGNATURE, WILL WAIT 10 DAYS REGARDLESS</strong><br>Largest housing bill in a generation, passed 85–5 and 358–32, seeks one (1) presidential signature. Currently chained to an unrelated voter-ID buoy and held hostage. Note: becomes law in ten days whether signed or not, so this is less a job and more a formality we are all performing together. Veto-proof and emotionally available. <em>Apply: the Constitution will handle it; you needn't do anything.</em></p>
+    <p><strong>OIL EXECUTIVE — MUST EXPLAIN ROCKETS & FEATHERS</strong><br>Major energy firm (initials E.X. or C.H.) seeks spokesperson to explain why pump prices rise like rockets and fall like feathers. Must withstand a DOJ “look.” Comfortable bobbing buoy-like in a reflecting pool while dispensing fuel into an algae bloom. Crude-to-gallon conversion knowledge helpful; ability to do it on a President's Tuesday timeline: impossible, but apply anyway. <em>Apply: the pump is floating; flag it down.</em></p>
+    <p><strong>PERSONALS — DEMOCRATIC INCUMBENT, NY, SEEKS SEAT</strong><br>Recently un-renominated five-term congressman, warm, experienced, fixture of the community, seeks any congressional district not currently being run over by a subway car labeled MAMDANI EFFECT. Must love affordable housing and merengue. No socialists, please — have met enough this week. Dan and Adriano need not reply to each other. <em>Apply: concede gracefully around 10:30 p.m.</em></p>
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+<div class="page awards-page" id="p15">
+  <div class="awards-inner">
+    <h2 class="awards-title">🏆 INSANE AWARDS</h2>
+    
+    
+  </div>
+</div>
+
+<div class="page fold-in-page" id="p16">
+  <div class="foldin-inner">
+    <div class="foldin-header">
+      <h2 class="foldin-title">INSANE BACK PAGE</h2>
+      <div class="foldin-subtitle">THE FAMOUS FOLD-IN &nbsp;✦&nbsp; "FOLD CAREFULLY — UNLIKE THE CEASEFIRE"</div>
+    </div>
+    <div class="foldin-area" id="foldinArea">
+      <div class="foldin-left" id="foldinLeft">
+        <div class="foldin-img-placeholder">📰</div>
+        <div class="foldin-section-top">INSANE — FOLD THIS HALF IN →</div>
+        <div class="foldin-question">WE DRAINED THE POOL, INVESTIGATED THE GASH, AND ASKED, ON BEHALF OF A GRATEFUL NATION, WHO IS TRULY RESPONSIBLE FOR THE STATE OF THIS REFLECTING POOL?</div>
+        <div class="foldin-label-a">A</div>
+      </div>
+      <div class="foldin-right">
+        <div class="foldin-section-top">← FOLD LEFT SIDE OVER TO MEET THE REFLECTION</div>
+        <div class="foldin-answer-hidden">THE ONE HOLDING THE ROLLER. THE POOL KNEW. IT IS A REFLECTING POOL. REFLECTING IS THE ONLY JOB IT HAS EVER HAD.</div>
+        <div class="foldin-label-b">B</div>
+      </div>
+    </div>
+    <div class="foldin-answer-reveal" id="foldinAnswer">
+      <div class="foldin-answer-text">THE ONE HOLDING THE ROLLER. THE POOL KNEW. IT IS A REFLECTING POOL. REFLECTING IS THE ONLY JOB IT HAS EVER HAD.</div>
+      <div class="foldin-answer-sub">Fold A over B to reveal the hidden truth</div>
+    </div>
+    <button class="foldin-btn" id="foldinBtn" onclick="toggleFoldin()">📰 FOLD IT!</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>window.STORY_PAGES = 17;</script>
+<script>(function () {
+  'use strict';
+
+  var PAGES   = window.STORY_PAGES || 0;
+  var current = 0;
+  var track   = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots    = [];
+
+  function update() {
+    if (track)   track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    if (counter) counter.textContent   = (current + 1) + ' / ' + PAGES;
+    if (prevBtn) prevBtn.disabled      = current === 0;
+    if (nextBtn) nextBtn.disabled      = current === PAGES - 1;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    try { history.replaceState(null, '', '#' + current); } catch(e) {}
+    // Reset fold-in state when navigating away
+    var area = document.getElementById('foldinArea');
+    if (area) area.classList.remove('folded');
+    var btn = document.getElementById('foldinBtn');
+    if (btn) btn.textContent = '\uD83D\uDCF0 FOLD IT!';
+  }
+
+  window.goTo = function (n) {
+    current = Math.max(0, Math.min(PAGES - 1, n));
+    update();
+  };
+
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  // Build dots
+  var dotRow = document.getElementById('dotRow');
+  if (dotRow) {
+    for (var i = 0; i < PAGES; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.setAttribute('data-i', i);
+      d.addEventListener('click', (function (idx) {
+        return function () { window.goTo(idx); };
+      })(i));
+      dotRow.appendChild(d);
+      dots.push(d);
+    }
+  }
+
+  // Hash navigation
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  // Touch swipe
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft')  window.prev();
+  });
+
+  // Share
+  window.shareIssue = function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        if (btn) {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 2000);
+        }
+      });
+    }
+  };
+
+  // Fold-in toggle
+  window.toggleFoldin = function () {
+    var area = document.getElementById('foldinArea');
+    var btn  = document.getElementById('foldinBtn');
+    if (!area) return;
+    var folded = area.classList.toggle('folded');
+    if (btn) btn.textContent = folded ? '\uD83D\uDCF0 UNFOLD IT!' : '\uD83D\uDCF0 FOLD IT!';
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>

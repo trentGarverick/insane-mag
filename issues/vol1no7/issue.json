@@ -48,15 +48,42 @@
       "type": "masthead",
       "title": "INSANE",
       "staff": [
-        { "role": "Editor-in-Chief", "name": "Algernon Q. Bloom, fished out of the pool" },
-        { "role": "Drainage Correspondent", "name": "Marsh Wetherby (waders, own)" },
-        { "role": "War Powers Desk", "name": "Symbolica Gesture-Jones" },
-        { "role": "Iran Accord Translator", "name": "Both/And, simultaneously" },
-        { "role": "Housing Bill Hostage Negotiator", "name": "Pending the SAVE Act" },
-        { "role": "Pump Buoy Watch", "name": "Crude T. Falling-Slowly" },
-        { "role": "NYC Bureau (3rd rail)", "name": "Darlene Subway-Car, in transit" },
-        { "role": "Duckling Hazmat Coordinator", "name": "Lil' Goggles, age 2 weeks" },
-        { "role": "Algae", "name": "Algae (1922–present, undefeated)" }
+        {
+          "role": "Editor-in-Chief",
+          "name": "Algernon Q. Bloom, fished out of the pool"
+        },
+        {
+          "role": "Drainage Correspondent",
+          "name": "Marsh Wetherby (waders, own)"
+        },
+        {
+          "role": "War Powers Desk",
+          "name": "Symbolica Gesture-Jones"
+        },
+        {
+          "role": "Iran Accord Translator",
+          "name": "Both/And, simultaneously"
+        },
+        {
+          "role": "Housing Bill Hostage Negotiator",
+          "name": "Pending the SAVE Act"
+        },
+        {
+          "role": "Pump Buoy Watch",
+          "name": "Crude T. Falling-Slowly"
+        },
+        {
+          "role": "NYC Bureau (3rd rail)",
+          "name": "Darlene Subway-Car, in transit"
+        },
+        {
+          "role": "Duckling Hazmat Coordinator",
+          "name": "Lil' Goggles, age 2 weeks"
+        },
+        {
+          "role": "Algae",
+          "name": "Algae (1922–present, undefeated)"
+        }
       ],
       "subscriberAlert": {
         "title": "INSANE MAGAZINE SUBSCRIBER ALERT!",
@@ -75,23 +102,77 @@
       "type": "contents",
       "title": "WHAT'S DRAINING THIS ISSUE",
       "entries": [
-        { "num": "06", "title": "The Pool That Reflects Everything", "desc": "$16 million, one 350-foot “gash,” zero evidence, infinite algae." },
-        { "num": "08", "title": "The Accord That Disagrees With Itself", "desc": "WHAT TRUMP SAID vs. WHAT IRAN SAYS, printed in two columns that hate each other." },
-        { "num": "10", "title": "War Powers: Now In Symbolic Size", "desc": "The 50–48 vote that directs the President to do a thing he can ignore." },
-        { "num": "12", "title": "The Hostage Houseboat", "desc": "Largest housing bill in a generation, chained to a voter-ID buoy." },
-        { "num": "13", "title": "Man & Woman In The Street", "desc": "Real Americans squint into the pool and report what squints back." },
-        { "num": "14", "title": "The $87.6 Billion Sandbag", "desc": "War money, Ebola money, and farmer money in one heroic splash." },
-        { "num": "15", "title": "Pump Buoys & The Oil Probe", "desc": "The DOJ is asked why the price at the bobbing gas pump won't fall faster." },
-        { "num": "16", "title": "The Mamdani Subway Car", "desc": "Three socialists, two ousted incumbents, one derailed establishment." },
-        { "num": "17", "title": "Spy vs. Spy: The Drain Plug", "desc": "Two agents, one rubber stopper, infinite swamp." },
-        { "num": "18", "title": "INSANE Classifieds", "desc": "Help wanted: pool contractor, snorkeling inspector, one congressional seat." },
-        { "num": "19", "title": "The INSANE Awards", "desc": "Gold, Silver & Bronze for excellence in deniable infrastructure." },
-        { "num": "20", "title": "FOLD-IN: Who Did This?", "desc": "Fold the page. The pool answers. It always does." }
+        {
+          "num": "06",
+          "title": "The Pool That Reflects Everything",
+          "desc": "$16 million, one 350-foot “gash,” zero evidence, infinite algae."
+        },
+        {
+          "num": "08",
+          "title": "The Accord That Disagrees With Itself",
+          "desc": "WHAT TRUMP SAID vs. WHAT IRAN SAYS, printed in two columns that hate each other."
+        },
+        {
+          "num": "10",
+          "title": "War Powers: Now In Symbolic Size",
+          "desc": "The 50–48 vote that directs the President to do a thing he can ignore."
+        },
+        {
+          "num": "12",
+          "title": "The Hostage Houseboat",
+          "desc": "Largest housing bill in a generation, chained to a voter-ID buoy."
+        },
+        {
+          "num": "13",
+          "title": "Man & Woman In The Street",
+          "desc": "Real Americans squint into the pool and report what squints back."
+        },
+        {
+          "num": "14",
+          "title": "The $87.6 Billion Sandbag",
+          "desc": "War money, Ebola money, and farmer money in one heroic splash."
+        },
+        {
+          "num": "15",
+          "title": "Pump Buoys & The Oil Probe",
+          "desc": "The DOJ is asked why the price at the bobbing gas pump won't fall faster."
+        },
+        {
+          "num": "16",
+          "title": "The Mamdani Subway Car",
+          "desc": "Three socialists, two ousted incumbents, one derailed establishment."
+        },
+        {
+          "num": "17",
+          "title": "Crazy Comments!",
+          "desc": "The week's most baffling real quotes, printed verbatim. We checked. They're real."
+        },
+        {
+          "num": "19",
+          "title": "Spy vs. Spy: The Drain Plug",
+          "desc": "Two agents, one rubber stopper, infinite swamp."
+        },
+        {
+          "num": "20",
+          "title": "INSANE Classifieds",
+          "desc": "Help wanted: pool contractor, snorkeling inspector, one congressional seat."
+        },
+        {
+          "num": "21",
+          "title": "The INSANE Awards",
+          "desc": "Gold, Silver & Bronze for excellence in deniable infrastructure."
+        },
+        {
+          "num": "22",
+          "title": "FOLD-IN: Who Did This?",
+          "desc": "Fold the page. The pool answers. It always does."
+        }
       ]
     },
     {
       "type": "story",
       "illoId": "pool",
+      "scene": "A bright Mad Magazine style cartoon of the Lincoln Memorial Reflecting Pool turned into a swamp: algae-green water, peeling 'American Flag Blue' paint flaking into the water, ducklings paddling in tiny hazmat safety goggles. A large lopsided wooden sign at the water's edge reads '350-FOOT GASH — EVIDENCE PENDING'. A bewildered National Park Service ranger wades out holding a net, weeping. Exaggerated expressions, crowded comic chaos, the Lincoln Memorial columns in the background.",
       "heading": "THE POOL THAT REFLECTS EVERYTHING",
       "subhead": "A $16 Million Renovation, A 350-Foot “Gash,” And An Algae That Has Gone Undefeated Since 1922",
       "byline": "By Our Drainage Correspondent, filing from a kayak",
@@ -119,6 +200,7 @@
     {
       "type": "story",
       "illoId": "accord",
+      "scene": "A Mad Magazine style cartoon of a politician in waders standing in a green swampy reflecting pool, triumphantly holding up a giant open two-column document. The left column is headed 'WHAT TRUMP SAID' and the right column 'WHAT IRAN SAYS', the two columns visibly contradicting each other with little angry scribbles between them. A snorkeling inspector duck in goggles bobs nearby next to an underwater barrel labeled 'URANIUM'. Bright comic colors, exaggerated satirical expressions.",
       "heading": "THE ACCORD THAT DISAGREES WITH ITSELF",
       "subhead": "Trump Says Iran Agreed To “Highest Level” Inspections — “Infinity!!!” Iran Says It Agreed To Nothing Of The Sort. Both Were Said On The Same Day.",
       "byline": "By Our Iran Accord Translator (he translates it into itself)",
@@ -133,16 +215,29 @@
       "glossary": {
         "title": "INFINITY INSPECTIONS: A GLOSSARY",
         "terms": [
-          { "term": "Highest Level", "def": "An altitude. Inspections will be conducted from it, looking down, with a telescope, optionally." },
-          { "term": "Anywhere, Anytime", "def": "Anywhere we already inspected; anytime that is not now." },
-          { "term": "Infinity!!!", "def": "A quantity of inspections equal to itself plus one, forever, sold separately, batteries not included." },
-          { "term": "Not So Fast", "def": "Official Iranian unit of access, convertible to the shallow end only, pending sanctions relief." }
+          {
+            "term": "Highest Level",
+            "def": "An altitude. Inspections will be conducted from it, looking down, with a telescope, optionally."
+          },
+          {
+            "term": "Anywhere, Anytime",
+            "def": "Anywhere we already inspected; anytime that is not now."
+          },
+          {
+            "term": "Infinity!!!",
+            "def": "A quantity of inspections equal to itself plus one, forever, sold separately, batteries not included."
+          },
+          {
+            "term": "Not So Fast",
+            "def": "Official Iranian unit of access, convertible to the shallow end only, pending sanctions relief."
+          }
         ]
       }
     },
     {
       "type": "story",
       "illoId": "warpowers",
+      "scene": "A Mad Magazine style cartoon of tiny senators in a small wooden rowboat floating on an algae-green reflecting pool, paddling with oars, holding up an oversized soggy scroll labeled 'WAR POWERS RESOLUTION 50-48'. The scroll is comically tiny and stamped 'SYMBOLIC SIZE'. Two empty senator seats labeled with question marks. The boat goes nowhere. Crowded comic chaos, exaggerated worried faces.",
       "heading": "WAR POWERS: NOW AVAILABLE IN SYMBOLIC SIZE",
       "subhead": "The Senate Voted 50–48 To Direct The President To Halt The War. The President Is Directed To, And May Now Ignore It, As Directed.",
       "byline": "By Our War Powers Desk, floating in a tiny boat",
@@ -158,6 +253,7 @@
     {
       "type": "story",
       "illoId": "houseboat",
+      "scene": "A Mad Magazine style cartoon of a wooden houseboat labeled 'BIPARTISAN HOUSING BILL' floating on a green swampy pool, chained with a heavy padlock to a red buoy labeled 'SAVE ACT FIRST'. The houseboat strains against the chain trying to float away. A giant disembodied hand dangles a signing pen just out of reach. Bright satirical comic style, exaggerated tension, algae everywhere.",
       "heading": "THE HOSTAGE HOUSEBOAT",
       "subhead": "Congress Passed The Biggest Housing Bill In A Generation. The President Canceled The Signing Two Hours Early And Chained His Pen To A Voter-ID Bill.",
       "byline": "By Our Housing Bill Hostage Negotiator",
@@ -185,6 +281,7 @@
     {
       "type": "story",
       "illoId": "street",
+      "scene": "A Mad Magazine style cartoon montage of ordinary American citizens of various ages standing at the edge of an algae-green reflecting pool, leaning over and squinting into the water, each with a comic speech bubble and an exaggerated baffled expression. One holds a measuring tape. A duckling in hazmat goggles paddles toward the deep end. Crowded vibrant comic panel energy.",
       "heading": "MAN & WOMAN IN THE STREET",
       "subhead": "We Asked Real Americans To Gaze Into The Reflecting Pool And Tell Us What They Saw",
       "byline": "Printed Verbatim, Goggles Provided",
@@ -201,6 +298,7 @@
     {
       "type": "story",
       "illoId": "sandbag",
+      "scene": "A Mad Magazine style cartoon of an enormous burlap sandbag labeled '$87.6 BILLION' splashing into an algae-green reflecting pool, sending green water flying. The bag is stamped with an itemized receipt reading 'WAR $67.15B • EBOLA RESPONSE • FARMERS $11.1B • BLAME MANAGEMENT $50,000'. Tiny ducklings scatter from the splash wearing goggles. Exaggerated comic motion, water droplets, satirical chaos.",
       "heading": "THE $87.6 BILLION SANDBAG",
       "subhead": "The White House Asks Congress For A Supplemental So Large It Has Its Own Splash. War Money, Ebola Money, And Farmer Money, All In One Bag.",
       "byline": "By Our Splash Correspondent, soaked",
@@ -215,6 +313,7 @@
     {
       "type": "story",
       "illoId": "pumps",
+      "scene": "A Mad Magazine style cartoon of gasoline pumps bobbing like buoys in an algae-green reflecting pool, their hoses dangling into the green water. Two pumps wear nervous cartoon faces, labeled 'EXXON' and 'CHEVRON'. A stern DOJ official in a suit peers at them through a magnifying glass from the shore. A crude-oil price arrow rockets up and floats down like a feather. Bright satirical comic chaos.",
       "heading": "PUMP BUOYS & THE GREAT OIL PROBE",
       "subhead": "Gas Pumps Bob In The Pool Like Buoys. The President Has Ordered The DOJ To Ask Exxon And Chevron Why The Price Isn't Falling Faster.",
       "byline": "By Our Pump Buoy Watch",
@@ -229,6 +328,7 @@
     {
       "type": "story",
       "illoId": "subway",
+      "scene": "A Mad Magazine style cartoon of a New York City subway car bursting out of an algae-green reflecting pool at an angle, crashing through the corner, labeled 'MAMDANI EFFECT' on the side and 'INCUMBENTS OUT' on the front. Three cheering progressive candidates wave from the windows while two stunned establishment politicians tumble out the back doors into the green water. Exaggerated comic motion, water spray, vibrant energy.",
       "heading": "THE MAMDANI SUBWAY CAR DERAILS THE ESTABLISHMENT",
       "subhead": "Three Mamdani-Backed Candidates — Valdez, Lander, Avila Chevalier — Win Democratic Primaries, Taking Two Incumbents Down With The Train",
       "byline": "By Our NYC Bureau, riding the 3rd rail",
@@ -241,20 +341,63 @@
       "pullQuote": "Jeffries campaigned against them. The train ran anyway. The train does not check the schedule with leadership."
     },
     {
-      "type": "spy-vs-spy",
-      "illoId": "spy",
-      "heading": "SPY vs. SPY",
-      "subhead": "“The Drain Plug”",
-      "panels": [
-        { "caption": "BLACK SPY discovers the Reflecting Pool's master drain plug, hidden beneath a sign reading “350-FOOT GASH — EVIDENCE PENDING.” He grins. He will drain the swamp at last." },
-        { "caption": "WHITE SPY, disguised as a credentialed IAEA inspector duck, snorkels up and replaces the plug with an identical plug labeled “INFINITY!!! — BATTERIES NOT INCLUDED.” Black Spy pulls it. Nothing drains. The plug was symbolic." },
-        { "caption": "BLACK SPY chains the real plug to a buoy labeled SAVE ACT FIRST, taking it hostage. White Spy points out, smugly, that the pool drains on its own in ten days regardless, constitutionally." },
-        { "caption": "The pool, reflecting both spies perfectly, drains at last — revealing, at the bottom, a single $16 million invoice and the algae, still winning, now also fully briefed on the war, which is more than Senator Cassidy can say." }
+      "type": "story",
+      "illoId": "comments1",
+      "scene": "A Mad Magazine style cartoon gallery wall of framed portraits of caricatured politicians at a podium, each with an enormous speech bubble, mouths open mid-proclamation, exaggerated confident grins. A red velvet 'HALL OF FAME' banner reads 'CRAZY COMMENTS'. One politician points at himself proudly. Bright satirical comic style, crowded gallery energy, ornate gold frames slightly crooked.",
+      "eyebrow": "SPECIAL FEATURE · ON THE RECORD",
+      "heading": "CRAZY COMMENTS!",
+      "subheading": "Real Quotes. Really Said. We Checked. We're As Surprised As You Are.",
+      "deck": "INSANE's Hall of Fame for the week's most baffling, math-defying, and self-contradicting statements — printed VERBATIM, because we could not possibly improve on them. Every quote below is real and accurately reproduced. The commentary is ours. The words are theirs.",
+      "caption": "★ All quotes are genuine and on the record. We are not making these up. That is the entire point. ★",
+      "paragraphs": [
+        "<strong>🏆 THE “INFINITY!!!” AWARD FOR NUCLEAR CERTAINTY — President Donald Trump (Truth Social):</strong><br>“Iran has fully and completely agreed to highest level Nuclear inspections long into the future (Infinity!!!). This will insure ‘Nuclear Honesty.’ If they did not agree to this, there would be no further negotiations!”<br><em>— INSANE notes: Iran's Foreign Ministry, the same day, said it had made “no new commitments” and had no plans to allow inspections of the attacked sites. Both statements are real. Both were said. Infinity remains, as ever, batteries not included.</em>",
+        "<strong>📋 THE REBUTTAL DESK — Iranian Foreign Ministry spokesman Esmail Baghaei (Tehran news conference):</strong><br>“We do not intend to allow IAEA inspectors to visit the nuclear sites that were attacked in the war.”<br><em>— INSANE notes: Printed here purely so you can hold it up next to the “Infinity!!!” post and watch the two of them refuse to be in the same room.</em>",
+        "<strong>🌟 THE “MAJOR MILESTONE” FOR A THING THAT DIDN'T HAPPEN — Vice President JD Vance (Switzerland press conference):</strong><br>“The Iranians have agreed to invite IAEA inspectors back into their country… That is a major milestone for the American people.”<br><em>— INSANE notes: The Iranians, contacted for comment by reality, declined to confirm they had agreed to the milestone they were a major part of.</em>",
+        "<strong>⚖️ THE “PROVIDED AID AND COMFORT” PROCLAMATION (Spelling Preserved) — President Donald Trump (Truth Social):</strong><br>“Senate decides to have a poorly timed and meaningless War Powers Act Vote, telling the Number One Sponser of Terror in the World… and by so doing has provided aid and comfort the Enemy.”<br><em>— INSANE notes: “Sponser” is reproduced exactly as posted. We have a copy editor. He wept. The Constitution's “aid and comfort” language refers to treason, which the Senate committed by voting, which is its job.</em>"
       ]
     },
     {
       "type": "story",
+      "illoId": "comments2",
+      "scene": "A Mad Magazine style cartoon split scene: on one side a politician at a gas station yanking a fuel-price sign downward shouting at it, prices comically falling like rocks and floating up like feathers; on the other side the same politician giving a thumbs-up next to a female senator with a giant gold star reading 'SANE', while a tiny calendar behind them flips to a page reading 'LOSER'. Bright satirical comic style, exaggerated contradictory expressions.",
+      "eyebrow": "SPECIAL FEATURE · ON THE RECORD (CONT'D)",
+      "heading": "CRAZY COMMENTS, PART TWO!",
+      "subheading": "The Gas-Pump Physics & Self-Reversing-Endorsement Wing Of The Hall Of Fame",
+      "deck": "More genuine, verbatim, on-the-record statements — this time on the subjects of petroleum, loyalty, and the binding force of documents nobody has to sign.",
+      "caption": "★ Still real. Still verbatim. Still happening. ★",
+      "paragraphs": [
+        "<strong>🪨 THE GEOLOGY-DEFYING GAS-PUMP THEOREM — President Donald Trump (Truth Social):</strong><br>“The big Oil Companies are not dropping their price at the pump commensurate with the sharply lower prices they are paying for Oil. Those prices are dropping like a rock! …customers are being ‘gouged.’ Gasoline prices better start going down a lot faster than what I'm seeing!”<br><em>— INSANE notes: Filed with the Department of Justice as an official “look” at Exxon and Chevron. Rocks, for the record, fall. Pump prices, for the record, feather. This is the entire field of energy economics, and it is now a DOJ matter.</em>",
+        "<strong>🔁 THE SELF-REVERSING ENDORSEMENT — President Donald Trump, on Sen. Susan Collins, EARLIER this month:</strong><br>“She is a sane woman.”<br><em>— INSANE notes: Days later, after Collins voted for the war-powers resolution, the same president grouped her among “Four Republican Losers.” The sane woman and the Republican loser are, we are reliably informed, the same Maine senator, observed at two different moments of presidential favor.</em>",
+        "<strong>💪 THE “I ALWAYS GET IT DONE” GUARANTEE — President Donald Trump (Truth Social):</strong><br>“These Senators have just made my job more difficult, but I will get it done, one way or the other, because I always get it done!”<br><em>— INSANE notes: The job in question — ending or authorizing the war — is the one the Senate just voted 50–48 to make him do. He is now vowing to get done the thing he is mad at them for telling him to do.</em>",
+        "<strong>📜 THE “ACTUALLY, IT'S BINDING” COUNTERPOINT — Rep. Gregory Meeks (statement after Senate passage):</strong><br>“Regardless of what President Trump says, this measure is binding under the War Powers Resolution.”<br><em>— INSANE notes: Included in the interest of balance, and because somebody in this issue should sound like they've read the law. The courts will now decide whether the paper boat floats. We await the ruling from a kayak.</em>"
+      ]
+    },
+    {
+      "type": "spy-vs-spy",
+      "illoId": "spy",
+      "scene": "A Mad Magazine 'Spy vs Spy' style cartoon, black-and-white pointy-nosed spies (one in black, one in white) battling over a rubber drain plug at the bottom of an algae-green reflecting pool. The white spy is disguised with a snorkel and an 'IAEA INSPECTOR' badge. A sign reads '350-FOOT GASH — EVIDENCE PENDING'. Classic crosshatch Spy vs Spy comic style, slapstick sabotage energy.",
+      "title": "SPY vs. SPY",
+      "subtitle": "“The Drain Plug” — Two Agents, One Rubber Stopper, Infinite Swamp",
+      "white": {
+        "panels": [
+          "WHITE SPY, disguised as a credentialed IAEA inspector duck, snorkels to the bottom of the Reflecting Pool and locates the master drain plug. Today, he drains the swamp.",
+          "He swaps BLACK SPY's plug for an identical one stamped “INFINITY!!! — BATTERIES NOT INCLUDED.” Black Spy yanks it triumphantly. Nothing drains. The plug was purely symbolic.",
+          "Smugly, WHITE SPY notes the pool drains on its own in ten days regardless — constitutionally. He gloats. He accepts a handed-over $16 million invoice on reflex. He should not have."
+        ]
+      },
+      "black": {
+        "panels": [
+          "BLACK SPY finds the master drain plug first, hidden beneath a sign reading “350-FOOT GASH — EVIDENCE PENDING.” He grins. The credit will be his.",
+          "Foiled by the symbolic plug, BLACK SPY chains the REAL plug to a buoy labeled “SAVE ACT FIRST,” taking the drain itself hostage until his unrelated demands are met.",
+          "As WHITE SPY gloats, BLACK SPY quietly hands him the renovation invoice. White Spy is now financially responsible for the entire pool. Checkmate."
+        ]
+      },
+      "result": "The pool, reflecting both spies perfectly, drains at last — revealing a single $16 million invoice and the algae, still winning, now also fully briefed on the war, which is more than Senator Cassidy can say."
+    },
+    {
+      "type": "story",
       "illoId": "classifieds",
+      "scene": "A Mad Magazine style cartoon of a chaotic waterlogged classified-ads bulletin board half-submerged in an algae-green reflecting pool, job listings pinned everywhere and floating on the water, a carnival barker in a suit shouting 'HELP WANTED' from a rowboat. Applicants include a snorkeling inspector duck, a pool contractor with a dripping paint roller, and a glum politician holding a 'WILL LEGISLATE FOR A SEAT' sign. Crowded comic job-fair chaos.",
       "eyebrow": "HELP WANTED · INSANE CLASSIFIEDS",
       "heading": "INSANE CLASSIFIEDS!",
       "subheading": "JOBS! OPPORTUNITIES! POSITIONS BOBBING IN THE POOL! (READ WHILE TREADING WATER.)",
@@ -271,29 +414,33 @@
     },
     {
       "type": "awards",
-      "heading": "THE INSANE AWARDS",
-      "subhead": "Honoring Excellence In Deniable Infrastructure & Symbolic Governance",
-      "awards": [
+      "title": "🏆 THE INSANE AWARDS",
+      "date": "Honoring Excellence In Deniable Infrastructure & Symbolic Governance",
+      "categories": [
         {
-          "medal": "GOLD",
-          "title": "The 350-Foot Gash (Evidence Pending)",
-          "desc": "For the most load-bearing piece of evidence never produced. A claimed gash so large it explains a $16 million algae bloom, so invisible it has never been photographed. The gash is, at press time, the single most powerful object in American government, precisely because it does not appear to exist. We salute it. We cannot find it."
+          "name": "MOST LOAD-BEARING PIECE OF EVIDENCE NEVER PRODUCED",
+          "gold": "The 350-Foot Gash — so large it explains a $16M algae bloom, so invisible it has never been photographed. The single most powerful object in government, precisely because it may not exist.",
+          "silver": "The vandals who allegedly cut it — named by no one, seen by no one, blamed by everyone.",
+          "bronze": "The pending evidence itself, which remains, like the war briefing Senator Cassidy keeps requesting, pending."
         },
         {
-          "medal": "SILVER",
-          "title": "The War Powers Resolution (Symbolic Size)",
-          "desc": "For passing both chambers of Congress for the first time in 50 years, on the strength of two opponents being absent, and then directing the President to do something he is fully entitled to ignore. A historic milestone with the binding force of a folded paper boat. It floats beautifully. That is its entire function."
+          "name": "BEST USE OF THE WORD “INFINITY!!!”",
+          "gold": "As a unit of nuclear inspection Iran says it never agreed to — batteries not included, cannot be verified.",
+          "silver": "As three exclamation points doing the work of an entire arms-control framework.",
+          "bronze": "As an answer to “how many times will you say a deal exists while the other party denies it?”"
         },
         {
-          "medal": "BRONZE",
-          "title": "The Word “Infinity!!!”",
-          "desc": "For serving simultaneously as a description of nuclear inspections Iran says it never agreed to, a quantity that cannot be verified, and a product that does not come with batteries. Three exclamation points doing the work of an entire arms-control framework. Diplomacy has never been so punctuated."
+          "name": "MOST SYMBOLIC ACT OF GOVERNANCE",
+          "gold": "The 50–48 war-powers resolution — passed for the first time in 50 years, on two opponents being absent, directing the President to do a thing he can ignore.",
+          "silver": "Taking a housing bill hostage that becomes law in ten days whether you sign it or not.",
+          "bronze": "A DOJ “look” at oil companies for not lowering prices on a Tuesday timeline."
         }
       ]
     },
     {
       "type": "fold-in",
       "illoId": "foldin",
+      "scene": "A wide bright Mad Magazine style fold-in illustration of the algae-green Lincoln Memorial Reflecting Pool, with a politician in waders holding a paint roller, senators in tiny boats, a chained housing houseboat, an $87.6 billion sandbag, a snorkeling inspector duck, and a crowd on the bank all pointing in every direction shouting 'WHO DID THIS?'. Designed so that when the left third folds over to meet the right, the pool surface becomes a mirror and the combined reflection points back at the figure in the waders. Bright comic style engineered for the fold.",
       "heading": "THE INSANE FOLD-IN",
       "instruction": "FOLD PAGE OVER LIKE THIS — A OVER B — TO SEE WHAT THE POOL REFLECTS",
       "alt": "A wide Mad-Magazine-style illustration of the drained-and-refilled Lincoln Memorial Reflecting Pool, algae-green, with the President in waders and paint roller, Congress in tiny boats, the chained housing houseboat, the $87.6 billion sandbag, the snorkeling IAEA duck, and a crowd on the bank all pointing in every direction shouting WHO DID THIS? When the left third folds over to meet the right, the surface becomes a single mirror and the combined reflection points squarely back at the figure in the waders. Bright comic style, engineered for the fold.",

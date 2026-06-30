@@ -1,0 +1,432 @@
+{
+  "id": "vol1no8",
+  "volume": "VOL. 1",
+  "number": "NO. 8",
+  "date": "JUNE 30, 2026",
+  "title": "Democracy Got A Pink Slip!",
+  "subtitle": "The Unitary Executive Issue — Now Hiring (Just Kidding, You're Fired)",
+  "price": "$6.99 CHEAP!",
+  "eyebrow": "VOL. 1 · NO. 8",
+  "tagline": "AMERICA'S ONLY MAGAZINE WITHOUT A CONSCIENCE — AND THE BEST-STAFFED CONSCIENCE IN WASHINGTON!",
+  "coverImage": "images/vol1no8-cover.png",
+  "pages": [
+    {
+      "type": "cover-full",
+      "illoId": "cover",
+      "alt": "A crowned Trump as ringmaster-king standing on a pedestal labeled EXECUTIVE POWER, firing a giant pink cannon reading YOU'RE FIRED, WATCHDOGS at flying banners marked FTC, NLRB, and CPSC, while a row of grinning Supreme Court justices cheer ALL HAIL THE UNITARY EXECUTIVE, a frightened Federal Reserve figure cowers under a glass dome marked DO NOT TOUCH YET, Doha peace negotiators clutch a 14-point pact, chickens in ties hold YES SIR signs, schoolchildren in church-steeple hats do Prayer Math, and the elderly crawl through a Medicaid Obstacle Course."
+    },
+    {
+      "type": "cover",
+      "illoId": "cover",
+      "volNum": "VOL. 1 · NO. 8",
+      "date": "JUNE 30, 2026",
+      "price": "$6.99",
+      "coverLines": [
+        "DEMOCRACY GOT A PINK SLIP!",
+        "ALL HAIL THE UNITARY EXECUTIVE — WATCHDOGS, YOU'RE FIRED!",
+        "IRAN PEACE TALKS: NOW WITH ZERO ADULTS",
+        "Cheaper Than Truth"
+      ]
+    },
+    {
+      "type": "editorial",
+      "title": "FROM THE DESK OF THE EDITOR-IN-CHIEF",
+      "illoId": "editorial",
+      "scene": "Mad Magazine style satirical comic illustration: a cartoon magazine editor in a rumpled suit sitting at a cluttered desk inside a crumbling newsroom, holding a giant pink slip stamped 'DEMOCRACY — TERMINATED,' while a tiny king in a paper crown rubber-stamps documents in the background, exaggerated caricature, ink and watercolor, busy detailed comic linework, vintage satire magazine aesthetic",
+      "salutation": "Fellow Inmates,",
+      "paragraphs": [
+        "There is an old idea, possibly apocryphal, possibly just naive, that the United States government was designed as three branches that watch each other like suspicious roommates dividing a refrigerator. The legislative branch makes the rules. The executive enforces them. The judicial referees. And, in theory, no single roommate eats all the leftovers, hides the remote, and declares himself King of the Apartment.",
+        "This month the Supreme Court looked at that arrangement, thought about it carefully, and ruled that actually the leftovers belong to whoever shouts 'unitary executive' loudest. In a 6-3 decision, the Court overturned a 91-year-old precedent so that the President may now fire the independent watchdogs Congress specifically built to be un-fireable. The watchdogs are still technically alive. They have simply been informed that their continued service is, in the immortal phrasing of the administration, 'inconsistent with [the] Administration's priorities.' Which is corporate-HR for 'security will walk you out.'",
+        "Elsewhere this issue: an Iran peace deal negotiated entirely by adults who have apparently never met a deadline they couldn't extend, a Congress that located its spine, held it up to the light, admired it, and then mailed it back; a Medicaid system redesigned by someone who clearly hates both sick people AND paperwork and wanted them to spend eternity together; Signal group chats that delete themselves faster than the officials can deny them; Ten Commandments going up in public school classrooms one poster at a time; and the Trump family crypto empire, where the house always wins and 'the house' is spelled M-A-R-A-L-A-G-O.",
+        "We at INSANE remain, as ever, America's only magazine without a conscience — which this month makes us the best-staffed conscience in Washington."
+      ],
+      "signature": "— The Editors",
+      "ps": "P.S. If you are reading this on a federal device, this issue has already been set to auto-delete in eight hours. You're welcome."
+    },
+    {
+      "type": "masthead",
+      "title": "INSANE",
+      "illoId": "masthead",
+      "scene": "Mad Magazine style satirical comic illustration: a chaotic newsroom masthead scene with cartoon staffers in disarray, one fact-checker asleep under a mountain of subpoenas, a lawyer shredding documents into confetti, a mascot chicken in a tie holding a 'YES SIR' sign, exaggerated caricatures, vintage satire magazine ink and watercolor style, busy detailed linework",
+      "staff": [
+        {
+          "role": "Editor-In-Chief",
+          "name": "A man who has never read the Constitution but owns the audiobook"
+        },
+        {
+          "role": "Executive Editor (Unitary)",
+          "name": "Fired everyone else, so it's just him now"
+        },
+        {
+          "role": "Legal Counsel",
+          "name": "On Signal, set to auto-delete, unreachable"
+        },
+        {
+          "role": "Fact-Checker",
+          "name": "Position eliminated, deemed 'inconsistent with our priorities'"
+        },
+        {
+          "role": "Chicken Correspondent",
+          "name": "Cluck cluck (translation: 'Symbolic rebuke!')"
+        },
+        {
+          "role": "Head Of Compliance",
+          "name": "Currently 80 hours into a 80-hour paperwork requirement"
+        },
+        {
+          "role": "Crypto Desk",
+          "name": "Down 97%, still bullish, still tweeting"
+        }
+      ],
+      "subscriberAlert": {
+        "title": "INSANE MAGAZINE SUBSCRIBER ALERT!",
+        "subtitle": "Your Subscription Has Been Overruled 6-3 — But You'll Keep Getting Issues Anyway, Because The President Said You Could!",
+        "items": [
+          "🗞️ One (1) UNITARY EXECUTIVE DECODER RING — points only at him, spins for no one else!",
+          "📄 A genuine PINK SLIP suitable for terminating any watchdog, referee, or inconvenient fact-checker in your life!",
+          "📵 The OFFICIAL INSANE SIGNAL CHAT — auto-deletes your renewal notice in 8 hours, so you never have to feel guilty about lapsing!",
+          "📜 A 16-by-20-inch FRAMED POSTER of this very alert, mandatory in every room of your home (it's not coercive, it just hangs there)!",
+          "🪙 Three (3) TRUMP CRYPTO TOKENS, current value $0.04, projected value also $0.04, FAMILY ALWAYS WINS!",
+          "📋 An 80-HOUR PAPERWORK PACKET proving you are subscribed, due monthly, or your subscription is deemed inconsistent with our priorities!"
+        ]
+      }
+    },
+    {
+      "type": "contents",
+      "title": "IN THIS ISSUE",
+      "illoId": "contents",
+      "scene": "Mad Magazine style satirical comic illustration: a table of contents page rendered as a crumbling government org chart, with cartoon caricatures peeking out of file folders, a tiny crowned figure firing watchdog dogs out of a cannon, exaggerated comic style, vintage satire magazine aesthetic, ink and watercolor",
+      "items": [
+        {
+          "page": "04",
+          "emoji": "👑",
+          "title": "ALL HAIL THE UNITARY EXECUTIVE",
+          "desc": "Supreme Court Fires The Referees"
+        },
+        {
+          "page": "06",
+          "emoji": "🕊️",
+          "title": "IRAN PEACE TALKS: NOW WITH ZERO ADULTS",
+          "desc": "14 Points, 60 Days, We Promise (Maybe)"
+        },
+        {
+          "page": "08",
+          "emoji": "🐔",
+          "title": "CONGRESS DISCOVERS SPINE — THEN APOLOGIZES",
+          "desc": "A backbone, located, admired, and promptly returned."
+        },
+        {
+          "page": "09",
+          "emoji": "📵",
+          "title": "SIGNAL CHAT 2: DISAPPEARING MESSAGES, REAPPEARING IDIOTS",
+          "desc": "Auto-deleting chats, undeletable embarrassment."
+        },
+        {
+          "page": "10",
+          "emoji": "📕",
+          "title": "PUBLIC SCHOOLS: ALGEBRA, LUNCH, AND HOLY VIBES",
+          "desc": "Now with mandatory posters and Prayer Math."
+        },
+        {
+          "page": "11",
+          "emoji": "♿",
+          "title": "MEDICAID OBSTACLE COURSE",
+          "desc": "Sick? Prove It! 80 Hours Of Paperwork!"
+        },
+        {
+          "page": "12",
+          "emoji": "🪙",
+          "title": "CRYPTO ETHICS: FAMILY ALWAYS WINS",
+          "desc": "Trump Tokens, Investor Tears"
+        },
+        {
+          "page": "13",
+          "emoji": "📢",
+          "title": "MAN & WOMAN IN THE STREET",
+          "desc": "Citizens Get Loud"
+        },
+        {
+          "page": "14",
+          "emoji": "🎭",
+          "title": "SPY vs. SPY",
+          "desc": "'The Independent Agency'"
+        },
+        {
+          "page": "15",
+          "emoji": "🏆",
+          "title": "THE INSANE AWARDS",
+          "desc": "June's Worst, Officially Ranked"
+        },
+        {
+          "page": "16",
+          "emoji": "💬",
+          "title": "CRAZY COMMENTS",
+          "desc": "Real Quotes, We Swear"
+        },
+        {
+          "page": "18",
+          "emoji": "📰",
+          "title": "INSANE CLASSIFIEDS",
+          "desc": "Help Wanted, Spine Found"
+        },
+        {
+          "page": "19",
+          "emoji": "📁",
+          "title": "THE INSANE FOLD-IN",
+          "desc": "What Replaced The Watchdogs?"
+        }
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "unitary",
+      "scene": "Mad Magazine style satirical comic illustration: a cartoon king in a golden crown standing on a pedestal labeled 'EXECUTIVE POWER,' firing a giant pink cannon labeled 'YOU'RE FIRED, WATCHDOGS' at three flying paper banners reading FTC, NLRB, CPSC; behind him a row of grinning robed Supreme Court justices applaud; a single small frightened Federal Reserve figure cowers under a glass dome labeled 'DO NOT TOUCH YET,' exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "ALL HAIL THE UNITARY EXECUTIVE",
+      "subhead": "Supreme Court Fires The Referees, Keeps The Whistle For The Quarterback",
+      "byline": "By Our Separation-Of-Powers Desk, now a one-person operation",
+      "paragraphs": [
+        "WASHINGTON — In a development that legal scholars are calling 'a power unknown even to the English Crown' — and that phrase is not INSANE being colorful, that is an actual sitting Supreme Court Justice describing the actual ruling — the Court this week handed the President sweeping authority over roughly two dozen agencies that Congress had specifically designed to be independent. The vote was 6-3. The precedent overturned, Humphrey's Executor v. United States, was 91 years old, which in Supreme Court years is apparently the age at which a beloved family pet is taken 'to a farm upstate.'",
+        "Here is the case in brief, for those of you who did not attend law school and therefore still believe words mean things. In 1935, a unanimous Court ruled that the President could NOT fire members of the Federal Trade Commission just because he disagreed with them. The FTC, the Court reasoned back then, does work that is 'neither political nor executive, but predominantly quasi-judicial and quasi-legislative.' It is supposed to be a referee. You do not let the quarterback fire the referees mid-game. This was considered, for nine decades, an extremely obvious idea.",
+        "This week, the Court discovered it was no longer obvious. Chief Justice Roberts, writing for the majority, explained that the modern FTC enforces some 80 statutes covering 'nearly every facet of the economy,' which makes its work 'the very essence of execution of the law,' and therefore the President should get to fire whomever he likes. The ruling turns FTC commissioners into, in NPR's plain phrasing, at-will employees who serve at the pleasure of the President — and quietly ends the century-old requirement that the commission be bipartisan, so that no single party has too much sway. Too much sway, the Court has decided, is now the whole point.",
+        "The President responded with the gravitas the moment demanded. 'BIG WIN,' he posted, before clarifying on Truth Social that '90 years of precedent has been COMPLETELY AND UNEQUIVOCALLY OVERRULED, greatly increasing Presidential Power at a time when it is most needed!' INSANE has reviewed this statement closely and can confirm that it is, in fact, true — it is most needed by him, specifically, right now. Asked at the White House whether he planned to fire more people as a result, the President said, 'I don't think so,' which is precisely what you want to hear from a man who has just been handed a flamethrower and asked if he intends to use it.",
+        "Justice Sotomayor, dissenting, wrote that the Court had given the President 'a power unknown even to the English Crown against which the Founders revolted,' and noted that the case 'should have begun and ended' with the Court's own unanimous decision from a century ago. She was joined by Justices Kagan and Jackson, who together now constitute the entire remaining staff of the Department of Saying The Quiet Part Out Loud.",
+        "There was, mercifully, one watchdog the Court did not feed into the cannon. In a companion ruling, the justices declined to let the President fire Federal Reserve Governor Lisa Cook, describing the central bank as possessing a 'unique historical tradition.' Translation: you can fire the people who protect your toys from lead paint, but the people who protect the bond market get a glass display case marked DO NOT TOUCH YET. America has, at last, established its true hierarchy of values, and it turns out the toys lost.",
+        "The agencies affected — the FTC, the National Labor Relations Board, the Consumer Product Safety Commission, and roughly twenty others — were created across the 20th century to do unglamorous, vital things: stop monopolies, protect workers, keep cribs from strangling infants. None of them will be abolished. They will simply, going forward, be staffed entirely by people the President personally finds agreeable, which is a category that has historically excluded anyone who has ever told him no."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "iran",
+      "scene": "Mad Magazine style satirical comic illustration: two cartoon diplomats in suits holding a giant scroll labeled '14-POINT PACT — 60 DAYS — WE PROMISE (MAYBE),' standing in front of a burning oil tanker labeled 'OIL $ CASH' and a sign reading 'DOHA NEGOTIATIONS — TECHNICAL TALKS ONLY,' a giant invoice floating by reading '$300 BILLION PLEASE,' exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "IRAN PEACE TALKS: NOW WITH ZERO ADULTS",
+      "subhead": "14 Points, 60 Days, At Least $300 Billion, And A Document Signed At Versailles For Some Reason",
+      "byline": "By Our Diplomatic Translator, filing from Versailles",
+      "paragraphs": [
+        "VERSAILLES / TEHRAN / EVERYWHERE BUT SWITZERLAND — After a war that began in late February and rattled the world economy, the United States and Iran have signed a 14-point memorandum of understanding to end hostilities, reopen the Strait of Hormuz, and begin 60 days of negotiations toward a final deal. The agreement was scheduled to be signed in a grand ceremony in Switzerland on Friday. It was instead signed by the President on Wednesday at the Palace of Versailles, because if you are going to end a war, you want to do it at the literal historical monument to a monarch who said 'let them eat cake' — a vibe the administration appears to have selected on purpose.",
+        "'It's signed. Signed in Versailles. Just signed it,' the President told a reporter on his way out, in the tone of a man confirming he had in fact returned the rental car. The Iranian President, Masoud Pezeshkian, signed separately and held the document up for state media, calling it 'a historic document and a message from a strong Iran: peace will be achieved in the shadow of mutual respect.' Both men are correct that something was achieved. Whether it was peace remains, per the actual text, subject to a 60-day window 'extendable by mutual consent,' which is diplomatic Latin for 'or whenever, honestly.'",
+        "Let us walk through the highlights, because they are genuinely something. Point three commits both sides to reaching a final deal in 'maximum 60 days.' Point five has Iran making 'its best efforts' to allow toll-free passage of commercial vessels through the Strait of Hormuz — 'for 60 days only' — after which Iran's negotiator Ghalibaf has helpfully clarified that the Strait 'will not return to pre-war conditions' and that Iran will 'receive a fee for services.' So the war ended, and the toll booth opened. One assumes the EZ-Pass lane is being installed as we speak.",
+        "Point six is INSANE's favorite. The United States 'undertakes with regional partners to develop a definitive, mutually agreed plan with at least USD $300 billion for the reconstruction and economic development' of Iran. There is no detail on who pays this $300 billion, when, or how. A senior U.S. official rushed to reassure everyone that the U.S. isn't required to contribute, explaining that the clause merely means that if Iran behaves, 'we will permit the sanctions relief that would allow, for example, the Emiratis to build a power plant in Iran. That's all it says.' It is genuinely impressive to negotiate a $300 billion line item and then describe it as 'all it says.'",
+        "The agreement also reaffirms that Iran 'shall not procure or develop nuclear weapons' — a promise the country has made, by NPR's count, for years, including under the previous deal this same administration once called 'the worst deal ever' and tore up. The new pledge goes further than that old worst-deal-ever, which raises the philosophical question of whether the worst deal ever can be improved upon by simply fighting a war first and then signing a longer version of it. INSANE's foreign affairs desk has filed this under 'asked and not answered.'",
+        "As for why now: the President, who last month insisted he does not think about Americans' financial situation when handling Iran, acknowledged at a news conference that he signed because he 'didn't want to see an economic catastrophe.' His approval ratings have been sliding amid soaring gas prices and spiking inflation. So to summarize the adult supervision at these talks: a war was started, the global oil supply was throttled, prices spiked, the President noticed his poll numbers, and peace broke out approximately eleven minutes later. The system works. The system is also on fire. Both things, somehow, at once."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "spine",
+      "scene": "Mad Magazine style satirical comic illustration: a row of cartoon congressmen dressed as nervous chickens with wind-up keys in their backs holding signs reading 'DEEP CONCERN!', 'SYMBOLIC REBUKE!', and 'YES SIR!'; in the foreground one sweating congressman gingerly dips a single plastic spine labeled 'SPINE (ONE-TIME USE)' into a bucket labeled 'PRIMARY FEAR,' exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "CONGRESS DISCOVERS SPINE — THEN APOLOGIZES",
+      "subhead": "Legislative Branch Locates Backbone In Storage, Returns It Unused, Keeps The Receipt",
+      "byline": "By Our Capitol Correspondent, deeply concerned",
+      "paragraphs": [
+        "CAPITOL HILL — In a stunning act of institutional courage that lasted slightly under one full news cycle, members of Congress this month expressed grave concern about the rapid expansion of executive power, the auto-deleting Signal chats, the agency firings, and the general sensation of constitutional roommates being evicted one by one. They expressed this concern strongly. They expressed it in statements. Several of them expressed it on camera, with feeling. And then, having expressed it, they went back to expressing it, which is the entire program.",
+        "INSANE's congressional correspondent spent a week on the Hill cataloguing the precise verbs of accountability currently in use. The leading entry remains 'deeply concerned,' followed closely by 'troubling,' 'this raises serious questions,' and the perennial favorite, 'I haven't seen the report.' One senator achieved a personal best by being 'gravely troubled' on Tuesday and voting to fund the exact thing he was gravely troubled by on Thursday, a turnaround time that even our jaded staff found briefly inspiring.",
+        "Senator Dick Durbin, ranking member of the Senate Judiciary Committee, offered a statement on the unitary-executive ruling that came genuinely close to a spine: 'The Supreme Court just overturned well-established precedent to greenlight Donald Trump's threats to independent federal agencies.' He added that the President 'can fire whomever he perceives as his enemy at these agencies without so much as citing cause.' This is true, well-said, and was followed by precisely the volume of legislative response you would expect, which is to say a press release and the gentle sound of a door closing.",
+        "On the recordkeeping side, Democracy Forward's Skye Perryman urged the National Archives to initiate an enforcement action over what she called 'likely violations' of the Federal Records Act — the rare instance this month of a watchdog that has not yet been fired, mostly because nobody remembered it existed. Congress, for its part, declined to subpoena anyone, instead opting for the time-honored maneuver of writing a strongly worded letter and then leaking that it had written a strongly worded letter.",
+        "INSANE reached out to a bipartisan group of lawmakers to ask whether they intended to do anything beyond expressing concern. We have not heard back. We assume they are deeply concerned about our question and will be issuing a statement shortly, which they will then forward to their primary challengers as proof of toughness."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "signal",
+      "scene": "Mad Magazine style satirical comic illustration: a row of cartoon cabinet officials hunched over glowing smartphones with thought bubbles reading 'Iran/Ukraine Planning,' 'Auto-delete in 8 hours,' and 'Official Business, Probably Fine,' messages visibly evaporating into puffs of smoke; behind them a giant paper shredder labeled 'FEDERAL RECORDS?' chews documents, exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "SIGNAL CHAT 2: DISAPPEARING MESSAGES, REAPPEARING IDIOTS",
+      "subhead": "Top Officials Kept Using The App After The President Told Them To Stop Using The App",
+      "byline": "By Our National Security Desk (this byline auto-deletes in 8 hours)",
+      "paragraphs": [
+        "WASHINGTON — Newly released records show that Defense Secretary Pete Hegseth, Secretary of State Marco Rubio, and Joint Chiefs Chairman Dan Caine continued using Signal group chats configured to automatically delete messages — even after the President himself publicly suggested everyone stop using Signal. To be clear about the timeline: there was already one famous Signal disaster, in which an editor of The Atlantic was accidentally added to a chat where officials discussed bombing the Houthis. The President responded to that by telling reporters, and we quote, 'Maybe don't use Signal, okay? If you want to know the truth. I would frankly tell these people not to use Signal.'",
+        "These people did not, in fact, stop using Signal. The documents — released by the State Department under FOIA litigation brought by the watchdog group Democracy Forward — reveal 13 previously unreported Signal group chats involving senior officials. Among the chat names visible in the screenshots: one labeled 'Iran/Ukraine Planning,' and another, including Hegseth, the Vice President, and Commerce Secretary Howard Lutnick, set to erase its own messages after one week. Nothing says 'we have nothing to hide' quite like a national-security conversation engineered to incriminate the delete button instead of anyone in the room.",
+        "INSANE wishes to highlight the sheer elegance of the design here. A federal record is, by law, supposed to be preserved. A Signal message set to auto-delete is, by design, supposed to vanish. By holding government business on auto-deleting Signal, officials have discovered the bureaucratic equivalent of eating a document — the information was definitely there, it definitely mattered, and now it is definitely gone, and somehow this is the secure option. Democracy Forward's Skye Perryman has urged the National Archives to act on what she called likely Federal Records Act violations, which is to say: the people whose job is to keep the receipts would now like to know where the receipts went.",
+        "We reached out to several officials for comment via Signal. Our messages were received, read, and — per the chat's settings — will be unavailable for verification in eight hours, at which point we, too, will have nothing to report, and everyone can relax."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "school",
+      "scene": "Mad Magazine style satirical comic illustration: a cartoon public school classroom with a banner reading 'PUBLIC SCHOOL NOW WITH CHURCH — WELCOME TO SUNDAY SCHOOL, MONDAY-FRIDAY,' children wearing little paper church-steeple hats with crosses sitting at desks, a chalkboard reading 'PRAYER MATH: 10 COMMANDMENTS + 0 SEPARATION = A+,' one child clutching a giant Holy Bible, exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "PUBLIC SCHOOLS: ALGEBRA, LUNCH, AND HOLY VIBES",
+      "subhead": "Ten Commandments Head To Texas Classrooms; Math Now Includes 'Thou Shalt Pass The Test'",
+      "byline": "By Our Education Correspondent, grading on a curve",
+      "paragraphs": [
+        "AUSTIN — A deeply divided federal appeals court has ruled that Texas may require every public-school classroom to display the Ten Commandments, reversing lower courts and setting up a likely showdown at the Supreme Court. The vote at the en banc Fifth Circuit was 9-8, a margin so thin that nearly half the court dissented, which is the legal system's way of putting a yellow sticky note on a decision that reads 'we are not done arguing about this.'",
+        "The law, Texas Senate Bill 10, requires a framed display 'at least 16 inches wide and 20 inches tall' in a 'conspicuous place in each classroom,' using a specific Protestant version of the Commandments. The majority insisted this is not coercion. In the opinion's own words, S.B. 10 'puts a poster on a classroom wall' and 'requires no religious exercise or observance.' Students, the court assured everyone, are 'neither catechized on the Commandments nor taught to adopt them.' INSANE has reviewed this reasoning and agrees that posters are famously neutral, which is why no teenager in history has ever been influenced by one on a wall.",
+        "The dissent was less relaxed. It pointed out that in 1980, in Stone v. Graham, the Supreme Court struck down a nearly identical Kentucky law as 'plainly religious in nature,' warning the displays would 'induce the schoolchildren to read, meditate upon, perhaps to venerate and obey, the Commandments.' The Supreme Court has never overruled Stone. The Fifth Circuit majority got around this by reasoning that a different precedent, Lemon v. Kurtzman, had been 'abandoned,' and that Stone once cited Lemon, so Stone is now optional. This is the legal equivalent of arguing that because your gym membership lapsed, you no longer have to pay your mortgage, since both are technically bills.",
+        "Officials celebrated. Texas Attorney General Ken Paxton called it 'a major victory for Texas and our moral values,' adding that 'the Ten Commandments have had a profound impact on our nation, and it's important that students learn from them every single day.' Lt. Gov. Dan Patrick called the ruling 'a great day for those who believe in the Word of God.' The families challenging the law — Jewish, Christian, Hindu, Unitarian Universalist, and nonreligious — were less thrilled. Plaintiff Rabbi Mara Nathan noted the mandated version 'does not match the text followed by our family.' Plaintiff Pastor Griff Martin, a Baptist, put it most sharply: 'Posting the Ten Commandments in public schools is un-American and un-Baptist.'",
+        "INSANE's education desk supports a rigorous curriculum and has accordingly drafted the new Prayer Math syllabus visible on this issue's cover. Sample problem: 'A student has 10 Commandments and 0 separation of church and state. Solve for the grade.' Answer key: A+, plus a strongly worded amicus brief, due Friday, in triplicate, ideally on a 16-by-20-inch poster."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "medicaid",
+      "scene": "Mad Magazine style satirical comic illustration: an elaborate carnival obstacle course labeled 'MEDICAID OBSTACLE COURSE,' with elderly and disabled cartoon people in wheelchairs and hospital gowns crawling under velvet ropes toward a bureaucrat at a desk stamping 'DENIED'; a sign reads 'NOT TIRED ENOUGH'; a skeleton in a chair holds a sign reading 'RIP COVERAGE,' exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "THE MEDICAID OBSTACLE COURSE",
+      "subhead": "Sick? Prove It! 80 Hours A Month Of Qualifying Activity, Or Your Coverage Is 'Inconsistent With Our Priorities'",
+      "byline": "By Our Health Desk, currently on hold with the state",
+      "paragraphs": [
+        "WASHINGTON — Under a new federal rule taking effect this summer, millions of adults on Medicaid will be required to document at least 80 hours per month of 'community engagement' — work, job training, community service, or half-time school — or lose their health coverage. The rule applies to non-pregnant adults ages 19 to 64 across more than 40 expansion states, with full national enforcement arriving January 1, 2027. The Congressional Budget Office estimates that roughly 5 million people will lose coverage by 2034. And here is the part that even the dry policy analysts keep underlining: most of them will lose it not because they refuse to work, but because of the paperwork.",
+        "Let INSANE explain the cruelty efficiently, since the rule itself is anything but. Study after study — including the famous Arkansas experiment, where 18,000 people lost coverage before a judge shut it down — has found that work requirements do not meaningfully increase employment. What they do increase is the volume of forms. Most people subject to the rule are already working. They simply have to prove it, every month, through a verification system that states are building from scratch on a deadline, at an estimated cost of about $15 million per state, which works out to roughly $660 million nationally spent to make sick people fill out more documents.",
+        "The administration's own touches make it worse. The June interim rule narrowed the 'medically frail' exemption — the carve-out meant to protect the people at highest risk — by adding a requirement that the person prove their condition 'significantly impairs' their ability to do the work activities, on top of simply having the qualifying condition. In plain terms: it is no longer enough to be seriously ill. You must now also be ill in a way that fills out a form documenting that you are too ill to fill out forms. INSANE has read this three times and each time it has gotten worse.",
+        "The policy analysts at the Center on Budget and Policy Priorities sketched out exactly who falls through. People who can work because they have consistent access to care to manage their condition — but whose health collapses the moment that care is interrupted. People who can clear 80 hours in some months but fall short in others because of the very illness Medicaid is treating. A paperwork error by the agency. A business closure. A lack of paid sick leave. Any one of these is now a coverage-ending event, in a system supposedly designed to keep people healthy enough to work.",
+        "INSANE's health desk has prepared a simple flowchart for navigating the new Medicaid Obstacle Course, pictured on the cover. Step one: get sick. Step two: prove you are sick, but not in a disqualifying way. Step three: prove you are working, or prove you are too sick to work, but not in a way that suggests you might recover and therefore did not need the coverage in the first place. Step four: receive a stamp. The stamp says DENIED. The bureaucrat is sorry. The bureaucrat is also being timed, and has 80 hours of his own paperwork to finish before the system auto-deletes him in eight hours."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "crypto",
+      "scene": "Mad Magazine style satirical comic illustration: a golden slot machine labeled 'TRUMP CRYPTO — FAMILY ALWAYS WINS' spitting out gold coins into the hands of grinning cartoon sons in suits, while a crowd of weeping investors in 'REKT' baseball caps stare at phones showing '-97%'; a tombstone reads 'RIP SAVINGS,' exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "CRYPTO ETHICS: FAMILY ALWAYS WINS",
+      "subhead": "Trump Tokens Up For The Family, Down 97% For You — A Beginner's Guide To Being The Beginner",
+      "byline": "By Our Investing Desk, which is not financial advice",
+      "paragraphs": [
+        "NEW YORK — A Reuters investigation reviewing thousands of documents, disclosures, and blockchain records has found that the Trump family has generated at least $2.3 billion in profit from its main crypto ventures since the President returned to office — while the more than one million investors on the other side of those trades lost, collectively, about $2.3 billion. INSANE has double-checked this symmetry and can confirm it is not a coincidence so much as a business model. The money did not vanish. It changed addresses.",
+        "The mechanics, per Reuters, follow a tidy template across four ventures — World Liberty Financial, the $TRUMP meme coin, American Bitcoin, and AI Financial Corp (formerly ALT5 Sigma). In each case the family put in, in the report's phrasing, 'little or none of their money.' They licensed the name. The sons hyped the launch. Investors piled in. Prices surged, the family cashed out, and then prices collapsed, leaving retail buyers holding assets worth a fraction of what they paid. Experts who reviewed the analysis estimated each venture could have been set up for under $1 million in costs, meaning the $2.3 billion gain came almost entirely from licensing fees and revenue sharing rather than any capital actually at risk.",
+        "The numbers, for the connoisseur of financial pain: the $TRUMP meme coin has fallen roughly 97% from its January 2025 peak, generating around $616 million for the family while buyers lost more than $700 million. World Liberty's governance tokens funneled well over $1 billion to the family — and most token holders are barred from selling until 2030, meaning they get to watch the value drop in real time without the mercy of an exit. AI Financial's stock fell from above $9 to under a dollar, a decline that has the company facing possible delisting because Nasdaq, charmingly, requires its companies to trade above $1 a share — a standard the broader administration apparently does not.",
+        "Reuters interviewed the human beings inside these figures. A software engineer in Minnesota who lost around $60,000. A machinist in Indiana out roughly $32,700. An investor whose $2,000 stake in the $TRUMP coin is now worth less than $120. INSANE notes that 'less than $120' is, technically, still more than the coin's underlying utility, which remains zero, and which was always zero, and which the fine print at the bottom of the offering documents was, in its way, honest about.",
+        "A spokesperson for World Liberty disputed the methods Reuters used to calculate the losses, which is the crypto-industry equivalent of disputing the score after the other team has gone home with the trophy. INSANE's investing desk offers the only financial advice we are legally and morally qualified to give: if a slot machine is labeled FAMILY ALWAYS WINS, and you are reading the label, you are not the family."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "street",
+      "scene": "Mad Magazine style satirical comic illustration: a busy city street with a diverse crowd of exaggerated cartoon citizens being interviewed by a reporter holding an 'INSANE' microphone, each person mid-rant with furious expressions and wild gestures, speech bubbles bursting, a backdrop of a crumbling Capitol dome, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "heading": "MAN & WOMAN IN THE STREET",
+      "subhead": "INSANE Asks Real Americans: How's It Going Out There?",
+      "byline": "Printed Verbatim, Volume Turned Up",
+      "paragraphs": [
+        "This month, in keeping with our sacred journalistic tradition, INSANE took to the streets to ask everyday Americans for their thoughts on the Supreme Court, the Congress, and the general management of the country. We expected mild grumbling. We received, instead, a spirited civics seminar conducted at full volume. The opinions below are invented for satire, attributed to fictional citizens, and reproduced here at the decibel level at which they were imagined.",
+        "GERALD P., 54, Plumber, Ohio: 'They overturned a ninety-one-year-old precedent so a guy can fire the people who keep cribs from killing babies, but the Federal Reserve gets a little glass dome? You're telling me the bond traders are protected and the BABIES aren't? I have been voting since 1990 and I would like a refund on all of it.'",
+        "DENISE W., 38, ICU Nurse, Arizona: 'I'm supposed to document eighty hours a month to keep MY patients' coverage, meanwhile the cabinet can't document a single Signal chat because it ATE ITSELF. If I deleted a patient's chart it would be a felony. They delete the whole government and it's a Tuesday. Do not get me started. You got me started.'",
+        "MARCUS T., 61, Retired Teacher, Texas: 'A poster on the wall, they said. Just a poster. I spent thirty-one years in a classroom. You know what kids do with a poster on the wall? They read it. That's the whole idea of a poster. Nine judges to eight and not one of them has ever taught a fourth-grader, I'd bet my pension. If I still had a pension.'",
+        "AISHA R., 29, Software Developer, Illinois: 'My cousin put two grand into the President's coin because he trusted the name. It's worth a hundred and twenty bucks now. The FAMILY made two-point-three billion. They literally named the slot machine FAMILY ALWAYS WINS and people still played it, and honestly I'm madder at the people who built the machine than the ones who pulled the lever, but I'm mad at everybody. I'm mad at the lever.'",
+        "BIG TONY, 47, Longshoreman, New Jersey: 'Congress is deeply concerned. Oh, they're concerned! You know who else is concerned? ME. I'm concerned. The difference is I don't have subpoena power and they do and NEITHER OF US IS USING IT. Send 'em a strongly worded letter, fellas. That'll do it. Frame it. Put it on a sixteen-by-twenty poster next to the Commandments.'",
+        "EVELYN H., 72, Grandmother, Florida: 'I raised three kids on a nurse's salary and I have never in my life seen grown men in suits so frightened of a primary election that they'd hand a king his crown rather than lose a fundraiser. Spine? They've got a spine. They keep it in a drawer for special occasions, and apparently this is not one. I have my church group and I have my opinions and I brought BOTH today.'",
+        "INSANE thanks our fictional citizens for their fictional candor. Any resemblance to the way millions of real people actually feel this June is, of course, entirely the point."
+      ]
+    },
+    {
+      "type": "spy-vs-spy",
+      "illoId": "spy",
+      "scene": "Mad Magazine Spy vs Spy style comic illustration: two pointy-faced spies, one in white and one in black, in a bureaucratic government office setting battling over a desk labeled 'INDEPENDENT AGENCY,' one spy operating a giant pink termination cannon while the other hides behind a glass dome marked 'FEDERAL RESERVE — DO NOT TOUCH,' classic crosshatched black-and-white spy vs spy aesthetic with comic slapstick, detailed linework",
+      "title": "SPY vs. SPY",
+      "subtitle": "'The Independent Agency' — Two Agents, One Termination Letter, Zero Oversight",
+      "white": {
+        "panels": [
+          "WHITE SPY, holding a freshly notarized Supreme Court ruling, marches into the office of the INDEPENDENT AGENCY and informs BLACK SPY that his continued service is 'inconsistent with current priorities.' He hands over a pink slip the size of a beach towel and points smugly to the door.",
+          "BLACK SPY, undaunted, produces his own ruling — the 91-year-old precedent — and frames it on the wall. WHITE SPY produces a cannon labeled UNITARY EXECUTIVE and fires the frame, the wall, and the precedent into a fine constitutional mist. He dusts off his hands.",
+          "WHITE SPY settles into the now-empty agency chair, having fired everyone, and reaches for the one lever still glowing on the desk. The lever is labeled FEDERAL RESERVE. A glass dome slams down over his hand with a CLANG. The sign reads: DO NOT TOUCH YET. He has, at last, found the one thing he cannot fire — and it has found his fingers."
+        ]
+      },
+      "black": {
+        "panels": [
+          "BLACK SPY, evicted, does not leave the building. He simply changes the nameplate on the door from INDEPENDENT AGENCY to ADVISORY COMMITTEE and walks back in, untouchable, having discovered that you cannot fire a man from a job that no longer technically exists.",
+          "WHITE SPY, enraged, signs an order abolishing the Advisory Committee. BLACK SPY hands him the order back, pointing out that it must be reviewed by an independent watchdog. There are no independent watchdogs left. WHITE SPY has fired them all. The order cannot be processed.",
+          "In the final panel, both spies sit in the empty agency, the cannon cooling, the glass dome glinting, every referee gone — and slowly realize that with no one left to oversee anything, there is also no one left to declare either of them the winner. They reach, in unison, for the last Federal Reserve lever. The dome holds. It always holds."
+        ]
+      },
+      "result": "WINNER: The algae in the Reflecting Pool, which remains the only entity in Washington still answerable to absolutely no one and proud of it."
+    },
+    {
+      "type": "awards",
+      "title": "THE INSANE AWARDS",
+      "illoId": "awards",
+      "scene": "Mad Magazine style satirical comic illustration: a gaudy gold-silver-bronze awards podium in a crumbling government hall, cartoon caricatures of officials and chickens accepting trophies shaped like rubber stamps, pink slips, and crypto coins, confetti made of shredded federal records raining down, exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "date": "June 2026",
+      "categories": [
+        {
+          "name": "BEST USE OF A 91-YEAR-OLD PRECEDENT AS KINDLING",
+          "gold": "The Supreme Court, 6-3, for converting Humphrey's Executor into a fine constitutional mist",
+          "silver": "The Fifth Circuit, 9-8, for declaring Stone v. Graham 'optional' because it once cited a different case",
+          "bronze": "Every law student who paid $200,000 to learn precedents that now expire like yogurt"
+        },
+        {
+          "name": "MOST ADULTS IN A ROOM (ZERO)",
+          "gold": "The Versailles signing ceremony, for ending a war at a monument to a beheaded monarchy",
+          "silver": "The $300 billion clause described by an official as 'all it says'",
+          "bronze": "The 60-day deadline, 'extendable by mutual consent,' i.e., never"
+        },
+        {
+          "name": "OUTSTANDING ACHIEVEMENT IN SELF-DELETION",
+          "gold": "The cabinet's auto-deleting Signal chats, for incriminating the delete button instead of anyone in the room",
+          "silver": "The chat literally named 'Iran/Ukraine Planning,' for honesty",
+          "bronze": "Congress's spine, which deleted itself the moment a primary was mentioned"
+        },
+        {
+          "name": "CRUELEST PAPERWORK INNOVATION",
+          "gold": "The Medicaid rule requiring the sick to prove they are too sick to fill out forms, on a form",
+          "silver": "The $660 million spent nationally to make working people prove they work",
+          "bronze": "The DENIED stamp, for its consistency"
+        },
+        {
+          "name": "FINEST PERFORMANCE BY A SLOT MACHINE",
+          "gold": "TRUMP CRYPTO, for the slogan 'FAMILY ALWAYS WINS,' printed on the machine, in advance",
+          "silver": "The $2,000 stake now worth $120, for outperforming the coin's actual utility (zero)",
+          "bronze": "Nasdaq's $1 minimum, the last institution in America still enforcing a standard"
+        }
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "comments1",
+      "scene": "Mad Magazine style satirical comic illustration: a wall of framed speech bubbles containing political quotes, with a cartoon INSANE editor in a beret pinning sarcastic one-line notes beneath each frame using a red pen, exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "eyebrow": "SPECIAL FEATURE · ON THE RECORD",
+      "heading": "CRAZY COMMENTS",
+      "subheading": "Real Quotes. Verbatim. Sourced. The Commentary Is Ours; The Words Are Theirs.",
+      "deck": "INSANE collects the week's most baffling real statements and provides only the commentary. Every quote below is genuine and accurately reproduced. We checked. We wish we hadn't.",
+      "caption": "★ All quotes are real and on the record. We are not making these up. That is the entire point. ★",
+      "paragraphs": [
+        "Each month INSANE collects real, verbatim, accurately sourced quotes from the news cycle and provides only the commentary. The quotes are real. We checked. We wish we hadn't, but we did.",
+        "THE QUOTE: 'BIG WIN.' — President Trump, on Truth Social, reacting to the Supreme Court overturning Humphrey's Executor. INSANE SAYS: Two words. Ninety-one years of precedent. A truly economical ratio of syllables to constitutional change.",
+        "THE QUOTE: '90 years of precedent has been COMPLETELY AND UNEQUIVOCALLY OVERRULED, greatly increasing Presidential Power at a time when it is most needed!' — President Trump, Truth Social. INSANE SAYS: We agree entirely with the phrase 'when it is most needed,' and would only add a clarifying 'by whom.'",
+        "THE QUOTE: 'a power unknown even to the English Crown against which the Founders revolted.' — Justice Sonia Sotomayor, dissenting. INSANE SAYS: When the dissent reaches for 'we literally fought a war to not have this,' the majority might consider that the bar was on the floor and they brought a shovel.",
+        "THE QUOTE: 'It's signed. Signed in Versailles. Just signed it.' — President Trump, leaving the Palace of Versailles after signing the Iran memorandum. INSANE SAYS: The cadence of a man confirming he remembered to bring the milk home. The setting of a man who did not Google what happened at Versailles.",
+        "THE QUOTE: 'Maybe don't use Signal, okay? If you want to know the truth. I would frankly tell these people not to use Signal.' — President Trump, April, on his own officials. INSANE SAYS: A rare instance of presidential advice that was correct, ignored, and is now Exhibit A."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "comments2",
+      "scene": "Mad Magazine style satirical comic illustration: a courtroom-meets-classroom scene where framed real quotes hang on the wall, a cartoon judge and a cartoon schoolteacher both pointing at the same poster in confusion, the INSANE editor scribbling sarcastic captions, exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "eyebrow": "SPECIAL FEATURE · ON THE RECORD (CONT'D)",
+      "heading": "CRAZY COMMENTS, CONT'D",
+      "subheading": "More Real Quotes We Genuinely Could Not Make Up",
+      "deck": "Still genuine, still verbatim, still happening — this time on the Ten Commandments, the crypto books, and a poster that is definitely not coercive.",
+      "caption": "★ Still real. Still verbatim. Still happening. ★",
+      "paragraphs": [
+        "THE QUOTE: 'a major victory for Texas and our moral values.' — Texas Attorney General Ken Paxton, on the Ten Commandments ruling. INSANE SAYS: We support moral values so much we would never reduce them to a mandatory 16-by-20-inch poster purchasable in bulk.",
+        "THE QUOTE: 'the Ten Commandments have had a profound impact on our nation, and it's important that students learn from them every single day.' — Ken Paxton. INSANE SAYS: Statistically, the Commandment most relevant to this administration is the eighth one, and we are concerned it will be read 'every single day' and ignored 'every single day.'",
+        "THE QUOTE: 'a great day for those who believe in the Word of God.' — Texas Lt. Gov. Dan Patrick. INSANE SAYS: Also, per the dissent, a confusing day for the Catholic, Jewish, and Hindu students whose own scriptures did not make the 9-8 cut.",
+        "THE QUOTE: 'Posting the Ten Commandments in public schools is un-American and un-Baptist.' — Pastor Griff Martin, plaintiff. INSANE SAYS: When the Baptist pastor is the one defending the wall between church and state, you have built a debate so strange even the satire magazine is taking notes respectfully.",
+        "THE QUOTE: 'It puts a poster on a classroom wall.' — the Fifth Circuit majority opinion, on why S.B. 10 is not coercive. INSANE SAYS: The entire advertising industry, the entire propaganda industry, and every motivational cat dangling from a branch would like a word about the persuasive power of 'a poster on a wall.'",
+        "THE QUOTE: 'These conditions raise substantial doubt about the company's ability to continue as a going concern within one year.' — AI Financial Corp (formerly ALT5 Sigma), SEC filing, on the crypto venture tied to the Trump family. INSANE SAYS: 'Going concern' is accountant for 'still technically breathing.' The investors share the diagnosis."
+      ]
+    },
+    {
+      "type": "story",
+      "illoId": "classifieds",
+      "scene": "Mad Magazine style satirical comic illustration: a vintage newspaper classifieds page rendered as a chaotic bulletin board covered in absurd job postings and for-sale notices, cartoon hands pinning index cards, a 'SPINE FOUND' flyer with tear-off tabs, a tiny chicken in a tie reading the ads, exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework",
+      "eyebrow": "HELP WANTED · INSANE CLASSIFIEDS",
+      "heading": "INSANE CLASSIFIEDS",
+      "subheading": "JOBS! OPPORTUNITIES! POSITIONS RECENTLY VACATED BY COURT ORDER!",
+      "deck": "This Week's Employment Listings, Personals, And Opportunities From The INSANE Marketplace — We Are Not Responsible For The Applicants These Ads Will Attract.",
+      "caption": "★ INSANE Magazine assumes no liability for the positions below. All listings are satire. ★",
+      "paragraphs": [
+        "HELP WANTED — INDEPENDENT WATCHDOG. Must be capable of overseeing powerful agencies while remaining fully fireable at the President's pleasure for any reason or no reason. 'Independence' is in the title only. Tenure protections overruled 6-3. Cannon-proof vest provided (does not work). Apply within; do not expect to remain within.",
+        "HELP WANTED — FEDERAL RECORDS CLERK. Seeking detail-oriented professional to preserve government communications that are configured to delete themselves in 8 hours. Strong organizational skills useless. Must be comfortable filing nothing. Position may already have deleted itself; if you can read this, it's open again.",
+        "FOR SALE — ONE (1) U.S. SENATE SPINE. Lightly used, mostly stored. Removed for parts the moment a primary challenger announced. Comes with original packaging marked 'IN CASE OF CONSTITUTIONAL CRISIS, BREAK GLASS,' glass intact, never broken. Will trade for a strongly worded letter.",
+        "FOR SALE — $TRUMP COIN, $2,000 OBO. Currently worth $120. Will accept $120. Will accept a sandwich. Will accept your sympathy. Slot machine clearly labeled FAMILY ALWAYS WINS; I was not, it turns out, family. Buyer must be either very optimistic or my cousin.",
+        "SERVICES — VERSAILLES EVENT PLANNING. Specializing in signing ceremonies at locations whose historical symbolism you definitely did not look up. Other venues available: the Bastille (grand openings), the Hindenburg hangar (product launches), the Titanic gift shop (going-away parties). No refunds; refunds are inconsistent with our priorities.",
+        "PERSONALS — MEDICALLY FRAIL ADULT, 58, seeks someone, anyone, who can explain how to document that I am too unwell to document things, using a document. Must love forms. Must hate me slightly less than the rule does. Coverage expires in 8 hours; so, apparently, does everything.",
+        "LOST & FOUND — FOUND: separation of church and state, last seen 1980, near a Kentucky classroom. If yours, please claim at the Fifth Circuit, 9-8, bring ID and a 16-by-20-inch frame. FOUND: one (1) glass dome marked DO NOT TOUCH; Federal Reserve, this is yours, the President's hand is still in it."
+      ]
+    },
+    {
+      "type": "fold-in",
+      "title": "THE INSANE FOLD-IN",
+      "illoId": "foldin",
+      "scene": "Mad Magazine style satirical fold-in comic illustration: a wide detailed scene of a grand government building labeled 'INDEPENDENT AGENCIES' with watchdog dogs in little ties guarding the doors; designed so that folding the image reveals a hidden picture, with a crowned figure and an empty dog leash, exaggerated caricatures, vintage satire magazine ink and watercolor, busy detailed comic linework, fold-in puzzle composition",
+      "question": "Q: AFTER THE SUPREME COURT LET THE PRESIDENT FIRE EVERY INDEPENDENT WATCHDOG IN WASHINGTON, WHAT POWERFUL FORCE WAS LEFT GUARDING THE AMERICAN PUBLIC FROM ABUSE?",
+      "answer": "A: NO ONE",
+      "leftText": "Folks ask what stands between a powerful office and an ordinary citizen now that the referees have all been escorted out, and the optimists insist the system still has plenty of",
+      "rightText": "guardrails — fold the page and find out exactly how much oversight is actually left holding the leash."
+    }
+  ]
+}
